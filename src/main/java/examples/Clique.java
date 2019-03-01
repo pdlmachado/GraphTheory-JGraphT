@@ -14,6 +14,10 @@ import org.jgrapht.Graph;
 import org.jgrapht.alg.clique.DegeneracyBronKerboschCliqueFinder;
 import org.jgrapht.alg.clique.PivotBronKerboschCliqueFinder;
 import org.jgrapht.graph.SimpleGraph;
+import org.jgrapht.io.EdgeProvider;
+import org.jgrapht.io.GmlImporter;
+import org.jgrapht.io.ImportException;
+import org.jgrapht.io.VertexProvider;
 
 
 public class Clique {
@@ -27,9 +31,10 @@ public class Clique {
 	    		(from,to,label,attributes) -> new RelationshipEdge(from,to,attributes);
 		GmlImporter <Object,RelationshipEdge> gmlImporter = new GmlImporter <> (vp1,ep1);
 	    Graph<Object, RelationshipEdge> graphgml = new SimpleGraph<>(RelationshipEdge.class);
+	    System.out.println(System.getProperty("java.class.path"));
   	    try {
 	        gmlImporter.importGraph(graphgml, 
-	        		ImportGraph.readFile(System.getProperty("user.dir") + "\\src\\graphs\\lesmis.gml"));
+	        		ImportGraph.readFile("./src/main/java/graphs/lesmis.gml"));
 	      } catch (ImportException e) {
 	        throw new RuntimeException(e);
 	      }	    

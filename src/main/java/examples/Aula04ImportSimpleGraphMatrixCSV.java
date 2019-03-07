@@ -18,7 +18,9 @@ public class Aula04ImportSimpleGraphMatrixCSV {
 				graph, 
 				"./src/main/java/graphs/5-3regular.csv",
 				CSVFormat.MATRIX, 
-				CSVFormat.Parameter.MATRIX_FORMAT_NODEID);
+				false,
+				false,
+				true); // MATRIX_FORMAT_NODEID
 		
 		System.out.println("Vertices: " + graph.vertexSet());
 		System.out.println("Arestas: " + graph.edgeSet());

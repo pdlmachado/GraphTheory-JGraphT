@@ -5,8 +5,6 @@ package examples;
 import org.jgrapht.alg.connectivity.ConnectivityInspector;
 import org.jgrapht.alg.shortestpath.AllDirectedPaths;
 import org.jgrapht.graph.*;
-import org.jgrapht.io.*;
-
 import java.util.*;
 
 public class ConnectivityDirectedGraph {

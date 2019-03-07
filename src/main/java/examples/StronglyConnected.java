@@ -4,7 +4,7 @@ package examples;
 
 import org.jgrapht.alg.connectivity.KosarajuStrongConnectivityInspector;
 import org.jgrapht.graph.*;
-import org.jgrapht.io.*;
+
 
 
 import java.util.*;
@@ -13,19 +13,10 @@ public class StronglyConnected {
     //Conectividade em grafos direcionados
 	
 	public static void main(String[] args) {
-	    VertexProvider <DefaultVertex> vp1 = 
-	    		(label,attributes) -> new DefaultVertex (label,attributes);
-	    EdgeProvider <DefaultVertex,RelationshipDirectedEdge> ep1 = 
-	    		(from,to,label,attributes) -> new RelationshipDirectedEdge(from,to,attributes);
-		GmlImporter <DefaultVertex,RelationshipDirectedEdge> gmlImporter = new GmlImporter <> (vp1,ep1);
 	    DefaultDirectedGraph<DefaultVertex,RelationshipDirectedEdge> graphgml = new DefaultDirectedGraph<>(RelationshipDirectedEdge.class);
-   	    try {
-	        // Testar com grafos strongly1-strongly4.gml
-   	    	gmlImporter.importGraph(graphgml, ImportGraph.readFile("./src/graphs/strongly4.gml"));
-	      } catch (ImportException e) {
-	        throw new RuntimeException(e);
-	      }	    		
- 	    
+   	    MyJGraphTUtil.importDirectedGraphGML(graphgml,("./src/main/java/graphs/strongly4.gml"));
+		
+ 
 	    Set <Object> V = new HashSet <Object>(graphgml.vertexSet());
 	    Set <DefaultEdge> E = new HashSet <DefaultEdge>(graphgml.edgeSet());
 	    

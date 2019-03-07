@@ -4,15 +4,10 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
-
 import org.jgrapht.GraphPath;
 import org.jgrapht.alg.shortestpath.AllDirectedPaths;
 import org.jgrapht.graph.DefaultDirectedGraph;
 import org.jgrapht.graph.DefaultEdge;
-import org.jgrapht.io.EdgeProvider;
-import org.jgrapht.io.GmlImporter;
-import org.jgrapht.io.ImportException;
-import org.jgrapht.io.VertexProvider;
 
 public class ConnectivityDirectedGraph2 {
 	// Conectividade de Grafos Directionados

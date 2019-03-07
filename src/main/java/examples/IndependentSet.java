@@ -11,10 +11,6 @@ import org.jgrapht.alg.independentset.ChordalGraphIndependentSetFinder;
 import org.jgrapht.generate.ComplementGraphGenerator;
 import org.jgrapht.graph.DefaultEdge;
 import org.jgrapht.graph.SimpleGraph;
-import org.jgrapht.io.EdgeProvider;
-import org.jgrapht.io.GmlImporter;
-import org.jgrapht.io.ImportException;
-import org.jgrapht.io.VertexProvider;
 
 public class IndependentSet {
 	public static void main(String[] args) {

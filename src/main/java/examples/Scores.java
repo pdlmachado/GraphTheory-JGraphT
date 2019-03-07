@@ -19,27 +19,13 @@ import org.jgrapht.alg.scoring.Coreness;
 import org.jgrapht.alg.scoring.HarmonicCentrality;
 import org.jgrapht.alg.shortestpath.DijkstraShortestPath;
 import org.jgrapht.graph.SimpleGraph;
-import org.jgrapht.io.EdgeProvider;
-import org.jgrapht.io.GmlImporter;
-import org.jgrapht.io.ImportException;
-import org.jgrapht.io.VertexProvider;
 import org.jgrapht.traverse.BreadthFirstIterator;
 
 public class Scores {
 	public static void main(String[] args) {
-		// Import GML
+
 	    Graph<DefaultVertex, RelationshipEdge> graphgml = new SimpleGraph<>(RelationshipEdge.class);
-        VertexProvider <DefaultVertex> vp1 = 
-	    		(label,attributes) -> new DefaultVertex (label,attributes);
-	    EdgeProvider <DefaultVertex,RelationshipEdge> ep1 = 
-	    		(from,to,label,attributes) -> new RelationshipEdge(from,to,attributes);
-		GmlImporter <DefaultVertex,RelationshipEdge> gmlImporter = new GmlImporter <> (vp1,ep1);
-  	    try {
-	        gmlImporter.importGraph(graphgml, 
-	        		ImportGraph.readFile("./src/graphs/lesmis.gml"));
-	      } catch (ImportException e) {
-	        throw new RuntimeException(e);
-	    }	    
+        MyJGraphTUtil.importGraphGML(graphgml, "./src/main/java/graphs/lesmis.gml");
   	    
   	    // Compute Metrics
   	    System.out.println("-BETWEENESS CENTRALITY- ");

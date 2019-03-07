@@ -7,10 +7,6 @@ import java.util.Iterator;
 import org.jgrapht.Graph;
 import org.jgrapht.GraphMapping;
 import org.jgrapht.graph.SimpleGraph;
-import org.jgrapht.io.EdgeProvider;
-import org.jgrapht.io.GmlImporter;
-import org.jgrapht.io.ImportException;
-import org.jgrapht.io.VertexProvider;
 import org.jgrapht.alg.isomorphism.*;
 
 public class Isomorphism {

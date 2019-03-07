@@ -21,7 +21,7 @@ public final class Complement {
 		g.addEdge("PE","BA");	g.addEdge("PE","AL");	g.addEdge("BA","AL");
 		g.addEdge("BA","SE");	g.addEdge("AL","SE");
 		
-		System.out.println("V�rtices: " + g.vertexSet());
+		System.out.println("Vértices: " + g.vertexSet());
 		System.out.println("Arestas: " + g.edgeSet());
 
         Graph<String, DefaultEdge> complement = new SimpleGraph<>(DefaultEdge.class);

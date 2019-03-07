@@ -14,18 +14,8 @@ public class ConnectivityDirectedGraph {
 
 	public static void main(String[] args) {
 
-	    VertexProvider <DefaultVertex> vp1 = 
-	    		(label,attributes) -> new DefaultVertex (label,attributes);
-	    EdgeProvider <DefaultVertex,RelationshipDirectedEdge> ep1 = 
-	    		(from,to,label,attributes) -> new RelationshipDirectedEdge(from,to,attributes);
-		GmlImporter <DefaultVertex,RelationshipDirectedEdge> gmlImporter = new GmlImporter <> (vp1,ep1);
 	    DefaultDirectedGraph<DefaultVertex,RelationshipDirectedEdge> graphgml = new DefaultDirectedGraph<>(RelationshipDirectedEdge.class);
-   	    try {
-   	    	// Testar com arquivos strongly1.gml ... strongly4.gml
-	        gmlImporter.importGraph(graphgml, ImportGraph.readFile(System.getProperty("user.dir") + "\\src\\graphs\\grid.gml"));
-	      } catch (ImportException e) {
-	        throw new RuntimeException(e);
-	      }	    		
+        MyJGraphTUtil.importDirectedGraphGML(graphgml, "./src/main/java/graphs/grid.gml");    		
  	    
 	    Set <DefaultVertex> V = new HashSet <DefaultVertex>(graphgml.vertexSet());
 	    Set <DefaultEdge> E = new HashSet <DefaultEdge>(graphgml.edgeSet());
@@ -41,8 +31,8 @@ public class ConnectivityDirectedGraph {
 	    
 	    System.out.println("Connected Sets: " + k.connectedSets());
 	    
-        DefaultVertex source = DefaultVertexSet.getVertexfromLabel(V,"a");
-        DefaultVertex target = DefaultVertexSet.getVertexfromLabel(V,"e");
+        DefaultVertex source = MyJGraphTUtil.getVertexfromLabel(V,"a");
+        DefaultVertex target = MyJGraphTUtil.getVertexfromLabel(V,"e");
 	    
 	    AllDirectedPaths <DefaultVertex,RelationshipDirectedEdge> p = new AllDirectedPaths <> (graphgml);
 	    System.out.println("Paths from " + source + " to " + target + "? " + 

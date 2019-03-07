@@ -206,8 +206,8 @@ graph
 			configuration	"AutoFlippingLabel"
 			contentWidth	17.34765625
 			contentHeight	18.701171875
-			model	"null"
-			position	"null"
+			model	"six_pos"
+			position	"tail"
 		]
 	]
 	edge
@@ -227,8 +227,8 @@ graph
 			configuration	"AutoFlippingLabel"
 			contentWidth	10.673828125
 			contentHeight	18.701171875
-			model	"null"
-			position	"null"
+			model	"six_pos"
+			position	"tail"
 		]
 	]
 	edge
@@ -248,8 +248,8 @@ graph
 			configuration	"AutoFlippingLabel"
 			contentWidth	17.34765625
 			contentHeight	18.701171875
-			model	"null"
-			position	"null"
+			model	"six_pos"
+			position	"shead"
 		]
 	]
 	edge
@@ -269,8 +269,8 @@ graph
 			configuration	"AutoFlippingLabel"
 			contentWidth	17.34765625
 			contentHeight	18.701171875
-			model	"null"
-			position	"null"
+			model	"six_pos"
+			position	"tail"
 		]
 	]
 	edge
@@ -290,8 +290,8 @@ graph
 			configuration	"AutoFlippingLabel"
 			contentWidth	10.673828125
 			contentHeight	18.701171875
-			model	"null"
-			position	"null"
+			model	"six_pos"
+			position	"ttail"
 		]
 	]
 	edge
@@ -311,8 +311,8 @@ graph
 			configuration	"AutoFlippingLabel"
 			contentWidth	10.673828125
 			contentHeight	18.701171875
-			model	"null"
-			position	"null"
+			model	"six_pos"
+			position	"tail"
 		]
 	]
 	edge
@@ -350,8 +350,8 @@ graph
 			configuration	"AutoFlippingLabel"
 			contentWidth	10.673828125
 			contentHeight	18.701171875
-			model	"null"
-			position	"null"
+			model	"six_pos"
+			position	"tail"
 		]
 	]
 	edge
@@ -371,8 +371,8 @@ graph
 			configuration	"AutoFlippingLabel"
 			contentWidth	10.673828125
 			contentHeight	18.701171875
-			model	"null"
-			position	"null"
+			model	"six_pos"
+			position	"tail"
 		]
 	]
 	edge
@@ -392,8 +392,8 @@ graph
 			configuration	"AutoFlippingLabel"
 			contentWidth	10.673828125
 			contentHeight	18.701171875
-			model	"null"
-			position	"null"
+			model	"six_pos"
+			position	"tail"
 		]
 	]
 	edge
@@ -413,8 +413,8 @@ graph
 			configuration	"AutoFlippingLabel"
 			contentWidth	10.673828125
 			contentHeight	18.701171875
-			model	"null"
-			position	"null"
+			model	"six_pos"
+			position	"tail"
 		]
 	]
 	edge
@@ -434,8 +434,8 @@ graph
 			configuration	"AutoFlippingLabel"
 			contentWidth	10.673828125
 			contentHeight	18.701171875
-			model	"null"
-			position	"null"
+			model	"six_pos"
+			position	"tail"
 		]
 	]
 	edge
@@ -455,8 +455,8 @@ graph
 			configuration	"AutoFlippingLabel"
 			contentWidth	10.673828125
 			contentHeight	18.701171875
-			model	"null"
-			position	"null"
+			model	"six_pos"
+			position	"tail"
 		]
 	]
 ]

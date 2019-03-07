@@ -18,33 +18,23 @@ import org.jgrapht.io.VertexProvider;
 
 public class IndependentSet {
 	public static void main(String[] args) {
-	    //Gml
-	    VertexProvider <Object> vp1 = 
-	    		(label,attributes) -> new DefaultVertex (label,attributes);
-	    EdgeProvider <Object,DefaultEdge> ep1 = 
-	    		(from,to,label,attributes) -> new DefaultEdge();
-		GmlImporter <Object,DefaultEdge> gmlImporter = new GmlImporter <> (vp1,ep1);
-	    Graph<Object, DefaultEdge> graphgml = new SimpleGraph<>(DefaultEdge.class);
-  	    try {
-	        gmlImporter.importGraph(graphgml, 
-	        		ImportGraph.readFile("./src/graphs/cordal.gml"));
-	      } catch (ImportException e) {
-	        throw new RuntimeException(e);
-	      }	    
-	       
-	    ChordalGraphIndependentSetFinder <Object,DefaultEdge> is = 
+
+	    Graph<String, DefaultEdge> graphgml = new SimpleGraph<>(DefaultEdge.class);
+	    MyJGraphTUtil.importDefaultGraphGML(graphgml,"./src/main/java/graphs/cordal.gml");
+
+	    ChordalGraphIndependentSetFinder <String,DefaultEdge> is = 
 	    		new ChordalGraphIndependentSetFinder <> (graphgml); 
-        System.out.println("ChordalGraphIndependentSetFinder (conjunto m�ximo): " + is.getIndependentSet() );
+        System.out.println("ChordalGraphIndependentSetFinder (conjunto maximo): " + is.getIndependentSet() );
         
         // Aplicando o algoritmo que calcula cliques no complemento do grafo
-        Graph<Object, DefaultEdge> complement = new SimpleGraph<>(DefaultEdge.class);
-        ComplementGraphGenerator<Object, DefaultEdge> cGenerator =
+        Graph<String, DefaultEdge> complement = new SimpleGraph<>(DefaultEdge.class);
+        ComplementGraphGenerator<String, DefaultEdge> cGenerator =
             new ComplementGraphGenerator<>(graphgml);
         cGenerator.generateGraph(complement);
-        PivotBronKerboschCliqueFinder <Object,DefaultEdge> cf3 = 
+        PivotBronKerboschCliqueFinder <String,DefaultEdge> cf3 = 
 	    		new PivotBronKerboschCliqueFinder <> (complement); 
-	    Iterator  <Set <Object>> it3 = cf3.iterator();
-	    System.out.println("Conjuntos Est�veis:");
+	    Iterator  <Set <String>> it3 = cf3.iterator();
+	    System.out.println("Conjuntos Estaveis:");
 	    while (it3.hasNext()) {
 	    	System.out.println(it3.next());
 	    }	    

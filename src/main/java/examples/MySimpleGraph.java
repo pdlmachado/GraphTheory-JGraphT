@@ -74,11 +74,11 @@ public class MySimpleGraph {
 
 		// Exibe informacoes sobre o conjunto de vertices de um grafo e tambem do seu
 		// conjunto de arestas utilizando os metodos vertexSet e edgeSet.
-		System.out.println("Vertices: " + g.vertexSet());
+		System.out.println("Vértices: " + g.vertexSet());
 		System.out.println("Arestas: " + g.edgeSet());
 
 		// Exibe informacoes sobre as arestas relacionadas a um determinado grafo.
-		System.out.println(ln + "Arestas que possuem o vertices PE como Terminal: " + g.edgesOf("PE"));
+		System.out.println(ln + "Arestas que possuem o vértice PE como Terminal: " + g.edgesOf("PE"));
 
 		// Utiliza os metodos getCyleBasis e getCycle para capturar e exibir todos os
 		// ciclos simples do grafo criado.
@@ -93,6 +93,8 @@ public class MySimpleGraph {
 		DefaultEdge e1 = g.getEdge("CE", "PI");
 		DefaultEdge e2 = g.getEdge("PI", "CE");
 		System.out.println(ln + "A ordem de vertices na aresta nao importa: " + e1.equals(e2));
+		
+		System.out.println(GraphTests.isTree(g));
 
 	}
 

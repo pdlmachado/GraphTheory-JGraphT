@@ -20,6 +20,11 @@ import org.jgrapht.io.ImportException;
 import org.jgrapht.io.VertexProvider;
 
 public class MyJGraphTUtil {
+	
+	public static <V,E> void printGraph (Graph <V,E> g ) {
+        System.out.println(g.vertexSet());
+		System.out.println(g.edgeSet()+"\n");
+	}
 
 	/**
 	 * Os métodos a seguir retornam um vértice ou aresta cujo label eh igual ao passado como parametro.

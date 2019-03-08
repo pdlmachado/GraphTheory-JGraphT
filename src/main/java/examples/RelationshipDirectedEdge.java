@@ -2,9 +2,12 @@
 
 package examples;
 
+import java.util.HashMap;
 import java.util.Map;
 import org.jgrapht.graph.DefaultEdge;
 import org.jgrapht.io.Attribute;
+import org.jgrapht.io.AttributeType;
+import org.jgrapht.io.DefaultAttribute;
 
 /*
  * > Duvidas sobre como eh a implementacao de alguma classe ou metodo?
@@ -43,18 +46,24 @@ public class RelationshipDirectedEdge extends DefaultEdge {
 		this.v2 = v2;
 		this.att = att;
 	}
+	public RelationshipDirectedEdge (Object v1, Object v2, String label) {
+		this.v1 = v1;
+		this.v2 = v2;
+		att = new HashMap <String,Attribute> ();
+		att.put("label",new DefaultAttribute<String>(label,AttributeType.STRING));		
+	}
 
 	/**
 	 * Responsavel por retornar o lable de um determinado vertice.
 	 * 
 	 * @return string contendo uma representacao textual do lable da aresta.
 	 */
-	public Object getLabel() {
+	public String getLabel() {
 		Object o = att.get("label"); // captura o label da aresta
 		if (o == null) { // analisa se este eh nulo. se for...
 			return ("(" + v1 + ":" + v2 + ")"); // retorna um label na forma "(cauda:cabeca)"
 		} else // caso contrario...
-			return o; // retorna o proprio label capturado.
+			return o.toString(); // retorna o proprio label capturado.
 	}
 
 	/**
@@ -72,7 +81,7 @@ public class RelationshipDirectedEdge extends DefaultEdge {
 	}
 
 	/**
-	 * Retorna o vertice relacionado (vuzunho) de um determinado vertice.
+	 * Retorna o vertice relacionado (vizunho) de um determinado vertice.
 	 * 
 	 * @param v vertice o qual deseja que se retorne o seu vizinho.
 	 * @return vertice vizinho do vertice passado como parametro.

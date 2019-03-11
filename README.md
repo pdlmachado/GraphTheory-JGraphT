@@ -1,7 +1,7 @@
 # GraphTheory-JGraphT
 Repositorio de Codigo Exemplo usando a biblioteca JGraphT para a disciplina Teoria dos Grafos, UFCG.
 
-Importando este projeto no Eclipse
+IMPORTANDO ESTE PROJETO NO ECLIPSE
 
 1. Selecione File -> Import
 2. Na janela "Import - Select", selecione Git -> Projects from Git e clique Next

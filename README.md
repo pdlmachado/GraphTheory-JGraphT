@@ -1,7 +1,13 @@
 # GraphTheory-JGraphT
 Repositorio de Codigo Exemplo usando a biblioteca JGraphT para a disciplina Teoria dos Grafos, UFCG.
 
-IMPORTANDO ESTE PROJETO NO ECLIPSE
+SOBRE A JgraphT
+
+JgraphT é uma biblioteca Java voltada a implementação de grafos e algoritmos. 
+Todas as informações podem ser encontradas em https://jgrapht.org
+Documentação detalhada pode ser encontrada em https://jgrapht.org/javadoc/
+
+INSTALANDO A JgraphT e IMPORTANDO ESTE PROJETO NO ECLIPSE 
 
 1. Selecione File -> Import
 2. Na janela "Import - Select", selecione Git -> Projects from Git e clique Next

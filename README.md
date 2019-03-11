@@ -16,8 +16,8 @@ Importando este projeto no Eclipse
 8. Na janela "Select a wizard to use for importing projects", escolha "Import existing Eclipse projects". Clique em Next.
 9. Na janela "Import Projects", marque o projeto "GraphTheory-JGraphT" e clique em Finish.
 10. Aguarde a conclusão da instalação que pode levar ainda alguns minutos. Este é um projeto MAVEN que faz 
-   referência diretamente a bibliotecas JGraphT. O Eclipse se encarregará de baixar todas as pendências. 
-   Mas poderá "warnings", até que consiga baixar todas as referências. 
+   referência diretamente à biblioteca JGraphT. O Eclipse se encarregará de baixar a JGraphT. 
+   Mas poderá exibir "warnings", até que consiga concluir o upload e a resolução das referências. 
 
 
 

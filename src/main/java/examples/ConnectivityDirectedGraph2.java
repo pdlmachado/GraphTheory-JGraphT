@@ -29,7 +29,7 @@ public class ConnectivityDirectedGraph2 {
 	    
         DefaultVertex source;
         DefaultVertex target;
-        System.out.println("Q2.1. N�o � poss�vel deslocamento nos seguintes sentidos:");
+        System.out.println("Q2.1. Não é possível deslocamento nos seguintes sentidos:");
 	    for (int i=1;i<=20;i++) {
 	    	source = MyJGraphTUtil.getVertexfromLabel(V,(new Integer(i)).toString());
 	    	for (int j=1;j<=20;j++) {
@@ -41,7 +41,7 @@ public class ConnectivityDirectedGraph2 {
 	    	}
 	    }
 	    	
-        System.out.println("\nQ2.2. Cruzamentos que n�o s�o acess�veis:");
+        System.out.println("\nQ2.2. Cruzamentos que não são acessíveis:");
 	    for (int i=1;i<=20;i++) {
 	    	boolean eh_acessivel = false;
 	    	target = MyJGraphTUtil.getVertexfromLabel(V,(new Integer(i)).toString());

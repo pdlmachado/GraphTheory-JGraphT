@@ -29,8 +29,8 @@ public class ConnectivityDirectedGraph {
 	    
 	    System.out.println("Connected Sets: " + k.connectedSets());
 	    
-        DefaultVertex source = MyJGraphTUtil.getVertexfromLabel(V,"a");
-        DefaultVertex target = MyJGraphTUtil.getVertexfromLabel(V,"e");
+        DefaultVertex source = MyJGraphTUtil.getVertexfromLabel(V,"1");
+        DefaultVertex target = MyJGraphTUtil.getVertexfromLabel(V,"2");
 	    
 	    AllDirectedPaths <DefaultVertex,RelationshipDirectedEdge> p = new AllDirectedPaths <> (graphgml);
 	    System.out.println("Paths from " + source + " to " + target + "? " + 

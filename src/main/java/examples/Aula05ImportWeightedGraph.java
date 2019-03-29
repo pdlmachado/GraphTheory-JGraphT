@@ -7,7 +7,7 @@ import org.jgrapht.graph.DefaultDirectedWeightedGraph;
 import org.jgrapht.graph.DefaultWeightedEdge;
 import org.jgrapht.io.CSVFormat;
 
-public class ImportWeightedGraph {
+public class Aula05ImportWeightedGraph {
 	// Importa Grafo Direcionado Ponderado no formato CSV
 
 	public static void main(String[] args) {
@@ -18,7 +18,9 @@ public class ImportWeightedGraph {
 				graph, 
 				"./src/main/java/graphs/csv-weighted-example.txt", 
 				CSVFormat.MATRIX, 
-				true, true, true);
+				false, 
+				true, // EDGE_WEIGHTS
+				true); // MATRIX_FORMAT_NODEID
 
 		System.out.println("Grafo importado do arquivo CSV: ");
 		System.out.println("Arestas: " + graph.edgeSet());

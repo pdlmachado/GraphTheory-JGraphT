@@ -9,7 +9,7 @@ import org.jgrapht.GraphMapping;
 import org.jgrapht.graph.SimpleGraph;
 import org.jgrapht.alg.isomorphism.*;
 
-public class Isomorphism {
+public class Aula06Isomorphism {
 	// Importa Grafo Simples no formato GML com r�tulo nos v�rtices e nas arestas
 
 	public static void main(String[] args) {
@@ -77,7 +77,7 @@ public class Isomorphism {
 	    //Teste de Simetria do Grafo de Petersen
 	    VF2GraphIsomorphismInspector <DefaultVertex,RelationshipEdge> auto_p = 
 	    		new VF2GraphIsomorphismInspector <> (p,p);
-	    System.out.println("\nQuais os poss�veis automorfismo para o grafo de Petersen?");
+	    System.out.println("\nQuais os possíveis automorfismo para o grafo de Petersen?");
 		Iterator <GraphMapping <DefaultVertex,RelationshipEdge>> it = auto_p.getMappings();
 	    while (it.hasNext()) {
 	    	System.out.println(it.next());

@@ -10,7 +10,6 @@ import org.jgrapht.graph.*;
 import org.jgrapht.util.SupplierUtil;
 
 import java.util.*;
-import java.util.function.Supplier;
 
 public final class Aula04MyBipartiteCompleteGraph {
 

@@ -1,19 +1,20 @@
 package examples;
 
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
 import org.jgrapht.GraphPath;
-import org.jgrapht.alg.interfaces.ShortestPathAlgorithm;
-import org.jgrapht.alg.interfaces.ShortestPathAlgorithm.SingleSourcePaths;
+
 
 //Teoria dos Grafos - UFCG
 
 import org.jgrapht.alg.shortestpath.AllDirectedPaths;
-import org.jgrapht.alg.shortestpath.BhandariKDisjointShortestPaths;
-import org.jgrapht.alg.shortestpath.DijkstraShortestPath;
-import org.jgrapht.alg.shortestpath.ListMultiObjectiveSingleSourcePathsImpl;
 import org.jgrapht.graph.*;
-import org.jgrapht.traverse.RandomWalkIterator;
 
-import java.util.*;
 
 public class TGen {
 	// Conectividade de Grafos Directionados
@@ -25,13 +26,12 @@ public class TGen {
         String actor1D = "Email User";
 		String initialNode = "1";
 		String finalNode = "7";
-		int maxTCSize = 2;
+		int maxTCSize = 3;
 		String filename = "./src/main/java/graphs/Sending Email.gml";
 		
 		Map <String,String> actorMap = new HashMap <> ();
 		actorMap.put(actor1V, actor1D);
 		
-
 	    DirectedMultigraph<DefaultVertex,RelationshipDirectedEdge> graphgml = new DirectedMultigraph<>(RelationshipDirectedEdge.class);
         MyJGraphTUtil.importDirectedGraphGML(graphgml, filename);    		
 	    

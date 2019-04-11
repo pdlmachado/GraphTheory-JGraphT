@@ -9,26 +9,17 @@ import org.jgrapht.graph.*;
 
 import java.util.*;
 
-public class Connectivity {
-	// Conectividade para grafos n�o-direcionados
-	// Testar com connected e unconnected.gml
+public class Aula09Connectivity {
 
 	public static void main(String[] args) {
 
-	    DefaultDirectedGraph<DefaultVertex,RelationshipDirectedEdge> graphgml = new DefaultDirectedGraph<>(RelationshipDirectedEdge.class);
-        MyJGraphTUtil.importDirectedGraphGML(graphgml, "./src/main/java/graphs/unconnected.gml");
+	    SimpleGraph<DefaultVertex,RelationshipEdge> graphgml = new SimpleGraph<>(RelationshipEdge.class);
+        MyJGraphTUtil.importGraphGML(graphgml, "./src/main/java/graphs/unconnected.gml");
+ 	    MyJGraphTUtil.printGraph(graphgml,"Graph: ");
    		
- 	    
 	    Set <DefaultVertex> V = new HashSet <DefaultVertex>(graphgml.vertexSet());
-	    Set <DefaultEdge> E = new HashSet <DefaultEdge>(graphgml.edgeSet());
-	    
-	    
- 	    System.out.println("Ordem do Grafo G: " + V.size());
- 	    System.out.println("Tamanho do Grafo G: " + E.size());
-	    System.out.println("V(G): " + V);
-	    System.out.println("E(G): " + E.toString());
 
-	    ConnectivityInspector <DefaultVertex,RelationshipDirectedEdge> k = 
+	    ConnectivityInspector <DefaultVertex,RelationshipEdge> k = 
 	    		new ConnectivityInspector <> (graphgml);
 	    System.out.println("Is connected? " + k.isConnected());
 	    System.out.println("Connected Sets: " + k.connectedSets());

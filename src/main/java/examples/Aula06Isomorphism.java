@@ -18,37 +18,27 @@ public class Aula06Isomorphism {
 	    //Import G1	
 	    Graph<DefaultVertex, RelationshipEdge> g1 = new SimpleGraph<>(RelationshipEdge.class);
 	    MyJGraphTUtil.importGraphGML(g1,"./src/main/java/graphs/K3-3.gml");
-   	    System.out.println("Grafo G1: ");
-	    System.out.println("Arestas: "+ g1.edgeSet());
-	    System.out.println("Vertices: " + g1.vertexSet());
+        MyJGraphTUtil.printGraph(g1,"Grafo G1:");
 	    
 	    //Import G2
 	    Graph<DefaultVertex, RelationshipEdge> g2 = new SimpleGraph<>(RelationshipEdge.class);
 	    MyJGraphTUtil.importGraphGML(g2,"./src/main/java/graphs/K3-3-Isomorfico.gml");
-   	    System.out.println("\nGrafo G2: ");
-	    System.out.println("Arestas: "+ g2.edgeSet());
-	    System.out.println("Vertices: " + g2.vertexSet());
+        MyJGraphTUtil.printGraph(g2,"Grafo G2:");
 	    
 	    //Import G3
 	    Graph<DefaultVertex, RelationshipEdge> g3 = new SimpleGraph<>(RelationshipEdge.class);
 	    MyJGraphTUtil.importGraphGML(g3,"./src/main/java/graphs/cubo-rotulado.gml");
-   	    System.out.println("\nGrafo G3: ");
-	    System.out.println("Arestas: "+ g3.edgeSet());
-	    System.out.println("Vertices: " + g3.vertexSet());
+        MyJGraphTUtil.printGraph(g3,"Grafo G3:");
 	    
 	    //Import G4
 	    Graph<DefaultVertex, RelationshipEdge> g4 = new SimpleGraph<>(RelationshipEdge.class);
 	    MyJGraphTUtil.importGraphGML(g4,"./src/main/java/graphs/nao-isomorficocubo.gml");
-   	    System.out.println("\nGrafo G4: ");
-	    System.out.println("Arestas: "+ g4.edgeSet());
-	    System.out.println("Vertices: " + g4.vertexSet());
+        MyJGraphTUtil.printGraph(g4,"Grafo G4:");
 	    
 	    //Import Petersen
 	    Graph<DefaultVertex, RelationshipEdge> p = new SimpleGraph<>(RelationshipEdge.class);
 	    MyJGraphTUtil.importGraphGML(p,"./src/main/java/graphs/petersen-labelled.gml");
-   	    System.out.println("\nGrafo de Petersen: ");
-	    System.out.println("Arestas: "+ p.edgeSet());
-	    System.out.println("Vertices: " + p.vertexSet());
+        MyJGraphTUtil.printGraph(p,"Grafo de Petersen:");
 	    
 	    //Teste de Isomorfismo entre G1 e G2
 	    VF2GraphIsomorphismInspector <DefaultVertex,RelationshipEdge> iso1_2 = 

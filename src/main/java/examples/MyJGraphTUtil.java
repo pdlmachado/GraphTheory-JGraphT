@@ -25,6 +25,12 @@ public class MyJGraphTUtil {
         System.out.println(g.vertexSet());
 		System.out.println(g.edgeSet()+"\n");
 	}
+	
+	public static <V,E> void printGraph (Graph <V,E> g, String title ) {
+		System.out.println(title);
+        System.out.println(g.vertexSet());
+		System.out.println(g.edgeSet()+"\n");
+	}
 
 	/**
 	 * Os métodos a seguir retornam um vértice ou aresta cujo label eh igual ao passado como parametro.
@@ -34,8 +40,15 @@ public class MyJGraphTUtil {
 		return V.stream().filter(v-> v.getLabel().equals(label)).findAny().get();
 	}
 
-	public static RelationshipEdge getEdgefromLabel(Set<RelationshipEdge> V, String label) {	
-		return V.stream().filter(v-> v.getLabel().equals(label)).findAny().get();
+	public static RelationshipEdge getEdgefromLabel(Set<RelationshipEdge> E, String label) {	
+		return E.stream().filter(e-> e.getLabel().equals(label)).findAny().get();
+	}
+	
+	public static RelationshipEdge getEdgefromVertexLabels(Set<RelationshipEdge> E, Set<DefaultVertex> V, String l1, String l2) {	
+		DefaultVertex v1 = getVertexfromLabel(V,l1);
+		DefaultVertex v2 = getVertexfromLabel(V,l2);
+		return E.stream().filter(e-> (e.getV1().equals(v1) && e.getV2().equals(v2)) ||
+			                        	(e.getV1().equals(v2) && e.getV2().equals(v1))).findAny().get();
 	}
 	
 	/**

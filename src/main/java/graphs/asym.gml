@@ -8,7 +8,7 @@ graph
 	node
 	[
 		id	0
-		label	""
+		label	"a"
 		graphics
 		[
 			x	222.0
@@ -22,12 +22,16 @@ graph
 		]
 		LabelGraphics
 		[
+			text	"a"
+			fontSize	12
+			fontName	"Dialog"
+			anchor	"c"
 		]
 	]
 	node
 	[
 		id	1
-		label	""
+		label	"b"
 		graphics
 		[
 			x	361.0
@@ -41,12 +45,16 @@ graph
 		]
 		LabelGraphics
 		[
+			text	"b"
+			fontSize	12
+			fontName	"Dialog"
+			anchor	"c"
 		]
 	]
 	node
 	[
 		id	2
-		label	""
+		label	"c"
 		graphics
 		[
 			x	420.0
@@ -60,12 +68,16 @@ graph
 		]
 		LabelGraphics
 		[
+			text	"c"
+			fontSize	12
+			fontName	"Dialog"
+			anchor	"c"
 		]
 	]
 	node
 	[
 		id	3
-		label	""
+		label	"d"
 		graphics
 		[
 			x	387.0
@@ -79,12 +91,16 @@ graph
 		]
 		LabelGraphics
 		[
+			text	"d"
+			fontSize	12
+			fontName	"Dialog"
+			anchor	"c"
 		]
 	]
 	node
 	[
 		id	4
-		label	""
+		label	"e"
 		graphics
 		[
 			x	301.0
@@ -98,12 +114,16 @@ graph
 		]
 		LabelGraphics
 		[
+			text	"e"
+			fontSize	12
+			fontName	"Dialog"
+			anchor	"c"
 		]
 	]
 	node
 	[
 		id	5
-		label	""
+		label	"f"
 		graphics
 		[
 			x	191.0
@@ -117,6 +137,10 @@ graph
 		]
 		LabelGraphics
 		[
+			text	"f"
+			fontSize	12
+			fontName	"Dialog"
+			anchor	"c"
 		]
 	]
 	edge

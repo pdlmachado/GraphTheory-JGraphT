@@ -7,10 +7,14 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
 import java.io.StringReader;
+import java.util.Collection;
 import java.util.Set;
-
+import javax.swing.JFrame;
 import org.jgrapht.Graph;
+import org.jgrapht.ListenableGraph;
+import org.jgrapht.ext.JGraphXAdapter;
 import org.jgrapht.graph.DefaultEdge;
+import org.jgrapht.graph.DefaultListenableGraph;
 import org.jgrapht.graph.DefaultWeightedEdge;
 import org.jgrapht.io.CSVFormat;
 import org.jgrapht.io.CSVImporter;
@@ -19,7 +23,20 @@ import org.jgrapht.io.GmlImporter;
 import org.jgrapht.io.ImportException;
 import org.jgrapht.io.VertexProvider;
 
-public class MyJGraphTUtil {
+import com.mxgraph.layout.mxCircleLayout;
+import com.mxgraph.layout.mxEdgeLabelLayout;
+import com.mxgraph.layout.mxFastOrganicLayout;
+import com.mxgraph.layout.mxIGraphLayout;
+import com.mxgraph.model.mxGraphModel;
+import com.mxgraph.swing.mxGraphComponent;
+import com.mxgraph.util.mxConstants;
+import com.mxgraph.util.mxStyleUtils;
+
+public class MyJGraphTUtil <V,E> {
+	
+///////////////////////////////////
+// GRAPH VIEW METHODS
+///////////////////////////////////
 	
 	public static <V,E> void printGraph (Graph <V,E> g ) {
         System.out.println(g.vertexSet());
@@ -32,6 +49,37 @@ public class MyJGraphTUtil {
 		System.out.println(g.edgeSet()+"\n");
 	}
 
+	// Graphic view for directed graphs
+	public static <V,E> void createAndShowGui(Graph <V,E> graph, String frameLabel, boolean directed, boolean danglingEdges, boolean labelsVisible, boolean labelsClipped) {
+
+		JFrame frame = new JFrame(frameLabel);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		ListenableGraph<V,E> g = new DefaultListenableGraph <> (graph);
+		JGraphXAdapter<V,E> graphAdapter = new JGraphXAdapter<V,E>(g);
+		graphAdapter.setAllowDanglingEdges(danglingEdges);
+		graphAdapter.setLabelsVisible(labelsVisible);
+		graphAdapter.setLabelsClipped(labelsClipped);
+
+		mxIGraphLayout layout = new mxCircleLayout(graphAdapter);
+		layout.execute(graphAdapter.getDefaultParent());
+
+		mxGraphComponent graphComponent = new mxGraphComponent(graphAdapter);
+		mxGraphModel graphModel  = (mxGraphModel)graphComponent.getGraph().getModel(); 
+		Collection<Object> cells =  graphModel.getCells().values(); 
+		if (directed == false) {
+			mxStyleUtils.setCellStyles(graphComponent.getGraph().getModel(), 
+				    cells.toArray(), mxConstants.STYLE_ENDARROW, mxConstants.NONE);
+		}
+        frame.add(graphComponent);
+		frame.pack();
+		frame.setLocationByPlatform(true);
+		frame.setVisible(true);
+	}
+	
+/////////////////////////////////////////
+// VERTEX AND EGDES UTILITIES
+/////////////////////////////////////////
 	/**
 	 * Os métodos a seguir retornam um vértice ou aresta cujo label eh igual ao passado como parametro.
 	 * 
@@ -50,6 +98,10 @@ public class MyJGraphTUtil {
 		return E.stream().filter(e-> (e.getV1().equals(v1) && e.getV2().equals(v2)) ||
 			                        	(e.getV1().equals(v2) && e.getV2().equals(v1))).findAny().get();
 	}
+	
+////////////////////////////////////////
+// CSV and GML IMPORTERS
+////////////////////////////////////////
 	
 	/**
 	 * Os métodos a seguir realizam a importação de grafos no formato CSV e GML.
@@ -170,5 +222,6 @@ public class MyJGraphTUtil {
 		StringReader readergml = new StringReader(contentBuilder.toString());
 		return readergml;
 	}
+    
 	
 }

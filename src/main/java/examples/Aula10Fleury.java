@@ -23,10 +23,10 @@ public class Aula10Fleury {
 		V x = v;
 		List <E> w = new ArrayList <> ();
 		if (GraphTests.isEulerian(f)) {
-			while (f.edgeSet().isEmpty()==false) {
-		        E e = getNextNonBridgeEdge(f,x);
-		        x = Graphs.getOppositeVertex(f,e,x);
+			while (f.edgesOf(x).isEmpty()==false) {
+		        E e = getNextEdge(f,x);
 		        w.add(e);
+		        x = Graphs.getOppositeVertex(f,e,x);
 		        f.removeEdge(e);
 			}
 		} else {
@@ -35,10 +35,10 @@ public class Aula10Fleury {
 		return w;
 	}
 
-	public static <V,E> E getNextNonBridgeEdge (Graph <V,E> g, V v) {
+	public static <V,E> E getNextEdge (Graph <V,E> g, V v) {
+		// Returns an edge e that is not a bridge, unless there is no other option. 
         Iterator <E> s = g.edgesOf(v).iterator();
-		BiconnectivityInspector <V,E> b = 
-				new BiconnectivityInspector <> (g);
+		BiconnectivityInspector <V,E> b = new BiconnectivityInspector <> (g);
 		E e = s.next();
         while (b.getBridges().contains(e) && s.hasNext()) {
         	e = s.next();

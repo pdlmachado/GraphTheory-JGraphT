@@ -3,13 +3,11 @@ package examples;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-
 import org.jgrapht.Graph;
 import org.jgrapht.GraphTests;
 import org.jgrapht.Graphs;
 import org.jgrapht.alg.connectivity.BiconnectivityInspector;
 import org.jgrapht.graph.DefaultEdge;
-import org.jgrapht.graph.GraphWalk;
 import org.jgrapht.graph.SimpleGraph;
 
 public class Aula10Fleury {

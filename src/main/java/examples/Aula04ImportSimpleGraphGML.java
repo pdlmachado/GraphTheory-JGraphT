@@ -14,7 +14,7 @@ public class Aula04ImportSimpleGraphGML {
 
 		graphgml = MyJGraphTUtil.importGraphGML(graphgml, "./src/main/java/graphs/cubo.gml");
 
-		System.out.println("Vertices: " + graphgml.vertexSet());
-		System.out.println("Arestas: " + graphgml.edgeSet());
+		MyJGraphTUtil.printGraph(graphgml);
+
 	}
 }

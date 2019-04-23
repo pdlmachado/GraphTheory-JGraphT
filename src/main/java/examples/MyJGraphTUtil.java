@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.Reader;
 import java.io.StringReader;
 import java.util.Collection;
+import java.util.Enumeration;
 import java.util.Set;
 import javax.swing.JFrame;
 import org.jgrapht.Graph;
@@ -27,6 +28,9 @@ import com.mxgraph.layout.mxCircleLayout;
 import com.mxgraph.layout.mxEdgeLabelLayout;
 import com.mxgraph.layout.mxFastOrganicLayout;
 import com.mxgraph.layout.mxIGraphLayout;
+import com.mxgraph.layout.mxOrganicLayout;
+import com.mxgraph.layout.hierarchical.mxHierarchicalLayout;
+import com.mxgraph.layout.orthogonal.mxOrthogonalLayout;
 import com.mxgraph.model.mxGraphModel;
 import com.mxgraph.swing.mxGraphComponent;
 import com.mxgraph.util.mxConstants;
@@ -49,8 +53,16 @@ public class MyJGraphTUtil <V,E> {
 		System.out.println(g.edgeSet()+"\n");
 	}
 
+	public enum layout_type {CIRCLE,ORGANIC,HIERARCHICAL,ORTHOGONAL;}
+	
 	// Graphic view for directed graphs
-	public static <V,E> void createAndShowGui(Graph <V,E> graph, String frameLabel, boolean directed, boolean danglingEdges, boolean labelsVisible, boolean labelsClipped) {
+	public static <V,E> void createAndShowGui(Graph <V,E> graph, String frameLabel, 
+			                                  boolean directed, 
+			                                  boolean danglingEdges, 
+			                                  boolean labelsVisible, 
+			                                  boolean labelsClipped, 
+			                                  layout_type layoutType
+			) {
 
 		JFrame frame = new JFrame(frameLabel);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -60,8 +72,18 @@ public class MyJGraphTUtil <V,E> {
 		graphAdapter.setAllowDanglingEdges(danglingEdges);
 		graphAdapter.setLabelsVisible(labelsVisible);
 		graphAdapter.setLabelsClipped(labelsClipped);
+		graphAdapter.setCellsMovable(true);
+		graphAdapter.setCellsSelectable(true);
+		graphAdapter.setEdgeLabelsMovable(true);
 
-		mxIGraphLayout layout = new mxCircleLayout(graphAdapter);
+		mxIGraphLayout layout;
+		switch (layoutType) {
+			case CIRCLE : layout = new mxCircleLayout(graphAdapter); break;
+			case ORGANIC: layout = new mxFastOrganicLayout(graphAdapter);break;
+			case HIERARCHICAL : layout = new mxHierarchicalLayout(graphAdapter);break;
+			case ORTHOGONAL: layout = new mxOrthogonalLayout(graphAdapter);break;
+			default: layout = new mxCircleLayout(graphAdapter);break;
+		}
 		layout.execute(graphAdapter.getDefaultParent());
 
 		mxGraphComponent graphComponent = new mxGraphComponent(graphAdapter);

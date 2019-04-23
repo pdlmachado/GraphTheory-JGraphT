@@ -8,7 +8,7 @@ import org.jgrapht.graph.DefaultEdge;
 import org.jgrapht.graph.SimpleGraph;
 import org.jgrapht.util.SupplierUtil;
 
-public class RandomGenerator {
+public class Aula11RandomGenerator {
 
 	public static void main(String[] args) {
 		GnmRandomGraphGenerator <String,DefaultEdge> genGraph = 
@@ -21,6 +21,8 @@ public class RandomGenerator {
 	
 		System.out.println(GraphTests.isBiconnected(graph));
 		
-		MyJGraphTUtil.createAndShowGui(graph,"Random Graph",false,false,true,true);
+		MyJGraphTUtil.createAndShowGui(graph,"Random Graph",
+				                       false,false,true,true,
+				                       MyJGraphTUtil.layout_type.CIRCLE);
 	}
 }

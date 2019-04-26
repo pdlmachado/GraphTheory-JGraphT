@@ -9,7 +9,7 @@ import org.jgrapht.graph.*;
 
 import java.util.*;
 
-public class StronglyConnected {
+public class Aula10StronglyConnected {
     //Conectividade em grafos direcionados
 	
 	public static void main(String[] args) {

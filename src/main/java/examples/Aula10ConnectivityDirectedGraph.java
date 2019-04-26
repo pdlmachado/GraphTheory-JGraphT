@@ -7,7 +7,7 @@ import org.jgrapht.alg.shortestpath.AllDirectedPaths;
 import org.jgrapht.graph.*;
 import java.util.*;
 
-public class ConnectivityDirectedGraph {
+public class Aula10ConnectivityDirectedGraph {
 	// Conectividade de Grafos Directionados
 
 	public static void main(String[] args) {

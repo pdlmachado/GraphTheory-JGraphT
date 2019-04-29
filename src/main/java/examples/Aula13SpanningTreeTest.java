@@ -21,21 +21,8 @@ public class Aula13SpanningTreeTest {
 		MyJGraphTUtil.printGraph(basegraph, "Base Graph");
 		MyJGraphTUtil.printGraph(tree, "Spanning Tree Candidate");
 		
-		System.out.println("Is spanning tree? " + testSpanningTree(basegraph, tree));	
+		System.out.println("Is spanning tree? " + MyTreeUtil.testSpanningTree(basegraph, tree));	
 
-	}
-	
-	public static <V,E> boolean testSpanningTree (Graph <V,E> g, Graph <V,E> t) {
-		
-		boolean includeEdges = true;
-		Iterator <E> itEdge = t.edgeSet().iterator();
-		while (itEdge.hasNext()) {
-			E e = itEdge.next();
-			if(g.containsEdge(t.getEdgeSource(e),t.getEdgeTarget(e))==false) {
-				includeEdges = false;
-			}
-		}
-		return GraphTests.isTree(t) && includeEdges && (g.vertexSet().equals(t.vertexSet()));
 	}
 
 }

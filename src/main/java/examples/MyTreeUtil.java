@@ -26,16 +26,17 @@ public class MyTreeUtil {
 		return GraphTests.isTree(t) && includeEdges && (g.vertexSet().equals(t.vertexSet()));
 	}
 	
-	public static <V,E> Set <E> getcoTreeEdges (Graph <V,E> g, Graph <V,E> t) {
+	public static <V,E> void getcoTree (Graph <V,E> coTree, Graph <V,E> basegraph, Graph <V,E> spanningtree) {
+		Graphs.addAllVertices(coTree, basegraph.vertexSet());
 		Set <E> edges = new HashSet<E>();
-		Iterator <E> itEdge = g.edgeSet().iterator();
+		Iterator <E> itEdge = basegraph.edgeSet().iterator();
 		while (itEdge.hasNext()) {
 			E e = itEdge.next();
-			if(t.containsEdge(g.getEdgeSource(e),g.getEdgeTarget(e))==false) {
+			if(spanningtree.containsEdge(basegraph.getEdgeSource(e),basegraph.getEdgeTarget(e))==false) {
 				edges.add(e);
 			}
 		}
-		return edges;
+		Graphs.addAllEdges(coTree, basegraph, edges);
 	}
 	
 	public static <V,E> int level (Graph <V,E> g, V root, V v) {
@@ -47,16 +48,16 @@ public class MyTreeUtil {
 		}
 	}
 	
-	public static void getRootedTree (SimpleGraph <String,DefaultEdge> g, String root, DefaultDirectedGraph <String,DefaultEdge> t) {
-		Graphs.addAllVertices(t, g.vertexSet());
-		Iterator <DefaultEdge> it = g.edgeSet().iterator();
+	public static void getRootedTree (SimpleGraph <String,DefaultEdge> basegraph, String root, DefaultDirectedGraph <String,DefaultEdge> rt) {
+		Graphs.addAllVertices(rt, basegraph.vertexSet());
+		Iterator <DefaultEdge> it = basegraph.edgeSet().iterator();
 		while (it.hasNext()) {
 			DefaultEdge e = it.next();
-			String source = g.getEdgeSource(e);
-			String target = g.getEdgeTarget(e);
-			if (level(g,root,source) > level(g,root,target)) {
-				t.addEdge(target, source, new DefaultEdge());
-			} else t.addEdge(source, target,new DefaultEdge());
+			String source = basegraph.getEdgeSource(e);
+			String target = basegraph.getEdgeTarget(e);
+			if (level(basegraph,root,source) > level(basegraph,root,target)) {
+				rt.addEdge(target, source, new DefaultEdge());
+			} else rt.addEdge(source, target,new DefaultEdge());
 		}	
 	}
 } 

@@ -1,16 +1,12 @@
 package examples;
 
-import java.util.Iterator;
-
 import org.jgrapht.Graph;
-import org.jgrapht.GraphTests;
 import org.jgrapht.graph.DefaultEdge;
 import org.jgrapht.graph.SimpleGraph;
 
 public class Aula13SpanningTreeTest {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		
 		Graph<String, DefaultEdge> basegraph = new SimpleGraph<>(DefaultEdge.class);
 		basegraph = MyJGraphTUtil.importDefaultGraphGML(basegraph, "./src/main/java/graphs/cubo.gml");

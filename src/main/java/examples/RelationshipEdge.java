@@ -50,6 +50,13 @@ public class RelationshipEdge extends DefaultEdge {
 	public Object getV2() {
 		return v2;
 	}
+	
+	public Object getEdgeSource() {
+		return v1;
+	}
+	public Object getEdgeTarget() {
+		return v2;
+	}
 
 	public int hashCode() {
 		final int prime = 31;

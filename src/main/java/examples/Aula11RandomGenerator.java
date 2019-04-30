@@ -2,7 +2,6 @@
 
 package examples;
 
-import org.jgrapht.GraphTests;
 import org.jgrapht.generate.GnmRandomGraphGenerator;
 import org.jgrapht.graph.DefaultEdge;
 import org.jgrapht.graph.SimpleGraph;
@@ -18,8 +17,6 @@ public class Aula11RandomGenerator {
 		                            SupplierUtil.createDefaultEdgeSupplier(),false);
 		genGraph.generateGraph(graph);
 		MyJGraphTUtil.printGraph(graph);
-	
-		System.out.println(GraphTests.isBiconnected(graph));
 		
 		MyJGraphTUtil.createAndShowGui(graph,"Random Graph",
 				                       false,false,true,true,

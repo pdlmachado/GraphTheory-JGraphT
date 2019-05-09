@@ -11,6 +11,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 import org.jgrapht.Graph;
+import org.jgrapht.GraphMetrics;
 import org.jgrapht.alg.cycle.PatonCycleBase;
 import org.jgrapht.alg.scoring.AlphaCentrality;
 import org.jgrapht.alg.scoring.BetweennessCentrality;
@@ -50,7 +51,7 @@ public class Scores {
 	    
 		double triplets = get_NTriplets(graphgml);
 	    System.out.println("\nN. Triplets: " + triplets);
-        double triangles = get_NTriangles(graphgml);
+        double triangles = GraphMetrics.getNumberOfTriangles(graphgml);
 	    System.out.println("N. Triangles: " + triangles);
 	    double coefCluster = 3*triangles/triplets;
 	    System.out.println("CLUSTERING COEFFICIENT: " + new Double(coefCluster));
@@ -72,8 +73,8 @@ public class Scores {
 	   		}
 	   }
        double average = sum / a.size();
-       System.out.println("DISTANCE: " + average);
-	   System.out.println("DIAMETER: " + diameter);	
+       System.out.println("DISTANCE: " + average + "-" + GraphMetrics.getRadius(graphgml));
+	   System.out.println("DIAMETER: " + GraphMetrics.getDiameter(graphgml));	
 	   
 	   Coreness <DefaultVertex,RelationshipEdge> c = new Coreness <> (graphgml);
 	   System.out.println("Degeneracy: " + c.getDegeneracy());
@@ -125,19 +126,6 @@ public class Scores {
 		return triplets;
 	}
 	
-	static <V,E> double get_NTriangles (Graph <V,E> g) {
-		double triangles = 0;
-		PatonCycleBase <V,E> pc = new PatonCycleBase <> (g);
-		Iterator <List<E>> it2 = ((pc.getCycleBasis()).getCycles()).iterator();
-	    while (it2.hasNext()) {
-	    	List <E> s = it2.next();
-	    	if ((s).size()==3) {
-		    	//System.out.println(s);
-	    		triangles++;
-	    	}
-	    }
-	    return triangles;
-	}
 	
     static <V,E> double calculateAssortativityCoefficient (Graph <V, E> graph) {
         // from: https://github.com/Infeligo/jgrapht-metrics/blob/master/src/main/java/org/jgrapht/metrics/AssortativityCoefficientMetric.java

@@ -6,7 +6,7 @@ import org.jgrapht.alg.tour.TwoApproxMetricTSP;
 import org.jgrapht.graph.DefaultWeightedEdge;
 import org.jgrapht.graph.SimpleWeightedGraph;
 
-public class TSP {
+public class Aula16TwoApproxTSP {
     // 2-algoritmo de aproxima��o para problema TSP
 	
 	public static void main(String[] args) {

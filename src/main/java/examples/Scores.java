@@ -5,25 +5,28 @@ package examples;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.Iterator;
+
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 import org.jgrapht.Graph;
 import org.jgrapht.GraphMetrics;
-import org.jgrapht.alg.cycle.PatonCycleBase;
+
 import org.jgrapht.alg.scoring.AlphaCentrality;
 import org.jgrapht.alg.scoring.BetweennessCentrality;
 import org.jgrapht.alg.scoring.ClosenessCentrality;
 import org.jgrapht.alg.scoring.Coreness;
 import org.jgrapht.alg.scoring.HarmonicCentrality;
-import org.jgrapht.alg.shortestpath.DijkstraShortestPath;
+import org.jgrapht.alg.shortestpath.GraphMeasurer;
 import org.jgrapht.graph.SimpleGraph;
 import org.jgrapht.traverse.BreadthFirstIterator;
 
 public class Scores {
 	public static void main(String[] args) {
+		
+		// To implement
+		GraphMeasurer <DefaultVertex, RelationshipEdge> g;
 
 	    Graph<DefaultVertex, RelationshipEdge> graphgml = new SimpleGraph<>(RelationshipEdge.class);
         MyJGraphTUtil.importGraphGML(graphgml, "./src/main/java/graphs/lesmis.gml");
@@ -63,18 +66,8 @@ public class Scores {
 	   double density = (2*E) / (V*(V-1));
 	   System.out.println("\nDENSITY: " + density);
 	   
-	   int diameter = 0;
-	   ArrayList <Integer> a = get_allpathLenghts(graphgml);
-	   	   int sum = 0;
-	   for(int i=0; i < a.size() ; i++) {
-	         sum = sum + a.get(i);
-	   		if (diameter<a.get(i)) {
-	   			diameter = a.get(i);
-	   		}
-	   }
-       double average = sum / a.size();
-       System.out.println("DISTANCE: " + average + "-" + GraphMetrics.getRadius(graphgml));
 	   System.out.println("DIAMETER: " + GraphMetrics.getDiameter(graphgml));	
+	   System.out.println("RADIUS: " + GraphMetrics.getRadius(graphgml));
 	   
 	   Coreness <DefaultVertex,RelationshipEdge> c = new Coreness <> (graphgml);
 	   System.out.println("Degeneracy: " + c.getDegeneracy());
@@ -147,23 +140,4 @@ public class Scores {
         return (n1 - n2) / (dn - n2);
     }
     
-    static <V,E> ArrayList <Integer> get_allpathLenghts (Graph <V,E> g) {
-    	DijkstraShortestPath <V,E>  p = 
-    			new DijkstraShortestPath <> (g);
-    	ArrayList <Integer> a = new ArrayList <Integer> ();
-    	BreadthFirstIterator <V,E> pf = 
-    			new BreadthFirstIterator <> (g);
-    	while (pf.hasNext()) {
-    		V v1 = pf.next();
-    		Iterator <V> vs = g.vertexSet().iterator();
-    		while (vs.hasNext()) {
-    			V v2 = vs.next();
-    			int dist = (p.getPath(v1, v2)).getLength();
-    			if (v1.equals(v2) == false) {
-    				a.add(dist);
-    			}
-    		}			
-    	}
-        return a;
-    }
 }

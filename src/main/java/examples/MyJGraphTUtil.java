@@ -9,6 +9,7 @@ import java.io.Reader;
 import java.io.StringReader;
 import java.util.Collection;
 import java.util.Enumeration;
+import java.util.Iterator;
 import java.util.Set;
 import javax.swing.JFrame;
 import org.jgrapht.Graph;
@@ -51,6 +52,17 @@ public class MyJGraphTUtil <V,E> {
 		System.out.println(title);
         System.out.println(g.vertexSet());
 		System.out.println(g.edgeSet()+"\n");
+	}
+	
+	public static <V,E> void printWeightedGraph (Graph <V,E> g, String title ) {
+		System.out.println(title);
+        System.out.println(g.vertexSet());
+        Iterator <E> it = g.edgeSet().iterator();
+        while (it.hasNext()) {
+        	E e = it.next();
+        	System.out.print(e + ":" + g.getEdgeWeight(e) + " ");
+        }
+        System.out.print("\n");
 	}
 
 	public enum layout_type {CIRCLE,ORGANIC,HIERARCHICAL,ORTHOGONAL;}

@@ -2,16 +2,12 @@
 
 package examples;
 
-import org.jgrapht.Graph;
 import org.jgrapht.alg.spanning.BoruvkaMinimumSpanningTree;
 import org.jgrapht.alg.spanning.KruskalMinimumSpanningTree;
 import org.jgrapht.alg.spanning.PrimMinimumSpanningTree;
 import org.jgrapht.generate.GnmRandomGraphGenerator;
-import org.jgrapht.graph.DefaultEdge;
 import org.jgrapht.graph.DefaultWeightedEdge;
-import org.jgrapht.graph.SimpleGraph;
 import org.jgrapht.graph.SimpleWeightedGraph;
-import org.jgrapht.io.CSVFormat;
 import org.jgrapht.util.SupplierUtil;
 import java.lang.Math;
 

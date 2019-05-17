@@ -17,20 +17,22 @@ import org.jgrapht.graph.SimpleGraph;
 
 
 
-public class Clique {
+public class Aula18Clique {
 	
 	
 	public static void main(String[] args) {
 	    Graph<DefaultVertex, RelationshipEdge> graphgml = new SimpleGraph<>(RelationshipEdge.class);
         MyJGraphTUtil.importGraphGML(graphgml,"./src/main/java/graphs/lesmis.gml");
 
-	    DegeneracyBronKerboschCliqueFinder <DefaultVertex,RelationshipEdge> cf2 = 
+	    ///////////////
+        DegeneracyBronKerboschCliqueFinder <DefaultVertex,RelationshipEdge> cf2 = 
 	    		new DegeneracyBronKerboschCliqueFinder <> (graphgml); 
 	    Iterator  <Set <DefaultVertex>> it1 = cf2.iterator();
 	    List <Set <DefaultVertex>> t = new ArrayList <>();
 	    while (it1.hasNext()) {
 	    	t.add(it1.next());
 	    }
+	    // SORT TO PRINT
         Collections.sort( t, new Comparator<Set<DefaultVertex>>()
         {
             public int compare( Set <DefaultVertex> o1, Set <DefaultVertex> o2 )
@@ -44,6 +46,7 @@ public class Clique {
 	    	System.out.println(it2.next());
 	    }
 	    
+	    ///////////////
 	    PivotBronKerboschCliqueFinder <DefaultVertex,RelationshipEdge> cf3 = 
 	    		new PivotBronKerboschCliqueFinder <> (graphgml); 
 	    Iterator  <Set <DefaultVertex>> it3 = cf3.iterator();
@@ -51,6 +54,7 @@ public class Clique {
 	    while (it3.hasNext()) {
 	    	t2.add(it3.next());
 	    }
+	    // SORT TO PRINT
         Collections.sort( t2, new Comparator<Set<DefaultVertex>>()
         {
             public int compare( Set <DefaultVertex> o1, Set <DefaultVertex> o2 )
@@ -61,13 +65,7 @@ public class Clique {
 	    System.out.print("\n\nPivotBronKerboschCliqueFinder cliques: \n");
 	    Iterator <Set<DefaultVertex>> it4 = t2.iterator();
 	    while (it4.hasNext()) {
-	    	System.out.println(it4.next());
-	    	
+	    	System.out.println(it4.next());	
 	    }
-
-	}
-	
-	
-	
-	
+	}	
 }

@@ -1,3 +1,5 @@
+// Teoria dos Grafos - UFCG
+
 package examples;
 
 import org.jgrapht.Graph;
@@ -9,7 +11,7 @@ import org.jgrapht.alg.vertexcover.RecursiveExactVCImpl;
 import org.jgrapht.graph.DefaultEdge;
 import org.jgrapht.graph.SimpleGraph;
 
-public class VertexCover {
+public class Aula18VertexCover {
 	public static void main(String[] args) {
 
 	    Graph<String, DefaultEdge> graphgml = new SimpleGraph<>(DefaultEdge.class);

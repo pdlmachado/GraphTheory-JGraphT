@@ -40,6 +40,6 @@ public final class Aula04MyCompleteGraph {
         while (iter.hasNext()) {
             String vertex = iter.next();
             System.out.println("Vizinhos de " + vertex + ": " + Graphs.neighborSetOf(completeGraph, vertex));
-        }        
+        }
     }
 }

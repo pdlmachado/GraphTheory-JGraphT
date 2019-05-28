@@ -26,9 +26,6 @@ public class Aula05ImportDefaultDirectedGraph {
         System.out.println("Arcos onde v é cauda: " + g.outgoingEdgesOf(v));
         System.out.println("Vizinhos de entrada de v:" + Graphs.predecessorListOf(g,v));
         System.out.println("Vizinhos de saída de v:" + Graphs.successorListOf(g,v));
-  
-
 	}
-
 }
 

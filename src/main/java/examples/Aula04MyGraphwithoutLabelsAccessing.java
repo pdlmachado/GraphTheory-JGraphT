@@ -20,7 +20,6 @@ public class Aula04MyGraphwithoutLabelsAccessing {
 		System.out.println("Aresta: " + graphgml.getEdge("1", "3"));
 		System.out.println("Source: " + graphgml.getEdgeSource(e1));
 		System.out.println("Source: " + graphgml.getEdgeTarget(e1));
-		
         System.out.println("d_G(1) = " + graphgml.degreeOf("1"));
 	}
 }

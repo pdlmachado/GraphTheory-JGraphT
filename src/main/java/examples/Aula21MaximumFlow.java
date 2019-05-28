@@ -7,8 +7,8 @@ import org.jgrapht.graph.DefaultDirectedWeightedGraph;
 import org.jgrapht.graph.DefaultWeightedEdge;
 
 
-public class MaximumFlow {
-	// Fluxo M�ximo e Corte M�nimo usando algoritmo de Edmonds-Karp
+public class Aula21MaximumFlow {
+	// Fluxo Máximo e Corte Mínimo usando algoritmo de Edmonds-Karp
 
 	public static void main(String[] args) {
 
@@ -25,10 +25,10 @@ public class MaximumFlow {
 	    
 	    EdmondsKarpMFImpl <String,DefaultWeightedEdge> mf1 = new EdmondsKarpMFImpl <> (n1);
 	    System.out.println(n1);
-	    System.out.println("Fluxo M�ximo: " + mf1.getMaximumFlow("s","t"));
-	    System.out.println("Valor do Fluxo M�ximo: " + mf1.calculateMaximumFlow("s","t"));
-	    System.out.println("Corte M�nimo: "+ mf1.getCutEdges());
-	    System.out.println("Capacidade do Corte M�nimo: " + mf1.calculateMinCut("s", "t"));
+	    System.out.println("Fluxo Máximo: " + mf1.getMaximumFlow("s","t"));
+	    System.out.println("Valor do Fluxo Máximo: " + mf1.calculateMaximumFlow("s","t"));
+	    System.out.println("Corte Mínimo: "+ mf1.getCutEdges());
+	    System.out.println("Capacidade do Corte Mínimo: " + mf1.calculateMinCut("s", "t"));
 	    
 	    DefaultDirectedWeightedGraph<String,DefaultWeightedEdge> n2 = 
 	    		new DefaultDirectedWeightedGraph<>(DefaultWeightedEdge.class);
@@ -45,10 +45,10 @@ public class MaximumFlow {
 	  
 	    EdmondsKarpMFImpl <String,DefaultWeightedEdge> mf2 = new EdmondsKarpMFImpl <> (n2);
 	    System.out.println("\n" + n2);
-	    System.out.println("Fluxo M�ximo: " + mf2.getMaximumFlow("a","g"));
-	    System.out.println("Valor do Fluxo M�ximo: " + mf2.calculateMaximumFlow("a","g"));
-	    System.out.println("Corte M�nimo: "+ mf2.getCutEdges());
-	    System.out.println("Capacidade do Corte M�nimo: " + mf2.calculateMinCut("a", "g"));
+	    System.out.println("Fluxo Máximo: " + mf2.getMaximumFlow("a","g"));
+	    System.out.println("Valor do Fluxo Máximo: " + mf2.calculateMaximumFlow("a","g"));
+	    System.out.println("Corte Mínimo: "+ mf2.getCutEdges());
+	    System.out.println("Capacidade do Corte Mínimo: " + mf2.calculateMinCut("a", "g"));
 	    
 	}
 }

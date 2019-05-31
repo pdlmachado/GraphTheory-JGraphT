@@ -18,7 +18,7 @@ public class Aula19UndirectedGraphScores {
 	public static void main(String[] args) {
 		
 		Graph<DefaultVertex, RelationshipEdge> ugraph = new Multigraph<>(RelationshipEdge.class);
-		MyJGraphTUtil.importGraphGML(ugraph, "./src/main/java/graphs/dolphins.gml");
+		MyJGraphTUtil.importGraphGML(ugraph, "./src/main/java/graphs/email-Eu-core.gml");
   	    
   	   	// Compute Metrics
   	   	System.out.println("-BETWEENESS CENTRALITY- ");

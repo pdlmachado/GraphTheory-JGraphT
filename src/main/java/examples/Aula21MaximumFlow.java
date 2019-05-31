@@ -5,6 +5,8 @@ package examples;
 import org.jgrapht.alg.flow.EdmondsKarpMFImpl;
 import org.jgrapht.graph.DefaultDirectedWeightedGraph;
 import org.jgrapht.graph.DefaultWeightedEdge;
+import org.jgrapht.graph.SimpleWeightedGraph;
+import org.jgrapht.io.CSVFormat;
 
 
 public class Aula21MaximumFlow {
@@ -49,6 +51,16 @@ public class Aula21MaximumFlow {
 	    System.out.println("Valor do Fluxo Máximo: " + mf2.calculateMaximumFlow("a","g"));
 	    System.out.println("Corte Mínimo: "+ mf2.getCutEdges());
 	    System.out.println("Capacidade do Corte Mínimo: " + mf2.calculateMinCut("a", "g"));
+	    
+	    DefaultDirectedWeightedGraph <String,DefaultWeightedEdge> n3 = new DefaultDirectedWeightedGraph<>(DefaultWeightedEdge.class);
+        MyJGraphTUtil.importWeightedGraphCSV(n3, "./src/main/java/graphs/MTGO520191.csv",CSVFormat.MATRIX,false,true,true);
+	    EdmondsKarpMFImpl <String,DefaultWeightedEdge> mf3 = new EdmondsKarpMFImpl <> (n3);
+	    System.out.println("\n" + n3);
+	    System.out.println("Fluxo Máximo: " + mf3.getMaximumFlow("0","5"));
+	    System.out.println("Valor do Fluxo Máximo: " + mf3.calculateMaximumFlow("0","5"));
+	    System.out.println("Corte Mínimo: "+ mf3.getCutEdges());
+	    System.out.println("Capacidade do Corte Mínimo: " + mf3.calculateMinCut("0", "5"));
+	    
 	    
 	}
 }

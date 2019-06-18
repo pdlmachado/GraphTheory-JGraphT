@@ -11,7 +11,7 @@ import org.jgrapht.alg.color.SmallestDegreeLastColoring;
 import org.jgrapht.graph.SimpleGraph;
 
 
-public class Color {
+public class Aula27Color {
 	
 	public static void main(String[] args) {
 	    Graph<DefaultVertex, RelationshipEdge> graphgml = new SimpleGraph<>(RelationshipEdge.class);

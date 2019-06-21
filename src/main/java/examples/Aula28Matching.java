@@ -1,6 +1,9 @@
 package examples;
 
+import java.util.HashSet;
+
 import org.jgrapht.Graph;
+import org.jgrapht.alg.interfaces.MatchingAlgorithm;
 import org.jgrapht.alg.matching.EdmondsMaximumCardinalityMatching;
 import org.jgrapht.graph.DefaultEdge;
 import org.jgrapht.graph.SimpleGraph;
@@ -24,6 +27,13 @@ public class Aula28Matching {
 		EdmondsMaximumCardinalityMatching <String,DefaultEdge> m2 = 
 				new EdmondsMaximumCardinalityMatching <>(graph2);
 		System.out.println("Graph 2:" + m2.getMatching());
+		
+		HashSet <DefaultEdge> edgeSet = new HashSet <> ();
+		edgeSet.add(graph2.getEdge("0", "6"));
+		edgeSet.add(graph2.getEdge("7", "1"));	
+		edgeSet.add(graph2.getEdge("5", "4"));
+		System.out.println("For Graph 2, is match " + edgeSet + " maximum? " + 
+		                   m2.isMaximumMatching(new MatchingAlgorithm.MatchingImpl<String, DefaultEdge> (graph2, edgeSet, 3.0)));
 		
 	}
 }

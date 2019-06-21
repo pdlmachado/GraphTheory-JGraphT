@@ -1,7 +1,6 @@
 package examples;
 
 import org.jgrapht.Graph;
-import org.jgrapht.alg.connectivity.BlockCutpointGraph;
 import org.jgrapht.alg.matching.EdmondsMaximumCardinalityMatching;
 import org.jgrapht.graph.DefaultEdge;
 import org.jgrapht.graph.SimpleGraph;

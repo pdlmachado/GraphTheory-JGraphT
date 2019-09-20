@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -40,10 +39,8 @@ import org.jgrapht.io.ImportException;
 import org.jgrapht.io.VertexProvider;
 
 import com.mxgraph.layout.mxCircleLayout;
-import com.mxgraph.layout.mxEdgeLabelLayout;
 import com.mxgraph.layout.mxFastOrganicLayout;
 import com.mxgraph.layout.mxIGraphLayout;
-import com.mxgraph.layout.mxOrganicLayout;
 import com.mxgraph.layout.hierarchical.mxHierarchicalLayout;
 import com.mxgraph.layout.orthogonal.mxOrthogonalLayout;
 import com.mxgraph.model.mxGraphModel;
@@ -186,6 +183,7 @@ public class MyJGraphTUtil <V,E> {
 	 */	
 	
 	public static Graph<String,DefaultEdge> importGraphCSV (Graph<String,DefaultEdge> graph, String filename, CSVFormat f) {
+		// EDGE LIST
 		VertexProvider<String> vp = (label, attributes) -> label;
 		EdgeProvider<String, DefaultEdge> ep = (from, to, label, attributes) -> new DefaultEdge();
 
@@ -200,6 +198,25 @@ public class MyJGraphTUtil <V,E> {
 		return graph;
 	}
 	
+	public static Graph<String,DefaultWeightedEdge> importWeightedGraphCSV 
+		(Graph<String,DefaultWeightedEdge> graph, String filename) {
+		// WEIGHTED EDGE LIST
+		try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
+			String sCurrentLine = br.readLine();
+			while ((sCurrentLine = br.readLine()) != null) {
+				String [] attributes = sCurrentLine.split(",");
+				graph.addVertex(attributes[0]);
+				graph.addVertex(attributes[1]);
+				DefaultWeightedEdge e = new DefaultWeightedEdge();
+				graph.addEdge(attributes[0], attributes[1], e);
+				graph.setEdgeWeight(e, new Double(attributes[2]).doubleValue());
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return graph;
+	}
+	
 	public static Graph<String,DefaultEdge> importGraphCSV (
 			Graph<String,DefaultEdge> graph, 
 			String filename, 
@@ -207,6 +224,7 @@ public class MyJGraphTUtil <V,E> {
 			boolean pMATRIX_FORMAT_ZERO_WHEN_NO_EDGE,
 			boolean pEDGE_WEIGHT,
 			boolean pMATRIX_FORMAT_NODEID) {
+		// MATRIX
 		VertexProvider<String> vp = (label, attributes) -> label;
 		EdgeProvider<String, DefaultEdge> ep = (from, to, label, attributes) -> new DefaultEdge();
 
@@ -231,6 +249,7 @@ public class MyJGraphTUtil <V,E> {
 			boolean pMATRIX_FORMAT_ZERO_WHEN_NO_EDGE,
 			boolean pEDGE_WEIGHT,
 			boolean pMATRIX_FORMAT_NODEID) {
+		// WEIGHTED MATRIX
 		VertexProvider<String> vp = (label, attributes) -> label;
 		EdgeProvider<String, DefaultWeightedEdge> ep = (from, to, label, attributes) -> new DefaultWeightedEdge();
 
@@ -259,6 +278,7 @@ public class MyJGraphTUtil <V,E> {
 		}
 		return graph;
 	}
+	
 	
 	public static Graph<DefaultVertex,RelationshipEdge> importGraphGML (Graph<DefaultVertex,RelationshipEdge> graph, String filename) {
 		VertexProvider<DefaultVertex> vp1 = (label, attributes) -> new DefaultVertex(label, attributes);

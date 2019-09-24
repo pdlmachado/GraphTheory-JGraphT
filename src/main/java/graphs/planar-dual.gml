@@ -8,11 +8,11 @@ graph
 	node
 	[
 		id	0
-		label	"8"
+		label	"f1"
 		graphics
 		[
-			x	346.59999999999997
-			y	170.60000000000002
+			x	332.0
+			y	165.0
 			w	30.0
 			h	30.0
 			type	"ellipse"
@@ -22,7 +22,7 @@ graph
 		]
 		LabelGraphics
 		[
-			text	"8"
+			text	"f1"
 			fontSize	12
 			fontName	"Dialog"
 			model	"null"
@@ -31,11 +31,11 @@ graph
 	node
 	[
 		id	1
-		label	"1"
+		label	"f2"
 		graphics
 		[
-			x	653.0
-			y	533.6
+			x	518.0
+			y	111.0
 			w	30.0
 			h	30.0
 			type	"ellipse"
@@ -45,7 +45,7 @@ graph
 		]
 		LabelGraphics
 		[
-			text	"1"
+			text	"f2"
 			fontSize	12
 			fontName	"Dialog"
 			model	"null"
@@ -54,11 +54,11 @@ graph
 	node
 	[
 		id	2
-		label	"2"
+		label	"f3"
 		graphics
 		[
-			x	353.0
-			y	533.6
+			x	682.0
+			y	219.0
 			w	30.0
 			h	30.0
 			type	"ellipse"
@@ -68,7 +68,7 @@ graph
 		]
 		LabelGraphics
 		[
-			text	"2"
+			text	"f3"
 			fontSize	12
 			fontName	"Dialog"
 			model	"null"
@@ -77,11 +77,11 @@ graph
 	node
 	[
 		id	3
-		label	"3"
+		label	"f4"
 		graphics
 		[
-			x	130.60000000000002
-			y	398.2
+			x	605.0
+			y	389.0
 			w	30.0
 			h	30.0
 			type	"ellipse"
@@ -91,7 +91,7 @@ graph
 		]
 		LabelGraphics
 		[
-			text	"3"
+			text	"f4"
 			fontSize	12
 			fontName	"Dialog"
 			model	"null"
@@ -100,11 +100,11 @@ graph
 	node
 	[
 		id	4
-		label	"4"
+		label	"f5"
 		graphics
 		[
-			x	717.6
-			y	392.20000000000005
+			x	579.0
+			y	28.0
 			w	30.0
 			h	30.0
 			type	"ellipse"
@@ -114,7 +114,7 @@ graph
 		]
 		LabelGraphics
 		[
-			text	"4"
+			text	"f5"
 			fontSize	12
 			fontName	"Dialog"
 			model	"null"
@@ -123,11 +123,11 @@ graph
 	node
 	[
 		id	5
-		label	"5"
+		label	"f6"
 		graphics
 		[
-			x	522.8
-			y	276.59999999999997
+			x	181.0
+			y	300.0
 			w	30.0
 			h	30.0
 			type	"ellipse"
@@ -137,53 +137,7 @@ graph
 		]
 		LabelGraphics
 		[
-			text	"5"
-			fontSize	12
-			fontName	"Dialog"
-			model	"null"
-		]
-	]
-	node
-	[
-		id	6
-		label	"6"
-		graphics
-		[
-			x	357.2
-			y	393.6000000000001
-			w	30.0
-			h	30.0
-			type	"ellipse"
-			raisedBorder	0
-			fill	"#FFCC00"
-			outline	"#000000"
-		]
-		LabelGraphics
-		[
-			text	"6"
-			fontSize	12
-			fontName	"Dialog"
-			model	"null"
-		]
-	]
-	node
-	[
-		id	7
-		label	"7"
-		graphics
-		[
-			x	195.0
-			y	293.0
-			w	30.0
-			h	30.0
-			type	"ellipse"
-			raisedBorder	0
-			fill	"#FFCC00"
-			outline	"#000000"
-		]
-		LabelGraphics
-		[
-			text	"7"
+			text	"f6"
 			fontSize	12
 			fontName	"Dialog"
 			model	"null"
@@ -191,20 +145,181 @@ graph
 	]
 	edge
 	[
+		source	0
+		target	1
+		label	"j*"
+		graphics
+		[
+			fill	"#000000"
+			Line
+			[
+				point
+				[
+					x	332.0
+					y	165.0
+				]
+				point
+				[
+					x	451.0
+					y	167.0
+				]
+				point
+				[
+					x	503.0
+					y	110.0
+				]
+				point
+				[
+					x	518.0
+					y	111.0
+				]
+			]
+		]
+		LabelGraphics
+		[
+			text	"j*"
+			fontSize	12
+			fontName	"Dialog"
+			configuration	"AutoFlippingLabel"
+			contentWidth	11.3359375
+			contentHeight	18.701171875
+			model	"null"
+			position	"null"
+		]
+	]
+	edge
+	[
+		source	0
+		target	1
+		label	"k*"
+		graphics
+		[
+			fill	"#000000"
+			Line
+			[
+				point
+				[
+					x	332.0
+					y	165.0
+				]
+				point
+				[
+					x	407.0
+					y	105.0
+				]
+				point
+				[
+					x	518.0
+					y	111.0
+				]
+			]
+		]
+		LabelGraphics
+		[
+			text	"k*"
+			fontSize	12
+			fontName	"Dialog"
+			configuration	"AutoFlippingLabel"
+			contentWidth	14.669921875
+			contentHeight	18.701171875
+			model	"null"
+			position	"null"
+		]
+	]
+	edge
+	[
 		source	1
 		target	2
-		label	"a"
+		label	"i*"
 		graphics
 		[
 			fill	"#000000"
 		]
 		LabelGraphics
 		[
-			text	"a"
+			text	"i*"
 			fontSize	12
 			fontName	"Dialog"
 			configuration	"AutoFlippingLabel"
-			contentWidth	10.673828125
+			contentWidth	11.3359375
+			contentHeight	18.701171875
+			model	"null"
+			position	"null"
+		]
+	]
+	edge
+	[
+		source	2
+		target	0
+		label	"m*"
+		graphics
+		[
+			fill	"#000000"
+			Line
+			[
+				point
+				[
+					x	682.0
+					y	219.0
+				]
+				point
+				[
+					x	509.0
+					y	218.0
+				]
+				point
+				[
+					x	332.0
+					y	165.0
+				]
+			]
+		]
+		LabelGraphics
+		[
+			text	"m*"
+			fontSize	12
+			fontName	"Dialog"
+			configuration	"AutoFlippingLabel"
+			contentWidth	18.666015625
+			contentHeight	18.701171875
+			model	"null"
+			position	"null"
+		]
+	]
+	edge
+	[
+		source	2
+		target	3
+		label	"h*"
+		graphics
+		[
+			fill	"#000000"
+			Line
+			[
+				point
+				[
+					x	682.0
+					y	219.0
+				]
+				point
+				[
+					x	684.0
+					y	314.0
+				]
+				point
+				[
+					x	605.0
+					y	389.0
+				]
+			]
+		]
+		LabelGraphics
+		[
+			text	"h*"
+			fontSize	12
+			fontName	"Dialog"
+			configuration	"AutoFlippingLabel"
+			contentWidth	15.34375
 			contentHeight	18.701171875
 			model	"null"
 			position	"null"
@@ -214,18 +329,18 @@ graph
 	[
 		source	2
 		target	4
-		label	"b"
+		label	"g*"
 		graphics
 		[
 			fill	"#000000"
 		]
 		LabelGraphics
 		[
-			text	"b"
+			text	"g*"
 			fontSize	12
 			fontName	"Dialog"
 			configuration	"AutoFlippingLabel"
-			contentWidth	10.673828125
+			contentWidth	15.34375
 			contentHeight	18.701171875
 			model	"null"
 			position	"null"
@@ -233,20 +348,20 @@ graph
 	]
 	edge
 	[
-		source	2
-		target	3
-		label	"c"
+		source	3
+		target	0
+		label	"f*"
 		graphics
 		[
 			fill	"#000000"
 		]
 		LabelGraphics
 		[
-			text	"c"
+			text	"f*"
 			fontSize	12
 			fontName	"Dialog"
 			configuration	"AutoFlippingLabel"
-			contentWidth	10.0
+			contentWidth	12.00390625
 			contentHeight	18.701171875
 			model	"null"
 			position	"null"
@@ -254,20 +369,69 @@ graph
 	]
 	edge
 	[
-		source	2
-		target	6
-		label	"d"
+		source	3
+		target	5
+		label	"e*"
 		graphics
 		[
 			fill	"#000000"
 		]
 		LabelGraphics
 		[
-			text	"d"
+			text	"e*"
 			fontSize	12
 			fontName	"Dialog"
 			configuration	"AutoFlippingLabel"
-			contentWidth	10.673828125
+			contentWidth	15.34375
+			contentHeight	18.701171875
+			model	"null"
+			position	"null"
+		]
+	]
+	edge
+	[
+		source	0
+		target	0
+		label	"a*"
+		graphics
+		[
+			fill	"#000000"
+			Line
+			[
+				point
+				[
+					x	332.0
+					y	165.0
+				]
+				point
+				[
+					x	278.0
+					y	92.0
+				]
+				point
+				[
+					x	252.0
+					y	117.0
+				]
+				point
+				[
+					x	320.0
+					y	174.0
+				]
+				point
+				[
+					x	332.0
+					y	165.0
+				]
+			]
+		]
+		LabelGraphics
+		[
+			text	"a*"
+			fontSize	12
+			fontName	"Dialog"
+			configuration	"AutoFlippingLabel"
+			contentWidth	15.34375
 			contentHeight	18.701171875
 			model	"null"
 			position	"null"
@@ -276,19 +440,37 @@ graph
 	edge
 	[
 		source	4
-		target	6
-		label	"e"
+		target	0
+		label	"c*"
 		graphics
 		[
 			fill	"#000000"
+			Line
+			[
+				point
+				[
+					x	579.0
+					y	28.0
+				]
+				point
+				[
+					x	391.0
+					y	45.66666666666667
+				]
+				point
+				[
+					x	332.0
+					y	165.0
+				]
+			]
 		]
 		LabelGraphics
 		[
-			text	"e"
+			text	"c*"
 			fontSize	12
 			fontName	"Dialog"
 			configuration	"AutoFlippingLabel"
-			contentWidth	10.673828125
+			contentWidth	14.669921875
 			contentHeight	18.701171875
 			model	"null"
 			position	"null"
@@ -298,81 +480,36 @@ graph
 	[
 		source	4
 		target	5
-		label	"f"
+		label	"d*"
 		graphics
 		[
 			fill	"#000000"
+			Line
+			[
+				point
+				[
+					x	579.0
+					y	28.0
+				]
+				point
+				[
+					x	195.0
+					y	23.666666666666657
+				]
+				point
+				[
+					x	181.0
+					y	300.0
+				]
+			]
 		]
 		LabelGraphics
 		[
-			text	"f"
+			text	"d*"
 			fontSize	12
 			fontName	"Dialog"
 			configuration	"AutoFlippingLabel"
-			contentWidth	7.333984375
-			contentHeight	18.701171875
-			model	"null"
-			position	"null"
-		]
-	]
-	edge
-	[
-		source	6
-		target	3
-		label	"g"
-		graphics
-		[
-			fill	"#000000"
-		]
-		LabelGraphics
-		[
-			text	"g"
-			fontSize	12
-			fontName	"Dialog"
-			configuration	"AutoFlippingLabel"
-			contentWidth	10.673828125
-			contentHeight	18.701171875
-			model	"null"
-			position	"null"
-		]
-	]
-	edge
-	[
-		source	6
-		target	5
-		label	"h"
-		graphics
-		[
-			fill	"#000000"
-		]
-		LabelGraphics
-		[
-			text	"h"
-			fontSize	12
-			fontName	"Dialog"
-			configuration	"AutoFlippingLabel"
-			contentWidth	10.673828125
-			contentHeight	18.701171875
-			model	"null"
-			position	"null"
-		]
-	]
-	edge
-	[
-		source	5
-		target	7
-		label	"i"
-		graphics
-		[
-			fill	"#000000"
-		]
-		LabelGraphics
-		[
-			text	"i"
-			fontSize	12
-			fontName	"Dialog"
-			configuration	"AutoFlippingLabel"
-			contentWidth	6.666015625
+			contentWidth	15.34375
 			contentHeight	18.701171875
 			model	"null"
 			position	"null"
@@ -382,60 +519,18 @@ graph
 	[
 		source	5
 		target	0
-		label	"j"
+		label	"b*"
 		graphics
 		[
 			fill	"#000000"
 		]
 		LabelGraphics
 		[
-			text	"j"
+			text	"b*"
 			fontSize	12
 			fontName	"Dialog"
 			configuration	"AutoFlippingLabel"
-			contentWidth	6.666015625
-			contentHeight	18.701171875
-			model	"null"
-			position	"null"
-		]
-	]
-	edge
-	[
-		source	0
-		target	7
-		label	"k"
-		graphics
-		[
-			fill	"#000000"
-		]
-		LabelGraphics
-		[
-			text	"k"
-			fontSize	12
-			fontName	"Dialog"
-			configuration	"AutoFlippingLabel"
-			contentWidth	10.0
-			contentHeight	18.701171875
-			model	"null"
-			position	"null"
-		]
-	]
-	edge
-	[
-		source	7
-		target	3
-		label	"m"
-		graphics
-		[
-			fill	"#000000"
-		]
-		LabelGraphics
-		[
-			text	"m"
-			fontSize	12
-			fontName	"Dialog"
-			configuration	"AutoFlippingLabel"
-			contentWidth	13.99609375
+			contentWidth	15.34375
 			contentHeight	18.701171875
 			model	"null"
 			position	"null"

@@ -58,6 +58,15 @@ public class Aula21MaximumFlow {
 	    System.out.println("Fluxo Máximo: " + mf3.getMaximumFlow("0","5"));
 	    System.out.println("Valor do Fluxo Máximo: " + mf3.calculateMaximumFlow("0","5"));
 	    System.out.println("Corte Mínimo: "+ mf3.getCutEdges());
-	    System.out.println("Capacidade do Corte Mínimo: " + mf3.calculateMinCut("0", "5"));	    
+	    System.out.println("Capacidade do Corte Mínimo: " + mf3.calculateMinCut("0", "5"));	
+	    
+	    DefaultDirectedWeightedGraph <String,DefaultWeightedEdge> n4 = new DefaultDirectedWeightedGraph<>(DefaultWeightedEdge.class);
+        MyJGraphTUtil.importWeightedGraphCSV(n4, "./src/main/java/graphs/netflow-aula20.csv",CSVFormat.MATRIX,false,true,true);
+	    EdmondsKarpMFImpl <String,DefaultWeightedEdge> mf4 = new EdmondsKarpMFImpl <> (n4);
+	    System.out.println("\n" + n4);
+	    System.out.println("Fluxo Máximo: " + mf4.getMaximumFlow("x","y"));
+	    System.out.println("Valor do Fluxo Máximo: " + mf4.calculateMaximumFlow("x","y"));
+	    System.out.println("Corte Mínimo: "+ mf4.getCutEdges());
+	    System.out.println("Capacidade do Corte Mínimo: " + mf4.calculateMinCut("x", "y"));	 
 	}
 }

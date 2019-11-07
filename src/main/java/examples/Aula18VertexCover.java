@@ -15,7 +15,7 @@ public class Aula18VertexCover {
 	public static void main(String[] args) {
 
 	    Graph<String, DefaultEdge> graphgml = new SimpleGraph<>(DefaultEdge.class);
-	    MyJGraphTUtil.importDefaultGraphGML(graphgml, "./src/main/java/graphs/cordal.gml");
+	    MyJGraphTUtil.importDefaultGraphGML(graphgml, "./src/main/java/graphs/graph-layout.gml");
 	       
 	    BarYehudaEvenTwoApproxVCImpl <String, DefaultEdge> vc1 = 
 	    		new BarYehudaEvenTwoApproxVCImpl <> (graphgml); 

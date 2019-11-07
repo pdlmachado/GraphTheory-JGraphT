@@ -19,7 +19,7 @@ public class Aula19UndirectedGraphScores {
 	public static void main(String[] args) {
 		
 		Graph<String, DefaultEdge> ugraph = new Multigraph<>(DefaultEdge.class);
-		MyJGraphTUtil.importDefaultGraphGML(ugraph, "./src/main/java/graphs/antcolony1000.gml");
+		MyJGraphTUtil.importDefaultGraphGML(ugraph, "./src/main/java/graphs/dolphins.gml");
 		
 		MyJGraphTUtil.printGraph(ugraph);
   	    
@@ -27,7 +27,6 @@ public class Aula19UndirectedGraphScores {
   	   	System.out.println("-BETWEENESS CENTRALITY- ");
   	   	BetweennessCentrality <String, DefaultEdge> bc = 
   	   		new BetweennessCentrality <> (ugraph,true);
-  	   	System.out.println(bc.getScores());
   	   	MyJGraphTUtil.printOrderedVertexMeasures (bc.getScores(),0,true);
 
   	   	System.out.println("\n-ALPHA CENTRALITY- ");

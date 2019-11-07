@@ -12,9 +12,9 @@ import org.jgrapht.generate.ComplementGraphGenerator;
 import org.jgrapht.graph.DefaultEdge;
 import org.jgrapht.graph.SimpleGraph;
 
-public class Aula18IndependentSet {
+public class Aula18IndependentSetChordal {
 	public static void main(String[] args) {
-
+        // For Chordal Graphs ONLY
 	    Graph<String, DefaultEdge> graphgml = new SimpleGraph<>(DefaultEdge.class);
 	    MyJGraphTUtil.importDefaultGraphGML(graphgml,"./src/main/java/graphs/cordal.gml");
 

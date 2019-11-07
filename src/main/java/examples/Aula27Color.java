@@ -13,9 +13,11 @@ import org.jgrapht.graph.SimpleGraph;
 
 public class Aula27Color {
 	
+	
+	// Algorithms from JGRAPHT
 	public static void main(String[] args) {
 	    Graph<DefaultVertex, RelationshipEdge> graphgml = new SimpleGraph<>(RelationshipEdge.class);
-        MyJGraphTUtil.importGraphGML(graphgml,"./src/main/java/graphs/sudoko4x4.gml");	    
+        MyJGraphTUtil.importGraphGML(graphgml,"./src/main/java/graphs/graph-layout.gml");	    
 	       
        GreedyColoring <DefaultVertex, RelationshipEdge> g = new GreedyColoring <> (graphgml);
        System.out.println("GreedyColoring");

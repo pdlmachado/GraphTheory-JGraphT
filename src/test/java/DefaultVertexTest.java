@@ -18,11 +18,11 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
+import util.DefaultVertex;
+
 import static java.time.Duration.*;
 import java.util.LinkedList;
 import java.util.stream.Stream;
-
-import examples.DefaultVertex;
 
 @DisplayName("A special test case")
 class DefaultVertexTest {

@@ -3,9 +3,13 @@
 package classexamples;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
+
 import org.jgrapht.Graph;
 import org.jgrapht.Graphs;
 import org.jgrapht.graph.DefaultEdge;
@@ -14,35 +18,35 @@ import org.jgrapht.util.SupplierUtil;
 
 import util.DefaultVertex;
 import util.ImportUtil;
-
+import util.PrintUtil;
+import util.VertexEdgeUtil;
 
 public class Aula27ColorGreedingHeuristic {
-	
-	
 	// Greedy Colouring Heuristic (from Class 27)
 	
 	public static void main(String[] args) {
 	    Graph<DefaultVertex, DefaultEdge> graphgml = 
-				new SimpleGraph <> (ImportUtil.createDefaultVertexSupplier(), SupplierUtil.createDefaultEdgeSupplier(), false);
+				new SimpleGraph <> (VertexEdgeUtil.createDefaultVertexSupplier(), 
+						SupplierUtil.createDefaultEdgeSupplier(), false);
         ImportUtil.importDefaultGraphGML(graphgml,"./src/main/java/graphs/cordal.gml");
         
-        ImportUtil.printGraph(graphgml);
+        PrintUtil.printGraph(graphgml);
         HashMap <DefaultVertex, Integer> coloring = new HashMap <> ();
    
         // Manual Ordering
         graphgml.vertexSet().forEach(v -> coloring.put(v, 0));
         List <DefaultVertex> manuallistV = new ArrayList <> ();
-        manuallistV.add(ImportUtil.getVertexfromLabel(graphgml.vertexSet(),"7"));
-        manuallistV.add(ImportUtil.getVertexfromLabel(graphgml.vertexSet(),"0"));
-        manuallistV.add(ImportUtil.getVertexfromLabel(graphgml.vertexSet(),"1"));
-        manuallistV.add(ImportUtil.getVertexfromLabel(graphgml.vertexSet(),"4"));
-        manuallistV.add(ImportUtil.getVertexfromLabel(graphgml.vertexSet(),"3"));
-        manuallistV.add(ImportUtil.getVertexfromLabel(graphgml.vertexSet(),"2"));
-        manuallistV.add(ImportUtil.getVertexfromLabel(graphgml.vertexSet(),"6"));
-        manuallistV.add(ImportUtil.getVertexfromLabel(graphgml.vertexSet(),"8"));
-        manuallistV.add(ImportUtil.getVertexfromLabel(graphgml.vertexSet(),"9"));
-        manuallistV.add(ImportUtil.getVertexfromLabel(graphgml.vertexSet(),"10"));
-        manuallistV.add(ImportUtil.getVertexfromLabel(graphgml.vertexSet(),"5"));        
+        manuallistV.add(VertexEdgeUtil.getVertexfromLabel(graphgml.vertexSet(),"7"));
+        manuallistV.add(VertexEdgeUtil.getVertexfromLabel(graphgml.vertexSet(),"0"));
+        manuallistV.add(VertexEdgeUtil.getVertexfromLabel(graphgml.vertexSet(),"1"));
+        manuallistV.add(VertexEdgeUtil.getVertexfromLabel(graphgml.vertexSet(),"4"));
+        manuallistV.add(VertexEdgeUtil.getVertexfromLabel(graphgml.vertexSet(),"3"));
+        manuallistV.add(VertexEdgeUtil.getVertexfromLabel(graphgml.vertexSet(),"2"));
+        manuallistV.add(VertexEdgeUtil.getVertexfromLabel(graphgml.vertexSet(),"6"));
+        manuallistV.add(VertexEdgeUtil.getVertexfromLabel(graphgml.vertexSet(),"8"));
+        manuallistV.add(VertexEdgeUtil.getVertexfromLabel(graphgml.vertexSet(),"9"));
+        manuallistV.add(VertexEdgeUtil.getVertexfromLabel(graphgml.vertexSet(),"10"));
+        manuallistV.add(VertexEdgeUtil.getVertexfromLabel(graphgml.vertexSet(),"5"));        
 
         manuallistV.forEach(v -> coloring.put(v, getColor(graphgml,coloring,v)));
         System.out.println("Manual: ");
@@ -52,8 +56,13 @@ public class Aula27ColorGreedingHeuristic {
         // Alphabetical Ordering 
         graphgml.vertexSet().forEach(v -> coloring.put(v, 0));
         List <DefaultVertex> alphalistV = new ArrayList <> (graphgml.vertexSet());
-        // To be fixed Update 1.4.0
-        	//Collections.sort(alphalistV);
+        Collections.sort( alphalistV, new Comparator<DefaultVertex>()
+        {
+            public int compare( DefaultVertex o1, DefaultVertex o2 )
+            {
+                return (o1.getLabel().compareTo( (o2.getLabel()) ));
+            }
+        } );
         alphalistV.forEach(v -> coloring.put(v, getColor(graphgml,coloring,v)));
         System.out.println("\nAlphabetical: ");
         System.out.println(alphalistV);

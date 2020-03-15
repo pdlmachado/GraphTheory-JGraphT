@@ -10,12 +10,15 @@ import org.jgrapht.util.SupplierUtil;
 
 import util.DefaultVertex;
 import util.ImportUtil;
+import util.VertexEdgeUtil;
 
 
 public class Core {
 	public static void main(String[] args) {
 
-	    Graph<DefaultVertex, DefaultEdge> graphgml = new SimpleGraph <> (ImportUtil.createDefaultVertexSupplier(), SupplierUtil.createDefaultEdgeSupplier(), false);
+	    Graph<DefaultVertex, DefaultEdge> graphgml = 
+	    		new SimpleGraph <> (VertexEdgeUtil.createDefaultVertexSupplier(), 
+	    				SupplierUtil.createDefaultEdgeSupplier(), false);
   	    ImportUtil.importDefaultGraphGML(graphgml, "./src/main/java/graphs/natural-cluster.gml");
    	    Coreness <DefaultVertex,DefaultEdge> core = new Coreness <> (graphgml);
   	    System.out.println("Degeneracy: " + core.getDegeneracy());

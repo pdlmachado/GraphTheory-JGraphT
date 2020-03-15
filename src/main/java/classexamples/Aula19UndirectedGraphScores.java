@@ -16,7 +16,9 @@ import org.jgrapht.util.SupplierUtil;
 
 import util.DefaultVertex;
 import util.ImportUtil;
+import util.MeasureUtil;
 import util.PrintUtil;
+import util.VertexEdgeUtil;
 
 
 public class Aula19UndirectedGraphScores {
@@ -24,7 +26,8 @@ public class Aula19UndirectedGraphScores {
 	public static void main(String[] args) {
 		
 		Graph<DefaultVertex, DefaultEdge> ugraph = 
-				new Multigraph <> (ImportUtil.createDefaultVertexSupplier(), SupplierUtil.createDefaultEdgeSupplier(), false);
+				new Multigraph <> (VertexEdgeUtil.createDefaultVertexSupplier(), 
+						SupplierUtil.createDefaultEdgeSupplier(), false);
 		ImportUtil.importDefaultGraphGML(ugraph, "./src/main/java/graphs/dolphins.gml");
 		
 		PrintUtil.printGraph(ugraph);
@@ -54,7 +57,7 @@ public class Aula19UndirectedGraphScores {
 	    	new ClusteringCoefficient <> (ugraph);
   	   	System.out.println("\n\nCluster Coefficient: " + cluster.getGlobalClusteringCoefficient());
 	    
-  	   	System.out.println("\nASSORTATIVITY: " + ImportUtil.assortativityCoefficient(ugraph));
+  	   	System.out.println("\nASSORTATIVITY: " + MeasureUtil.assortativityCoefficient(ugraph));
 	   
   	   	if (GraphTests.hasMultipleEdges(ugraph)==false) {
   	  	   	double E = (ugraph.edgeSet()).size();

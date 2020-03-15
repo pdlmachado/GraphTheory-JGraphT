@@ -10,6 +10,7 @@ import org.jgrapht.util.SupplierUtil;
 
 import util.DefaultVertex;
 import util.ImportUtil;
+import util.VertexEdgeUtil;
 
 
 public class Aula21MaximumFlow {
@@ -57,13 +58,13 @@ public class Aula21MaximumFlow {
 	    
 	    DefaultDirectedWeightedGraph <DefaultVertex,DefaultWeightedEdge> n3 = 
 				new DefaultDirectedWeightedGraph<DefaultVertex, DefaultWeightedEdge>(
-						ImportUtil.createDefaultVertexSupplier(),
+						VertexEdgeUtil.createDefaultVertexSupplier(),
 						SupplierUtil.createDefaultWeightedEdgeSupplier());
         ImportUtil.importWeightedGraphCSV(n3, "./src/main/java/graphs/MTGO520191.csv",CSVFormat.MATRIX,false,true,true);
 	    EdmondsKarpMFImpl <DefaultVertex,DefaultWeightedEdge> mf3 = new EdmondsKarpMFImpl <> (n3);
 	    System.out.println("\n" + n3);
-	    DefaultVertex x = ImportUtil.getVertexfromLabel(n3.vertexSet(), "0");
-	    DefaultVertex y = ImportUtil.getVertexfromLabel(n3.vertexSet(), "5");
+	    DefaultVertex x = VertexEdgeUtil.getVertexfromLabel(n3.vertexSet(), "0");
+	    DefaultVertex y = VertexEdgeUtil.getVertexfromLabel(n3.vertexSet(), "5");
 	    System.out.println("Fluxo Máximo: " + mf3.getMaximumFlow(x,y));
 	    System.out.println("Valor do Fluxo Máximo: " + mf3.calculateMaximumFlow(x,y));
 	    System.out.println("Corte Mínimo: "+ mf3.getCutEdges());
@@ -71,12 +72,12 @@ public class Aula21MaximumFlow {
 	    
 	    DefaultDirectedWeightedGraph <DefaultVertex,DefaultWeightedEdge> n4 = 
 				new DefaultDirectedWeightedGraph<DefaultVertex, DefaultWeightedEdge>(
-						ImportUtil.createDefaultVertexSupplier(),
+						VertexEdgeUtil.createDefaultVertexSupplier(),
 						SupplierUtil.createDefaultWeightedEdgeSupplier());
         ImportUtil.importWeightedGraphCSV(n4, "./src/main/java/graphs/netflow-aula20.csv",CSVFormat.MATRIX,false,true,true);
 	    EdmondsKarpMFImpl <DefaultVertex,DefaultWeightedEdge> mf4 = new EdmondsKarpMFImpl <> (n4);
-	    x = ImportUtil.getVertexfromLabel(n4.vertexSet(), "x");
-	    y = ImportUtil.getVertexfromLabel(n4.vertexSet(), "y");
+	    x = VertexEdgeUtil.getVertexfromLabel(n4.vertexSet(), "x");
+	    y = VertexEdgeUtil.getVertexfromLabel(n4.vertexSet(), "y");
 	    System.out.println("\n" + n4);
 	    System.out.println("Fluxo Máximo: " + mf4.getMaximumFlow(x,y));
 	    System.out.println("Valor do Fluxo Máximo: " + mf4.calculateMaximumFlow(x,y));

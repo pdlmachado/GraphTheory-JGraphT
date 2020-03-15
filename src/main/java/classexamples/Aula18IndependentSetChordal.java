@@ -15,12 +15,14 @@ import org.jgrapht.util.SupplierUtil;
 
 import util.DefaultVertex;
 import util.ImportUtil;
+import util.VertexEdgeUtil;
 
 public class Aula18IndependentSetChordal {
 	public static void main(String[] args) {
         // For Chordal Graphs ONLY
 	    Graph<DefaultVertex, DefaultEdge> graphgml = 
-				new SimpleGraph <> (ImportUtil.createDefaultVertexSupplier(), SupplierUtil.createDefaultEdgeSupplier(), false);
+				new SimpleGraph <> (VertexEdgeUtil.createDefaultVertexSupplier(), 
+									SupplierUtil.createDefaultEdgeSupplier(), false);
 	    ImportUtil.importDefaultGraphGML(graphgml,"./src/main/java/graphs/cordal.gml");
 
 	    ChordalGraphIndependentSetFinder <DefaultVertex,DefaultEdge> is = 

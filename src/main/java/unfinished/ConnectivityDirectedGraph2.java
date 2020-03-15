@@ -12,13 +12,16 @@ import org.jgrapht.graph.DefaultEdge;
 import util.DefaultVertex;
 import util.ImportUtil;
 import util.RelationshipDirectedEdge;
+import util.VertexEdgeUtil;
 
 public class ConnectivityDirectedGraph2 {
 	// Conectividade de Grafos Directionados
 
 	public static void main(String[] args) {
 
-	    DefaultDirectedGraph<DefaultVertex,RelationshipDirectedEdge> graphgml = new DefaultDirectedGraph<>(RelationshipDirectedEdge.class);
+	    DefaultDirectedGraph<DefaultVertex,RelationshipDirectedEdge> graphgml = 
+				new DefaultDirectedGraph <> (VertexEdgeUtil.createDefaultVertexSupplier(), 
+						VertexEdgeUtil.createRelationshipDirectedEdgeSupplier(), false);
         ImportUtil.importDirectedGraphGML(graphgml, "./src/main/java/graphs/grid.gml");    		
  	    
 	    Set <DefaultVertex> V = new HashSet <DefaultVertex>(graphgml.vertexSet());
@@ -35,9 +38,9 @@ public class ConnectivityDirectedGraph2 {
         DefaultVertex target;
         System.out.println("Q2.1. Não é possível deslocamento nos seguintes sentidos:");
 	    for (int i=1;i<=20;i++) {
-	    	source = ImportUtil.getVertexfromLabel(V,(new Integer(i)).toString());
+	    	source = VertexEdgeUtil.getVertexfromLabel(V,(new Integer(i)).toString());
 	    	for (int j=1;j<=20;j++) {
-		    	target = ImportUtil.getVertexfromLabel(V,(new Integer(j)).toString());
+		    	target = VertexEdgeUtil.getVertexfromLabel(V,(new Integer(j)).toString());
 		    	List<GraphPath<DefaultVertex,RelationshipDirectedEdge>> l =  p.getAllPaths(source,target,true,null); 
 		    	if (l.isEmpty()) {
 		    		System.out.print(source.toString() + "->" + target.toString() + " | ");
@@ -48,9 +51,9 @@ public class ConnectivityDirectedGraph2 {
         System.out.println("\nQ2.2. Cruzamentos que não são acessíveis:");
 	    for (int i=1;i<=20;i++) {
 	    	boolean eh_acessivel = false;
-	    	target = ImportUtil.getVertexfromLabel(V,(new Integer(i)).toString());
+	    	target = VertexEdgeUtil.getVertexfromLabel(V,(new Integer(i)).toString());
 	    	for (int j=1;j<=20;j++) {
-		    	source = ImportUtil.getVertexfromLabel(V,(new Integer(j)).toString());
+		    	source = VertexEdgeUtil.getVertexfromLabel(V,(new Integer(j)).toString());
 		    	List<GraphPath<DefaultVertex,RelationshipDirectedEdge>> l =  p.getAllPaths(source,target,true,null); 
 		    	if (l.isEmpty()==false) {
 		    		eh_acessivel = true;
@@ -63,10 +66,10 @@ public class ConnectivityDirectedGraph2 {
 
         System.out.println("Q2.3. Tamanho m�nimo, m�dio e m�ximo dos percursos de um quarteir�o ao outro, quando existir:");
 	    for (int i=1;i<=20;i++) {
-	    	source = ImportUtil.getVertexfromLabel(V,(new Integer(i)).toString());
+	    	source = VertexEdgeUtil.getVertexfromLabel(V,(new Integer(i)).toString());
 	    	for (int j=1;j<=20;j++) {
 	    		if (i!=j) {
-	    			target = ImportUtil.getVertexfromLabel(V,(new Integer(j)).toString());
+	    			target = VertexEdgeUtil.getVertexfromLabel(V,(new Integer(j)).toString());
 	    			List<GraphPath<DefaultVertex,RelationshipDirectedEdge>> l =  p.getAllPaths(source,target,true,null); 
 	    			if (l.isEmpty()==false) {
 	    				TreeSet <Integer> tamanhos = new  TreeSet <> ();

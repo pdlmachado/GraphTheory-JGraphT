@@ -8,16 +8,19 @@ import org.jgrapht.graph.SimpleGraph;
 import org.jgrapht.util.SupplierUtil;
 
 import util.DefaultVertex;
+import util.DrawUtil;
 import util.ImportUtil;
+import util.VertexEdgeUtil;
 
 public class Aula17SeparationAndOrientation {
 
 	public static void main(String[] args) {
 
 		Graph<DefaultVertex, DefaultEdge> graph = 
-				new SimpleGraph <> (ImportUtil.createDefaultVertexSupplier(), SupplierUtil.createDefaultEdgeSupplier(), false);
+				new SimpleGraph <> (VertexEdgeUtil.createDefaultVertexSupplier(), 
+						SupplierUtil.createDefaultEdgeSupplier(), false);
 		graph = ImportUtil.importDefaultGraphGML(graph, "./src/main/java/graphs/cubo.gml");
-		ImportUtil.createAndShowGui(graph, "Graph", false, true, true, true, JGraphTUtil.ImportUtil.HIERARCHICAL);
+		DrawUtil.createAndShowGui(graph, "Graph", false, true, true, true, DrawUtil.layout_type.HIERARCHICAL);
 		
 		System.out.println("Is biconnected (non-separable)?  " +
 		                     GraphTests.isBiconnected(graph));

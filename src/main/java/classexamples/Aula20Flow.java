@@ -14,21 +14,23 @@ import org.jgrapht.util.SupplierUtil;
 
 import util.DefaultVertex;
 import util.ImportUtil;
+import util.PrintUtil;
+import util.VertexEdgeUtil;
 
 public class Aula20Flow {
 	public static void main(String[] args) {
 
 	    SimpleWeightedGraph <DefaultVertex,DefaultWeightedEdge> graph = 
 				new SimpleWeightedGraph<DefaultVertex, DefaultWeightedEdge>(
-						ImportUtil.createDefaultVertexSupplier(),
+						VertexEdgeUtil.createDefaultVertexSupplier(),
 						SupplierUtil.createDefaultWeightedEdgeSupplier());
         ImportUtil.importWeightedGraphCSV(graph, "./src/main/java/graphs/netflow1.csv",CSVFormat.MATRIX,false,true,true);
- 	    ImportUtil.printGraph(graph,"Graph: ");
+ 	    PrintUtil.printGraph(graph,"Graph: ");
  	          
         Set <DefaultVertex> X = new HashSet <> ();
-        X.add(ImportUtil.getVertexfromLabel(graph.vertexSet(), "s"));
-        X.add(ImportUtil.getVertexfromLabel(graph.vertexSet(), "p"));
-        X.add(ImportUtil.getVertexfromLabel(graph.vertexSet(), "r"));
+        X.add(VertexEdgeUtil.getVertexfromLabel(graph.vertexSet(), "s"));
+        X.add(VertexEdgeUtil.getVertexfromLabel(graph.vertexSet(), "p"));
+        X.add(VertexEdgeUtil.getVertexfromLabel(graph.vertexSet(), "r"));
         
         System.out.println("X =" + X);
         

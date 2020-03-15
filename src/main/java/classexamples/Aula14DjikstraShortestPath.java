@@ -8,7 +8,9 @@ import org.jgrapht.nio.csv.CSVFormat;
 import org.jgrapht.util.SupplierUtil;
 
 import util.DefaultVertex;
+import util.DrawUtil;
 import util.ImportUtil;
+import util.VertexEdgeUtil;
 
 import java.util.Iterator;
 
@@ -18,12 +20,11 @@ import org.jgrapht.alg.shortestpath.*;
 
 public class Aula14DjikstraShortestPath {
 
-
 	public static void main(String[] args) {
 
 		Graph<DefaultVertex, DefaultWeightedEdge> g = 
 				new SimpleWeightedGraph<DefaultVertex, DefaultWeightedEdge>(
-						ImportUtil.createDefaultVertexSupplier(),
+						VertexEdgeUtil.createDefaultVertexSupplier(),
 						SupplierUtil.createDefaultWeightedEdgeSupplier());
 		g = ImportUtil.importWeightedGraphCSV(g, 				
 				"./src/main/java/graphs/germany-roads.csv", 
@@ -31,11 +32,11 @@ public class Aula14DjikstraShortestPath {
 				false, 
 				true, // EDGE_WEIGHTS
 				true); // MATRIX_FORMAT_NODEID
-		ImportUtil.createAndShowGui(g, "Germany Roads", false, false, true, true, JGraphTUtil.ImportUtil.HIERARCHICAL);
+		DrawUtil.createAndShowGui(g, "Germany Roads", false, false, true, true, DrawUtil.layout_type.HIERARCHICAL);
 	
 		DijkstraShortestPath<DefaultVertex, DefaultWeightedEdge> dsp = new DijkstraShortestPath<>(g);
 		
-		DefaultVertex source = ImportUtil.getVertexfromLabel(g.vertexSet(), "Fra");
+		DefaultVertex source = VertexEdgeUtil.getVertexfromLabel(g.vertexSet(), "Fra");
 		ShortestPathAlgorithm.SingleSourcePaths<DefaultVertex, DefaultWeightedEdge> paths = dsp.getPaths(source);
 		
 		Iterator <DefaultVertex> it = g.vertexSet().iterator();

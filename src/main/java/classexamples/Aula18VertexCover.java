@@ -14,12 +14,15 @@ import org.jgrapht.util.SupplierUtil;
 
 import util.DefaultVertex;
 import util.ImportUtil;
+import util.VertexEdgeUtil;
 
 public class Aula18VertexCover {
-	public static void main(DefaultVertex[] args) {
+	
+	public static void main(String[] args) {
 
 	    Graph<DefaultVertex, DefaultEdge> graphgml = 
-				new SimpleGraph <> (ImportUtil.createDefaultVertexSupplier(), SupplierUtil.createDefaultEdgeSupplier(), false);
+				new SimpleGraph <> (VertexEdgeUtil.createDefaultVertexSupplier(), 
+						SupplierUtil.createDefaultEdgeSupplier(), false);
 	    ImportUtil.importDefaultGraphGML(graphgml, "./src/main/java/graphs/graph-layout.gml");
 	       
 	    BarYehudaEvenTwoApproxVCImpl <DefaultVertex, DefaultEdge> vc1 = 

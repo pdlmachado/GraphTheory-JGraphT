@@ -19,15 +19,15 @@ import org.jgrapht.util.SupplierUtil;
 
 import util.DefaultVertex;
 import util.ImportUtil;
-
-
+import util.VertexEdgeUtil;
 
 public class Aula18RelCliqueIndependent {
 	
 	// Compute Independent Set and Stability Number using a Clique Algorithm
 	public static void main(String[] args) {
 	    Graph<DefaultVertex, DefaultEdge> original = 
-				new SimpleGraph <> (ImportUtil.createDefaultVertexSupplier(), SupplierUtil.createDefaultEdgeSupplier(), false);
+				new SimpleGraph <> (VertexEdgeUtil.createDefaultVertexSupplier(), 
+						SupplierUtil.createDefaultEdgeSupplier(), false);
         ImportUtil.importDefaultGraphGML(original,"./src/main/java/graphs/graph-layout.gml");
         
         Graph<DefaultVertex, DefaultEdge> complement = new SimpleGraph<>(DefaultEdge.class);

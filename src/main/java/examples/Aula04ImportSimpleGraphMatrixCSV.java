@@ -6,14 +6,16 @@ package examples;
 import org.jgrapht.Graph;
 import org.jgrapht.graph.DefaultEdge;
 import org.jgrapht.graph.SimpleGraph;
-import org.jgrapht.io.CSVFormat;
+import org.jgrapht.nio.csv.CSVFormat;
+import org.jgrapht.util.SupplierUtil;
 
 public class Aula04ImportSimpleGraphMatrixCSV {
 
 	public static void main(String[] args) {
-
-		Graph<String, DefaultEdge> graph = new SimpleGraph<>(DefaultEdge.class);
-
+		
+		Graph<DefaultVertex, DefaultEdge> graph = 
+				new SimpleGraph <> (MyJGraphTUtil.createDefaultVertexSupplier(), SupplierUtil.createDefaultEdgeSupplier(), false);
+				
 		graph = MyJGraphTUtil.importGraphCSV(
 				graph, 
 				"./src/main/java/graphs/5-3regular.csv",

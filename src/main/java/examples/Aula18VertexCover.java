@@ -10,30 +10,32 @@ import org.jgrapht.alg.vertexcover.GreedyVCImpl;
 import org.jgrapht.alg.vertexcover.RecursiveExactVCImpl;
 import org.jgrapht.graph.DefaultEdge;
 import org.jgrapht.graph.SimpleGraph;
+import org.jgrapht.util.SupplierUtil;
 
 public class Aula18VertexCover {
-	public static void main(String[] args) {
+	public static void main(DefaultVertex[] args) {
 
-	    Graph<String, DefaultEdge> graphgml = new SimpleGraph<>(DefaultEdge.class);
+	    Graph<DefaultVertex, DefaultEdge> graphgml = 
+				new SimpleGraph <> (MyJGraphTUtil.createDefaultVertexSupplier(), SupplierUtil.createDefaultEdgeSupplier(), false);
 	    MyJGraphTUtil.importDefaultGraphGML(graphgml, "./src/main/java/graphs/graph-layout.gml");
 	       
-	    BarYehudaEvenTwoApproxVCImpl <String, DefaultEdge> vc1 = 
+	    BarYehudaEvenTwoApproxVCImpl <DefaultVertex, DefaultEdge> vc1 = 
 	    		new BarYehudaEvenTwoApproxVCImpl <> (graphgml); 
         System.out.println("BarYehudaEvenTwoApproxVCImpl (cobertura): \n" + vc1.getVertexCover() );
 
-        ClarksonTwoApproxVCImpl <String, DefaultEdge> vc2 = 
+        ClarksonTwoApproxVCImpl <DefaultVertex, DefaultEdge> vc2 = 
 	    		new ClarksonTwoApproxVCImpl <> (graphgml); 
         System.out.println("ClarksonTwoApproxVCImpl (cobertura): \n" + vc2.getVertexCover() );
         
-        EdgeBasedTwoApproxVCImpl <String, DefaultEdge> vc3 = 
+        EdgeBasedTwoApproxVCImpl <DefaultVertex, DefaultEdge> vc3 = 
 	    		new EdgeBasedTwoApproxVCImpl <> (graphgml); 
         System.out.println("EdgeBasedTwoApproxVCImpl (cobertura): \n" + vc3.getVertexCover() );
         
-        GreedyVCImpl <String, DefaultEdge> vc4 = 
+        GreedyVCImpl <DefaultVertex, DefaultEdge> vc4 = 
 	    		new GreedyVCImpl <> (graphgml); 
         System.out.println("GreedyVCImpl (cobertura): \n" + vc4.getVertexCover() );
         
-        RecursiveExactVCImpl <String, DefaultEdge> vc5 = 
+        RecursiveExactVCImpl <DefaultVertex, DefaultEdge> vc5 = 
 	    		new RecursiveExactVCImpl <> (graphgml); 
         System.out.println("RecursiveExactVCImpl (cobertura): \n" + vc5.getVertexCover() );
 	}	    

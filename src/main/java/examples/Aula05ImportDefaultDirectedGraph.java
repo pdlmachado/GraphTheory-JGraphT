@@ -11,7 +11,8 @@ public class Aula05ImportDefaultDirectedGraph {
 	public static void main(String[] args) {
 
 	    DefaultDirectedGraph<DefaultVertex,RelationshipDirectedEdge> g = 
-	    		new DefaultDirectedGraph<>(RelationshipDirectedEdge.class);
+	    		new DefaultDirectedGraph<>(MyJGraphTUtil.createDefaultVertexSupplier(),
+	    				                   MyJGraphTUtil.createRelationshipDirectedEdgeSupplier(),false);
         MyJGraphTUtil.importDirectedGraphGML(g, "./src/main/java/graphs/grid.gml");    		
  	    
 	    Set <DefaultVertex> V = new HashSet <DefaultVertex>(g.vertexSet());

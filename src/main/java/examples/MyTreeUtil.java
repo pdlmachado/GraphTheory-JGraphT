@@ -48,13 +48,13 @@ public class MyTreeUtil {
 		}
 	}
 	
-	public static void getRootedTree (SimpleGraph <String,DefaultEdge> basegraph, String root, DefaultDirectedGraph <String,DefaultEdge> rt) {
+	public static void getRootedTree (SimpleGraph <DefaultVertex,DefaultEdge> basegraph, DefaultVertex root, DefaultDirectedGraph <DefaultVertex,DefaultEdge> rt) {
 		Graphs.addAllVertices(rt, basegraph.vertexSet());
 		Iterator <DefaultEdge> it = basegraph.edgeSet().iterator();
 		while (it.hasNext()) {
 			DefaultEdge e = it.next();
-			String source = basegraph.getEdgeSource(e);
-			String target = basegraph.getEdgeTarget(e);
+			DefaultVertex source = basegraph.getEdgeSource(e);
+			DefaultVertex target = basegraph.getEdgeTarget(e);
 			if (level(basegraph,root,source) > level(basegraph,root,target)) {
 				rt.addEdge(target, source, new DefaultEdge());
 			} else rt.addEdge(source, target,new DefaultEdge());

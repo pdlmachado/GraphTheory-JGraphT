@@ -10,7 +10,6 @@ import org.jgrapht.GraphTests;
 import org.jgrapht.graph.Pseudograph;
 
 public class Aula04MyFirstGraphTests {
-
 	
 	public static void main(String[] args) {
 		Graph<String,RelationshipEdge> graph = 
@@ -20,10 +19,10 @@ public class Aula04MyFirstGraphTests {
 		graph.addVertex("a");
 		graph.addVertex("b");
 		graph.addVertex("c"); 
-		graph.addEdge("a","b",new RelationshipEdge("a","b","ab1"));
-		graph.addEdge("a","b",new RelationshipEdge("a","b","ab2"));
-		graph.addEdge("a","c",new RelationshipEdge("a","c","ac"));		
-		graph.addEdge("b","b",new RelationshipEdge("b","b","bb"));
+		graph.addEdge("a","b",new RelationshipEdge("ab1"));
+		graph.addEdge("a","b",new RelationshipEdge("ab2"));
+		graph.addEdge("a","c",new RelationshipEdge("ac"));		
+		graph.addEdge("b","b",new RelationshipEdge("bb"));
 		eSet = graph.edgeSet();
 		System.out.println("Graph edges: " + eSet);
 		
@@ -37,6 +36,9 @@ public class Aula04MyFirstGraphTests {
         graph.removeEdge(MyJGraphTUtil.getEdgefromLabel(eSet,"bb"));
         
         System.out.println("After removing edges ab1 and bb ... ");
+		System.out.println("has multiple edges? " + GraphTests.hasMultipleEdges(graph));
+		System.out.println("has self loops? " + GraphTests.hasSelfLoops(graph));
+		System.out.println("is connected? " + GraphTests.isConnected(graph));
 		System.out.println("is bipartite? " + GraphTests.isBipartite(graph));
 		System.out.println("is complete? " + GraphTests.isComplete(graph));
 		

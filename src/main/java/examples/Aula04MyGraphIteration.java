@@ -12,7 +12,10 @@ import org.jgrapht.graph.Pseudograph;
 public class Aula04MyGraphIteration {
 	
 	public static void main(String[] args) {
-		Graph<DefaultVertex, RelationshipEdge> graphgml = new Pseudograph<DefaultVertex, RelationshipEdge>(RelationshipEdge.class);
+		Graph<DefaultVertex, RelationshipEdge> graphgml = 
+				new Pseudograph<DefaultVertex, RelationshipEdge>(
+						MyJGraphTUtil.createDefaultVertexSupplier(), 
+						MyJGraphTUtil.createRelationshipEdgeSupplier(), false);
 		graphgml = MyJGraphTUtil.importGraphGML(graphgml,"./src/main/java/graphs/pseudograph-Aula02.gml");
 		NeighborCache <DefaultVertex,RelationshipEdge> nc = new NeighborCache <DefaultVertex,RelationshipEdge> (graphgml);
 

@@ -35,6 +35,6 @@ public final class Aula04MyBipartiteCompleteGraph {
         while (iter.hasNext()) {
             String vertex = iter.next();
             System.out.println("Vizinhos de " + vertex + ": " + Graphs.neighborSetOf(completeBGraph, vertex));
-        }        
+        }    
     }
 }

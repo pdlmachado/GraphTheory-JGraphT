@@ -12,39 +12,41 @@ import org.jgrapht.alg.scoring.HarmonicCentrality;
 import org.jgrapht.alg.shortestpath.GraphMeasurer;
 import org.jgrapht.graph.DefaultEdge;
 import org.jgrapht.graph.Multigraph;
+import org.jgrapht.util.SupplierUtil;
 
 
 public class Aula19UndirectedGraphScores {
 
 	public static void main(String[] args) {
 		
-		Graph<String, DefaultEdge> ugraph = new Multigraph<>(DefaultEdge.class);
+		Graph<DefaultVertex, DefaultEdge> ugraph = 
+				new Multigraph <> (MyJGraphTUtil.createDefaultVertexSupplier(), SupplierUtil.createDefaultEdgeSupplier(), false);
 		MyJGraphTUtil.importDefaultGraphGML(ugraph, "./src/main/java/graphs/dolphins.gml");
 		
 		MyJGraphTUtil.printGraph(ugraph);
   	    
   	   	// Compute Metrics
   	   	System.out.println("-BETWEENESS CENTRALITY- ");
-  	   	BetweennessCentrality <String, DefaultEdge> bc = 
+  	   	BetweennessCentrality <DefaultVertex, DefaultEdge> bc = 
   	   		new BetweennessCentrality <> (ugraph,true);
   	   	MyJGraphTUtil.printOrderedVertexMeasures (bc.getScores(),0,true);
 
   	   	System.out.println("\n-ALPHA CENTRALITY- ");
-  	   	AlphaCentrality <String, DefaultEdge> ac = 
+  	   	AlphaCentrality <DefaultVertex, DefaultEdge> ac = 
   	   		new AlphaCentrality <> (ugraph,0.001);
   	   	MyJGraphTUtil.printOrderedVertexMeasures (ac.getScores(),0,true);
 	    
   	   	System.out.println("\n-CLOSENESS CENTRALITY- ");
-  	   	ClosenessCentrality <String, DefaultEdge> cc = 
+  	   	ClosenessCentrality <DefaultVertex, DefaultEdge> cc = 
 	   		new ClosenessCentrality <> (ugraph);
   	   	MyJGraphTUtil.printOrderedVertexMeasures (cc.getScores(),0,true);
 	    
   	   	System.out.println("\n-HARMONIC CENTRALITY- ");
-  	   	HarmonicCentrality <String, DefaultEdge> hc = 
+  	   	HarmonicCentrality <DefaultVertex, DefaultEdge> hc = 
 	   		new HarmonicCentrality <> (ugraph);
   	   	MyJGraphTUtil.printOrderedVertexMeasures (hc.getScores(),0,true);
 	    
-  	   	ClusteringCoefficient <String, DefaultEdge> cluster = 
+  	   	ClusteringCoefficient <DefaultVertex, DefaultEdge> cluster = 
 	    	new ClusteringCoefficient <> (ugraph);
   	   	System.out.println("\n\nCluster Coefficient: " + cluster.getGlobalClusteringCoefficient());
 	    
@@ -56,7 +58,7 @@ public class Aula19UndirectedGraphScores {
   	  	   	double density = (2*E) / (V*(V-1));
   	  	   	System.out.println("\nDENSITY: " + density);   		
   	   	}   
-  	   	GraphMeasurer <String, DefaultEdge> g = new GraphMeasurer <> (ugraph);
+  	   	GraphMeasurer <DefaultVertex, DefaultEdge> g = new GraphMeasurer <> (ugraph);
 	   
   	   	System.out.println("\nDIAMETER: " + g.getDiameter());	
   	   	System.out.println("RADIUS: " + g.getRadius());

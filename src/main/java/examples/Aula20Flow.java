@@ -9,19 +9,23 @@ import java.util.stream.Collectors;
 
 import org.jgrapht.graph.DefaultWeightedEdge;
 import org.jgrapht.graph.SimpleWeightedGraph;
-import org.jgrapht.io.CSVFormat;
+import org.jgrapht.nio.csv.CSVFormat;
+import org.jgrapht.util.SupplierUtil;
 
 public class Aula20Flow {
 	public static void main(String[] args) {
 
-	    SimpleWeightedGraph <String,DefaultWeightedEdge> graph = new SimpleWeightedGraph<>(DefaultWeightedEdge.class);
+	    SimpleWeightedGraph <DefaultVertex,DefaultWeightedEdge> graph = 
+				new SimpleWeightedGraph<DefaultVertex, DefaultWeightedEdge>(
+						MyJGraphTUtil.createDefaultVertexSupplier(),
+						SupplierUtil.createDefaultWeightedEdgeSupplier());
         MyJGraphTUtil.importWeightedGraphCSV(graph, "./src/main/java/graphs/netflow1.csv",CSVFormat.MATRIX,false,true,true);
  	    MyJGraphTUtil.printGraph(graph,"Graph: ");
  	          
-        Set <String> X = new HashSet <> ();
-        X.add("s");
-        X.add("p");
-        X.add("r");
+        Set <DefaultVertex> X = new HashSet <> ();
+        X.add(MyJGraphTUtil.getVertexfromLabel(graph.vertexSet(), "s"));
+        X.add(MyJGraphTUtil.getVertexfromLabel(graph.vertexSet(), "p"));
+        X.add(MyJGraphTUtil.getVertexfromLabel(graph.vertexSet(), "r"));
         
         System.out.println("X =" + X);
         

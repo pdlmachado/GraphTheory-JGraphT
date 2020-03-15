@@ -2,7 +2,11 @@
 
 package examples;
 
+import org.jgrapht.nio.*;
+import org.jgrapht.util.*;
+
 import java.io.BufferedReader;
+
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
@@ -18,6 +22,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.Map.Entry;
+import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
 import javax.swing.JFrame;
@@ -26,17 +31,18 @@ import org.jgrapht.GraphTests;
 import org.jgrapht.Graphs;
 import org.jgrapht.ListenableGraph;
 import org.jgrapht.alg.connectivity.BiconnectivityInspector;
+import org.jgrapht.alg.drawing.CircularLayoutAlgorithm2D;
+import org.jgrapht.alg.drawing.model.Box2D;
+import org.jgrapht.alg.drawing.model.MapLayoutModel2D;
 import org.jgrapht.alg.shortestpath.DijkstraShortestPath;
 import org.jgrapht.ext.JGraphXAdapter;
 import org.jgrapht.graph.DefaultEdge;
 import org.jgrapht.graph.DefaultListenableGraph;
 import org.jgrapht.graph.DefaultWeightedEdge;
-import org.jgrapht.io.CSVFormat;
-import org.jgrapht.io.CSVImporter;
-import org.jgrapht.io.EdgeProvider;
-import org.jgrapht.io.GmlImporter;
-import org.jgrapht.io.ImportException;
-import org.jgrapht.io.VertexProvider;
+import org.jgrapht.nio.ImportException;
+import org.jgrapht.nio.csv.CSVFormat;
+import org.jgrapht.nio.csv.CSVImporter;
+import org.jgrapht.nio.gml.GmlImporter;
 
 import com.mxgraph.layout.mxCircleLayout;
 import com.mxgraph.layout.mxFastOrganicLayout;
@@ -75,7 +81,15 @@ public class MyJGraphTUtil <V,E> {
         }
         System.out.print("\n");
 	}
-
+	
+	public static <V,E> void circulardraw (Graph <V,E> graph) {
+		CircularLayoutAlgorithm2D <V,E> c = new 
+				CircularLayoutAlgorithm2D <> ();
+		c.layout(graph,new MapLayoutModel2D <>(new Box2D(100.0,100.0)));
+		
+	}
+	
+	
 	public enum layout_type {CIRCLE,ORGANIC,HIERARCHICAL,ORTHOGONAL;}
 	
 	// Graphic view for directed graphs
@@ -151,9 +165,41 @@ public class MyJGraphTUtil <V,E> {
         }
 	}
 	
+	
 /////////////////////////////////////////
 // VERTEX AND EGDES UTILITIES
 /////////////////////////////////////////
+	
+	public static Supplier<DefaultVertex> createDefaultVertexSupplier () {
+	    Supplier<DefaultVertex> vSupplier = new Supplier<DefaultVertex>() {
+	        private int id = 0;
+	        public DefaultVertex get() { 
+	            return new DefaultVertex(Integer.toString(id++));
+	        }
+	    };
+		return vSupplier;
+	}
+	
+    public static Supplier<String> createStringVVertexSupplier () {
+    	Supplier<String> vSupplier = new Supplier<String>() {
+            private int id = 0;
+            public String get() {
+                return "v" + id++;
+            }
+        };
+        return vSupplier;
+    }
+    
+    public static Supplier<RelationshipEdge> createRelationshipEdgeSupplier()
+    {
+        return SupplierUtil.createSupplier(RelationshipEdge.class);
+	}
+
+    public static Supplier<RelationshipDirectedEdge> createRelationshipDirectedEdgeSupplier()
+    {
+        return SupplierUtil.createSupplier(RelationshipDirectedEdge.class);
+	}
+	
 	/**
 	 * Os métodos a seguir retornam um vértice ou aresta cujo label eh igual ao passado como parametro.
 	 * 
@@ -170,8 +216,8 @@ public class MyJGraphTUtil <V,E> {
 		DefaultVertex v1 = getVertexfromLabel(V,l1);
 		DefaultVertex v2 = getVertexfromLabel(V,l2);
 		return E.stream().filter(e-> (e.getV1().equals(v1) && e.getV2().equals(v2)) ||
-			                        	(e.getV1().equals(v2) && e.getV2().equals(v1))).findAny().get();
-	}
+			                         (e.getV1().equals(v2) && e.getV2().equals(v1))).findAny().get();
+	} 
 	
 ////////////////////////////////////////
 // CSV and GML IMPORTERS
@@ -181,17 +227,26 @@ public class MyJGraphTUtil <V,E> {
 	 * Os métodos a seguir realizam a importação de grafos no formato CSV e GML.
 	 * 
 	 */	
-	
-	public static Graph<String,DefaultEdge> importGraphCSV (Graph<String,DefaultEdge> graph, String filename, CSVFormat f) {
-		// EDGE LIST
-		VertexProvider<String> vp = (label, attributes) -> label;
-		EdgeProvider<String, DefaultEdge> ep = (from, to, label, attributes) -> new DefaultEdge();
 
-		CSVImporter<String, DefaultEdge> csvImporter = new CSVImporter<>(vp, ep);
-		csvImporter.setFormat(f); 
-		
+	public static Graph<DefaultVertex,DefaultEdge> importGraphCSV 
+		(Graph<DefaultVertex,DefaultEdge> graph, String filename, CSVFormat f) {
+		// EDGE LIST
+		// Updated 1.4.0
+		CSVImporter<DefaultVertex, DefaultEdge> csvImporter = new CSVImporter<>(f);
+		Map<DefaultVertex, Map<String, Attribute>> attrs = new HashMap<>();
+        csvImporter.addVertexAttributeConsumer((p, a) -> {
+            Map<String, Attribute> map = attrs.get(p.getFirst());
+            if (map == null) {
+                map = new HashMap<>();
+                attrs.put(p.getFirst(), map);
+            }
+            map.put(p.getSecond(), a);
+        });
 		try {
-			csvImporter.importGraph(graph, readFile(filename)); 
+			csvImporter.importGraph(graph, readFile(filename));         
+			for (DefaultVertex v : attrs.keySet()) {
+	        	v.setAttrs(attrs.get(v));
+	        }
 		} catch (ImportException e) { 
 			throw new RuntimeException(e); 
 		}
@@ -217,62 +272,89 @@ public class MyJGraphTUtil <V,E> {
 		return graph;
 	}
 	
-	public static Graph<String,DefaultEdge> importGraphCSV (
-			Graph<String,DefaultEdge> graph, 
+	public static Graph<DefaultVertex,DefaultEdge> importGraphCSV (
+			Graph<DefaultVertex,DefaultEdge> graph, 
 			String filename, 
 			CSVFormat f,
 			boolean pMATRIX_FORMAT_ZERO_WHEN_NO_EDGE,
 			boolean pEDGE_WEIGHT,
 			boolean pMATRIX_FORMAT_NODEID) {
 		// MATRIX
-		VertexProvider<String> vp = (label, attributes) -> label;
-		EdgeProvider<String, DefaultEdge> ep = (from, to, label, attributes) -> new DefaultEdge();
-
-		CSVImporter<String, DefaultEdge> csvImporter = new CSVImporter<>(vp, ep);
-		csvImporter.setFormat(f);
+		// Updated 1.4.0
+		CSVImporter<DefaultVertex, DefaultEdge> csvImporter = new CSVImporter<>(f);
 	    csvImporter.setParameter(CSVFormat.Parameter.MATRIX_FORMAT_ZERO_WHEN_NO_EDGE,pMATRIX_FORMAT_ZERO_WHEN_NO_EDGE);
 	    csvImporter.setParameter(CSVFormat.Parameter.EDGE_WEIGHTS, pEDGE_WEIGHT);
-	    csvImporter.setParameter(CSVFormat.Parameter.MATRIX_FORMAT_NODEID, pMATRIX_FORMAT_NODEID);
-		
-		try {
+	    csvImporter.setParameter(CSVFormat.Parameter.MATRIX_FORMAT_NODEID, pMATRIX_FORMAT_NODEID);		
+		Map<DefaultVertex, Map<String, Attribute>> attrs = new HashMap<>();
+        csvImporter.addVertexAttributeConsumer((p, a) -> {
+            Map<String, Attribute> map = attrs.get(p.getFirst());
+            if (map == null) {
+                map = new HashMap<>();
+                attrs.put(p.getFirst(), map);
+            }
+            map.put(p.getSecond(), a);
+        });
+	    try {
 			csvImporter.importGraph(graph, readFile(filename)); 
+			for (DefaultVertex v : attrs.keySet()) {
+	        	v.setAttrs(attrs.get(v));
+			}
 		} catch (ImportException e) { 
 			throw new RuntimeException(e); 
 		}
 		return graph;
 	}
 	
-	public static Graph<String,DefaultWeightedEdge> importWeightedGraphCSV (
-			Graph<String,DefaultWeightedEdge> graph, 
+	public static Graph<DefaultVertex,DefaultWeightedEdge> importWeightedGraphCSV (
+			Graph<DefaultVertex,DefaultWeightedEdge> graph, 
 			String filename, 
 			CSVFormat f,
 			boolean pMATRIX_FORMAT_ZERO_WHEN_NO_EDGE,
 			boolean pEDGE_WEIGHT,
 			boolean pMATRIX_FORMAT_NODEID) {
 		// WEIGHTED MATRIX
-		VertexProvider<String> vp = (label, attributes) -> label;
-		EdgeProvider<String, DefaultWeightedEdge> ep = (from, to, label, attributes) -> new DefaultWeightedEdge();
-
-		CSVImporter<String, DefaultWeightedEdge> csvImporter = new CSVImporter<>(vp, ep);
-		csvImporter.setFormat(f);
+		CSVImporter<DefaultVertex, DefaultWeightedEdge> csvImporter = new CSVImporter<>(f);
 	    csvImporter.setParameter(CSVFormat.Parameter.MATRIX_FORMAT_ZERO_WHEN_NO_EDGE,pMATRIX_FORMAT_ZERO_WHEN_NO_EDGE);
 	    csvImporter.setParameter(CSVFormat.Parameter.EDGE_WEIGHTS, pEDGE_WEIGHT);
 	    csvImporter.setParameter(CSVFormat.Parameter.MATRIX_FORMAT_NODEID, pMATRIX_FORMAT_NODEID);
-		
+		Map<DefaultVertex, Map<String, Attribute>> attrs = new HashMap<>();
+        csvImporter.addVertexAttributeConsumer((p, a) -> {
+            Map<String, Attribute> map = attrs.get(p.getFirst());
+            if (map == null) {
+                map = new HashMap<>();
+                attrs.put(p.getFirst(), map);
+            }
+            map.put(p.getSecond(), a);
+        });
 		try {
 			csvImporter.importGraph(graph, readFile(filename)); 
+			for (DefaultVertex v : attrs.keySet()) {
+	        	v.setAttrs(attrs.get(v));
+			}
 		} catch (ImportException e) { 
 			throw new RuntimeException(e); 
 		}
 		return graph;
 	}
 	
-	public static Graph<String,DefaultEdge> importDefaultGraphGML (Graph<String,DefaultEdge> graph, String filename) {
-		VertexProvider<String> vp1 = (label, attributes) -> label;
-		EdgeProvider<String, DefaultEdge> ep1 = (from, to, label, attributes) -> new DefaultEdge();
-		GmlImporter<String, DefaultEdge> gmlImporter = new GmlImporter<>(vp1, ep1);
-		try {
+	public static Graph<DefaultVertex,DefaultEdge> importDefaultGraphGML 
+		(Graph<DefaultVertex,DefaultEdge> graph, String filename) {
+		// Updated 1.4.0
+		GmlImporter<DefaultVertex, DefaultEdge> gmlImporter = new GmlImporter<>();	
+		Map<DefaultVertex, Map<String, Attribute>> attrs = new HashMap<>();
+        gmlImporter.addVertexAttributeConsumer((p, a) -> {
+            Map<String, Attribute> map = attrs.get(p.getFirst());
+            if (map == null) {
+                map = new HashMap<>();
+                attrs.put(p.getFirst(), map);
+            }
+            map.put(p.getSecond(), a);
+        });
+        try {
 			gmlImporter.importGraph(graph, readFile(filename));
+			for (DefaultVertex v : attrs.keySet()) {
+	        	v.setAttrs(attrs.get(v));
+			}
 		} catch (ImportException e) {
 			throw new RuntimeException(e);
 		}
@@ -281,12 +363,34 @@ public class MyJGraphTUtil <V,E> {
 	
 	
 	public static Graph<DefaultVertex,RelationshipEdge> importGraphGML (Graph<DefaultVertex,RelationshipEdge> graph, String filename) {
-		VertexProvider<DefaultVertex> vp1 = (label, attributes) -> new DefaultVertex(label, attributes);
-		EdgeProvider<DefaultVertex, RelationshipEdge> ep1 = (from, to, label, attributes) -> new RelationshipEdge(from,
-				to, attributes);
-		GmlImporter<DefaultVertex, RelationshipEdge> gmlImporter = new GmlImporter<>(vp1, ep1);
+		GmlImporter<DefaultVertex, RelationshipEdge> gmlImporter = new GmlImporter<>();
+		// Updated 1.4.0
+		Map<DefaultVertex, Map<String, Attribute>> attrs = new HashMap<>();
+        gmlImporter.addVertexAttributeConsumer((p, a) -> {
+            Map<String, Attribute> map = attrs.get(p.getFirst());
+            if (map == null) {
+                map = new HashMap<>();
+                attrs.put(p.getFirst(), map);
+            }
+            map.put(p.getSecond(), a);
+        });
+        Map<RelationshipEdge, Map<String, Attribute>> edgeAttrs = new HashMap<>();
+        gmlImporter.addEdgeAttributeConsumer((p, a) -> {
+            Map<String, Attribute> map = edgeAttrs.get(p.getFirst());
+            if (map == null) {
+                map = new HashMap<>();
+                edgeAttrs.put(p.getFirst(), map);
+            }
+            map.put(p.getSecond(), a);
+        }); 
 		try {
 			gmlImporter.importGraph(graph, readFile(filename));
+			for (DefaultVertex v : attrs.keySet()) {
+	        	v.setAttrs(attrs.get(v));
+			}
+			for (RelationshipEdge e : edgeAttrs.keySet()) {
+	        	e.setAttrs(edgeAttrs.get(e));
+			}
 		} catch (ImportException e) {
 			throw new RuntimeException(e);
 		}
@@ -294,12 +398,34 @@ public class MyJGraphTUtil <V,E> {
 	}
 	
 	public static Graph<DefaultVertex,RelationshipDirectedEdge> importDirectedGraphGML (Graph<DefaultVertex,RelationshipDirectedEdge> graph, String filename) {
-		VertexProvider<DefaultVertex> vp1 = (label, attributes) -> new DefaultVertex(label, attributes);
-		EdgeProvider<DefaultVertex, RelationshipDirectedEdge> ep1 = (from, to, label, attributes) -> new RelationshipDirectedEdge(from,
-				to, attributes);
-		GmlImporter<DefaultVertex, RelationshipDirectedEdge> gmlImporter = new GmlImporter<>(vp1, ep1);
+		GmlImporter<DefaultVertex, RelationshipDirectedEdge> gmlImporter = new GmlImporter<>();
+		// To be updated
+		Map<DefaultVertex, Map<String, Attribute>> attrs = new HashMap<>();
+        gmlImporter.addVertexAttributeConsumer((p, a) -> {
+            Map<String, Attribute> map = attrs.get(p.getFirst());
+            if (map == null) {
+                map = new HashMap<>();
+                attrs.put(p.getFirst(), map);
+            }
+            map.put(p.getSecond(), a);
+        });
+        Map<RelationshipDirectedEdge, Map<String, Attribute>> edgeAttrs = new HashMap<>();
+        gmlImporter.addEdgeAttributeConsumer((p, a) -> {
+            Map<String, Attribute> map = edgeAttrs.get(p.getFirst());
+            if (map == null) {
+                map = new HashMap<>();
+                edgeAttrs.put(p.getFirst(), map);
+            }
+            map.put(p.getSecond(), a);
+        }); 
 		try {
 			gmlImporter.importGraph(graph, readFile(filename));
+			for (DefaultVertex v : attrs.keySet()) {
+	        	v.setAttrs(attrs.get(v));
+			}
+			for (RelationshipDirectedEdge e : edgeAttrs.keySet()) {
+	        	e.setAttrs(edgeAttrs.get(e));
+			}
 		} catch (ImportException e) {
 			throw new RuntimeException(e);
 		}

@@ -5,7 +5,8 @@ package examples;
 import org.jgrapht.alg.flow.EdmondsKarpMFImpl;
 import org.jgrapht.graph.DefaultDirectedWeightedGraph;
 import org.jgrapht.graph.DefaultWeightedEdge;
-import org.jgrapht.io.CSVFormat;
+import org.jgrapht.nio.csv.CSVFormat;
+import org.jgrapht.util.SupplierUtil;
 
 
 public class Aula21MaximumFlow {
@@ -51,22 +52,32 @@ public class Aula21MaximumFlow {
 	    System.out.println("Corte Mínimo: "+ mf2.getCutEdges());
 	    System.out.println("Capacidade do Corte Mínimo: " + mf2.calculateMinCut("a", "g"));
 	    
-	    DefaultDirectedWeightedGraph <String,DefaultWeightedEdge> n3 = new DefaultDirectedWeightedGraph<>(DefaultWeightedEdge.class);
+	    DefaultDirectedWeightedGraph <DefaultVertex,DefaultWeightedEdge> n3 = 
+				new DefaultDirectedWeightedGraph<DefaultVertex, DefaultWeightedEdge>(
+						MyJGraphTUtil.createDefaultVertexSupplier(),
+						SupplierUtil.createDefaultWeightedEdgeSupplier());
         MyJGraphTUtil.importWeightedGraphCSV(n3, "./src/main/java/graphs/MTGO520191.csv",CSVFormat.MATRIX,false,true,true);
-	    EdmondsKarpMFImpl <String,DefaultWeightedEdge> mf3 = new EdmondsKarpMFImpl <> (n3);
+	    EdmondsKarpMFImpl <DefaultVertex,DefaultWeightedEdge> mf3 = new EdmondsKarpMFImpl <> (n3);
 	    System.out.println("\n" + n3);
-	    System.out.println("Fluxo Máximo: " + mf3.getMaximumFlow("0","5"));
-	    System.out.println("Valor do Fluxo Máximo: " + mf3.calculateMaximumFlow("0","5"));
+	    DefaultVertex x = MyJGraphTUtil.getVertexfromLabel(n3.vertexSet(), "0");
+	    DefaultVertex y = MyJGraphTUtil.getVertexfromLabel(n3.vertexSet(), "5");
+	    System.out.println("Fluxo Máximo: " + mf3.getMaximumFlow(x,y));
+	    System.out.println("Valor do Fluxo Máximo: " + mf3.calculateMaximumFlow(x,y));
 	    System.out.println("Corte Mínimo: "+ mf3.getCutEdges());
-	    System.out.println("Capacidade do Corte Mínimo: " + mf3.calculateMinCut("0", "5"));	
+	    System.out.println("Capacidade do Corte Mínimo: " + mf3.calculateMinCut(x,y));	
 	    
-	    DefaultDirectedWeightedGraph <String,DefaultWeightedEdge> n4 = new DefaultDirectedWeightedGraph<>(DefaultWeightedEdge.class);
+	    DefaultDirectedWeightedGraph <DefaultVertex,DefaultWeightedEdge> n4 = 
+				new DefaultDirectedWeightedGraph<DefaultVertex, DefaultWeightedEdge>(
+						MyJGraphTUtil.createDefaultVertexSupplier(),
+						SupplierUtil.createDefaultWeightedEdgeSupplier());
         MyJGraphTUtil.importWeightedGraphCSV(n4, "./src/main/java/graphs/netflow-aula20.csv",CSVFormat.MATRIX,false,true,true);
-	    EdmondsKarpMFImpl <String,DefaultWeightedEdge> mf4 = new EdmondsKarpMFImpl <> (n4);
+	    EdmondsKarpMFImpl <DefaultVertex,DefaultWeightedEdge> mf4 = new EdmondsKarpMFImpl <> (n4);
+	    x = MyJGraphTUtil.getVertexfromLabel(n4.vertexSet(), "x");
+	    y = MyJGraphTUtil.getVertexfromLabel(n4.vertexSet(), "y");
 	    System.out.println("\n" + n4);
-	    System.out.println("Fluxo Máximo: " + mf4.getMaximumFlow("x","y"));
-	    System.out.println("Valor do Fluxo Máximo: " + mf4.calculateMaximumFlow("x","y"));
+	    System.out.println("Fluxo Máximo: " + mf4.getMaximumFlow(x,y));
+	    System.out.println("Valor do Fluxo Máximo: " + mf4.calculateMaximumFlow(x,y));
 	    System.out.println("Corte Mínimo: "+ mf4.getCutEdges());
-	    System.out.println("Capacidade do Corte Mínimo: " + mf4.calculateMinCut("x", "y"));	 
+	    System.out.println("Capacidade do Corte Mínimo: " + mf4.calculateMinCut(x, y));	 
 	}
 }

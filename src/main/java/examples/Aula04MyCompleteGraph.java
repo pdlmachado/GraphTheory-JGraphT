@@ -10,7 +10,6 @@ import org.jgrapht.graph.*;
 import org.jgrapht.util.SupplierUtil;
 
 import java.util.*;
-import java.util.function.Supplier;
 
 public final class Aula04MyCompleteGraph {
 
@@ -21,15 +20,8 @@ public final class Aula04MyCompleteGraph {
         int n = keyboard.nextInt();
         keyboard.close();
     	
-        Supplier<String> vSupplier = new Supplier<String>() {
-            private int id = 0;
-            public String get() {
-                return "v" + id++;
-            }
-        };
-        
         Graph<String, DefaultEdge> completeGraph = 
-        		new SimpleGraph<>(vSupplier, SupplierUtil.createDefaultEdgeSupplier(), false);
+        		new SimpleGraph<>(MyJGraphTUtil.createStringVVertexSupplier(), SupplierUtil.createDefaultEdgeSupplier(), false);
 
         CompleteGraphGenerator<String, DefaultEdge> completeGenerator = 
         		new CompleteGraphGenerator<>(n);

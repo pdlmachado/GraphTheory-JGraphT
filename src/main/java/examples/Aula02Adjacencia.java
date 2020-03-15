@@ -5,12 +5,14 @@ import java.util.Set;
 import org.jgrapht.Graph;
 import org.jgrapht.graph.Pseudograph;
 
-
-public class Adjacencia {
+public class Aula02Adjacencia {
 	
 	public static void main(String[] args) {
 
-		Graph<DefaultVertex, RelationshipEdge> g = new Pseudograph<>(RelationshipEdge.class);
+		Graph<DefaultVertex, RelationshipEdge> g = 
+				new Pseudograph<DefaultVertex, RelationshipEdge>(
+						MyJGraphTUtil.createDefaultVertexSupplier(), 
+						MyJGraphTUtil.createRelationshipEdgeSupplier(), false);
 		g = MyJGraphTUtil.importGraphGML(g, "./src/main/java/graphs/pseudograph-Aula02.gml");
 		MyJGraphTUtil.printGraph(g);
 

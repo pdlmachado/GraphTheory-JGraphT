@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.jgrapht.io.Attribute;
+import org.jgrapht.nio.Attribute;
 
 public class DefaultVertex implements Serializable {
 
@@ -29,17 +29,25 @@ public class DefaultVertex implements Serializable {
 	public String getId() {
 		return id;
 	}
-
+	
 	public String getLabel() {
 		String label;
 		try {
 		   label = (att.get("label")).toString(); 
-	    } catch (Exception e) {
-		   label = id;
+	    } catch (Exception e1) {
+			try {
+				   label = (att.get("ID")).toString(); 
+			    } catch (Exception e2) {
+				   label = id;
+			    }
 	    }
 		return label;
 	}
 
+	public void setAttrs (Map<String, Attribute> attrs) {
+		this.att = attrs;
+	}
+	
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;

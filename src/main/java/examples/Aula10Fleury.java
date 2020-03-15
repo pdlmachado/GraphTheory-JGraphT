@@ -9,14 +9,16 @@ import org.jgrapht.Graphs;
 import org.jgrapht.alg.connectivity.BiconnectivityInspector;
 import org.jgrapht.graph.DefaultEdge;
 import org.jgrapht.graph.SimpleGraph;
+import org.jgrapht.util.SupplierUtil;
 
 public class Aula10Fleury {
 	public static void main(String[] args) {
-		Graph<String, DefaultEdge> g = new SimpleGraph<>(RelationshipEdge.class);
+		Graph<DefaultVertex, DefaultEdge> g = 
+				new SimpleGraph <> (MyJGraphTUtil.createDefaultVertexSupplier(), SupplierUtil.createDefaultEdgeSupplier(), false);
 		g = MyJGraphTUtil.importDefaultGraphGML(g, "./src/main/java/graphs/euler.gml");
-	    String v = "1";
+	    DefaultVertex v = MyJGraphTUtil.getVertexfromLabel(g.vertexSet(),"1");
 		MyJGraphTUtil.printGraph(g);		
-		System.out.println(getCircuit(g,v));
+		System.out.println("Circuito: " + getCircuit(g,v));
 	}
 	
 	public static <V,E> List<E> getCircuit (Graph <V,E> f, V v) {

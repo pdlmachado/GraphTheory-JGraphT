@@ -15,6 +15,7 @@ import org.jgrapht.alg.clique.DegeneracyBronKerboschCliqueFinder;
 import org.jgrapht.generate.ComplementGraphGenerator;
 import org.jgrapht.graph.DefaultEdge;
 import org.jgrapht.graph.SimpleGraph;
+import org.jgrapht.util.SupplierUtil;
 
 
 
@@ -22,28 +23,29 @@ public class Aula18RelCliqueIndependent {
 	
 	// Compute Independent Set and Stability Number using a Clique Algorithm
 	public static void main(String[] args) {
-	    Graph<String, DefaultEdge> original = new SimpleGraph<>(RelationshipEdge.class);
+	    Graph<DefaultVertex, DefaultEdge> original = 
+				new SimpleGraph <> (MyJGraphTUtil.createDefaultVertexSupplier(), SupplierUtil.createDefaultEdgeSupplier(), false);
         MyJGraphTUtil.importDefaultGraphGML(original,"./src/main/java/graphs/graph-layout.gml");
         
-        Graph<String, DefaultEdge> complement = new SimpleGraph<>(DefaultEdge.class);
+        Graph<DefaultVertex, DefaultEdge> complement = new SimpleGraph<>(DefaultEdge.class);
 
-        ComplementGraphGenerator<String, DefaultEdge> cGenerator =
+        ComplementGraphGenerator<DefaultVertex, DefaultEdge> cGenerator =
             new ComplementGraphGenerator<>(original);
 
         cGenerator.generateGraph(complement);
 
 	    ///////////////
-        DegeneracyBronKerboschCliqueFinder <String,DefaultEdge> cf2 = 
+        DegeneracyBronKerboschCliqueFinder <DefaultVertex,DefaultEdge> cf2 = 
 	    		new DegeneracyBronKerboschCliqueFinder <> (complement); 
-	    Iterator  <Set <String>> it1 = cf2.iterator();
-	    List <Set <String>> t = new ArrayList <>();
+	    Iterator  <Set <DefaultVertex>> it1 = cf2.iterator();
+	    List <Set <DefaultVertex>> t = new ArrayList <>();
 	    while (it1.hasNext()) {
 	    	t.add(it1.next());
 	    }
 	    // SORT TO PRINT
-        Collections.sort( t, new Comparator<Set<String>>()
+        Collections.sort( t, new Comparator<Set<DefaultVertex>>()
         {
-            public int compare( Set <String> o1, Set <String> o2 )
+            public int compare( Set <DefaultVertex> o1, Set <DefaultVertex> o2 )
             {
                 return (new Integer(o2.size())).compareTo( (new Integer(o1.size())) );
             }
@@ -51,9 +53,9 @@ public class Aula18RelCliqueIndependent {
         int stabilityNumber = t.get(0).size();
         System.out.println("Número de Estabilidade: " + stabilityNumber);
 	    System.out.print("Maximum Independent Sets: \n");
-	    Iterator <Set<String>> it2 = t.iterator();
+	    Iterator <Set<DefaultVertex>> it2 = t.iterator();
 	    while (it2.hasNext()) {
-	    	Set<String> s = it2.next();
+	    	Set<DefaultVertex> s = it2.next();
 	    	if (s.size() == stabilityNumber ) {
   			    	System.out.println(it2.next());
 	    	}

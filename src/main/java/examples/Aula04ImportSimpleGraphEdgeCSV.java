@@ -3,18 +3,19 @@
 
 package examples;
 
-import org.jgrapht.Graph;
 import org.jgrapht.graph.DefaultEdge;
 import org.jgrapht.graph.SimpleGraph;
-import org.jgrapht.io.CSVFormat;
+import org.jgrapht.nio.csv.CSVFormat;
+import org.jgrapht.util.SupplierUtil;
 
 public class Aula04ImportSimpleGraphEdgeCSV {
 
 	public static void main(String[] args) {
+		
+		SimpleGraph<DefaultVertex, DefaultEdge> graph = 
+				new SimpleGraph <> (MyJGraphTUtil.createDefaultVertexSupplier(), SupplierUtil.createDefaultEdgeSupplier(), false);
 
-		Graph<String, DefaultEdge> graph = new SimpleGraph<>(DefaultEdge.class);
-
-		graph = MyJGraphTUtil.importGraphCSV(
+		MyJGraphTUtil.importGraphCSV(
 				graph, 
 				"./src/main/java/graphs/csv-example.txt",
 				CSVFormat.EDGE_LIST);

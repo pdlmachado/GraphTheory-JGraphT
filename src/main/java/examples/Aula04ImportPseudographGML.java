@@ -11,7 +11,11 @@ public class Aula04ImportPseudographGML {
 
 	public static void main(String[] args) {
 		
-		Graph<DefaultVertex, RelationshipEdge> graphgml = new Pseudograph<DefaultVertex, RelationshipEdge>(RelationshipEdge.class);
+		Graph<DefaultVertex, RelationshipEdge> graphgml = 
+			new Pseudograph<DefaultVertex, RelationshipEdge>(
+					MyJGraphTUtil.createDefaultVertexSupplier(), 
+					MyJGraphTUtil.createRelationshipEdgeSupplier(), false);
+
 		graphgml = MyJGraphTUtil.importGraphGML(graphgml,"./src/main/java/graphs/pseudograph-Aula02.gml");
 
 		Set<DefaultVertex> V = graphgml.vertexSet();

@@ -7,7 +7,7 @@ import org.jgrapht.Graph;
 import org.jgrapht.graph.DefaultEdge;
 import org.jgrapht.graph.SimpleGraph;
 
-public class Aula04MyFirstGraph {
+public class Aula03MyFirstGraph {
 	
 	public static void main(String[] args) {
 	

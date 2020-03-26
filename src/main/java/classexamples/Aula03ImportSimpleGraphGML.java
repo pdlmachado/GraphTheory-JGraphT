@@ -13,17 +13,17 @@ import util.ImportUtil;
 import util.PrintUtil;
 import util.VertexEdgeUtil;
 
-public class Aula04ImportSimpleGraphGML {
+public class Aula03ImportSimpleGraphGML {
 
 	public static void main(String[] args) {
 
-		Graph<DefaultVertex, DefaultEdge> graphgml = 
+		Graph<DefaultVertex, DefaultEdge> graph = 
 				new SimpleGraph <> (VertexEdgeUtil.createDefaultVertexSupplier(), 
 						            SupplierUtil.createDefaultEdgeSupplier(), false);
 		
-		graphgml = ImportUtil.importDefaultGraphGML(graphgml, "./src/main/java/graphs/cubo.gml");
+		ImportUtil.importDefaultGraphGML(graph, "./src/main/java/graphs/bp1.gml");
 
-		PrintUtil.printGraph(graphgml);
+		PrintUtil.printGraph(graph);
 
 	}
 }

@@ -13,7 +13,7 @@ import util.DefaultVertex;
 import util.ImportUtil;
 import util.VertexEdgeUtil;
 
-public class Aula04ImportSimpleGraphMatrixCSV {
+public class Aula03ImportSimpleGraphMatrixCSV {
 
 	public static void main(String[] args) {
 		

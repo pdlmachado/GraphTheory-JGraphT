@@ -12,7 +12,7 @@ import util.DefaultVertex;
 import util.ImportUtil;
 import util.VertexEdgeUtil;
 
-public class Aula04ImportSimpleGraphEdgeCSV {
+public class Aula03ImportSimpleGraphEdgeCSV {
 
 	public static void main(String[] args) {
 		

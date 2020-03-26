@@ -13,7 +13,7 @@ import util.VertexEdgeUtil;
 
 import java.util.Set;
 
-public class Aula04ImportPseudographGML {
+public class Aula03ImportPseudographGML {
 
 	public static void main(String[] args) {
 		

@@ -75,15 +75,15 @@ public class ImportUtil <V,E> {
 			Graph<DefaultVertex,DefaultEdge> graph, 
 			String filename, 
 			CSVFormat f,
-			boolean pMATRIX_FORMAT_ZERO_WHEN_NO_EDGE,
-			boolean pEDGE_WEIGHT,
-			boolean pMATRIX_FORMAT_NODEID) {
+			boolean MATRIX_FORMAT_ZERO_WHEN_NO_EDGE,
+			boolean EDGE_WEIGHT,
+			boolean MATRIX_FORMAT_NODEID) {
 		// MATRIX
 		// Updated 1.4.0
 		CSVImporter<DefaultVertex, DefaultEdge> csvImporter = new CSVImporter<>(f);
-	    csvImporter.setParameter(CSVFormat.Parameter.MATRIX_FORMAT_ZERO_WHEN_NO_EDGE,pMATRIX_FORMAT_ZERO_WHEN_NO_EDGE);
-	    csvImporter.setParameter(CSVFormat.Parameter.EDGE_WEIGHTS, pEDGE_WEIGHT);
-	    csvImporter.setParameter(CSVFormat.Parameter.MATRIX_FORMAT_NODEID, pMATRIX_FORMAT_NODEID);		
+	    csvImporter.setParameter(CSVFormat.Parameter.MATRIX_FORMAT_ZERO_WHEN_NO_EDGE,MATRIX_FORMAT_ZERO_WHEN_NO_EDGE);
+	    csvImporter.setParameter(CSVFormat.Parameter.EDGE_WEIGHTS, EDGE_WEIGHT);
+	    csvImporter.setParameter(CSVFormat.Parameter.MATRIX_FORMAT_NODEID, MATRIX_FORMAT_NODEID);		
 		Map<DefaultVertex, Map<String, Attribute>> attrs = new HashMap<>();
         csvImporter.addVertexAttributeConsumer((p, a) -> {
             Map<String, Attribute> map = attrs.get(p.getFirst());

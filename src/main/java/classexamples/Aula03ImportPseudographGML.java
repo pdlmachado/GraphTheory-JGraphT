@@ -22,7 +22,7 @@ public class Aula03ImportPseudographGML {
 					VertexEdgeUtil.createDefaultVertexSupplier(), 
 					VertexEdgeUtil.createRelationshipEdgeSupplier(), false);
 
-		graphgml = ImportUtil.importGraphGML(graphgml,"./src/main/java/graphs/pseudograph-Aula02.gml");
+		ImportUtil.importGraphGML(graphgml,"./src/main/java/graphs/pseudograph-Aula02.gml");
 
 		Set<DefaultVertex> V = graphgml.vertexSet();
 		Set<RelationshipEdge> E = graphgml.edgeSet();

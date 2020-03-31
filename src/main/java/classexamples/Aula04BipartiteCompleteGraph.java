@@ -9,9 +9,11 @@ import org.jgrapht.generate.*;
 import org.jgrapht.graph.*;
 import org.jgrapht.util.SupplierUtil;
 
+import util.PrintUtil;
+
 import java.util.*;
 
-public final class Aula04MyBipartiteCompleteGraph {
+public final class Aula04BipartiteCompleteGraph {
 
     public static void main(String[] args) {
 
@@ -30,6 +32,8 @@ public final class Aula04MyBipartiteCompleteGraph {
         		new CompleteBipartiteGraphGenerator<>(p1,p2);
 
         completeGenerator.generateGraph(completeBGraph);
+        
+        PrintUtil.printGraph(completeBGraph);
         
         Iterator<String> iter = completeBGraph.vertexSet().iterator();
         while (iter.hasNext()) {

@@ -12,7 +12,7 @@ import org.jgrapht.graph.Pseudograph;
 import util.VertexEdgeUtil;
 import util.RelationshipEdge;
 
-public class Aula04MyFirstGraphTests {
+public class Aula04GraphTests {
 	
 	public static void main(String[] args) {
 		Graph<String,RelationshipEdge> graph = 
@@ -44,8 +44,5 @@ public class Aula04MyFirstGraphTests {
 		System.out.println("is connected? " + GraphTests.isConnected(graph));
 		System.out.println("is bipartite? " + GraphTests.isBipartite(graph));
 		System.out.println("is complete? " + GraphTests.isComplete(graph));
-		
-		
-	}
-	
+	}	
 }

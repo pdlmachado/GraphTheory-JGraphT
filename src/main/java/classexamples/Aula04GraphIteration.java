@@ -14,30 +14,29 @@ import util.ImportUtil;
 import util.VertexEdgeUtil;
 import util.RelationshipEdge;
 
-public class Aula04MyGraphIteration {
+public class Aula04GraphIteration {
 	
 	public static void main(String[] args) {
-		Graph<DefaultVertex, RelationshipEdge> graphgml = 
+		Graph<DefaultVertex, RelationshipEdge> graph = 
 				new Pseudograph<DefaultVertex, RelationshipEdge>(
 						VertexEdgeUtil.createDefaultVertexSupplier(), 
 						VertexEdgeUtil.createRelationshipEdgeSupplier(), false);
-		graphgml = ImportUtil.importGraphGML(graphgml,"./src/main/java/graphs/pseudograph-Aula02.gml");
-		NeighborCache <DefaultVertex,RelationshipEdge> nc = new NeighborCache <DefaultVertex,RelationshipEdge> (graphgml);
+		ImportUtil.importGraphGML(graph,"./src/main/java/graphs/pseudograph-Aula02.gml");
+		NeighborCache <DefaultVertex,RelationshipEdge> nc = new NeighborCache <DefaultVertex,RelationshipEdge> (graph);
 
 		// Usando Iterators
         System.out.println("\nGrau (d_G) e Vizinhos (N_G) de cada vertice (com Iterators):");
-	    Iterator<DefaultVertex> it = graphgml.vertexSet().iterator();
+	    Iterator<DefaultVertex> it = graph.vertexSet().iterator();
 	    while (it.hasNext()) {
 	    	DefaultVertex v = it.next();
-	    	System.out.println("d_G(" + v.toString() + ") = " + graphgml.degreeOf(v));
+	    	System.out.println("d_G(" + v.toString() + ") = " + graph.degreeOf(v));
 	    	System.out.println("N_G(" + v.toString() + ") = " + nc.neighborsOf(v));
 	    }
 	
 	    // Usando expressões lambda
 	    System.out.println("\nGrau (d_G) e Vizinhos (N_G) de cada vertice (com Lambda):");
-	    final Graph<DefaultVertex, RelationshipEdge> g = graphgml;
-	    g.vertexSet().stream().forEach(v -> {
-	    	System.out.println("d_G(" + v.toString() + ") = " + g.degreeOf(v));
+	    graph.vertexSet().stream().forEach(v -> {
+	    	System.out.println("d_G(" + v.toString() + ") = " + graph.degreeOf(v));
 	    	System.out.println("N_G(" + v.toString() + ") = " + nc.neighborsOf(v));
 	    });
 	}

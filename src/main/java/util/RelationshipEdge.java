@@ -48,7 +48,7 @@ public class RelationshipEdge extends DefaultEdge {
 	
 	public Object getV2() {
 		return getTarget();
-	}
+	}                           
 
 	public void setAttrs (Map<String, Attribute> attrs) {
 		this.att = attrs;

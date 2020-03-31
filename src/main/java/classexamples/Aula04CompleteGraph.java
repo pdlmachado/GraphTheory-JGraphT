@@ -9,11 +9,12 @@ import org.jgrapht.generate.*;
 import org.jgrapht.graph.*;
 import org.jgrapht.util.SupplierUtil;
 
+import util.PrintUtil;
 import util.VertexEdgeUtil;
 
 import java.util.*;
 
-public final class Aula04MyCompleteGraph {
+public final class Aula04CompleteGraph {
 
     public static void main(String[] args) {
 
@@ -30,6 +31,8 @@ public final class Aula04MyCompleteGraph {
         		new CompleteGraphGenerator<>(n);
 
         completeGenerator.generateGraph(completeGraph);
+        
+        PrintUtil.printGraph(completeGraph);
         
         Iterator<String> iter = completeGraph.vertexSet().iterator();
         while (iter.hasNext()) {

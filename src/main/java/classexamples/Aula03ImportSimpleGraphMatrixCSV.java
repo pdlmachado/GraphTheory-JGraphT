@@ -21,7 +21,7 @@ public class Aula03ImportSimpleGraphMatrixCSV {
 				new SimpleGraph <> (VertexEdgeUtil.createDefaultVertexSupplier(), 
 						            SupplierUtil.createDefaultEdgeSupplier(), false);
 				
-		graph = ImportUtil.importGraphCSV(
+		ImportUtil.importGraphCSV(
 				graph, 
 				"./src/main/java/graphs/5-3regular.csv",
 				CSVFormat.MATRIX, 

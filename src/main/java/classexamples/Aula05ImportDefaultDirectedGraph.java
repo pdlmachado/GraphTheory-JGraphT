@@ -18,7 +18,7 @@ public class Aula05ImportDefaultDirectedGraph {
 	    DefaultDirectedGraph<DefaultVertex,RelationshipDirectedEdge> g = 
 	    		new DefaultDirectedGraph<>(VertexEdgeUtil.createDefaultVertexSupplier(),
 	    									VertexEdgeUtil.createRelationshipDirectedEdgeSupplier(),false);
-        ImportUtil.importDirectedGraphGML(g, "./src/main/java/graphs/grid.gml");    		
+        ImportUtil.importDirectedGraphGML(g, "./src/main/java/graphs/strongly3.gml");    		
         PrintUtil.printGraph(g);
 	    	    
         g.vertexSet().stream().forEach(v -> { 

@@ -2,6 +2,7 @@
 
 package classexamples;
 
+import org.jgrapht.GraphPath;
 import org.jgrapht.alg.tour.PalmerHamiltonianCycle;
 import org.jgrapht.graph.DefaultWeightedEdge;
 import org.jgrapht.graph.SimpleWeightedGraph;
@@ -26,7 +27,14 @@ public class Aula05ImportWeightedGraphMatrix {
  	    
  	    PalmerHamiltonianCycle <DefaultVertex,DefaultWeightedEdge> h =
  	    		new PalmerHamiltonianCycle <> ();
- 	    System.out.println("Hamiltonian cycle: " + h.getTour(graph));
+ 	    GraphPath<DefaultVertex, DefaultWeightedEdge> hcycle = h.getTour(graph);
+ 	    System.out.println("Hamiltonian cycle: " + hcycle);
+ 	    // Para a lista de arestas do caminho, a expressão lambda abaixo calcula a soma dos pesos destas arestas
+ 	    // Este calculo pode ser feita por uma iteração simples usando o comando while.
+        double weight = hcycle.getEdgeList().stream().map(e -> graph.getEdgeWeight(e)).reduce(0.0, (a, b) -> a + b);
+        System.out.println("Cycle weight: " + weight);
+ 	    
+ 	    
  	    
  	    
 

@@ -41,18 +41,36 @@ public class VertexEdgeUtil {
 	 * Os métodos a seguir retornam um vértice ou aresta cujo label eh igual ao passado como parametro.
 	 * 
 	 */
-	public static DefaultVertex getVertexfromLabel(Set<DefaultVertex> V, String label) {	
-		return V.stream().filter(v-> v.getLabel().equals(label)).findAny().get();
+	public static DefaultVertex getVertexfromLabel(Set<DefaultVertex> V, String label) {
+		DefaultVertex vertex;
+		try {
+			vertex = V.stream().filter(v-> v.getLabel().equals(label)).findAny().get();
+		} catch (Exception e) {
+			vertex = null;
+		}
+		return vertex;
 	}
 
 	public static RelationshipEdge getEdgefromLabel(Set<RelationshipEdge> E, String label) {	
-		return E.stream().filter(e-> e.getLabel().equals(label)).findAny().get();
+		RelationshipEdge edge;
+		try {
+			edge = E.stream().filter(e-> e.getLabel().equals(label)).findAny().get();
+		} catch (Exception e) {
+			edge = null;
+		}
+		return edge; 			
 	}
 	
 	public static RelationshipEdge getEdgefromVertexLabels(Set<RelationshipEdge> E, Set<DefaultVertex> V, String l1, String l2) {	
-		DefaultVertex v1 = getVertexfromLabel(V,l1);
-		DefaultVertex v2 = getVertexfromLabel(V,l2);
-		return E.stream().filter(e-> (e.getV1().equals(v1) && e.getV2().equals(v2)) ||
-			                         (e.getV1().equals(v2) && e.getV2().equals(v1))).findAny().get();
+        RelationshipEdge edge;
+        try {
+    		DefaultVertex v1 = getVertexfromLabel(V,l1);
+    		DefaultVertex v2 = getVertexfromLabel(V,l2);
+    		edge = E.stream().filter(e-> (e.getV1().equals(v1) && e.getV2().equals(v2)) ||
+    			                         (e.getV1().equals(v2) && e.getV2().equals(v1))).findAny().get();
+        } catch (Exception e) {
+        	edge = null;
+        }
+        return edge;
 	}
 }

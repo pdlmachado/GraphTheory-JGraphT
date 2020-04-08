@@ -14,8 +14,7 @@ public class RelationshipDirectedEdge extends DefaultEdge {
 	private static final long serialVersionUID = -7887238603558924507L;
 
 	// Atributos da classe RelationshipDirectedEdge
-	//private Object source;
-	//private Object target;
+
 	private Map<String, Attribute> att;
 	
 	public RelationshipDirectedEdge() {
@@ -36,14 +35,6 @@ public class RelationshipDirectedEdge extends DefaultEdge {
 		} else // caso contrario...
 			return o.toString(); // retorna o proprio label capturado.
 	}
-
-//	public Object getSource() {
-//		return source;
-//	}
-
-//	public Object getTarget() {
-//		return target;
-//	}
 
 
 	public Object getNeighbour(Object v) {

@@ -52,17 +52,30 @@ public class ImportUtil <V,E> {
 		return graph;
 	}
 	
-	public static Graph<String,DefaultWeightedEdge> importWeightedGraphCSV 
-		(Graph<String,DefaultWeightedEdge> graph, String filename) {
+	public static Graph<DefaultVertex,DefaultWeightedEdge> importWeightedGraphCSV 
+		(Graph<DefaultVertex,DefaultWeightedEdge> graph, 
+		 String filename,
+		 boolean headsInFirstLine) {
 		// WEIGHTED EDGE LIST
 		try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
-			String sCurrentLine = br.readLine();
+			String sCurrentLine = "";
+			if (headsInFirstLine) {
+				sCurrentLine = br.readLine(); //Discard first line
+			}
 			while ((sCurrentLine = br.readLine()) != null) {
 				String [] attributes = sCurrentLine.split(",");
-				graph.addVertex(attributes[0]);
-				graph.addVertex(attributes[1]);
+				DefaultVertex v0 = VertexEdgeUtil.getVertexfromLabel(graph.vertexSet(), attributes[0]);
+				if (v0 == null) {
+					v0 = new DefaultVertex(attributes[0]);
+				}
+				DefaultVertex v1 = VertexEdgeUtil.getVertexfromLabel(graph.vertexSet(), attributes[1]);
+				if (v1 == null) {
+					v1 = new DefaultVertex(attributes[1]);
+				}
+				graph.addVertex(v0);
+				graph.addVertex(v1);
 				DefaultWeightedEdge e = new DefaultWeightedEdge();
-				graph.addEdge(attributes[0], attributes[1], e);
+				graph.addEdge(v0,v1,e);
 				graph.setEdgeWeight(e, new Double(attributes[2]).doubleValue());
 			}
 		} catch (IOException e) {
@@ -108,14 +121,14 @@ public class ImportUtil <V,E> {
 			Graph<DefaultVertex,DefaultWeightedEdge> graph, 
 			String filename, 
 			CSVFormat f,
-			boolean pMATRIX_FORMAT_ZERO_WHEN_NO_EDGE,
-			boolean pEDGE_WEIGHT,
-			boolean pMATRIX_FORMAT_NODEID) {
+			boolean MATRIX_FORMAT_ZERO_WHEN_NO_EDGE,
+			boolean EDGE_WEIGHT,
+			boolean MATRIX_FORMAT_NODEID) {
 		// WEIGHTED MATRIX
 		CSVImporter<DefaultVertex, DefaultWeightedEdge> csvImporter = new CSVImporter<>(f);
-	    csvImporter.setParameter(CSVFormat.Parameter.MATRIX_FORMAT_ZERO_WHEN_NO_EDGE,pMATRIX_FORMAT_ZERO_WHEN_NO_EDGE);
-	    csvImporter.setParameter(CSVFormat.Parameter.EDGE_WEIGHTS, pEDGE_WEIGHT);
-	    csvImporter.setParameter(CSVFormat.Parameter.MATRIX_FORMAT_NODEID, pMATRIX_FORMAT_NODEID);
+	    csvImporter.setParameter(CSVFormat.Parameter.MATRIX_FORMAT_ZERO_WHEN_NO_EDGE,MATRIX_FORMAT_ZERO_WHEN_NO_EDGE);
+	    csvImporter.setParameter(CSVFormat.Parameter.EDGE_WEIGHTS, EDGE_WEIGHT);
+	    csvImporter.setParameter(CSVFormat.Parameter.MATRIX_FORMAT_NODEID, MATRIX_FORMAT_NODEID);
 		Map<DefaultVertex, Map<String, Attribute>> attrs = new HashMap<>();
         csvImporter.addVertexAttributeConsumer((p, a) -> {
             Map<String, Attribute> map = attrs.get(p.getFirst());

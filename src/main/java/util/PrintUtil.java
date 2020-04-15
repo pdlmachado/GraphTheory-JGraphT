@@ -24,6 +24,16 @@ public class PrintUtil {
 		System.out.println(g.edgeSet()+"\n");
 	}
 	
+	public static <V,E> void printWeightedGraph (Graph <V,E> g ) {
+        System.out.println(g.vertexSet());
+        Iterator <E> it = g.edgeSet().iterator();
+        while (it.hasNext()) {
+        	E e = it.next();
+        	System.out.print(e + ":" + g.getEdgeWeight(e) + " ");
+        }
+        System.out.print("\n");
+	}
+	
 	public static <V,E> void printWeightedGraph (Graph <V,E> g, String title ) {
 		System.out.println(title);
         System.out.println(g.vertexSet());
@@ -33,6 +43,11 @@ public class PrintUtil {
         	System.out.print(e + ":" + g.getEdgeWeight(e) + " ");
         }
         System.out.print("\n");
+	}
+	
+	public static <V,E> void printGraphSize (Graph <V,E> g) {
+		System.out.println("#vertex = " + g.vertexSet().size());
+		System.out.println("#edge = " + g.edgeSet().size() + "\n");
 	}
 	
 	public static <V> void printOrderedVertexMeasures (Map <V,Double> M, int count, boolean descending) {

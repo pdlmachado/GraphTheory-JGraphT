@@ -7,22 +7,23 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-import org.jgrapht.graph.DefaultEdge;
+
+import org.jgrapht.graph.DefaultWeightedEdge;
 import org.jgrapht.nio.DefaultAttribute;
 import org.jgrapht.nio.Attribute;
 import org.jgrapht.nio.AttributeType;
 
-public class RelationshipEdge extends DefaultEdge {
+public class RelationshipWeightedEdge extends DefaultWeightedEdge {
 	private static final long serialVersionUID = 8238755873387699328L;
 	private Map<String, Attribute> att;
 
 	// Construtores
-	public RelationshipEdge () {
+	public RelationshipWeightedEdge () {
 		super();
 		att = new HashMap <String,Attribute> ();
 	}
 	
-	public RelationshipEdge (String label) {
+	public RelationshipWeightedEdge (String label) {
 		super();
 		att = new HashMap <String,Attribute> ();
 		att.put("label",new DefaultAttribute<String>(label,AttributeType.STRING));
@@ -75,11 +76,10 @@ public class RelationshipEdge extends DefaultEdge {
 		return result;
 	}
 
-	public boolean equals(RelationshipEdge e) {
+	public boolean equals(RelationshipWeightedEdge e) {
 		return (this.getLabel()).equals(e.getLabel());
 	}
 	
-
 	public String toString() {
 		Object o = att.get("label"); // captura o label da aresta
 		if (o == null) { // analisa se este eh nulo. se for...
@@ -91,10 +91,12 @@ public class RelationshipEdge extends DefaultEdge {
 	public String toStringAtt() {
 		String s = new String(getSource().toString());
 		s = s + "," + getTarget().toString();
+		s = s + "," + Double.toString(getWeight());
 		Iterator <String> keys = att.keySet().iterator();
 		while (keys.hasNext()) {
 			s = s + "," + att.get(keys.next());
 		}
 		return s;
 	} 
+	
 }

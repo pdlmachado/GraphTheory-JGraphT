@@ -5,6 +5,7 @@ package util;
 
 import java.io.Serializable;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 import org.jgrapht.nio.Attribute;
@@ -33,7 +34,7 @@ public class DefaultVertex implements Serializable {
 	public String getLabel() {
 		String label;
 		try {
-		   label = (att.get("label")).toString(); 
+		   label = (att.get("label")).getValue();
 	    } catch (Exception e1) {
 			try {
 				   label = (att.get("ID")).toString(); 
@@ -43,9 +44,21 @@ public class DefaultVertex implements Serializable {
 	    }
 		return label;
 	}
+	
+	public Map<String,Attribute> getAtts () {
+		return att;
+	}
+	
+	public Object getAtt(String field) {
+		return att.get(field); 
+	}
 
 	public void setAttrs (Map<String, Attribute> attrs) {
 		this.att = attrs;
+	}
+	
+	public void setAtt (String key, Attribute value) {
+		this.att.put(key, value);
 	}
 	
 	public int hashCode() {
@@ -66,5 +79,16 @@ public class DefaultVertex implements Serializable {
 	public String toString() {
 		return this.getLabel();
 	}
+	
+	public String toStringAtt() {
+		String s = new String("id:" + getId());
+		Iterator <String> keys = att.keySet().iterator();
+		while (keys.hasNext()) {
+			String key = keys.next();
+			Attribute a = att.get(key);
+			s = s + "," + key + ":" + a.toString();
+		}
+		return s;
+	} 
 
 }

@@ -37,14 +37,29 @@ public class VertexEdgeUtil {
         return SupplierUtil.createSupplier(RelationshipEdge.class);
 	}
     
+    public static Supplier<RelationshipWeightedEdge> createRelationshipWeightedEdgeSupplier()
+    {
+        return SupplierUtil.createSupplier(RelationshipWeightedEdge.class);
+	}
+    
 	/**
 	 * Os métodos a seguir retornam um vértice ou aresta cujo label eh igual ao passado como parametro.
 	 * 
 	 */
 	public static DefaultVertex getVertexfromLabel(Set<DefaultVertex> V, String label) {
-		DefaultVertex vertex;
+		DefaultVertex vertex = null;
 		try {
 			vertex = V.stream().filter(v-> v.getLabel().equals(label)).findAny().get();
+		} catch (Exception e) {
+			vertex = null;
+		}
+		return vertex;
+	}
+	
+	public static DefaultVertex getVertexfromId(Set<DefaultVertex> V, String id) {
+		DefaultVertex vertex;
+		try {
+			vertex = V.stream().filter(v-> v.getId().equals(id)).findAny().get();
 		} catch (Exception e) {
 			vertex = null;
 		}

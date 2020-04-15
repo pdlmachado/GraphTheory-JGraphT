@@ -36,16 +36,27 @@ public class RelationshipDirectedEdge extends DefaultEdge {
 			return o.toString(); // retorna o proprio label capturado.
 	}
 
-
 	public Object getNeighbour(Object v) {
 		if (v.equals(getSource())) {
 			return getTarget();
 		} else
 			return getSource();
 	}
-
+	
+	public Map<String,Attribute> getAtts () {
+		return att;
+	}
+	
+	public Object getAtt(String field) {
+		return att.get(field); 
+	}
+	
 	public void setAttrs (Map<String, Attribute> attrs) {
 		this.att = attrs;
+	}
+	
+	public void setAtt (String key, Attribute value) {
+		this.att.put(key, value);
 	}
 	
 	@Override

@@ -76,8 +76,31 @@ public class VertexEdgeUtil {
 		return edge; 			
 	}
 	
+	public static RelationshipWeightedEdge getWEdgefromLabel(Set<RelationshipWeightedEdge> E, String label) {	
+		RelationshipWeightedEdge edge;
+		try {
+			edge = E.stream().filter(e-> e.getLabel().equals(label)).findAny().get();
+		} catch (Exception e) {
+			edge = null;
+		}
+		return edge; 			
+	}
+	
 	public static RelationshipEdge getEdgefromVertexLabels(Set<RelationshipEdge> E, Set<DefaultVertex> V, String l1, String l2) {	
         RelationshipEdge edge;
+        try {
+    		DefaultVertex v1 = getVertexfromLabel(V,l1);
+    		DefaultVertex v2 = getVertexfromLabel(V,l2);
+    		edge = E.stream().filter(e-> (e.getV1().equals(v1) && e.getV2().equals(v2)) ||
+    			                         (e.getV1().equals(v2) && e.getV2().equals(v1))).findAny().get();
+        } catch (Exception e) {
+        	edge = null;
+        }
+        return edge;
+	}
+	
+	public static RelationshipWeightedEdge getWEdgefromVertexLabels(Set<RelationshipWeightedEdge> E, Set<DefaultVertex> V, String l1, String l2) {	
+        RelationshipWeightedEdge edge;
         try {
     		DefaultVertex v1 = getVertexfromLabel(V,l1);
     		DefaultVertex v2 = getVertexfromLabel(V,l2);

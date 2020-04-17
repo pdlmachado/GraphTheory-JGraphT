@@ -54,12 +54,15 @@ public class DefaultVertex implements Serializable {
 	}
 
 	public void setAttrs (Map<String, Attribute> attrs) {
-		this.att = attrs;
+		if (attrs != null) {
+			this.att = attrs;
+		}
 	}
 	
 	public void setAtt (String key, Attribute value) {
 		this.att.put(key, value);
 	}
+	
 	
 	public int hashCode() {
 		final int prime = 31;
@@ -69,11 +72,13 @@ public class DefaultVertex implements Serializable {
 	}
 
 	public boolean equals(DefaultVertex v) {
-		String s1 = this.getId();
-		String s2 = v.getId();
-		if (s2 instanceof String)
-		return s1.equals(s2);
-		else return false;
+		if (this != null && v != null) {
+			String s1 = this.getId();
+			String s2 = v.getId();
+			return s1.equals(s2) && this.getAtts().equals(v.getAtts());
+		} else {
+			return this == v;
+		}
 	}
 
 	public String toString() {

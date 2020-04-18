@@ -5,7 +5,7 @@ import java.util.function.Supplier;
 
 import org.jgrapht.util.SupplierUtil;
 
-public class VertexEdgeUtil {
+public class VertexEdgeUtil <V,E> {
 	
 	public static Supplier<DefaultVertex> createDefaultVertexSupplier () {
 	    Supplier<DefaultVertex> vSupplier = new Supplier<DefaultVertex>() {
@@ -66,20 +66,30 @@ public class VertexEdgeUtil {
 		return vertex;
 	}
 
-	public static RelationshipEdge getEdgefromLabel(Set<RelationshipEdge> E, String label) {	
+	public static RelationshipEdge getEdgefromLabel(Set<RelationshipEdge> edgeset, String label) {	
 		RelationshipEdge edge;
 		try {
-			edge = E.stream().filter(e-> e.getLabel().equals(label)).findAny().get();
+			edge = edgeset.stream().filter(e-> e.getLabel().equals(label)).findAny().get();
 		} catch (Exception e) {
 			edge = null;
 		}
 		return edge; 			
 	}
 	
-	public static RelationshipWeightedEdge getWEdgefromLabel(Set<RelationshipWeightedEdge> E, String label) {	
+	public static RelationshipDirectedEdge getDEdgefromLabel(Set<RelationshipDirectedEdge> edgeset, String label) {	
+		RelationshipDirectedEdge edge;
+		try {
+			edge = edgeset.stream().filter(e-> e.getLabel().equals(label)).findAny().get();
+		} catch (Exception e) {
+			edge = null;
+		}
+		return edge; 			
+	}
+	
+	public static RelationshipWeightedEdge getWEdgefromLabel(Set<RelationshipWeightedEdge> edgeset, String label) {	
 		RelationshipWeightedEdge edge;
 		try {
-			edge = E.stream().filter(e-> e.getLabel().equals(label)).findAny().get();
+			edge = edgeset.stream().filter(e-> e.getLabel().equals(label)).findAny().get();
 		} catch (Exception e) {
 			edge = null;
 		}
@@ -100,7 +110,8 @@ public class VertexEdgeUtil {
 	}
 	
 	public static RelationshipWeightedEdge getWEdgefromVertexLabels(Set<RelationshipWeightedEdge> E, Set<DefaultVertex> V, String l1, String l2) {	
-        RelationshipWeightedEdge edge;
+        // code is similar to getEdgefromVertexLabels - not able to generalize due to type errors
+		RelationshipWeightedEdge edge;
         try {
     		DefaultVertex v1 = getVertexfromLabel(V,l1);
     		DefaultVertex v2 = getVertexfromLabel(V,l2);
@@ -111,4 +122,18 @@ public class VertexEdgeUtil {
         }
         return edge;
 	}
+	
+	public static RelationshipDirectedEdge getDEdgefromVertexLabels(Set<RelationshipDirectedEdge> E, Set<DefaultVertex> V, String l1, String l2) {	
+        // unique
+		RelationshipDirectedEdge edge;
+        try {
+    		DefaultVertex v1 = getVertexfromLabel(V,l1);
+    		DefaultVertex v2 = getVertexfromLabel(V,l2);
+    		edge = E.stream().filter(e-> (e.getVSource().equals(v1) && e.getVTarget().equals(v2))).findAny().get();
+        } catch (Exception e) {
+        	edge = null;
+        }
+        return edge;
+	}
+	
 }

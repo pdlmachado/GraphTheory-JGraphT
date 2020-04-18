@@ -22,7 +22,7 @@ public class RelationshipDirectedEdge extends DefaultEdge {
 		att = new HashMap <String,Attribute> ();
 	}
 
-	public RelationshipDirectedEdge (Object s, Object t, String label) {
+	public RelationshipDirectedEdge (String label) {
 		super();
 		att = new HashMap <String,Attribute> ();
 		att.put("label",new DefaultAttribute<String>(label,AttributeType.STRING));		
@@ -41,6 +41,14 @@ public class RelationshipDirectedEdge extends DefaultEdge {
 			return getTarget();
 		} else
 			return getSource();
+	}
+	
+	public Object getVSource() {
+		return getSource();
+	}
+	
+	public Object getVTarget() {
+		return getTarget();
 	}
 	
 	public Map<String,Attribute> getAtts () {

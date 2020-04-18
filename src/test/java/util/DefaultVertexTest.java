@@ -1,7 +1,6 @@
 package util;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotSame;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -111,7 +110,7 @@ class DefaultVertexTest {
 		assertEquals(value,v.getAtt(key));
 	}
 	
-	// setAtts
+	// setAttrs
 	static Stream <Arguments> setAttrsDataProvider () {
 		return Stream.of(
 				Arguments.of(v0,att1),
@@ -138,7 +137,7 @@ class DefaultVertexTest {
 		assertSame(att,v.getAtts(),"Not Set atts to null");
 	}
 	
-	// setAttrs
+	// setAtt
 	static Stream <Arguments> setAttDataProvider () {
 		return Stream.of(
 				Arguments.of(v0,"test",new DefaultAttribute<String>("label0",AttributeType.STRING)),
@@ -157,7 +156,7 @@ class DefaultVertexTest {
 		assertEquals(value,v.getAtt(key));
 	}
 	
-	// setAttrs
+	// equals
 	static Stream <Arguments> equalsDataProvider () {
 		return Stream.of(
 				Arguments.of(v0,v0,true),

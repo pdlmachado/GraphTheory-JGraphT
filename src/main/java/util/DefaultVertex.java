@@ -37,7 +37,7 @@ public class DefaultVertex implements Serializable {
 		   label = (att.get("label")).getValue();
 	    } catch (Exception e1) {
 			try {
-				   label = (att.get("ID")).toString(); 
+				   label = (att.get("ID")).getValue(); 
 			    } catch (Exception e2) {
 				   label = id;
 			    }

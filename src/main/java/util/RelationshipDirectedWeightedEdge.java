@@ -4,12 +4,12 @@ package util;
 
 import java.util.HashMap;
 import java.util.Map;
-import org.jgrapht.graph.DefaultEdge;
+import org.jgrapht.graph.DefaultWeightedEdge;
 import org.jgrapht.nio.Attribute;
 import org.jgrapht.nio.AttributeType;
 import org.jgrapht.nio.DefaultAttribute;
 
-public class RelationshipDirectedEdge extends DefaultEdge {
+public class RelationshipDirectedWeightedEdge extends DefaultWeightedEdge {
 
 	private static final long serialVersionUID = -7887238603558924507L;
 
@@ -17,12 +17,12 @@ public class RelationshipDirectedEdge extends DefaultEdge {
 
 	private Map<String, Attribute> att;
 	
-	public RelationshipDirectedEdge() {
+	public RelationshipDirectedWeightedEdge() {
 		super();
 		att = new HashMap <String,Attribute> ();
 	}
 
-	public RelationshipDirectedEdge (String label) {
+	public RelationshipDirectedWeightedEdge (String label) {
 		super();
 		att = new HashMap <String,Attribute> ();
 		att.put("label",new DefaultAttribute<String>(label,AttributeType.STRING));		
@@ -76,7 +76,7 @@ public class RelationshipDirectedEdge extends DefaultEdge {
 		return result;
 	}
 
-	public boolean equals(RelationshipDirectedEdge e) {
+	public boolean equals(RelationshipDirectedWeightedEdge e) {
 		boolean result = this.getLabel().equals(e.getLabel());
 		if ((this.getSource() != null) && (this.getTarget() != null) 
 				&& (e.getSource() != null) && (e.getTarget() != null)) {

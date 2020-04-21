@@ -77,7 +77,15 @@ public class RelationshipWeightedEdge extends DefaultWeightedEdge {
 	}
 
 	public boolean equals(RelationshipWeightedEdge e) {
-		return (this.getLabel()).equals(e.getLabel());
+		//return (this.getLabel()).equals(e.getLabel());
+		boolean result = this.getLabel().equals(e.getLabel());
+		if ((this.getSource() != null) && (this.getTarget() != null) 
+				&& (e.getSource() != null) && (e.getTarget() != null)) {
+			result = result &&
+					((this.getSource().equals(e.getSource()) && this.getTarget().equals(e.getTarget())) ||
+					 (this.getSource().equals(e.getTarget()) && this.getTarget().equals(e.getSource())));
+		} else result = (this == e);
+		return result;
 	}
 	
 	public String toString() {

@@ -9,17 +9,27 @@ import java.util.Map;
 
 import org.jgrapht.graph.DefaultEdge;
 import org.jgrapht.nio.DefaultAttribute;
+
 import org.jgrapht.nio.Attribute;
 import org.jgrapht.nio.AttributeType;
 
 public class RelationshipEdge extends DefaultEdge {
 	private static final long serialVersionUID = 8238755873387699328L;
 	private Map<String, Attribute> att;
+	boolean directed;
 
 	// Construtores
+	public RelationshipEdge (boolean d) {
+		// To unify RelationshipEdge and RelationshipDirectedEdge
+		super();
+		directed = d;
+		att = new HashMap <String,Attribute> ();
+	}
+	
 	public RelationshipEdge () {
 		super();
-		att = new HashMap <String,Attribute> ();
+		//directed = d;
+		att = new HashMap <String,Attribute> ();		
 	}
 	
 	public RelationshipEdge (String label) {
@@ -29,6 +39,7 @@ public class RelationshipEdge extends DefaultEdge {
 	}
 	
     // Métodos de Acesso	
+
 	public String getLabel() {
 		Object o = att.get("label"); 
 		if (o == null) { 
@@ -76,9 +87,15 @@ public class RelationshipEdge extends DefaultEdge {
 	}
 
 	public boolean equals(RelationshipEdge e) {
-		return (this.getLabel()).equals(e.getLabel());
+		boolean result = this.getLabel().equals(e.getLabel());
+		if ((this.getSource() != null) && (this.getTarget() != null) 
+				&& (e.getSource() != null) && (e.getTarget() != null)) {
+			result = result &&
+					((this.getSource().equals(e.getSource()) && this.getTarget().equals(e.getTarget())) ||
+					 (this.getSource().equals(e.getTarget()) && this.getTarget().equals(e.getSource())));
+		} else result = (this == e);
+		return result;
 	}
-	
 
 	public String toString() {
 		Object o = att.get("label"); // captura o label da aresta

@@ -4,7 +4,7 @@ graph
 [
 	hierarchic	1
 	label	""
-	directed	1
+	directed	0
 	node
 	[
 		id	0

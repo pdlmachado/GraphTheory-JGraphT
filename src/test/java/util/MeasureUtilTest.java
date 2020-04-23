@@ -94,7 +94,7 @@ class MeasureUtilTest {
     		}
     	} catch (IOException e) {
 			// TODO Auto-generated catch block
-    		System.out.println("não criei");
+    		System.out.println("Graph was not created.");
 		}
     	return g;
     }

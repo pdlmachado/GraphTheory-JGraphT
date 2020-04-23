@@ -231,7 +231,7 @@ public class ImportUtil <V,E> {
 
 	}
 	
-	private static Graph<DefaultVertex,DefaultEdge> getDefaultGraphGML 
+	public static Graph<DefaultVertex,DefaultEdge> getDefaultGraphGML 
 	(Graph<DefaultVertex,DefaultEdge> graph, StringReader reader) {		
 		if (reader != null) {
 			GmlImporter<DefaultVertex, DefaultEdge> gmlImporter = new GmlImporter<>();	
@@ -317,7 +317,7 @@ public class ImportUtil <V,E> {
 		}
 	}
 	
-	private static Graph<DefaultVertex,RelationshipDirectedEdge> getDirectedGraphGML 
+	public static Graph<DefaultVertex,RelationshipDirectedEdge> getDirectedGraphGML 
 	(Graph<DefaultVertex,RelationshipDirectedEdge> graph, StringReader reader) {
 		if (reader != null) {
 			GmlImporter<DefaultVertex, RelationshipDirectedEdge> gmlImporter = new GmlImporter<>();
@@ -373,81 +373,85 @@ public class ImportUtil <V,E> {
 		}
 	}
 	
-	private static Graph<DefaultVertex,RelationshipWeightedEdge> readVertexSet (
+	public static Graph<DefaultVertex,RelationshipWeightedEdge> readVertexSet (
 			Graph<DefaultVertex,RelationshipWeightedEdge> graph, 
 			StringReader reader, String idAtt, String labelAtt) {		
 		// Reading Vertex Set
-		try (BufferedReader vSet = new BufferedReader(reader)) {
-			String sCurrentLine = vSet.readLine();
-			String [] headsV = sCurrentLine.split(",");
-			int indexId = 0;
-			int indexLabel = 0;
-			for (int i = 0; i < headsV.length; i++) {
-				if (headsV[i].equals(idAtt)) {
-					indexId = i;
-				}
-				if (headsV[i].equals(labelAtt)) {
-					indexLabel = i;
-				}
-			}
-			while ((sCurrentLine = vSet.readLine()) != null) {
-				String [] attributes = sCurrentLine.split(",");
-				DefaultVertex v = new DefaultVertex (attributes[indexId]);
-				for (int i = 0; i<attributes.length; i++) {
-					if (i != indexId && i != indexLabel) {
-						v.setAtt(headsV[i], new DefaultAttribute <> (attributes[i],AttributeType.STRING));
+		if (reader != null) {
+			try (BufferedReader vSet = new BufferedReader(reader)) {
+				String sCurrentLine = vSet.readLine();
+				String [] headsV = sCurrentLine.split(",");
+				int indexId = 0;
+				int indexLabel = 0;
+				for (int i = 0; i < headsV.length; i++) {
+					if (headsV[i].equals(idAtt)) {
+						indexId = i;
+					}
+					if (headsV[i].equals(labelAtt)) {
+						indexLabel = i;
 					}
 				}
-				v.setAtt("label", new DefaultAttribute <> (attributes[indexLabel],AttributeType.STRING));
-				graph.addVertex(v);
+				while ((sCurrentLine = vSet.readLine()) != null) {
+					String [] attributes = sCurrentLine.split(",");
+					DefaultVertex v = new DefaultVertex (attributes[indexId]);
+					for (int i = 0; i<attributes.length; i++) {
+						if (i != indexId && i != indexLabel) {
+							v.setAtt(headsV[i], new DefaultAttribute <> (attributes[i],AttributeType.STRING));
+						}
+					}
+					v.setAtt("label", new DefaultAttribute <> (attributes[indexLabel],AttributeType.STRING));
+					graph.addVertex(v);
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
 			}
-		} catch (IOException e) {
-			e.printStackTrace();
 		}
 		return graph;
 	}
 	
-	private static Graph<DefaultVertex,RelationshipWeightedEdge> readEdgeSet(
+	public static Graph<DefaultVertex,RelationshipWeightedEdge> readEdgeSet(
 			Graph<DefaultVertex,RelationshipWeightedEdge> graph,
 			StringReader reader, String sourceAtt, String targetAtt, String weightAtt,
 			boolean simplegraph, boolean weighted) {
 		// Reading Edge Set
-		Set <DefaultVertex> V = graph.vertexSet();
-		try (BufferedReader eSet = new BufferedReader(reader)) {
-			String eCurrentLine = eSet.readLine();
-			String [] headsE = eCurrentLine.split(",");
-			int indexS = 0;
-			int indexT = 0;
-			int indexW = 0;
-			for (int i = 0; i < headsE.length; i++) {
-				if (headsE[i].equals(sourceAtt)) {
-					indexS = i;
-				}
-				if (headsE[i].equals(targetAtt)) {
-					indexT = i;
-				}
-				if (headsE[i].equals(weightAtt) && weighted) {
-					indexW = i;
-				}
-			}
-			while ((eCurrentLine = eSet.readLine()) != null) {
-				String [] attributes = eCurrentLine.split(",");
-				DefaultVertex s = VertexEdgeUtil.getVertexfromId(V, attributes[indexS]);
-				DefaultVertex t = VertexEdgeUtil.getVertexfromId(V, attributes[indexT]);
-				if ((simplegraph && graph.getEdge(s, t) == null && graph.getEdge(t, s)==null) || 
-						(simplegraph == false)){
-					RelationshipWeightedEdge e = new RelationshipWeightedEdge ();
-					for (int i = 0; i<attributes.length; i++) {
-						if (i != indexS && i != indexT) {
-							e.setAtt(headsE[i], new DefaultAttribute <> (attributes[i],AttributeType.STRING));
-						}
+		if (reader != null) {
+			Set <DefaultVertex> V = graph.vertexSet();
+			try (BufferedReader eSet = new BufferedReader(reader)) {
+				String eCurrentLine = eSet.readLine();
+				String [] headsE = eCurrentLine.split(",");
+				int indexS = 0;
+				int indexT = 0;
+				int indexW = 0;
+				for (int i = 0; i < headsE.length; i++) {
+					if (headsE[i].equals(sourceAtt)) {
+						indexS = i;
 					}
-					graph.addEdge(s, t, e);
-					if (weighted) graph.setEdgeWeight(e, Double.valueOf(attributes[indexW]));
+					if (headsE[i].equals(targetAtt)) {
+						indexT = i;
+					}
+					if (headsE[i].equals(weightAtt) && weighted) {
+						indexW = i;
+					}
 				}
+				while ((eCurrentLine = eSet.readLine()) != null) {
+					String [] attributes = eCurrentLine.split(",");
+					DefaultVertex s = VertexEdgeUtil.getVertexfromId(V, attributes[indexS]);
+					DefaultVertex t = VertexEdgeUtil.getVertexfromId(V, attributes[indexT]);
+					if ((simplegraph && graph.getEdge(s, t) == null && graph.getEdge(t, s)==null) || 
+							(simplegraph == false)){
+						RelationshipWeightedEdge e = new RelationshipWeightedEdge ();
+						for (int i = 0; i<attributes.length; i++) {
+							if (i != indexS && i != indexT) {
+								e.setAtt(headsE[i], new DefaultAttribute <> (attributes[i],AttributeType.STRING));
+							}
+						}
+						graph.addEdge(s, t, e);
+						if (weighted) graph.setEdgeWeight(e, Double.valueOf(attributes[indexW]));
+					}
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
 			}
-		} catch (IOException e) {
-			e.printStackTrace();
 		}
 		return graph;
 	}

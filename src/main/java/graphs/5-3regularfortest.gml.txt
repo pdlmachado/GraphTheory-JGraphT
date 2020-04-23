@@ -1,0 +1,222 @@
+    		"Creator	\"yFiles\"" + NL +
+    		"Version	\"2.16\"" + NL +
+    		"graph" + NL +
+    		"[" + NL +
+    		"	hierarchic	1" + NL +
+    		"	label	\"\"" + NL +
+    		"	directed	0" + NL +
+    		"	node" + NL +
+    		"	[" + NL +
+    		"		id	0" + NL +
+    		"		label	\"a\"" + NL +
+    		"		graphics" + NL +
+    		"		[" + NL +
+    		"			x	169.0" + NL +
+    		"			y	121.0" + NL +
+    		"			w	30.0" + NL +
+    		"			h	30.0" + NL +
+    		"			type	\"ellipse\"" + NL +
+    		"			raisedBorder	0" + NL +
+    		"			fill	\"#FFCC00\"" + NL +
+    		"			outline	\"#000000\"" + NL +
+    		"		]" + NL +
+    		"		LabelGraphics" + NL +
+    		"		[" + NL +
+    		"			text	\"a\"" + NL +
+    		"			fontSize	12" + NL +
+    		"			fontName	\"Dialog\"" + NL +
+    		"			model	\"null\"" + NL +
+    		"		]" + NL +
+    		"	]" + NL +
+    		"	node" + NL +
+    		"	[" + NL +
+    		"		id	1" + NL +
+    		"		label	\"b\"" + NL +
+    		"		graphics" + NL +
+    		"		[" + NL +
+    		"			x	283.0" + NL +
+    		"			y	104.0" + NL +
+    		"			w	30.0" + NL +
+    		"			h	30.0" + NL +
+    		"			type	\"ellipse\"" + NL +
+    		"			raisedBorder	0" + NL +
+    		"			fill	\"#FFCC00\"" + NL +
+    		"			outline	\"#000000\"" + NL +
+    		"		]" + NL +
+    		"		LabelGraphics" + NL +
+    		"		[" + NL +
+    		"			text	\"b\"" + NL +
+    		"			fontSize	12" + NL +
+    		"			fontName	\"Dialog\"" + NL +
+    		"			model	\"null\"" + NL +
+    		"		]" + NL +
+    		"	]" + NL +
+    		"	node" + NL +
+    		"	[" + NL +
+    		"		id	2" + NL +
+    		"		label	\"c\"" + NL +
+    		"		graphics" + NL +
+    		"		[" + NL +
+    		"			x	447.0" + NL +
+    		"			y	132.0" + NL +
+    		"			w	30.0" + NL +
+    		"			h	30.0" + NL +
+    		"			type	\"ellipse\"" + NL +
+    		"			raisedBorder	0" + NL +
+    		"			fill	\"#FFCC00\"" + NL +
+    		"			outline	\"#000000\"" + NL +
+    		"		]" + NL +
+    		"		LabelGraphics" + NL +
+    		"		[" + NL +
+    		"			text	\"c\"" + NL +
+    		"			fontSize	12" + NL +
+    		"			fontName	\"Dialog\"" + NL +
+    		"			model	\"null\"" + NL +
+    		"		]" + NL +
+    		"	]" + NL +
+    		"	node" + NL +
+    		"	[" + NL +
+    		"		id	3" + NL +
+    		"		label	\"e\"" + NL +
+    		"		graphics" + NL +
+    		"		[" + NL +
+    		"			x	378.0" + NL +
+    		"			y	250.0" + NL +
+    		"			w	30.0" + NL +
+    		"			h	30.0" + NL +
+    		"			type	\"ellipse\"" + NL +
+    		"			raisedBorder	0" + NL +
+    		"			fill	\"#FFCC00\"" + NL +
+    		"			outline	\"#000000\"" + NL +
+    		"		]" + NL +
+    		"		LabelGraphics" + NL +
+    		"		[" + NL +
+    		"			text	\"e\"" + NL +
+    		"			fontSize	12" + NL +
+    		"			fontName	\"Dialog\"" + NL +
+    		"			model	\"null\"" + NL +
+    		"		]" + NL +
+    		"	]" + NL +
+    		"	node" + NL +
+    		"	[" + NL +
+    		"		id	4" + NL +
+    		"		label	\"d\"" + NL +
+    		"		graphics" + NL +
+    		"		[" + NL +
+    		"			x	202.0" + NL +
+    		"			y	250.0" + NL +
+    		"			w	30.0" + NL +
+    		"			h	30.0" + NL +
+    		"			type	\"ellipse\"" + NL +
+    		"			raisedBorder	0" + NL +
+    		"			fill	\"#FFCC00\"" + NL +
+    		"			outline	\"#000000\"" + NL +
+    		"		]" + NL +
+    		"		LabelGraphics" + NL +
+    		"		[" + NL +
+    		"			text	\"d\"" + NL +
+    		"			fontSize	12" + NL +
+    		"			fontName	\"Dialog\"" + NL +
+    		"			model	\"null\"" + NL +
+    		"		]" + NL +
+    		"	]" + NL +
+    		"	edge" + NL +
+    		"	[" + NL +
+    		"		source	0" + NL +
+    		"		target	1" + NL +
+    		"       label \"s\"" + NL +
+    		"		graphics" + NL +
+    		"		[" + NL +
+    		"			fill	\"#000000\"" + NL +
+    		"			Line" + NL +
+    		"			[" + NL +
+    		"				point" + NL +
+    		"				[" + NL +
+    		"					x	169.0" + NL +
+    		"					y	121.0" + NL +
+    		"				]" + NL +
+    		"				point" + NL +
+    		"				[" + NL +
+    		"					x	268.0" + NL +
+    		"					y	104.0" + NL +
+    		"				]" + NL +
+    		"				point" + NL +
+    		"				[" + NL +
+    		"				x	283.0" + NL +
+    		"				y	104.0" + NL +
+    		"				]" + NL +
+    		"			]" + NL +
+    		"		]" + NL +
+    		"	]" + NL +
+    		"	edge" + NL +
+    		"	[" + NL +
+    		"		source	0" + NL +
+    		"		target	2" + NL +
+    		"       label \"t\"" + NL +    		
+    		"		graphics" + NL +
+    		"		[" + NL +
+    		"		fill	\"#000000\"" + NL +
+    		"		]" + NL +
+    		"	]" + NL +
+    		"	edge" + NL +
+    		"	[" + NL +
+    		"		source	0" + NL +
+    		"		target	4" + NL +
+    		"       label \"r\"" + NL +    		
+    		"		graphics" + NL +
+    		"		[" + NL +
+    		"			fill	\"#000000\"" + NL +
+    		"		]" + NL +
+    		"	]" + NL +
+    		"	edge" + NL +
+    		"	[" + NL +
+    		"		source	1" + NL +
+    		"		target	2" + NL +
+    		"       label \"x\"" + NL +    		
+    		"		graphics" + NL +
+    		"		[" + NL +
+    		"			fill	\"#000000\"" + NL +
+    		"		]" + NL +
+    		"	]" + NL +
+    		"	edge" + NL +
+    		"	[" + NL +
+    		"		source	1" + NL +
+    		"		target	3" + NL +
+    		"       label \"w\"" + NL +    		
+    		"		graphics" + NL +
+    		"		[" + NL +
+    		"			fill	\"#000000\"" + NL +
+    		"		]" + NL +
+    		"	]" + NL +
+    		"	edge" + NL +
+    		"	[" + NL +
+    		"		source	4" + NL +
+    		"		target	2" + NL +
+    		"       label \"z\"" + NL +    		
+    		"		graphics" + NL +
+    		"		[" + NL +
+    		"			fill	\"#000000\"" + NL +
+    		"		]" + NL +
+    		"	]" + NL +
+    		"	edge" + NL +
+    		"	[" + NL +
+    		"		source	2" + NL +
+    		"		target	3" + NL +
+    		"       label \"y\"" + NL +    		
+    		"		graphics" + NL +
+    		"		[" + NL +
+    		"			fill	\"#000000\"" + NL +
+    		"		]" + NL +
+    		"	]" + NL +
+    		"	edge" + NL +
+    		"	[" + NL +
+    		"		source	4" + NL +
+    		"		target	3" + NL +
+    		"       label \"u\"" + NL +    		
+    		"		graphics" + NL +
+    		"		[" + NL +
+    		"			fill	\"#000000\"" + NL +
+    		"		]" + NL +
+    		"	]" + NL +
+    		"]"
+    		

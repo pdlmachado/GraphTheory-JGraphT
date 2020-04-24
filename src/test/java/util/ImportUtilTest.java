@@ -47,6 +47,15 @@ class ImportUtilTest {
 			"e,g" + NL +
 			"g,i" + NL +
 			"i,h" + NL;
+	static String adjacencyCSVf =
+			"a,b" + NL +
+			"b,c" + NL +
+			"c,f" + NL +
+			"f,d,e,g" + NL +
+			"d,e,g" + NL +
+			"e,g" + NL +
+			"g,i" + NL +
+			"i,h" + NL;
 	static String [] vedgeCSV = {"a","b","c","d","e","f","g","h","i"};
 	static String [] eedgeCSV = {"a,b", "b,c", "c,f", "f,d", "f,e", "f,g", "d,e", "d,g", "e,g", "g,i", "i,h"};
 	static String wedgeCSVf = 
@@ -392,8 +401,8 @@ class ImportUtilTest {
     static void beforeAll () {
     }
 	
-    ///////////////////////////////////////////////////
-    //importGraphCSV and getGraphCSV EDGE
+    /////////////////////////////////////////////////////////////
+    //importGraphCSV and getGraphCSV EDGE and ADJACENCY LISTS
     @Test
     void importGraphCSVTest () {
 		SimpleGraph <DefaultVertex, DefaultEdge> graph = new SimpleGraph <> 
@@ -403,17 +412,43 @@ class ImportUtilTest {
     	assertEquals(graph, ImportUtil.importGraphCSV(graph,"invalid-name",CSVFormat.EDGE_LIST));   	
     }
     
-	static Stream <Arguments> getGraphCSVProvider () {
+	static Stream <Arguments> getGraphECSVProvider () {
 		return Stream.of(
 			Arguments.of(new StringReader(edgeCSVf), CSVFormat.EDGE_LIST, makeStringList(vedgeCSV), makeStringPairList(eedgeCSV)),
 			Arguments.of(null,CSVFormat.EDGE_LIST, new ArrayList <>(), new ArrayList <> ()),
-			Arguments.of(new StringReader(edgeCSVf), CSVFormat.ADJACENCY_LIST, new ArrayList <>(), new ArrayList <> ())
+			Arguments.of(new StringReader(edgeCSVf), CSVFormat.MATRIX, new ArrayList <>(), new ArrayList <> ())
 			);
 	}
 	
 	@ParameterizedTest
-	@MethodSource("getGraphCSVProvider")
-    void getGraphCSVTest (StringReader reader, CSVFormat f, List <String> expectedV, List <Pair<String,String>> expectedE) {
+	@MethodSource("getGraphECSVProvider")
+    void getGraphECSVTest (StringReader reader, CSVFormat f, List <String> expectedV, List <Pair<String,String>> expectedE) {
+		Graph <DefaultVertex,DefaultEdge> graph = new SimpleGraph <> 
+			(VertexEdgeUtil.createDefaultVertexSupplier(), 
+	            SupplierUtil.createDefaultEdgeSupplier(), false);
+		final Graph <DefaultVertex,DefaultEdge> g = ImportUtil.getGraphCSV(graph, reader, f); 
+		Set <DefaultVertex> V = graph.vertexSet();
+		Set <DefaultEdge> E = graph.edgeSet();
+		assertEquals(expectedV.size(),V.size(), "Must have the same Vertex Set Size");
+		assertEquals(expectedE.size(),E.size(), "Must have the same Edge Set Size");
+		Predicate <String> pv = v -> VertexEdgeUtil.getVertexfromLabel(V, v) != null;
+		assertTrue(expectedV.stream().allMatch(pv), "Must contain all Vertexes");
+		Predicate <Pair<String,String>> pe = p -> g.getEdge(VertexEdgeUtil.getVertexfromLabel(V, p.getFirst()), 
+				                                                VertexEdgeUtil.getVertexfromLabel(V, p.getSecond())) != null;
+		assertTrue(expectedE.stream().allMatch(pe), "Must contain all Edges");
+	}
+	
+	static Stream <Arguments> getGraphACSVProvider () {
+		return Stream.of(
+			Arguments.of(new StringReader(adjacencyCSVf), CSVFormat.ADJACENCY_LIST, makeStringList(vedgeCSV), makeStringPairList(eedgeCSV)),
+			Arguments.of(null,CSVFormat.ADJACENCY_LIST, new ArrayList <>(), new ArrayList <> ()),
+			Arguments.of(new StringReader(adjacencyCSVf), CSVFormat.MATRIX, new ArrayList <>(), new ArrayList <> ())
+			);
+	}
+	
+	@ParameterizedTest
+	@MethodSource("getGraphACSVProvider")
+    void getGraphACSVTest (StringReader reader, CSVFormat f, List <String> expectedV, List <Pair<String,String>> expectedE) {
 		Graph <DefaultVertex,DefaultEdge> graph = new SimpleGraph <> 
 			(VertexEdgeUtil.createDefaultVertexSupplier(), 
 	            SupplierUtil.createDefaultEdgeSupplier(), false);
@@ -769,7 +804,6 @@ class ImportUtilTest {
 					VertexEdgeUtil.createRelationshipWeightedEdgeSupplier());
 		ImportUtil.readVertexSet(graph, vreader, idAtt, labelAtt);
 		ImportUtil.readEdgeSet(graph, ereader, sourceAtt, targetAtt, weightAtt, simplegraph, weighted);
-		PrintUtil.printGraph(graph);
 		Set <DefaultVertex> V = graph.vertexSet();
 		Set <RelationshipWeightedEdge> E = graph.edgeSet();
 		assertEquals(expectedV.size(),V.size(), "Must have the same Vertex Set Size");

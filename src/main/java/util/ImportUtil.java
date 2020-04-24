@@ -30,7 +30,6 @@ public class ImportUtil <V,E> {
 	
 	// EDGE LIST
 	// Updated 1.4.0
-	// Remover parâmetro CSVFormat em versões posteriores
 	public static Graph<DefaultVertex,DefaultEdge> importGraphCSV 
 		(Graph<DefaultVertex,DefaultEdge> graph, String filename, CSVFormat f) {
 		try {
@@ -43,7 +42,7 @@ public class ImportUtil <V,E> {
 	
 	public static Graph<DefaultVertex,DefaultEdge> getGraphCSV 
 	(Graph<DefaultVertex,DefaultEdge> graph, StringReader reader, CSVFormat f) {
-		if (reader != null && f == CSVFormat.EDGE_LIST) {
+		if (reader != null && (f == CSVFormat.EDGE_LIST || f == CSVFormat.ADJACENCY_LIST)) {
 			CSVImporter<DefaultVertex, DefaultEdge> csvImporter = new CSVImporter<>(f);
 			Map<DefaultVertex, Map<String, Attribute>> attrs = new HashMap<>();
 			csvImporter.addVertexAttributeConsumer((p, a) -> {

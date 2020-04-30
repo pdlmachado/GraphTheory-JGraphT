@@ -1,4 +1,5 @@
 // Teoria dos Grafos - UFCG
+// Updated JGraphT 1.4.0
 // Vértice com id e mapa de atributos, incluindo o label (rótulo)
 
 package util;

@@ -469,8 +469,8 @@ public class ImportUtil <V,E> {
 		} catch (IOException e) {
 			throw new FileNotFoundException();
 		}
-		StringReader readergml = new StringReader(contentBuilder.toString());
-		return readergml;
+		StringReader reader = new StringReader(contentBuilder.toString());
+		return reader;
 	}
     
 }

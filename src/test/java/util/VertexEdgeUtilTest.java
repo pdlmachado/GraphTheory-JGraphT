@@ -12,7 +12,6 @@ import java.util.Set;
 import java.util.stream.Stream;
 
 import org.jgrapht.Graph;
-import org.jgrapht.Graphs;
 import org.jgrapht.graph.DefaultDirectedGraph;
 import org.jgrapht.graph.Pseudograph;
 import org.jgrapht.graph.SimpleGraph;
@@ -56,7 +55,8 @@ class VertexEdgeUtilTest {
 	static RelationshipEdge e3;
 	static RelationshipEdge e4;
 	
-	
+	///////////////////////////////////////////
+	// Test Data
 	static void buildUndirectedGraph () {
 		Map<String, Attribute> att1;
 		Map<String, Attribute> att2;

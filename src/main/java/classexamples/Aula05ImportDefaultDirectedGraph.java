@@ -26,7 +26,7 @@ public class Aula05ImportDefaultDirectedGraph {
         	System.out.print("Grau de Entrada: " + g.inDegreeOf(v) + "|");
         	System.out.print("Grau de Saída: " + g.outDegreeOf(v) + "|");
         	System.out.print("Arcos onde é a cabeça: " + g.incomingEdgesOf(v) + "|");
-        	System.out.print("Arcos onde é a cabeça: " + g.incomingEdgesOf(v) + "|");
+        	System.out.print("Arcos onde é a cauda: " + g.outgoingEdgesOf(v) + "|");
         	System.out.print("Vizinhos de entrada: " + Graphs.predecessorListOf(g,v) + "|");
         	System.out.println("Vizinhos de saída: " + Graphs.successorListOf(g,v));
         } );

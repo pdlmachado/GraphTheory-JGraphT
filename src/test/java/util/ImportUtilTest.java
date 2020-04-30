@@ -2,9 +2,6 @@ package util;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +16,6 @@ import org.jgrapht.graph.DefaultEdge;
 import org.jgrapht.graph.DefaultWeightedEdge;
 import org.jgrapht.graph.SimpleGraph;
 import org.jgrapht.graph.SimpleWeightedGraph;
-import org.jgrapht.nio.ImportException;
 import org.jgrapht.nio.csv.CSVFormat;
 import org.jgrapht.util.SupplierUtil;
 import org.junit.jupiter.api.BeforeAll;
@@ -28,9 +24,6 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-import util.DrawUtil.layout_type;
-
-import static org.mockito.Mockito.*;
 
 class ImportUtilTest {
 	

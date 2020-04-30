@@ -41,7 +41,8 @@ public class PrintUtilTest {
 	  // printGraph
 	  @Test
 	  public void printGraphTest() {
-		  Graph <String,DefaultEdge> mockedgraph = mock(Graph.class);
+		  @SuppressWarnings("unchecked")
+		Graph <String,DefaultEdge> mockedgraph = mock(Graph.class);
 		  PrintUtil.printGraph(mockedgraph);
 		  verify(mockedgraph).edgeSet();
 		  verify(mockedgraph).vertexSet();
@@ -50,7 +51,8 @@ public class PrintUtilTest {
 	  // printGraph with title
 	  @Test
 	  public void printGraphwithTitleTest() {
-		  Graph <String,DefaultEdge> mockedgraph = mock(Graph.class);
+		  @SuppressWarnings("unchecked")
+		Graph <String,DefaultEdge> mockedgraph = mock(Graph.class);
 		  PrintUtil.printGraph(mockedgraph, "title");
 		  verify(mockedgraph).edgeSet();
 		  verify(mockedgraph).vertexSet();
@@ -81,7 +83,8 @@ public class PrintUtilTest {
 	  // printGraphSize
 	  @Test
 	  public void printGraphSizeTest() {
-		  Graph <String,DefaultEdge> mockedgraph = mock(Graph.class);
+		  @SuppressWarnings("unchecked")
+		Graph <String,DefaultEdge> mockedgraph = mock(Graph.class);
 		  PrintUtil.printGraphSize(mockedgraph);
 		  verify(mockedgraph, atLeastOnce()).edgeSet();
 		  verify(mockedgraph, atLeastOnce()).vertexSet();

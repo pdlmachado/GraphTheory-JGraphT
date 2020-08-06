@@ -80,9 +80,13 @@ public class MeasureUtil {
                 	size = s.size()+1; 
                 }
 			}
-            weights.put(v1,new Double(size));			
+            // Deprecated Code
+			//weights.put(v1,new Double(size));	
+			weights.put(v1,Double.valueOf(size));	
 		}
 		return weights;
 	}
+
+
 	
 }

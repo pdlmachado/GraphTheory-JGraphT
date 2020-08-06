@@ -102,7 +102,9 @@ public class ImportUtil <V,E> {
 					graph.addVertex(v1);
 					DefaultWeightedEdge e = new DefaultWeightedEdge();
 					graph.addEdge(v0,v1,e);
-					graph.setEdgeWeight(e, new Double(attributes[2]).doubleValue());
+					// Deprecated Code
+					//graph.setEdgeWeight(e, new Double(attributes[2]).doubleValue());
+					graph.setEdgeWeight(e, Double.valueOf(attributes[2]));
 				}
 			} catch (IOException e) {
 				e.printStackTrace();

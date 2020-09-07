@@ -13,7 +13,6 @@ import java.util.HashMap;
 import java.util.Map;
 import org.jgrapht.nio.Attribute;
 import org.jgrapht.nio.DefaultAttribute;
-import util.RelationshipDirectedWeightedEdge;
 
 public class RelationshipDirectedWeightedEdgeTest {
 

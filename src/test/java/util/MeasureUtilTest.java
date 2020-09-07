@@ -135,8 +135,8 @@ class MeasureUtilTest {
 	@ParameterizedTest
 	@MethodSource("assortativityCoefficientProvider")
 	<V,E> void assortativityCoefficientTest(Graph <V,E> g, double expected ) {
-		int e = new Double(expected*1000).intValue();
-		int r = new Double(MeasureUtil.assortativityCoefficient(g)*1000).intValue();
+		int e = Double.valueOf(expected*1000).intValue();
+		int r = Double.valueOf(MeasureUtil.assortativityCoefficient(g)*1000).intValue();
 		assertEquals(e,r);
 	}
 	
@@ -148,7 +148,7 @@ class MeasureUtilTest {
 	//getTreeCentroidPoints
 	static Stream <Arguments> getTreeCentroidPointsProvider () {
 		Set <Integer> vclaw = new HashSet<Integer> ();
-		vclaw.add(new Integer(0));
+		vclaw.add(Integer.valueOf(0));
 		Set <String> vtree = new HashSet<String> ();
 		vtree.add("e");
 		Set <String> vcent = new HashSet<String> ();

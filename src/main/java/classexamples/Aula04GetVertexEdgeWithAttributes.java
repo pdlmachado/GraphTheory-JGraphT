@@ -36,3 +36,4 @@ public class Aula04GetVertexEdgeWithAttributes {
 		System.out.println("Vizinho de " + v1 + ": " + e1.getNeighbor(v1));
 	}
 }
+

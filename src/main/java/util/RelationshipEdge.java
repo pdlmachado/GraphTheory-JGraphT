@@ -102,7 +102,8 @@ public class RelationshipEdge extends DefaultEdge {
 		if (o == null) { // analisa se este eh nulo. se for...
 			return ("{" + getSource() + "," + getTarget() + "}"); // retorna uma representacao no formato "{v1,v2}"
 		} else // caso contrario...
-			return (att.get("label")).toString() + "->{" + getSource() + "," + getTarget() + "}"; // retorna uma representacao no formato "lable->{v1,v2}"
+			//return (att.get("label")).toString() + "->{" + getSource() + "," + getTarget() + "}"; // retorna uma representacao no formato "label->{v1,v2}"
+			return o.toString();
 	}
 	
 	public String toStringAtt() {

@@ -12,7 +12,6 @@ import org.junit.jupiter.api.Test;
 import java.util.Map;
 import org.jgrapht.nio.Attribute;
 import org.jgrapht.nio.DefaultAttribute;
-import util.RelationshipWeightedEdge;
  
 public class RelationshipWeightedEdgeTest {
 
@@ -34,7 +33,7 @@ public class RelationshipWeightedEdgeTest {
   @Test
   public void test02()  throws Throwable  {
       RelationshipWeightedEdge relationshipWeightedEdge0 = new RelationshipWeightedEdge("a)dACYpbUC&RX");
-      Double double0 = new Double(29.98929);
+      Double double0 = Double.valueOf(29.98929);
       Attribute attribute0 = DefaultAttribute.createAttribute(double0);
       relationshipWeightedEdge0.setAtt("", attribute0);
       Object object0 = relationshipWeightedEdge0.getAtt("");

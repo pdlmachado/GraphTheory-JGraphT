@@ -385,7 +385,7 @@ class ImportUtilTest {
 		List <Triple<String,String,Double>> liste = new ArrayList <> ();
 		for (int i = 0; i < arrayLabels.length; i++) {
 			String [] attributes = arrayLabels[i].split(",");
-			liste.add(new Triple <> (attributes[0],attributes[1], new Double(attributes[2])));
+			liste.add(new Triple <> (attributes[0],attributes[1], Double.valueOf(attributes[2])));
 		}
 		return liste;
 	}

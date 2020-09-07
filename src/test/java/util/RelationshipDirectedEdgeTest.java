@@ -18,7 +18,6 @@ import java.util.Map;
 import org.jgrapht.nio.Attribute;
 import org.jgrapht.nio.DefaultAttribute;
 import org.junit.jupiter.api.Test;
-import util.RelationshipDirectedEdge;
 
 public class RelationshipDirectedEdgeTest {
 
@@ -41,7 +40,7 @@ public class RelationshipDirectedEdgeTest {
   @ Test //(timeout = 4000)
   public void test02()  throws Throwable  {
       RelationshipDirectedEdge relationshipDirectedEdge0 = new RelationshipDirectedEdge((String) null);
-      Double double0 = new Double(0.0);
+      Double double0 = Double.valueOf(0.0);
       Attribute attribute0 = DefaultAttribute.createAttribute(double0);
       relationshipDirectedEdge0.setAtt((String) null, attribute0);
       Object object0 = relationshipDirectedEdge0.getAtt((String) null);
@@ -76,7 +75,7 @@ public class RelationshipDirectedEdgeTest {
   @Test//(timeout = 4000)
   public void test05()  throws Throwable  {
       RelationshipDirectedEdge relationshipDirectedEdge0 = new RelationshipDirectedEdge();
-      Long long0 = new Long((-1L));
+      Long long0 = Long.valueOf((-1L));
       Attribute attribute0 = DefaultAttribute.createAttribute(long0);
       relationshipDirectedEdge0.setAttrs((Map<String, Attribute>) null);
       // Undeclared exception!

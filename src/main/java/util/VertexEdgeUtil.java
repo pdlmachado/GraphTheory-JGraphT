@@ -5,6 +5,7 @@ import java.util.function.Supplier;
 
 import org.jgrapht.util.SupplierUtil;
 
+
 public class VertexEdgeUtil <V,E> {
 	
 	public static Supplier<DefaultVertex> createDefaultVertexSupplier () {

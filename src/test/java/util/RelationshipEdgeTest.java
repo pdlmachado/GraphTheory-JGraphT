@@ -35,7 +35,7 @@ public class RelationshipEdgeTest {
   //@Timeout(value = 4000, unit.TimeUnit.MILISECONDS)
   public void test01()  throws Throwable  {
       RelationshipEdge relationshipEdge0 = new RelationshipEdge();
-      Double double0 = new Double((-400.993839361411));
+      Double double0 = Double.valueOf((-400.993839361411));
       Attribute attribute0 = DefaultAttribute.createAttribute(double0);
       relationshipEdge0.setAtt("", attribute0);
       Object object0 = relationshipEdge0.getAtt("");
@@ -81,7 +81,7 @@ public class RelationshipEdgeTest {
   //@Timeout(value = 4000, unit.TimeUnit.MILISECONDS)
   public void test04()  throws Throwable  {
       RelationshipEdge relationshipEdge0 = new RelationshipEdge("RyNv_?7");
-      Double double0 = new Double((-60.772513588703));
+      Double double0 = Double.valueOf((-60.772513588703));
       relationshipEdge0.setAttrs((Map<String, Attribute>) null);
       Attribute attribute0 = DefaultAttribute.createAttribute(double0);
       // Undeclared exception!

@@ -21,7 +21,6 @@ import org.jgrapht.Graph;
 import org.jgrapht.graph.DefaultEdge;
 import org.jgrapht.generate.NamedGraphGenerator;
 
-import util.PrintUtil;
 
 public class PrintUtilTest {
 		
@@ -183,7 +182,7 @@ public class PrintUtilTest {
   @Test
   public void test7()  throws Throwable  {
       HashMap<String, Double> hashMap0 = new HashMap<String, Double>();
-      Double double0 = new Double(366);
+      Double double0 = Double.valueOf(366);
       hashMap0.put("", double0);
       hashMap0.put("RM", double0);
       // Undeclared exception!
@@ -202,7 +201,7 @@ public class PrintUtilTest {
   @Test
   public void test8()  throws Throwable  {
       HashMap<Double, Double> hashMap0 = new HashMap<Double, Double>();
-      Double double0 = new Double(1.0);
+      Double double0 = Double.valueOf(1.0);
       Double double1 = hashMap0.put(double0, double0);
       hashMap0.put(double1, double1);
       // Undeclared exception!

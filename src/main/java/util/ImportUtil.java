@@ -21,9 +21,6 @@ import org.jgrapht.nio.ImportException;
 import org.jgrapht.nio.csv.CSVFormat;
 import org.jgrapht.nio.csv.CSVImporter;
 import org.jgrapht.nio.gml.GmlImporter;
-import org.jgrapht.nio.graphml.GraphMLImporter;
-
-import temp.CustomVertex;
 
 public class ImportUtil <V,E> {
 
@@ -461,45 +458,7 @@ public class ImportUtil <V,E> {
 	}
 	
 	
-/////////////////////////////////////////////////
-// GraphGML	
 
-	public static Graph<CustomVertex,DefaultWeightedEdge> importDefaultGraphGraphML 
-		(Graph<CustomVertex,DefaultWeightedEdge> graph, String filename) {
-	    try {
-	    	StringReader reader = (StringReader) readFile(filename);
-		    return getDefaultGraphGraphML(graph,reader);
-	    } catch (Exception e) {
-		    return graph;
-	    }
-
-	}
-	
-	public static Graph<CustomVertex,DefaultWeightedEdge> getDefaultGraphGraphML 
-	(Graph<CustomVertex,DefaultWeightedEdge> graph, StringReader reader) {		
-		if (reader != null) {
-			GraphMLImporter<CustomVertex, DefaultWeightedEdge> gmlImporter = new GraphMLImporter<>();	
-			Map<CustomVertex, Map<String, Attribute>> attrs = new HashMap<>();
-			gmlImporter.addVertexAttributeConsumer((p, a) -> {
-				Map<String, Attribute> map = attrs.get(p.getFirst());
-				if (map == null) {
-					map = new HashMap<>();
-					attrs.put(p.getFirst(), map);
-				}
-				map.put(p.getSecond(), a);
-			});
-			try {
-				gmlImporter.importGraph(graph, reader);
-				//for (CustomVertex v : attrs.keySet()) {
-				//	v.setAttrs(attrs.get(v));
-				//}
-			} catch (ImportException e) {
-				throw new RuntimeException(e);
-			}
-		}
-		return graph;
-	}	
-	
 ////////////////////////////////////////
 // File Reader
 ////////////////////////////////////////	

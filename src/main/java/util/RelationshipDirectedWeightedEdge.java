@@ -92,7 +92,7 @@ public class RelationshipDirectedWeightedEdge extends DefaultWeightedEdge {
 		if (o == null) { // analisa se este eh nulo. se for...
 			return ("(" + getSource() + ":" + getTarget() + ")"); // retorna uma descricao no formato "(cauda:cabeca)"
 		} else // caso contrario...
-			return o.toString() + "->(" + getSource() + ":" + getTarget() + ")"; // retorna uma descricao no formato
+			return o.toString(); // + "->(" + getSource() + ":" + getTarget() + ")"; // retorna uma descricao no formato
 																// "label->(cauda:cabeca)"
 	}
 

@@ -25,17 +25,17 @@ public class Aula04GraphIteration {
 		NeighborCache <DefaultVertex,RelationshipEdge> nc = new NeighborCache <DefaultVertex,RelationshipEdge> (graph);
 
 		// Usando Iterators
-        System.out.println("\nGrau (d_G) e Vizinhos (N_G) de cada vertice (com Iterators):");
-	    Iterator<DefaultVertex> it = graph.vertexSet().iterator();
-	    while (it.hasNext()) {
+		System.out.println("\nGrau (d_G) e Vizinhos (N_G) de cada vertice (com Iterators):");
+		Iterator<DefaultVertex> it = graph.vertexSet().iterator();
+		while (it.hasNext()) {
 	    	DefaultVertex v = it.next();
 	    	System.out.println("d_G(" + v.toString() + ") = " + graph.degreeOf(v));
 	    	System.out.println("N_G(" + v.toString() + ") = " + nc.neighborsOf(v));
 	    }
 	
 	    // Usando expressões lambda
-	    System.out.println("\nGrau (d_G) e Vizinhos (N_G) de cada vertice (com Lambda):");
-	    graph.vertexSet().stream().forEach(v -> {
+		System.out.println("\nGrau (d_G) e Vizinhos (N_G) de cada vertice (com Lambda):");
+		graph.vertexSet().stream().forEach(v -> {
 	    	System.out.println("d_G(" + v.toString() + ") = " + graph.degreeOf(v));
 	    	System.out.println("N_G(" + v.toString() + ") = " + nc.neighborsOf(v));
 	    });

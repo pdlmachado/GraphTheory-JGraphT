@@ -44,5 +44,6 @@ public class Aula04GraphTests {
 		System.out.println("is connected? " + GraphTests.isConnected(graph));
 		System.out.println("is bipartite? " + GraphTests.isBipartite(graph));
 		System.out.println("is complete? " + GraphTests.isComplete(graph));
+		System.out.println("is cubic?" + GraphTests.isCubic(graph));
 	}	
 }

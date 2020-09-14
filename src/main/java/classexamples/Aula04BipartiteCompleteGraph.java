@@ -17,12 +17,12 @@ public final class Aula04BipartiteCompleteGraph {
 
     public static void main(String[] args) {
 
-        Scanner keyboard = new Scanner(System.in);
+    	Scanner keyboard = new Scanner(System.in);
         System.out.print("Quantos vértices na partição 1? ");
         int p1 = keyboard.nextInt();
         System.out.print("Quantos vértices na partição 2? ");
         int p2 = keyboard.nextInt();
-        keyboard.close();
+        keyboard.close(); 	
     	
         Graph<String, DefaultEdge> completeBGraph = 
         		new SimpleGraph<>(SupplierUtil.createStringSupplier(), 

@@ -93,7 +93,7 @@ public class RelationshipWeightedEdge extends DefaultWeightedEdge {
 		if (o == null) { // analisa se este eh nulo. se for...
 			return ("{" + getSource() + "," + getTarget() + "}"); // retorna uma representacao no formato "{v1,v2}"
 		} else // caso contrario...
-			return (att.get("label")).toString() + "->{" + getSource() + "," + getTarget() + "}"; // retorna uma representacao no formato "lable->{v1,v2}"
+			return o.toString() ; //(att.get("label")).toString() + "->{" + getSource() + "," + getTarget() + "}"; // retorna uma representacao no formato "lable->{v1,v2}"
 	}
 	
 	public String toStringAtt() {

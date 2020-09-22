@@ -11,14 +11,18 @@ import util.PrintUtil;
 import util.VertexEdgeUtil;
 import util.RelationshipDirectedEdge;
 
-
 public class Aula07ImportDefaultDirectedGraph {
+
+	private static final String sep = System.getProperty("file.separator");
+	// path do folder onde os grafos a serem carregados estão armazenados
+	private static final String graphpathname = "." + sep + "src" + sep + "main" + sep +"java" + sep + "graphs" + sep;
+	
 	public static void main(String[] args) {
 
 	    DefaultDirectedGraph<DefaultVertex,RelationshipDirectedEdge> g = 
 	    		new DefaultDirectedGraph<>(VertexEdgeUtil.createDefaultVertexSupplier(),
 	    									VertexEdgeUtil.createRelationshipDirectedEdgeSupplier(),false);
-        ImportUtil.importDirectedGraphGML(g, "./src/main/java/graphs/grid.gml");    		
+        ImportUtil.importDirectedGraphGML(g, graphpathname + "grid.gml");    		
         PrintUtil.printGraph(g);
 	    	    
         g.vertexSet().stream().forEach(v -> { 

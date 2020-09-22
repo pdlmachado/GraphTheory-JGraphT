@@ -15,6 +15,10 @@ import util.PrintUtil;
 import util.VertexEdgeUtil;
 
 public class Aula07ImportWeightedGraphMatrix {
+	
+	private static final String sep = System.getProperty("file.separator");
+	// path do folder onde os grafos a serem carregados estão armazenados
+	private static final String graphpathname = "." + sep + "src" + sep + "main" + sep +"java" + sep + "graphs" + sep;
 
 	public static void main(String[] args) {
 
@@ -22,7 +26,7 @@ public class Aula07ImportWeightedGraphMatrix {
 				new SimpleWeightedGraph<DefaultVertex, DefaultWeightedEdge>(
 						VertexEdgeUtil.createDefaultVertexSupplier(),
 						SupplierUtil.createDefaultWeightedEdgeSupplier());
-        ImportUtil.importWeightedGraphCSV(graph, "./src/main/java/graphs/hamiltonian.csv",CSVFormat.MATRIX,false,true,true);
+        ImportUtil.importWeightedGraphCSV(graph, graphpathname + "hamiltonian.csv",CSVFormat.MATRIX,false,true,true);
  	    PrintUtil.printWeightedGraph(graph,"Graph: ");
  	    
  	    PalmerHamiltonianCycle <DefaultVertex,DefaultWeightedEdge> h =

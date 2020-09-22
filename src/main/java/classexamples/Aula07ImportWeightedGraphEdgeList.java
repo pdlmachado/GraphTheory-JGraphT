@@ -14,6 +14,10 @@ import util.PrintUtil;
 import util.VertexEdgeUtil;
 
 public class Aula07ImportWeightedGraphEdgeList {
+	
+	private static final String sep = System.getProperty("file.separator");
+	// path do folder onde os grafos a serem carregados estão armazenados
+	private static final String graphpathname = "." + sep + "src" + sep + "main" + sep +"java" + sep + "graphs" + sep;
 
 	public static void main(String[] args) {
 
@@ -21,7 +25,7 @@ public class Aula07ImportWeightedGraphEdgeList {
 				new SimpleWeightedGraph<DefaultVertex, DefaultWeightedEdge>(
 						VertexEdgeUtil.createDefaultVertexSupplier(),
 						SupplierUtil.createDefaultWeightedEdgeSupplier());
-        ImportUtil.importWeightedGraphCSV(graph, "./src/main/java/graphs/weightededgelist.csv", false);
+        ImportUtil.importWeightedGraphCSV(graph, graphpathname + "weightededgelist.csv", false);
  	    PrintUtil.printWeightedGraph(graph,"Graph: ");
  
  	    DefaultVertex e = VertexEdgeUtil.getVertexfromLabel(graph.vertexSet(), "e");

@@ -16,6 +16,10 @@ import util.VertexEdgeUtil;
 
 public class Aula07ImportWeightedDirectedGraph {
 	// Importa Grafo Direcionado Ponderado no formato CSV
+	
+	private static final String sep = System.getProperty("file.separator");
+	// path do folder onde os grafos a serem carregados estão armazenados
+	private static final String graphpathname = "." + sep + "src" + sep + "main" + sep +"java" + sep + "graphs" + sep;
 
 	public static void main(String[] args) {
 		// Import CSV
@@ -26,7 +30,7 @@ public class Aula07ImportWeightedDirectedGraph {
 						SupplierUtil.createDefaultWeightedEdgeSupplier());
 		ImportUtil.importWeightedGraphCSV(
 				graph, 
-				"./src/main/java/graphs/csv-weighted-example.txt", 
+				graphpathname + "csv-weighted-example.txt", 
 				CSVFormat.MATRIX, 
 				false, 
 				true, // EDGE_WEIGHTS

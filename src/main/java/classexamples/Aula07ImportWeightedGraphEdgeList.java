@@ -13,7 +13,7 @@ import util.ImportUtil;
 import util.PrintUtil;
 import util.VertexEdgeUtil;
 
-public class Aula05ImportWeightedGraphEdgeList {
+public class Aula07ImportWeightedGraphEdgeList {
 
 	public static void main(String[] args) {
 

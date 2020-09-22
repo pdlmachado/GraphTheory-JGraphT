@@ -14,7 +14,7 @@ import util.ImportUtil;
 import util.PrintUtil;
 import util.VertexEdgeUtil;
 
-public class Aula05ImportWeightedDirectedGraph {
+public class Aula07ImportWeightedDirectedGraph {
 	// Importa Grafo Direcionado Ponderado no formato CSV
 
 	public static void main(String[] args) {

@@ -21,6 +21,7 @@ public class Aula04GetVertexEdgeWithOutAttributes {
 		
 		System.out.println("d_G(0) = " + graph.degreeOf(0));
 		
+		// getEdge retorna referência para o objeto aresta criado
 		DefaultEdge e = graph.getEdge(0, 1);
 		System.out.println("Edge: " + e);
 		System.out.println("Source: " + graph.getEdgeSource(e));

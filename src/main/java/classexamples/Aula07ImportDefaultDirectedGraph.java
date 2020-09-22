@@ -12,13 +12,13 @@ import util.VertexEdgeUtil;
 import util.RelationshipDirectedEdge;
 
 
-public class Aula05ImportDefaultDirectedGraph {
+public class Aula07ImportDefaultDirectedGraph {
 	public static void main(String[] args) {
 
 	    DefaultDirectedGraph<DefaultVertex,RelationshipDirectedEdge> g = 
 	    		new DefaultDirectedGraph<>(VertexEdgeUtil.createDefaultVertexSupplier(),
 	    									VertexEdgeUtil.createRelationshipDirectedEdgeSupplier(),false);
-        ImportUtil.importDirectedGraphGML(g, "./src/main/java/graphs/strongly3.gml");    		
+        ImportUtil.importDirectedGraphGML(g, "./src/main/java/graphs/grid.gml");    		
         PrintUtil.printGraph(g);
 	    	    
         g.vertexSet().stream().forEach(v -> { 

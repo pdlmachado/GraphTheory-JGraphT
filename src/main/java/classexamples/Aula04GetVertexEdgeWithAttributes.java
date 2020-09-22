@@ -22,12 +22,14 @@ public class Aula04GetVertexEdgeWithAttributes {
 		ImportUtil.importGraphGML(graph,"./src/main/java/graphs/pseudograph-Aula02.gml");
         PrintUtil.printGraph(graph);
 		
+        // getVertexfromLabel retorna referência para o objeto vértice criado
         DefaultVertex a = VertexEdgeUtil.getVertexfromLabel(graph.vertexSet(),"a");
 		DefaultVertex b = VertexEdgeUtil.getVertexfromLabel(graph.vertexSet(), "b");
         System.out.println("d_G(a) = " + graph.degreeOf(a));
 		System.out.println("Aresta: " + graph.getEdge(a, b));
 		System.out.println("Aresta: " + graph.getEdge(b, a) + "\n");
 		
+		// getEdgefromLabel retorna referência para o objeto aresta criado
 		RelationshipEdge e1 = VertexEdgeUtil.getEdgefromLabel(graph.edgeSet(), "x");
 		System.out.println("Aresta: " + e1);
 		System.out.println("Label: " + e1.getLabel());

@@ -14,7 +14,7 @@ import util.ImportUtil;
 import util.PrintUtil;
 import util.VertexEdgeUtil;
 
-public class Aula05ImportWeightedGraphMatrix {
+public class Aula07ImportWeightedGraphMatrix {
 
 	public static void main(String[] args) {
 
@@ -33,13 +33,5 @@ public class Aula05ImportWeightedGraphMatrix {
  	    // Este calculo pode ser feita por uma iteração simples usando o comando while.
         double weight = hcycle.getEdgeList().stream().map(e -> graph.getEdgeWeight(e)).reduce(0.0, (a, b) -> a + b);
         System.out.println("Cycle weight: " + weight);
- 	    
- 	    
- 	    
- 	    
-
- 
-
 	}
-
 }

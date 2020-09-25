@@ -34,7 +34,7 @@ public class Aula08Product {
     
 		//Import G2
 		Graph<DefaultVertex, DefaultEdge> g2 = new SimpleGraph<>(VertexEdgeUtil.createDefaultVertexSupplier(), SupplierUtil.createDefaultEdgeSupplier(), false);
-		ImportUtil.importGraphCSV(g2,graphpathname + "vforprod",CSVFormat.EDGE_LIST);
+		ImportUtil.importGraphCSV(g2,graphpathname + "Vforprod",CSVFormat.EDGE_LIST);
 	    System.out.println("\nGrafo G2: ");
 	    System.out.println("Arestas: "+ g2.edgeSet());
 	    System.out.println("Vertices: " + g2.vertexSet());

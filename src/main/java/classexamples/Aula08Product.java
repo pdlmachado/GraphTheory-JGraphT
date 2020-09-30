@@ -12,10 +12,12 @@ import org.jgrapht.util.SupplierUtil;
 
 import util.DefaultVertex;
 import util.ImportUtil;
+import util.PrintUtil;
 import util.VertexEdgeUtil;
 
 public class Aula08Product {
 	
+	private static final String NL = System.getProperty("line.separator");
 	private static final String sep = System.getProperty("file.separator");
 	// path do folder onde os grafos a serem carregados estão armazenados
 	private static final String graphpathname = "." + sep + "src" + sep + "main" + sep +"java" + sep + "graphs" + sep;
@@ -24,20 +26,30 @@ public class Aula08Product {
 	
 		// Calcula o produto cartesiano entre G1 e G2
 		//Import G1	
+
+	    computeProduct("Vforprod","Uforprod");
+	    computeProduct("prod-a","prod-x");
+	}
+	
+	static void computeProduct(String filename1, String filename2) {
+		
 		Graph<DefaultVertex, DefaultEdge> g1 = 
 				new SimpleGraph<>(VertexEdgeUtil.createDefaultVertexSupplier(), 
 									SupplierUtil.createDefaultEdgeSupplier(), false);
-		ImportUtil.importGraphCSV(g1, graphpathname + "Uforprod",CSVFormat.EDGE_LIST);
-		System.out.println("Grafo G1: ");
-		System.out.println("Arestas: "+ g1.edgeSet());
-		System.out.println("Vertices: " + g1.vertexSet());
+		ImportUtil.importGraphCSV(g1, graphpathname + filename1,CSVFormat.ADJACENCY_LIST);
+		PrintUtil.printGraph(g1,"Grafo " + filename1 + ": ");
     
 		//Import G2
 		Graph<DefaultVertex, DefaultEdge> g2 = new SimpleGraph<>(VertexEdgeUtil.createDefaultVertexSupplier(), SupplierUtil.createDefaultEdgeSupplier(), false);
-		ImportUtil.importGraphCSV(g2,graphpathname + "Vforprod",CSVFormat.EDGE_LIST);
-	    System.out.println("\nGrafo G2: ");
-	    System.out.println("Arestas: "+ g2.edgeSet());
-	    System.out.println("Vertices: " + g2.vertexSet());
+		ImportUtil.importGraphCSV(g2,graphpathname + filename2,CSVFormat.ADJACENCY_LIST);
+		PrintUtil.printGraph(g2,"Grafo " + filename2 + ": ");
+	    
+	    Graph <Pair<DefaultVertex,DefaultVertex>,DefaultEdge> prod = getProduct(g1, g2);
+		PrintUtil.printGraph(prod,"Produto: ");
+	    
+	}
+	
+	static Graph <Pair<DefaultVertex,DefaultVertex>,DefaultEdge> getProduct (Graph <DefaultVertex, DefaultEdge> g1, Graph <DefaultVertex, DefaultEdge> g2) {
 	    
 	    Graph <Pair<DefaultVertex,DefaultVertex>,DefaultEdge> prod = new SimpleGraph <> (DefaultEdge.class);
 	    // Constroi conjunto de vértices
@@ -69,12 +81,7 @@ public class Aula08Product {
 		    	}
 		    }
 	    }
-	    
-	    System.out.println("\nProduto entre G1 e G2:");
-	    System.out.println(prod.vertexSet());
-	    System.out.println(prod.edgeSet());
-	    
-
+	    return prod;
 	}
 
 }

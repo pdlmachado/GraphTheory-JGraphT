@@ -1,5 +1,5 @@
 Creator	"yFiles"
-Version	"2.14"
+Version	"2.17"
 graph
 [
 	hierarchic	1
@@ -11,8 +11,8 @@ graph
 		label	"1"
 		graphics
 		[
-			x	0.0
-			y	0.0
+			x	114.11163015755183
+			y	119.80193682458291
 			w	30.0
 			h	30.0
 			type	"ellipse"
@@ -25,7 +25,7 @@ graph
 			text	"1"
 			fontSize	12
 			fontName	"Dialog"
-			model	"null"
+			anchor	"c"
 		]
 	]
 	node
@@ -34,8 +34,8 @@ graph
 		label	"2"
 		graphics
 		[
-			x	1520.0
-			y	0.0
+			x	30.0
+			y	117.77588332601259
 			w	30.0
 			h	30.0
 			type	"ellipse"
@@ -48,7 +48,7 @@ graph
 			text	"2"
 			fontSize	12
 			fontName	"Dialog"
-			model	"null"
+			anchor	"c"
 		]
 	]
 	node
@@ -57,8 +57,8 @@ graph
 		label	"3"
 		graphics
 		[
-			x	760.0
-			y	929.0
+			x	42.01359030861853
+			y	30.0
 			w	30.0
 			h	30.0
 			type	"ellipse"
@@ -71,7 +71,7 @@ graph
 			text	"3"
 			fontSize	12
 			fontName	"Dialog"
-			model	"null"
+			anchor	"c"
 		]
 	]
 	node
@@ -80,8 +80,8 @@ graph
 		label	"4"
 		graphics
 		[
-			x	733.800844159731
-			y	429.5424313681569
+			x	187.07676246767056
+			y	-13.479322938670464
 			w	30.0
 			h	30.0
 			type	"ellipse"
@@ -94,7 +94,7 @@ graph
 			text	"4"
 			fontSize	12
 			fontName	"Dialog"
-			model	"null"
+			anchor	"c"
 		]
 	]
 	node
@@ -103,8 +103,8 @@ graph
 		label	"5"
 		graphics
 		[
-			x	1083.009945038847
-			y	347.0263335639029
+			x	127.07676246767058
+			y	36.821453930048946
 			w	30.0
 			h	30.0
 			type	"ellipse"
@@ -117,7 +117,7 @@ graph
 			text	"5"
 			fontSize	12
 			fontName	"Dialog"
-			model	"null"
+			anchor	"c"
 		]
 	]
 	edge

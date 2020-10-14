@@ -6,9 +6,6 @@ import javax.swing.JFrame;
 
 import org.jgrapht.Graph;
 import org.jgrapht.ListenableGraph;
-import org.jgrapht.alg.drawing.CircularLayoutAlgorithm2D;
-import org.jgrapht.alg.drawing.model.Box2D;
-import org.jgrapht.alg.drawing.model.MapLayoutModel2D;
 import org.jgrapht.ext.JGraphXAdapter;
 import org.jgrapht.graph.DefaultListenableGraph;
 
@@ -24,15 +21,7 @@ import com.mxgraph.util.mxStyleUtils;
 
 public class DrawUtil {
 
-public static <V,E> void circulardraw (Graph <V,E> graph) {
-		CircularLayoutAlgorithm2D <V,E> c = new 
-				CircularLayoutAlgorithm2D <> ();
-		c.layout(graph,new MapLayoutModel2D <>(new Box2D(100.0,100.0)));
-		
-	}
-	
-	
-	public enum layout_type {CIRCLE,ORGANIC,HIERARCHICAL,ORTHOGONAL;}
+	public enum layout_type {CIRCLE,ORGANIC,HIERARCHICAL,ORTHOGONAL};
 	
 	// Graphic view for directed graphs
 	public static <V,E> void createAndShowGui(Graph <V,E> graph, String frameLabel, 

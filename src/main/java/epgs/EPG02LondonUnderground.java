@@ -14,6 +14,7 @@ import java.util.Set;
 
 import org.jgrapht.Graph;
 import org.jgrapht.GraphPath;
+import org.jgrapht.alg.util.Pair;
 import org.jgrapht.graph.GraphWalk;
 import org.jgrapht.graph.WeightedMultigraph;
 
@@ -95,6 +96,22 @@ public class EPG02LondonUnderground {
 		}
 		return lines;
 		
+	}
+	
+	///////////////////////////////////////////////////////////////////////////////////
+	// Métodos do EPG01 utilizados nos testes desta classe. Acrescente seu código
+	
+	// Menor Trajeto de Trem entre duas Estações
+	public GraphPath <DefaultVertex, RelationshipWeightedEdge> shortestPath (String source, String sink) {
+		// Adicione aqui sua implementação
+		return emptyPath;
+	}
+	
+	// Troca de Linhas em um Trajeto
+	public List <Pair<String,RelationshipWeightedEdge>> changeofLines 
+						(GraphPath <DefaultVertex, RelationshipWeightedEdge> path) {
+		// Adicione aqui sua implementação
+		return new ArrayList <> ();
 	}
 	
 	/////////////////////////////////////////////////

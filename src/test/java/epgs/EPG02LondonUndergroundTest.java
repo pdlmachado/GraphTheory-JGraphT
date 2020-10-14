@@ -89,6 +89,54 @@ public class EPG02LondonUndergroundTest {
 		return l;
 	}
 	
+	///////////////////////////////
+	// estimatedTime Tests
+
+	static Stream <Arguments> estimatedTimeDataProvider () {
+		return Stream.of(
+				Arguments.of(epg02.shortestPath("Bank", "East India"), 10.0, 22.0),
+				Arguments.of(epg02.shortestPath("Bank", "East India"), 0.0, 12.0),
+				Arguments.of(epg02.shortestPath("Aldgate", "Royal Albert"), 20.0, 123.0),
+				Arguments.of(epg02.shortestPath("Bank", "Stanmore"), 15.0, 95.0),
+				Arguments.of(epg02.shortestPath("Invalid","Bank"), 20.0, 0.0)
+		);
+	}
+
+	@ParameterizedTest
+	@MethodSource("estimatedTimeDataProvider")
+	void estimatedTimeTest (
+			GraphPath <DefaultVertex,RelationshipWeightedEdge> path, double time, double expectedResult) {
+		assertEquals(expectedResult,epg02.estimatedTime(path,time));
+	}
+
+	/////////////////////////////////
+	// shortestEstimatedPath Tests
+
+	static Stream <Arguments> shortestEstimatedPathDataProvider () {
+		String [] expected1 = {"Bank", "Shadwell", "Limehouse", "Westferry", "Poplar", "Blackwall", "East India"};
+		String [] expected2 = {"Aldgate", "Liverpool Street", "Bethnal Green", "Mile End", "Bow Road", "Bromley-By-Bow", "West Ham", "Canning Town", "Royal Victoria", "Custom House", "Prince Regent", "Royal Albert"};
+		String [] expected3 = {"Aldgate", "Liverpool Street", "Bank", "Shadwell", "Limehouse", "Westferry", "Poplar", "Blackwall", "East India", "Canning Town", "Royal Victoria", "Custom House", "Prince Regent", "Royal Albert"};
+		String [] expected4 = {"Bank", "St. Paul's", "Chancery Lane", "Holborn", "Tottenham Court Road", "Oxford Circus", "Bond Street", "Baker Street", "Finchley Road", "Wembley Park", "Kingsbury", "Queensbury", "Canons Park", "Stanmore"};
+		String [] expected5 = {};
+		return Stream.of(
+				Arguments.of("Bank", "East India", 15.0,20,makeVertexList(expected1),27.0),
+				Arguments.of("Aldgate", "Royal Albert", 15.0, 5, makeVertexList(expected2),98.0),
+				Arguments.of("Aldgate", "Royal Albert", 15.0, 20, makeVertexList(expected3),71.0),
+				Arguments.of("Bank", "Stanmore", 15.0, 20, makeVertexList(expected4),95.0),
+				Arguments.of("Bank", "Stanmore", 15.0, 0, makeVertexList(expected5),0.0),
+				Arguments.of("Invalid","Bank", 15.0, 20, makeVertexList(expected5),0.0)
+		);
+	}
+
+	@ParameterizedTest
+	@MethodSource("shortestEstimatedPathDataProvider")
+	void shortestEstimatedPathTest (
+			String source, String target, double time, int maxAttempts, 
+			List <DefaultVertex> expectedP, double expectedW) {
+		GraphPath <DefaultVertex, RelationshipWeightedEdge> result = epg02.shortestEstimatedPath(source,target,time,maxAttempts);
+		assertEquals(expectedP, result.getVertexList(), "Vertex List");
+		assertEquals(expectedW, epg02.estimatedTime(result, time), "Estimated Time");
+	}
 
 	//////////////////////////////////////////////
 	// bestRoute Tests

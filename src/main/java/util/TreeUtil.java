@@ -4,8 +4,10 @@ import java.util.Iterator;
 import java.util.Set;
 
 import org.jgrapht.Graph;
+import org.jgrapht.GraphMapping;
 import org.jgrapht.GraphTests;
 import org.jgrapht.Graphs;
+import org.jgrapht.alg.isomorphism.VF2SubgraphIsomorphismInspector;
 import org.jgrapht.alg.shortestpath.DijkstraShortestPath;
 import org.jgrapht.graph.DefaultDirectedGraph;
 import org.jgrapht.graph.DefaultEdge;
@@ -13,17 +15,30 @@ import org.jgrapht.graph.SimpleGraph;
 
 public class TreeUtil {
 	
-	public static <V,E> boolean testSpanningTree (Graph <V,E> g, Graph <V,E> t) {
+
+	public static <V,E> boolean  testSpanningTree (Graph <V,E> g, Graph <V,E> t) {
 		
 		boolean includeEdges = true;
 		Iterator <E> itEdge = t.edgeSet().iterator();
 		while (itEdge.hasNext()) {
 			E e = itEdge.next();
-			if(g.containsEdge(t.getEdgeSource(e),t.getEdgeTarget(e))==false) {
+			String sourceE = t.getEdgeSource(e).toString();
+			String targetE = t.getEdgeTarget(e).toString();
+			if(g.edgeSet().stream().anyMatch(ge -> g.getEdgeSource(ge).toString().equals(sourceE)&&g.getEdgeTarget(ge).toString().equals(targetE))==false &&
+			   g.edgeSet().stream().anyMatch(ge -> g.getEdgeSource(ge).toString().equals(targetE)&&g.getEdgeTarget(ge).toString().equals(sourceE))==false		) {
+				System.out.println(e);
 				includeEdges = false;
 			}
 		}
-		return GraphTests.isTree(t) && includeEdges && (g.vertexSet().equals(t.vertexSet()));
+		boolean includeVertices = true;
+		Iterator <V> itVertex = t.vertexSet().iterator();
+		while (itVertex.hasNext()) {
+			String v = itVertex.next().toString();
+			if(g.vertexSet().stream().anyMatch(gv -> gv.toString().equals(v))==false) {
+				includeEdges = false;
+			}
+		}
+		return GraphTests.isTree(t) && includeEdges && includeVertices;
 	}
 	
 	public static <V,E> void getcoTree (Graph <V,E> coTree, Graph <V,E> basegraph, Graph <V,E> spanningtree) {
@@ -32,7 +47,11 @@ public class TreeUtil {
 		Iterator <E> itEdge = basegraph.edgeSet().iterator();
 		while (itEdge.hasNext()) {
 			E e = itEdge.next();
-			if(spanningtree.containsEdge(basegraph.getEdgeSource(e),basegraph.getEdgeTarget(e))==false) {
+			String sourceE = basegraph.getEdgeSource(e).toString();
+			String targetE = basegraph.getEdgeTarget(e).toString();
+			if(spanningtree.edgeSet().stream().anyMatch(ge -> spanningtree.getEdgeSource(ge).toString().equals(sourceE)&&spanningtree.getEdgeTarget(ge).toString().equals(targetE))==false &&
+			   spanningtree.edgeSet().stream().anyMatch(ge -> spanningtree.getEdgeSource(ge).toString().equals(targetE)&&spanningtree.getEdgeTarget(ge).toString().equals(sourceE))==false		) {
+				System.out.println(e);
 				edges.add(e);
 			}
 		}

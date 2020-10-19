@@ -51,7 +51,6 @@ public class TreeUtil {
 			String targetE = basegraph.getEdgeTarget(e).toString();
 			if(spanningtree.edgeSet().stream().anyMatch(ge -> spanningtree.getEdgeSource(ge).toString().equals(sourceE)&&spanningtree.getEdgeTarget(ge).toString().equals(targetE))==false &&
 			   spanningtree.edgeSet().stream().anyMatch(ge -> spanningtree.getEdgeSource(ge).toString().equals(targetE)&&spanningtree.getEdgeTarget(ge).toString().equals(sourceE))==false		) {
-				System.out.println(e);
 				edges.add(e);
 			}
 		}

@@ -2,8 +2,13 @@
 
 package classexamples;
 
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
 import org.jgrapht.Graph;
 import org.jgrapht.GraphTests;
+import org.jgrapht.Graphs;
 import org.jgrapht.alg.scoring.AlphaCentrality;
 import org.jgrapht.alg.scoring.BetweennessCentrality;
 import org.jgrapht.alg.scoring.ClosenessCentrality;
@@ -52,25 +57,22 @@ public class Aula20GraphScores {
 		Graph<DefaultVertex, DefaultEdge> graph = 
 				new DirectedMultigraph <> (VertexEdgeUtil.createDefaultVertexSupplier(), 
 						SupplierUtil.createDefaultEdgeSupplier(), false);
-		Graph<DefaultVertex, DefaultEdge> ugraph = 
-				new Multigraph <> (VertexEdgeUtil.createDefaultVertexSupplier(), 
-						SupplierUtil.createDefaultEdgeSupplier(), false);
+		Graph<DefaultVertex, DefaultEdge> ugraph = Graphs.undirectedGraph(graph);
 		ImportUtil.importDefaultGraphGML(graph, graphpathname + filename);
-		ImportUtil.importDefaultGraphGML(ugraph, graphpathname + filename);
-		
 		if (numberOfValues > graph.vertexSet().size()) {
 			numberOfValues = graph.vertexSet().size();
 		}
- 
-		if (isdirected) {
+ 		if (isdirected) {
 			PrintUtil.printGraph(graph,"**Graph: " + filename);
-			System.out.println("Direcionado");
+			System.out.println("Grafo Direcionado");
+			System.out.println(ugraph.vertexSet().size() + " vértices");
+			System.out.println(ugraph.edgeSet().size() + " arcos" + NL);
 		} else {
 			PrintUtil.printGraph(ugraph,"**Graph: " + filename);
-			System.out.println("Não-direcionado");
+			System.out.println("Grafo Não-direcionado");
+			System.out.println(ugraph.vertexSet().size() + " vértices");
+			System.out.println(ugraph.edgeSet().size() + " arestas" + NL);
 		}
-		System.out.println(ugraph.vertexSet().size() + " vértices");
-		System.out.println(ugraph.edgeSet().size() + " arestas" + NL);
   	    
 		////
 		// Métricas
@@ -109,6 +111,34 @@ public class Aula20GraphScores {
   	   		hc = new HarmonicCentrality <> (ugraph);
   	   	}
   	   	PrintUtil.printOrderedVertexMeasures (hc.getScores(),numberOfValues,descending);
+  	   	
+  	    if (isdirected) {
+  	    	System.out.println(NL + "-INDEGREE-");
+  	    	Map <DefaultVertex, Double> indegree = new HashMap <> ();
+  	    	Iterator <DefaultVertex> inIt = graph.vertexSet().iterator();
+  	    	while (inIt.hasNext()) {
+  	    		DefaultVertex v = inIt.next();
+  	    		indegree.put(v,Double.valueOf(graph.inDegreeOf(v)));
+  	    	}
+  	    	PrintUtil.printOrderedVertexMeasures (indegree,numberOfValues,descending);
+  	    	System.out.println(NL + "-OUTDEGREE-");
+  	    	Map <DefaultVertex, Double> outdegree = new HashMap <> ();
+  	    	Iterator <DefaultVertex> outIt = graph.vertexSet().iterator();
+  	    	while (outIt.hasNext()) {
+  	    		DefaultVertex v = outIt.next();
+  	    		outdegree.put(v,Double.valueOf(graph.outDegreeOf(v)));
+  	    	} 
+  	  	    PrintUtil.printOrderedVertexMeasures (outdegree,numberOfValues,descending);
+  	    } else {
+  	    	System.out.println(NL + "-DEGREE-");
+  	    	Map <DefaultVertex, Double> degree = new HashMap <> ();
+  	    	Iterator <DefaultVertex> it = graph.vertexSet().iterator();
+  	    	while (it.hasNext()) {
+  	    		DefaultVertex v = it.next();
+  	    		degree.put(v,Double.valueOf(graph.degreeOf(v)));
+  	    	} 
+  	  	    PrintUtil.printOrderedVertexMeasures (degree,numberOfValues,descending);
+  	    }
 	   
   	   	if (GraphTests.hasMultipleEdges(graph)==false) {
    			double E = (graph.edgeSet()).size();

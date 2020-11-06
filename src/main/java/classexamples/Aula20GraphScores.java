@@ -23,7 +23,7 @@ import util.PrintUtil;
 import util.VertexEdgeUtil;
 
 
-public class Aula20UndirectedGraphScores {
+public class Aula20GraphScores {
 
 	private static final String NL = System.getProperty("line.separator");
 	private static final String sep = System.getProperty("file.separator");

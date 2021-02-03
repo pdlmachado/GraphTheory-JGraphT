@@ -6,10 +6,11 @@ def print_vertices (g,v_attrs={}):
   list_vertices = list(g.vertices)
   print("Vértices: {", end = "")
   for v in list_vertices:
-    if v in v_attrs.keys():
-      v = v_attrs[v]['label']
+    str_v = v
+    if v in v_attrs.keys() and 'label' in v_attrs[v].keys():
+      str_v = v_attrs[v]['label']
     if v != list_vertices[-1]:
-      print(v, end = ", ")
+      print(str_v, end = ", ")
     else:     
       print(v, end="}\n")
 
@@ -30,7 +31,7 @@ def print_edges (g,v_attrs={},e_attrs={}):
       source = v_attrs[source]['label']
       target = v_attrs[target]['label']
     str_e = "({},{})".format(source,target)
-    if e_attrs != {}:
+    if e_attrs != {} and 'label' in e_attrs[e].keys():
       str_e = e_attrs[e]['label'] + ":" + str_e
     if e != list_edges[-1]:
       print(str_e,end=", ")

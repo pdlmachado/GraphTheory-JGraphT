@@ -12,7 +12,7 @@ def print_vertices (g,v_attrs={}):
     if v != list_vertices[-1]:
       print(str_v, end = ", ")
     else:     
-      print(v, end="}\n")
+      print(str_v, end="}\n")
 
 # Imprime as arestas de um grafo
 # v_attrs é um dicionário com os atributos dos vértices, se existirem

@@ -190,7 +190,7 @@ plt.show()
 
 # Retorna o identificador de um vértice a partir do valor do atributo 'label'
 def get_vertexid (label, attrs):
-  for v,att in attrs:
+  for v,att in attrs.items():
     if att['label'] == label:
       return v
   return None

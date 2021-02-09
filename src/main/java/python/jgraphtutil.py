@@ -188,9 +188,60 @@ def draw_simple(graph,layout='circular',
 )
 plt.show()
 
+# Imprime grafo bipartido com partições em p1 e p2
+def draw_bipartite(g,p1,p2,vlabel='',v_attrs={},elabel='',e_attrs={},vertexid_aslabel=False):
+  positions = draw_matplotlib.layout(g, seed=10, name="circular")
+  draw_matplotlib.draw_jgrapht_vertices(
+    g, 
+    positions=positions, 
+    vertex_list=p1, 
+    vertex_color="red", 
+    vertex_title="Partição 1"
+  )
+  draw_matplotlib.draw_jgrapht_vertices(
+    g, 
+    positions=positions, 
+    vertex_list=p2, 
+    vertex_color="blue", 
+    vertex_title="Partição 2"
+  )
+  draw_matplotlib.draw_jgrapht_edges(
+    g,
+    positions=positions,
+    edge_list=g.edges,
+    edge_color="orange"
+  )
+  vertex_labels = {}
+  if(vlabel!='' and v_attrs!={}):
+    for v in g.vertices:
+      if vlabel in v_attrs[v].keys():
+        vertex_labels[v] = v_attrs[v][vlabel]
+  elif vertexid_aslabel:
+    for v in g.vertices:
+      vertex_labels[v] = str(v)
+  edge_labels = {}
+  if(elabel!='' and e_attrs!={}):
+    for e in g.edges:
+      if elabel in e_attrs[e].keys():
+        edge_labels[e] = e_attrs[e][elabel]
+  draw_matplotlib.draw_jgrapht_vertex_labels(
+    g,
+    positions=positions,
+    vertex_labels=vertex_labels,
+    vertex_font_color="white"
+  )  
+  if not (e_attrs=={}):
+    draw_matplotlib.draw_jgrapht_edge_labels(
+      g,
+      positions=positions,
+      edge_labels=edge_labels
+    )
+  plt.show()
+
 # Retorna o identificador de um vértice a partir do valor do atributo 'label'
 def get_vertexid (label, attrs):
   for v,att in attrs.items():
     if att['label'] == label:
       return v
   return None
+  

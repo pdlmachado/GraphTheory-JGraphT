@@ -141,8 +141,8 @@ def import_gml (g,v_attrs,e_attrs,filename):
 
 ## Desenha um grafo 
 # Para executar esta função é necessário importar as bibliotecas: 
-#import jgrapht.drawing.draw_matplotlib as draw_matplotlib
-#import matplotlib.pyplot as plt
+import jgrapht.drawing.draw_matplotlib as draw_matplotlib
+import matplotlib.pyplot as plt
 # Parâmetros:
 #   graph - instância do grafo
 #   layout - circular|random|fruchterman_reingold|fruchterman_reingold_indexed

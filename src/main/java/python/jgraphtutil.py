@@ -138,6 +138,28 @@ def import_gml (g,v_attrs,e_attrs,filename):
   parse_gml(g,input_gml1,
             vertex_attribute_cb=v_att_cb,
             edge_attribute_cb=e_att_cb)
+            
+#############
+# Cria dicionário v_attrs a partir de input_string no formato CSV 
+# edgelist ou adjacencylist. Se weighted=True, o último
+# elemento de cada linha será o peso da aresta (para o formato edgelist)
+def create_vdict (v_attrs, input_string, weighted=False):
+  listcsv = input_string.split('\n')
+  print(listcsv)
+  vlist = []
+  count = 0
+  for l in listcsv:
+    if l!='':
+      vertices = l.split(',')
+      if weighted:
+        vertices.pop(-1)
+      for v in vertices:
+       if not(v in vlist):
+         v_attrs[count] = {}
+         v_attrs[count]['label'] = v
+         vlist.append(v)
+         count += 1
+  print(v_attrs)
 
 ## Desenha um grafo 
 # Para executar esta função é necessário importar as bibliotecas: 
@@ -188,7 +210,7 @@ def draw_simple(graph,layout='circular',
 )
 plt.show()
 
-# Imprime grafo bipartido com partições em p1 e p2
+# Desenha grafo bipartido com partições em p1 e p2
 def draw_bipartite(g,p1,p2,vlabel='',v_attrs={},elabel='',e_attrs={},vertexid_aslabel=False):
   positions = draw_matplotlib.layout(g, seed=10, name="circular")
   draw_matplotlib.draw_jgrapht_vertices(

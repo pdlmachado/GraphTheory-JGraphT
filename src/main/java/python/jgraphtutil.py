@@ -165,9 +165,9 @@ import jgrapht.drawing.draw_matplotlib as draw_matplotlib
 import matplotlib.pyplot as plt
 # Parâmetros:
 #   graph - instância do grafo
+#   layout - circular|random|fruchterman_reingold|fruchterman_reingold_indexed
 #	vertexid_aslabel - indica os ids dos vértices devem ser utilizados como labels
 #	edgeweight_aslabel - indica se os pesos das arestas deve ser usados como labels
-#   layout - circular|random|fruchterman_reingold|fruchterman_reingold_indexed
 #   vlabel, v_attrs - identificador do label de vértices e dicionário
 #   elabel, e_attrs - identificador do label de arestas e dicionário
 #   demais: cores

@@ -145,7 +145,6 @@ def import_gml (g,v_attrs,e_attrs,filename):
 # elemento de cada linha será o peso da aresta (para o formato edgelist)
 def create_vdict (v_attrs, input_string, weighted=False):
   listcsv = input_string.split('\n')
-  print(listcsv)
   vlist = []
   count = 0
   for l in listcsv:
@@ -159,7 +158,6 @@ def create_vdict (v_attrs, input_string, weighted=False):
          v_attrs[count]['label'] = v
          vlist.append(v)
          count += 1
-  print(v_attrs)
 
 ## Desenha um grafo 
 # Para executar esta função é necessário importar as bibliotecas: 

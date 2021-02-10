@@ -165,6 +165,8 @@ import jgrapht.drawing.draw_matplotlib as draw_matplotlib
 import matplotlib.pyplot as plt
 # Parâmetros:
 #   graph - instância do grafo
+#	vertexid_aslabel - indica os ids dos vértices devem ser utilizados como labels
+#	edgeweight_aslabel - indica se os pesos das arestas deve ser usados como labels
 #   layout - circular|random|fruchterman_reingold|fruchterman_reingold_indexed
 #   vlabel, v_attrs - identificador do label de vértices e dicionário
 #   elabel, e_attrs - identificador do label de arestas e dicionário
@@ -172,6 +174,7 @@ import matplotlib.pyplot as plt
 #   axis - desenha ou não um frame
 def draw_simple(graph,layout='circular',
                 vertexid_aslabel=False,
+                edgeweight_aslabel=False,
                 vlabel='',v_attrs={},elabel='',e_attrs={},
                 vertex_color='blue',
                 edge_color='black',
@@ -193,6 +196,9 @@ def draw_simple(graph,layout='circular',
     for e in graph.edges:
       if elabel in e_attrs[e].keys():
         edge_labels[e] = e_attrs[e][elabel]
+  elif edgeweight_aslabel:
+    for e in graph.edges:
+      edge_labels[e] = str(graph.get_edge_weight(e))
   positions = draw_matplotlib.layout(graph, seed=10, name=layout)
   draw_matplotlib.draw_jgrapht(
     graph,
@@ -205,8 +211,8 @@ def draw_simple(graph,layout='circular',
     edge_labels=edge_labels,
     edge_font_color=edge_font_color,
     axis=axis,
-)
-plt.show()
+  )
+  plt.show()
 
 # Desenha grafo bipartido com partições em p1 e p2
 def draw_bipartite(g,p1,p2,vlabel='',v_attrs={},elabel='',e_attrs={},vertexid_aslabel=False):

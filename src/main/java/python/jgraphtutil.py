@@ -172,7 +172,8 @@ import matplotlib.pyplot as plt
 #   elabel, e_attrs - identificador do label de arestas e dicionário
 #   demais: cores
 #   axis - desenha ou não um frame
-def draw_simple(graph,layout='circular',
+#   width,height - largura, altura da janela de exibição
+def draw_simple2(graph,layout='circular',
                 vertexid_aslabel=False,
                 edgeweight_aslabel=False,
                 vlabel='',v_attrs={},elabel='',e_attrs={},
@@ -180,8 +181,9 @@ def draw_simple(graph,layout='circular',
                 edge_color='black',
                 vertex_font_color='white',
                 edge_font_color='gray',
-                axis=True
-                ):
+                axis=True,
+                width=8,
+                height=5):
   
   vertex_labels = {}
   if(vlabel!='' and v_attrs!={}):
@@ -212,6 +214,7 @@ def draw_simple(graph,layout='circular',
     edge_font_color=edge_font_color,
     axis=axis,
   )
+  plt.rcParams['figure.figsize'] = [width,height]
   plt.show()
 
 # Desenha grafo bipartido com partições em p1 e p2

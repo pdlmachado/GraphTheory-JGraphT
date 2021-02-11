@@ -173,7 +173,7 @@ import matplotlib.pyplot as plt
 #   demais: cores
 #   axis - desenha ou não um frame
 #   width,height - largura, altura da janela de exibição
-def draw_simple2(graph,layout='circular',
+def draw_simple(graph,layout='circular',
                 vertexid_aslabel=False,
                 edgeweight_aslabel=False,
                 vlabel='',v_attrs={},elabel='',e_attrs={},

@@ -60,16 +60,18 @@ def edge_list(g,v_attrs={},e_attrs={},
 #   e_attrs - instância do dicionário de atributos de arestas
 #   vfilename - arquivo com tabela de vértices no formato CSV
 #   vid - atributo que representa vértices na tabela de arestas
+#   vlabel - atributo que representa os labels dos vértices (se existir)
 #   efilename - arquivo com tabela de arestas no formato CSV
 #   esourceid - atributo que representa o vértice origem
 #   etargetid - atributo que representa o vértice destino
+#   elabel - atributo que representa os labels das arestas (se existir)
 #   weightid - atributo que representa o peso das arestas (se existir)
 #   delimiter - delimitador utilizado nos arquivos CSV - default: ,
 import csv
 def read_multiple_CSV(csvgraph,v_attrs,e_attrs,
-                      vfilename,vid,
-                      efilename,esourceid,etargetid,weightid='',
-                      delimiter=','):
+                       vfilename,vid,vlabel,
+                       efilename,esourceid,etargetid,elabel='',weightid='',
+                       delimiter=','):
   # Vertices
   listcsv = []
   with open(vfilename, newline='') as f:
@@ -79,6 +81,9 @@ def read_multiple_CSV(csvgraph,v_attrs,e_attrs,
   f.close()
   headers = listcsv[0]
   vertex_index = headers.index(vid)
+  vertexlabel_index = vertex_index
+  if vlabel != '':
+    vertexlabel_index = headers.index(vlabel)
   viddict = {}
   for i in range(1,len(listcsv)):
     csvgraph.add_vertex(i)
@@ -86,7 +91,7 @@ def read_multiple_CSV(csvgraph,v_attrs,e_attrs,
     dict = {}
     for j in range(len(headers)):
         dict[headers[j]] = listcsv[i][j]
-    dict['label'] = listcsv[i][vertex_index]
+    dict['label'] = listcsv[i][vertexlabel_index]
     v_attrs[i] = dict
   # Arestas
   listcsv = []
@@ -98,6 +103,9 @@ def read_multiple_CSV(csvgraph,v_attrs,e_attrs,
   headers = listcsv[0]
   source_index = headers.index(esourceid)
   target_index = headers.index(etargetid)
+  edgelabel_index = 0
+  if (elabel != ''):
+    edgelabel_index = headers.index(elabel)
   weight_index = -1
   if (weightid in headers):
     weight_index = headers.index(weightid)
@@ -110,6 +118,7 @@ def read_multiple_CSV(csvgraph,v_attrs,e_attrs,
     for j in range(len(headers)):
       if j!=source_index and j!=target_index:
         dict[headers[j]] = listcsv[i][j]
+    dict['label'] = listcsv[i][edgelabel_index]
     e_attrs[e] = dict
 
 ##########################################

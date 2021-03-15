@@ -86,13 +86,19 @@ def read_multiple_CSV(csvgraph,v_attrs,e_attrs,
     vertexlabel_index = headers.index(vlabel)
   viddict = {}
   for i in range(1,len(listcsv)):
-    csvgraph.add_vertex(i)
-    viddict[listcsv[i][vertex_index]] = i
+    id = i
+    try:
+      id = int(listcsv[i][vertex_index])
+      print('{} {}'.format(i,listcsv[i][vertex_index]))
+    except:
+      pass
+    csvgraph.add_vertex(id)
+    viddict[listcsv[i][vertex_index]] = id
     dict = {}
     for j in range(len(headers)):
         dict[headers[j]] = listcsv[i][j]
     dict['label'] = listcsv[i][vertexlabel_index]
-    v_attrs[i] = dict
+    v_attrs[id] = dict
   # Arestas
   listcsv = []
   with open(efilename, newline='') as f:
@@ -120,7 +126,7 @@ def read_multiple_CSV(csvgraph,v_attrs,e_attrs,
         dict[headers[j]] = listcsv[i][j]
     dict['label'] = listcsv[i][edgelabel_index]
     e_attrs[e] = dict
-
+    
 ##########################################
 # Importa grafo no formato GML
 from jgrapht.io.importers import parse_gml

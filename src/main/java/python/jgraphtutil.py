@@ -89,7 +89,6 @@ def read_multiple_CSV(csvgraph,v_attrs,e_attrs,
     id = i
     try:
       id = int(listcsv[i][vertex_index])
-      print('{} {}'.format(i,listcsv[i][vertex_index]))
     except:
       pass
     csvgraph.add_vertex(id)

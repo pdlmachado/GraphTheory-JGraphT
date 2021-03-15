@@ -96,7 +96,8 @@ def read_multiple_CSV(csvgraph,v_attrs,e_attrs,
     dict = {}
     for j in range(len(headers)):
         dict[headers[j]] = listcsv[i][j]
-    dict['label'] = listcsv[i][vertexlabel_index]
+    if vlabel != '':
+      dict['label'] = listcsv[i][vertexlabel_index]
     v_attrs[id] = dict
   # Arestas
   listcsv = []
@@ -126,7 +127,6 @@ def read_multiple_CSV(csvgraph,v_attrs,e_attrs,
     if (elabel != ''):
       dict['label'] = listcsv[i][edgelabel_index]
     e_attrs[e] = dict
-
     
 ##########################################
 # Importa grafo no formato GML

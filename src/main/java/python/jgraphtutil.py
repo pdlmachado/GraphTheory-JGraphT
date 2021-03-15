@@ -123,8 +123,10 @@ def read_multiple_CSV(csvgraph,v_attrs,e_attrs,
     for j in range(len(headers)):
       if j!=source_index and j!=target_index:
         dict[headers[j]] = listcsv[i][j]
-    dict['label'] = listcsv[i][edgelabel_index]
+    if (elabel != ''):
+      dict['label'] = listcsv[i][edgelabel_index]
     e_attrs[e] = dict
+
     
 ##########################################
 # Importa grafo no formato GML

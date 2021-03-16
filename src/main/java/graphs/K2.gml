@@ -8,7 +8,7 @@ graph
 	node
 	[
 		id	0
-		label	"a"
+		label	"q"
 		graphics
 		[
 			x	161.0
@@ -22,7 +22,7 @@ graph
 		]
 		LabelGraphics
 		[
-			text	"a"
+			text	"q"
 			fontSize	12
 			fontName	"Dialog"
 			anchor	"c"
@@ -31,7 +31,7 @@ graph
 	node
 	[
 		id	1
-		label	"b"
+		label	"w"
 		graphics
 		[
 			x	260.0
@@ -45,7 +45,7 @@ graph
 		]
 		LabelGraphics
 		[
-			text	"b"
+			text	"w"
 			fontSize	12
 			fontName	"Dialog"
 			anchor	"c"

@@ -1,5 +1,5 @@
 Creator	"yFiles"
-Version	"2.14"
+Version	"2.17"
 graph
 [
 	hierarchic	1
@@ -8,7 +8,7 @@ graph
 	node
 	[
 		id	0
-		label	""
+		label	"a"
 		graphics
 		[
 			x	260.0
@@ -22,6 +22,10 @@ graph
 		]
 		LabelGraphics
 		[
+			text	"a"
+			fontSize	12
+			fontName	"Dialog"
+			anchor	"c"
 		]
 	]
 ]

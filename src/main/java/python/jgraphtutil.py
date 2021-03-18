@@ -6,11 +6,11 @@
 #  v_attrs é um dicionário com os atributos dos vértices, se existirem
 #  label é o nome de um atributo dos vértices que pode ser impresso como label;
 #       default é 'label'
-#  subset é um subconjunto dos vértices; se [], indica todos os vértices.
-def vertex_list (g,v_attrs={},label='label',subset=[]):
+#  subset é um subconjunto dos vértices; se None, indica todos os vértices.
+def vertex_list (g,v_attrs={},label='label',subset=None):
   result = []
   list_vertices = g.vertices
-  if (subset != []):
+  if not subset is None:
     list_vertices = subset
   for v in list_vertices:
     str_v = v
@@ -34,10 +34,10 @@ def vertex_list (g,v_attrs={},label='label',subset=[]):
 #  weight indica se os pesos das arestas devem ser impressos, caso existam
 #  subset é um subconjunto de arestas; se None, indica todas as arestas.
 def edge_list(g,v_attrs={},e_attrs={},
-                vlabel='label',elabel='label',weight=False,subset=[]):
+                vlabel='label',elabel='label',weight=False,subset=None):
   result = []
   list_edges = g.edges
-  if subset != []:
+  if not subset is None:
     list_edges = subset
   for e in list_edges:
     source = g.edge_source(e)

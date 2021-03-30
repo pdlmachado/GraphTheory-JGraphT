@@ -334,7 +334,7 @@ def draw_cut(g,cut,vlabel='',v_attrs={},elabel='',e_attrs={},vertexid_aslabel=Fa
   plt.show()
  
  # Desenha floresta com até 10 componentes
- def draw_components(g,clist,vlabel='',v_attrs={},elabel='',e_attrs={},vertexid_aslabel=False):
+def draw_components(g,clist,vlabel='',v_attrs={},elabel='',e_attrs={},vertexid_aslabel=False):
   if len(clist) > 10:
     return None
   positions = draw_matplotlib.layout(g, seed=10, name="circular")

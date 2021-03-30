@@ -332,6 +332,57 @@ def draw_cut(g,cut,vlabel='',v_attrs={},elabel='',e_attrs={},vertexid_aslabel=Fa
       edge_labels=edge_labels
     )
   plt.show()
+ 
+ # Desenha floresta com até 10 componentes
+ def draw_components(g,clist,vlabel='',v_attrs={},elabel='',e_attrs={},vertexid_aslabel=False):
+  if len(clist) > 10:
+    return None
+  positions = draw_matplotlib.layout(g, seed=10, name="circular")
+  color_names = ["red", "darkblue", "green", "lightgreen", "grey", "pink", "orange", "brown", "purple", "lightblue"]
+  i = 1
+  for c in clist:
+    label = "Component " + str(i)
+    draw_matplotlib.draw_jgrapht_vertices(
+      g, 
+      positions=positions, 
+      vertex_list=c, 
+      vertex_color=color_names[i-1], 
+      vertex_title=label
+    )
+    i = i+1
+  draw_matplotlib.draw_jgrapht_edges(
+    g,
+    positions=positions,
+    edge_list=g.edges,
+    edge_color="orange"
+  )
+  vertex_labels = {}
+  if(vlabel!='' and v_attrs!={}):
+    for v in g.vertices:
+      if vlabel in v_attrs[v].keys():
+        vertex_labels[v] = v_attrs[v][vlabel]
+  elif vertexid_aslabel:
+    for v in g.vertices:
+      vertex_labels[v] = str(v)
+  edge_labels = {}
+  if(elabel!='' and e_attrs!={}):
+    for e in g.edges:
+      if elabel in e_attrs[e].keys():
+        edge_labels[e] = e_attrs[e][elabel]
+  draw_matplotlib.draw_jgrapht_vertex_labels(
+    g,
+    positions=positions,
+    vertex_labels=vertex_labels,
+    vertex_font_color="white"
+  )  
+  if not (e_attrs=={}):
+    draw_matplotlib.draw_jgrapht_edge_labels(
+      g,
+      positions=positions,
+      edge_labels=edge_labels
+    )
+  plt.rcParams['figure.figsize'] = [10,10]
+  plt.show()
 
 # Retorna o identificador de um vértice a partir do valor do atributo 'label'
 def get_vertexid (label, attrs):
@@ -340,3 +391,62 @@ def get_vertexid (label, attrs):
       return v
   return None
   
+############################
+### Funções auxiliares para árvores enraizadas
+def parent (v,rtree):
+  inedges = list(rtree.inedges_of(v))
+  if len(inedges) == 1:
+    return rtree.edge_source(inedges[0])
+  else: # todo vértice tem apenas um predecessor em uma árvore enraizada
+    return None
+
+def children (v,tree):
+  oute = tree.outedges_of(v)
+  return [tree.edge_target(e) for e in oute]
+
+def is_root(v,tree):
+  return list(tree.inedges_of(v))==[]
+
+def is_leaf(v,tree):
+  return list(tree.outedges_of(v))==[]
+  
+def level(tree,root,v):
+  return len(next(yen_k_loopless(tree,root,v,1)).edges)
+
+def get_rootedTree(tree,root):
+  if not is_tree(tree):
+    return None
+  # cria instância do grafo orientado com opção dag=True
+  rtree = jgrapht.create_graph(dag=True,weighted=False)
+  # adiciona vértices no grafo
+  rtree.add_vertices_from(tree.vertices)
+  # adiciona arcos no grafo a partir das arestas de tree
+  # considerando como source o terminal com menor nível (distância de root)
+  for e in tree.edges:
+    s = tree.edge_source(e)
+    t = tree.edge_target(e)
+    if level(tree,root,s) < level(tree,root,t):
+      rtree.add_edge(s,t)
+    else:
+      rtree.add_edge(t,s)
+  return rtree
+  
+  ##############################################
+  ### Determina se uma aresta é ponte
+  def is_bridge(e,g):
+  from jgrapht.algorithms.shortestpaths import yen_k_loopless
+  # Cria uma visão de subgrafo para o grafo g sem a aresta
+  vmask = lambda v : False
+  emask = lambda x : x == e
+  subgraph = jgrapht.views.as_masked_subgraph(g,
+                                              vertex_mask_cb=vmask,
+                                              edge_mask_cb=emask)
+  # Verifica se existe um caminho entre os vértices no subgrafo
+  paths = yen_k_loopless(subgraph,g.edge_source(e),g.edge_target(e),1)
+  try:
+    # existe; aresta não é ponte
+    p = next(paths)
+    return False
+  except StopIteration:
+    # não existe; aresta é ponte
+    return True

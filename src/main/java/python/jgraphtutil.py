@@ -431,9 +431,9 @@ def get_rootedTree(tree,root):
       rtree.add_edge(t,s)
   return rtree
   
-  ##############################################
-  ### Determina se uma aresta é ponte
-  def is_bridge(e,g):
+##############################################
+### Determina se uma aresta é ponte
+def is_bridge(e,g):
   from jgrapht.algorithms.shortestpaths import yen_k_loopless
   # Cria uma visão de subgrafo para o grafo g sem a aresta
   vmask = lambda v : False

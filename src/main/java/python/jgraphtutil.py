@@ -283,8 +283,10 @@ def draw_bipartite(g,p1,p2,vlabel='',v_attrs={},elabel='',e_attrs={},vertexid_as
     )
   plt.show()
   
-# Desenha grafo destacando corte (conjunto) de arestas
-def draw_cut(g,cut,vlabel='',v_attrs={},elabel='',e_attrs={},vertexid_aslabel=False):
+# Desenha grafo destacando um conjunto de arestas
+def draw_cut(g,cut,cutlabel='',vlabel='',v_attrs={},elabel='',e_attrs={},vertexid_aslabel=False):
+  if cutlabel == '':
+    cutlabel = 'Edge cut'
   positions = draw_matplotlib.layout(g, seed=10, name="circular")
   notcut = [e for e in g.edges if e not in cut]
   draw_matplotlib.draw_jgrapht_vertices(
@@ -298,7 +300,7 @@ def draw_cut(g,cut,vlabel='',v_attrs={},elabel='',e_attrs={},vertexid_aslabel=Fa
     positions=positions,
     edge_list=cut,
     edge_color="orange",
-    edge_title = "Edge Cut"
+    edge_title = cutlabel
   )
   draw_matplotlib.draw_jgrapht_edges(
     g,

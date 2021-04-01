@@ -395,7 +395,7 @@ def get_vertexid (label, attrs):
 
 
 # Constroi uma árvore de busca em profundidade
-def dfs (g,root):
+def buscaemprofundidade (g,root):
   visited = [root]
   S = [root]
   tree = jgrapht.create_graph(directed=True,weighted=False,
@@ -416,7 +416,7 @@ def dfs (g,root):
   return tree
 
 # Constroi uma árvore de busca em largura
-def bfs (g,root):
+def buscaemlargura (g,root):
   visited = [root]
   l = {}
   l[root] = 0

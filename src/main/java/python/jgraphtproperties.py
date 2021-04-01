@@ -1,3 +1,4 @@
+from jgrapht.properties import is_weakly_connected
 from jgrapht.algorithms.shortestpaths import yen_k_loopless
 from jgrapht.views import as_masked_subgraph
 from treeutil import is_root, is_leaf, children, dfs
@@ -22,7 +23,7 @@ def is_bridge(e,g):
 # Determina se um vértice é de corte em um grafo
 # Recebe como entrada o vértice, o grafo e uma árvore qualquer de busca em profundidade no grafo
 def is_cutvertex (v, g):
-  if (jgrapht.properties.is_weakly_connected(g)):
+  if (is_weakly_connected(g)):
     tree = dfs(g,0)
     if is_root(v,tree) and len(list(tree.outedges_of(v)))>=2:
       return True

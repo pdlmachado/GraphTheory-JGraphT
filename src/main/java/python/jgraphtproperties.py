@@ -24,7 +24,7 @@ def is_bridge(e,g):
 # Recebe como entrada o vértice, o grafo e uma árvore qualquer de busca em profundidade no grafo
 def is_cutvertex (v, g):
   if (is_weakly_connected(g)):
-    tree = dfs(g,0)
+    tree = dfs(g,g.vertices[0])
     if is_root(v,tree) and len(list(tree.outedges_of(v)))>=2:
       return True
     elif is_root(v,tree) or is_leaf(v,tree):

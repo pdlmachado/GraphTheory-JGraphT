@@ -1,3 +1,4 @@
+import jgrapht
 # Constroi uma árvore de busca em profundidade
 def dfs (g,root):
   visited = [root]

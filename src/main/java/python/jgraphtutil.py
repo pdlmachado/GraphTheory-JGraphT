@@ -392,6 +392,51 @@ def get_vertexid (label, attrs):
     if att['label'] == label:
       return v
   return None
-  
 
+
+# Constroi uma árvore de busca em profundidade
+def dfs (g,root):
+  visited = [root]
+  S = [root]
+  tree = jgrapht.create_graph(directed=True,weighted=False,
+                         allowing_multiple_edges=True,
+                         allowing_self_loops=True)
+  tree.add_vertex(root)
+  while S != [] :
+    x = S[0] 
+    neighbors = [g.opposite(e,x) for e in g.edges_of(x) if g.opposite(e,x) not in visited]
+    if neighbors != []:
+      y = neighbors[0]
+      visited.append(y)
+      S.insert(0,y)
+      tree.add_vertex(y)
+      tree.add_edge(x,y)
+    else:
+      S.pop(0)
+  return tree
+
+# Constroi uma árvore de busca em largura
+def bfs (g,root):
+  visited = [root]
+  l = {}
+  l[root] = 0
+  Q = [root]
+  tree = jgrapht.create_graph(directed=True,weighted=False,
+                         allowing_multiple_edges=True,
+                         allowing_self_loops=True)
+  tree.add_vertex(root)
+  while Q != [] :
+    x = Q[0] 
+    neighbors = [g.opposite(e,x) for e in g.edges_of(x) if g.opposite(e,x) not in visited]
+    if neighbors != []:
+      y = neighbors[0]
+      visited.append(y)
+      Q.append(y)
+      tree.add_vertex(y)
+      tree.add_edge(x,y)
+      l[y] = l[x]+1
+    else:
+      Q.pop(0)
+  return tree,l
+  
   

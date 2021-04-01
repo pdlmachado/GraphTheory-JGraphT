@@ -3,9 +3,7 @@ import jgrapht
 def dfs (g,root):
   visited = [root]
   S = [root]
-  tree = jgrapht.create_graph(directed=True,weighted=False,
-                         allowing_multiple_edges=True,
-                         allowing_self_loops=True)
+  tree = jgrapht.create_graph(directed=True,weighted=False,dag=True)
   tree.add_vertex(root)
   while S != [] :
     x = S[0] 
@@ -26,9 +24,7 @@ def bfs (g,root):
   l = {}
   l[root] = 0
   Q = [root]
-  tree = jgrapht.create_graph(directed=True,weighted=False,
-                         allowing_multiple_edges=True,
-                         allowing_self_loops=True)
+  tree = jgrapht.create_graph(directed=True,weighted=False,dag=True)
   tree.add_vertex(root)
   while Q != [] :
     x = Q[0] 

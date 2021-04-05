@@ -346,7 +346,7 @@ def draw_cut(g,cut=[],cutlabel='',vlabel='',vset=[],vsetlabel='',v_attrs={},elab
   plt.show()
  
 # Desenha floresta com até 10 componentes
-def draw_components(g,clist,vlabel='',v_attrs={},elabel='',e_attrs={},vertexid_aslabel=False, layout="circular"):
+def draw_components(g,clist,vlabel='',v_attrs={},elabel='',e_attrs={},vertexid_aslabel=False, layout="fruchterman_reingold"):
   if len(clist) > 10:
     return None
   positions = draw_matplotlib.layout(g, seed=10, name=layout)
@@ -361,13 +361,15 @@ def draw_components(g,clist,vlabel='',v_attrs={},elabel='',e_attrs={},vertexid_a
       vertex_color=color_names[i-1], 
       vertex_title=label
     )
+    eset = [e for e in g.edges if g.edge_source(e) in c]
+    draw_matplotlib.draw_jgrapht_edges(
+      g,
+      positions=positions,
+      edge_list=eset,
+      edge_color=color_names[i-1]
+    )
     i = i+1
-  draw_matplotlib.draw_jgrapht_edges(
-    g,
-    positions=positions,
-    edge_list=g.edges,
-    edge_color="orange"
-  )
+
   vertex_labels = {}
   if(vlabel!='' and v_attrs!={}):
     for v in g.vertices:
@@ -395,6 +397,7 @@ def draw_components(g,clist,vlabel='',v_attrs={},elabel='',e_attrs={},vertexid_a
     )
   plt.rcParams['figure.figsize'] = [10,10]
   plt.show()
+
 
 # Retorna o identificador de um vértice a partir do valor do atributo 'label'
 def get_vertexid (label, attrs):

@@ -272,14 +272,14 @@ def draw_bipartite(g,p1,p2,vlabel='',v_attrs={},elabel='',e_attrs={},vertexid_as
   draw_matplotlib.draw_jgrapht_vertex_labels(
     g,
     positions=positions,
-    vertex_labels=vertex_labels,
+    labels=vertex_labels,
     vertex_font_color="white"
   )  
   if not (e_attrs=={}):
     draw_matplotlib.draw_jgrapht_edge_labels(
       g,
       positions=positions,
-      edge_labels=edge_labels
+      labels=edge_labels
     )
   plt.show()
   
@@ -334,14 +334,14 @@ def draw_cut(g,cut=[],cutlabel='',vlabel='',vset=[],vsetlabel='',v_attrs={},elab
   draw_matplotlib.draw_jgrapht_vertex_labels(
     g,
     positions=positions,
-    vertex_labels=vertex_labels,
+    labels=vertex_labels,
     vertex_font_color="white"
   )  
   if not (e_attrs=={}):
     draw_matplotlib.draw_jgrapht_edge_labels(
       g,
       positions=positions,
-      edge_labels=edge_labels
+      labels=edge_labels
     )
   plt.show()
  

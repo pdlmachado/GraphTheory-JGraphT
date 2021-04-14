@@ -284,7 +284,7 @@ def draw_bipartite(g,p1,p2,vlabel='',v_attrs={},elabel='',e_attrs={},vertexid_as
   plt.show()
   
 # Desenha grafo destacando um conjunto de arestas
-def draw_cut(g,cut=[],cutlabel='',vlabel='',vset=[],vsetlabel='',v_attrs={},elabel='',e_attrs={},vertexid_aslabel=False):
+def draw_cut(g,cut=[],cutlabel='',vlabel='',vset=[],vsetlabel='',v_attrs={},elabel='',e_attrs={},vertexid_aslabel=False,layout="circular"):
   if cutlabel == '':
     cutlabel = 'Edge cut'
   positions = draw_matplotlib.layout(g, seed=10, name="circular")

@@ -234,8 +234,8 @@ def draw_simple(graph,layout='circular',
   plt.show()
 
 # Desenha grafo bipartido com partições em p1 e p2
-def draw_bipartite(g,p1,p2,vlabel='',v_attrs={},elabel='',e_attrs={},vertexid_aslabel=False):
-  positions = draw_matplotlib.layout(g, seed=10, name="circular")
+def draw_bipartite(g,p1,p2,vlabel='',v_attrs={},elabel='',e_attrs={},vertexid_aslabel=False,layout="circular"):
+  positions = draw_matplotlib.layout(g, seed=10, name=layout)
   draw_matplotlib.draw_jgrapht_vertices(
     g, 
     positions=positions, 

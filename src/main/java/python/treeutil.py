@@ -1,44 +1,68 @@
 import jgrapht
-# Constroi uma árvore de busca em profundidade
-def dfs (g,root):
-  visited = [root]
-  S = [root]
-  tree = jgrapht.create_graph(directed=True,weighted=False,dag=True)
-  tree.add_vertex(root)
-  while S != [] :
-    x = S[0] 
-    neighbors = [g.opposite(e,x) for e in g.edges_of(x) if g.opposite(e,x) not in visited]
-    if neighbors != []:
-      y = neighbors[0]
-      visited.append(y)
-      S.insert(0,y)
-      tree.add_vertex(y)
-      tree.add_edge(x,y)
-    else:
-      S.pop(0)
-  return tree
-
+from random import randint
 # Constroi uma árvore de busca em largura
+# Algoritmo BFS visto nas notas de aula, retornando árvore ao invés da função predecessor
+# Retorna uma árvore orientada, a função nível e a função tempo
 def bfs (g,root):
-  visited = [root]
+  i = 0
+  Q = [] # Lista que representa a fila Q
+  i = i+1
+  visited = [root] # Lista com vértices que foram pintados
   l = {}
   l[root] = 0
+  t = {}
+  t[root]=i
   Q = [root]
   tree = jgrapht.create_graph(directed=True,weighted=False,dag=True)
   tree.add_vertex(root)
-  while Q != [] :
-    x = Q[0] 
-    neighbors = [g.opposite(e,x) for e in g.edges_of(x) if g.opposite(e,x) not in visited]
-    if neighbors != []:
-      y = neighbors[0]
+  while Q != []:
+    x = Q[0] # x é o vértice da cabeça de Q
+    neighbors = [g.opposite(e,x) 
+                  for e in g.edges_of(x) if g.opposite(e,x) not in visited]
+    if neighbors != []: # x ainda tem vizinhos não pintados
+      # escolhe um dos vizinhos y aleatoriamente
+      y = neighbors[randint(0,len(neighbors)-1)]
+      i = i+1
       visited.append(y)
-      Q.append(y)
       tree.add_vertex(y)
       tree.add_edge(x,y)
       l[y] = l[x]+1
+      t[y] = i
+      Q.append(y) #adiciona y ao fim da fila
     else:
-      Q.pop(0)
-  return tree,l
+      Q.pop(0) # remove x da cabeça da fila Q
+  return tree,l,t
+  
+# Constroi uma árvore de busca em profundidade
+# Algoritmo DFS apresentado nas notas de aula
+# Retorna uma árvore DFS orientada e as funções tempo
+def dfs (g,root):
+  f = {} # função tempo de inclusão na árvore
+  t = {} # função tempo de saída da pilha
+  i = 0
+  S = [] # Lista que representa a pilha S
+  i = i+1
+  visited = [root] # Lista com vértices que foram pintados
+  f[root] = i
+  S.append(root)
+  tree = jgrapht.create_graph(directed=True,weighted=False,dag=True)
+  tree.add_vertex(root)
+  while S != [] :
+    x = S[0] # x é o topo da pilha S
+    neighbors = [g.opposite(e,x) for e in g.edges_of(x) if g.opposite(e,x) not in visited]
+    i = i+1
+    if neighbors != []:
+      # escolhe um dos vizinhos y aleatoriamente
+      y = neighbors[randint(0,len(neighbors)-1)]
+      visited.append(y)
+      tree.add_vertex(y)
+      tree.add_edge(x,y)
+      f[y] = i
+      S.insert(0,y) #adiciona y ao topo de S
+    else:
+      t[x] = i
+      S.pop(0) #remove x do topo
+  return tree,f,t
 
 ############################
 ### Funções auxiliares para árvores enraizadas

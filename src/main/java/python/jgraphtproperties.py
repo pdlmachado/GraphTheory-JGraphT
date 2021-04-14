@@ -20,23 +20,25 @@ def is_bridge(e,g):
     return True
 
 # Determina se um vértice é de corte em um grafo
-# Recebe como entrada o vértice, o grafo e uma árvore qualquer de busca em profundidade no grafo
+# Recebe como entrada o vértice, o grafo e uma árvore DFS qualquer
 def is_cutvertex (v, g, tree):
-    if is_root(v,tree) and len(list(tree.outedges_of(v)))>=2:
-      return True
-    elif is_root(v,tree) or is_leaf(v,tree):
-      return False
-    else:
-      ans = list(tree.ancestors(v))
-      chi = children(v,tree)
-      for f in chi:
-        subtreev = list(tree.descendants(f)) + [f]
-        flag = True
-        for d in subtreev:
-          a = all(g.contains_edge_between(a,d) == False for a in ans)
-          flag = flag and all(g.contains_edge_between(a,d) == False for a in ans)
-        if flag:
-          return True
+  if is_root(v,tree) and len(list(tree.outedges_of(v)))>=2:
+    return True #vértice é raiz e possui mais de um filho
+  elif is_root(v,tree) or is_leaf(v,tree):
+    return False #vértice é folha ou raiz com menos de 2 filhos
+  else:
+    #Verifica se nenhum vértice na sub-arvore onde v é raiz é adjacente em g 
+    #a ancestrais de v
+    ancestors = list(tree.ancestors(v))
+    chi = children(v,tree)
+    for f in chi:
+      subtreev = list(tree.descendants(f)) + [f]
+      flag = True
+      for d in subtreev:
+        a = all(g.contains_edge_between(a,d) == False for a in ancestors)
+        flag = flag and a
+      return flag
+  return False
 
 # Retorna um corte (conjunto) de arestas com um terminal em X e outro em Y 
 def edge_cut(X, g):

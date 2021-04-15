@@ -1,6 +1,9 @@
+"""# Funções"""
+
 from jgrapht.algorithms.shortestpaths import yen_k_loopless
 from jgrapht.views import as_masked_subgraph
 from treeutil import is_root, is_leaf, children, dfs
+
 ##############################################
 ### Determina se uma aresta é ponte
 def is_bridge(e,g):
@@ -22,6 +25,8 @@ def is_bridge(e,g):
 # Determina se um vértice é de corte em um grafo
 # Recebe como entrada o vértice, o grafo e uma árvore DFS qualquer
 def is_cutvertex (v, g, tree):
+  if not v in g.vertices:
+    return None
   if is_root(v,tree) and len(list(tree.outedges_of(v)))>=2:
     return True #vértice é raiz e possui mais de um filho
   elif is_root(v,tree) or is_leaf(v,tree):
@@ -37,7 +42,8 @@ def is_cutvertex (v, g, tree):
       for d in subtreev:
         a = all(g.contains_edge_between(a,d) == False for a in ancestors)
         flag = flag and a
-      return flag
+      if flag:
+        return True      
   return False
 
 # Retorna um corte (conjunto) de arestas com um terminal em X e outro em Y 
@@ -46,4 +52,3 @@ def edge_cut(X, g):
   edges = filter(lambda e: (g.edge_source(e) in X and g.edge_target(e) in Y) or
                            (g.edge_source(e) in Y and g.edge_target(e) in X),g.edges)
   return edges
-  

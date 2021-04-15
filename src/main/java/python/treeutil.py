@@ -24,9 +24,6 @@ def is_root(v,tree):
 def is_leaf(v,tree):
   return list(tree.outedges_of(v))==[]
   
-def level(tree,root,v):
-  return len(next(yen_k_loopless(tree,root,v,1)).edges)
-
 def dist(g,v1,v2):
   return len(next(yen_k_loopless(g,v1,v2,1)).edges)
 
@@ -42,7 +39,7 @@ def get_rootedTree(tree,root):
   for e in tree.edges:
     s = tree.edge_source(e)
     t = tree.edge_target(e)
-    if level(tree,root,s) < level(tree,root,t):
+    if dist(tree,root,s) < dist(tree,root,t):
       rtree.add_edge(s,t)
     else:
       rtree.add_edge(t,s)

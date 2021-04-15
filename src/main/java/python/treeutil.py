@@ -1,3 +1,7 @@
+import jgrapht
+from jgrapht.algorithms.shortestpaths import yen_k_loopless
+from random import randint
+
 """# Funções"""
 
 from jgrapht.algorithms.shortestpaths import yen_k_loopless

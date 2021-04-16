@@ -1,3 +1,4 @@
+
 # Importando a JgraphT 
 import jgrapht
 from jgrapht.algorithms.shortestpaths import yen_k_loopless
@@ -5,7 +6,6 @@ from jgrapht.properties import is_tree
 from random import randint
 from jgrapht.views import as_undirected
 from jgrapht import create_graph
-!wget https://raw.githubusercontent.com/pdlmachado/GraphTheory-JGraphT/master/src/main/java/python/jgraphtutil.py
 from jgraphtutil import dist
 
 """# Funções para Árvore Enraizada"""

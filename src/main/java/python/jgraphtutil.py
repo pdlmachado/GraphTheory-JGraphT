@@ -1,3 +1,14 @@
+# Importando a JgraphT
+import jgrapht
+
+# Importando funções para visualização gráfica
+import jgrapht.drawing.draw_matplotlib as draw_matplotlib
+import matplotlib.pyplot as plt
+from jgrapht.algorithms.shortestpaths import yen_k_loopless
+import unittest
+
+"""# Listas de Vértices e Arestas"""
+
 # Retorna uma lista com os vértices de um grafo.
 # Cada vértice é representado pelo tupla (id, label), caso o vértice possua
 # um label ou simplesmente id.
@@ -6,7 +17,7 @@
 #  v_attrs é um dicionário com os atributos dos vértices, se existirem
 #  label é o nome de um atributo dos vértices que pode ser impresso como label;
 #       default é 'label'
-#  subset é um subconjunto dos vértices; se None, indica todos os vértices.
+#  subset é um subconjunto dos vértices; se [], indica todos os vértices.
 def vertex_list (g,v_attrs={},label='label',subset=None):
   result = []
   list_vertices = g.vertices
@@ -52,6 +63,8 @@ def edge_list(g,v_attrs={},e_attrs={},
       e_tuple = e_tuple + tuple([g.get_edge_weight(e)])
     result.append(e_tuple)
   return result
+
+"""# Importação de Grafos"""
 
 # Importa um grafo a partir de tabelas com os conjuntos de vértices e arestas
 # Parâmetros:
@@ -127,7 +140,7 @@ def read_multiple_CSV(csvgraph,v_attrs,e_attrs,
     if (elabel != ''):
       dict['label'] = listcsv[i][edgelabel_index]
     e_attrs[e] = dict
-    
+
 ##########################################
 # Importa grafo no formato GML
 from jgrapht.io.importers import parse_gml
@@ -154,7 +167,7 @@ def import_gml (g,v_attrs,e_attrs,filename):
   parse_gml(g,input_gml1,
             vertex_attribute_cb=v_att_cb,
             edge_attribute_cb=e_att_cb)
-            
+
 #############
 # Cria dicionário v_attrs a partir de input_string no formato CSV 
 # edgelist ou adjacencylist. Se weighted=True, o último
@@ -174,6 +187,8 @@ def create_vdict (v_attrs, input_string, weighted=False):
          v_attrs[count]['label'] = v
          vlist.append(v)
          count += 1
+
+"""# Desenhando Grafo"""
 
 ## Desenha um grafo 
 # Para executar esta função é necessário importar as bibliotecas: 
@@ -234,8 +249,8 @@ def draw_simple(graph,layout='circular',
   plt.show()
 
 # Desenha grafo bipartido com partições em p1 e p2
-def draw_bipartite(g,p1,p2,vlabel='',v_attrs={},elabel='',e_attrs={},vertexid_aslabel=False,layout="circular"):
-  positions = draw_matplotlib.layout(g, seed=10, name=layout)
+def draw_bipartite(g,p1,p2,vlabel='',v_attrs={},elabel='',e_attrs={},vertexid_aslabel=False):
+  positions = draw_matplotlib.layout(g, seed=10, name="circular")
   draw_matplotlib.draw_jgrapht_vertices(
     g, 
     positions=positions, 
@@ -282,7 +297,8 @@ def draw_bipartite(g,p1,p2,vlabel='',v_attrs={},elabel='',e_attrs={},vertexid_as
       labels=edge_labels
     )
   plt.show()
-  
+
+# Desenha grafo destacando um conjunto de arestas
 # Desenha grafo destacando um conjunto de arestas
 def draw_cut(g,cut=[],cutlabel='',vlabel='',vset=[],vsetlabel='',v_attrs={},elabel='',e_attrs={},vertexid_aslabel=False,layout="circular"):
   if cutlabel == '':
@@ -344,12 +360,12 @@ def draw_cut(g,cut=[],cutlabel='',vlabel='',vset=[],vsetlabel='',v_attrs={},elab
       labels=edge_labels
     )
   plt.show()
- 
+
 # Desenha floresta com até 10 componentes
-def draw_components(g,clist,vlabel='',v_attrs={},elabel='',e_attrs={},vertexid_aslabel=False, layout="fruchterman_reingold"):
+def draw_components(g,clist,vlabel='',v_attrs={},elabel='',e_attrs={},vertexid_aslabel=False):
   if len(clist) > 10:
     return None
-  positions = draw_matplotlib.layout(g, seed=10, name=layout)
+  positions = draw_matplotlib.layout(g, seed=10, name="circular")
   color_names = ["red", "darkblue", "green", "lightgreen", "grey", "pink", "orange", "brown", "purple", "lightblue"]
   i = 1
   for c in clist:
@@ -361,15 +377,13 @@ def draw_components(g,clist,vlabel='',v_attrs={},elabel='',e_attrs={},vertexid_a
       vertex_color=color_names[i-1], 
       vertex_title=label
     )
-    eset = [e for e in g.edges if g.edge_source(e) in c]
-    draw_matplotlib.draw_jgrapht_edges(
-      g,
-      positions=positions,
-      edge_list=eset,
-      edge_color=color_names[i-1]
-    )
     i = i+1
-
+  draw_matplotlib.draw_jgrapht_edges(
+    g,
+    positions=positions,
+    edge_list=g.edges,
+    edge_color="orange"
+  )
   vertex_labels = {}
   if(vlabel!='' and v_attrs!={}):
     for v in g.vertices:
@@ -386,18 +400,19 @@ def draw_components(g,clist,vlabel='',v_attrs={},elabel='',e_attrs={},vertexid_a
   draw_matplotlib.draw_jgrapht_vertex_labels(
     g,
     positions=positions,
-    vertex_labels=vertex_labels,
+    labels=vertex_labels,
     vertex_font_color="white"
   )  
   if not (e_attrs=={}):
     draw_matplotlib.draw_jgrapht_edge_labels(
       g,
       positions=positions,
-      edge_labels=edge_labels
+      labels=edge_labels
     )
   plt.rcParams['figure.figsize'] = [10,10]
   plt.show()
 
+"""# Propriedades de Vértices e Arestas"""
 
 # Retorna o identificador de um vértice a partir do valor do atributo 'label'
 def get_vertexid (label, attrs):
@@ -405,5 +420,12 @@ def get_vertexid (label, attrs):
     if att['label'] == label:
       return v
   return None
-  
-  
+
+"""# Passeios, Caminhos e Trilhas"""
+
+# distancia entre 2 vértices de um grafo
+def dist(g,v1,v2):
+  if v1 in g.vertices and v2 in g.vertices:
+    return len(next(yen_k_loopless(g,v1,v2,1)).edges)
+  else:
+    return None

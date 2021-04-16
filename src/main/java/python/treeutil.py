@@ -1,34 +1,58 @@
+# Importando a JgraphT 
 import jgrapht
 from jgrapht.algorithms.shortestpaths import yen_k_loopless
+from jgrapht.properties import is_tree
 from random import randint
+from jgrapht.views import as_undirected
+from jgrapht import create_graph
+!wget https://raw.githubusercontent.com/pdlmachado/GraphTheory-JGraphT/master/src/main/java/python/jgraphtutil.py
+from jgraphtutil import dist
 
-"""# Funções"""
+"""# Funções para Árvore Enraizada"""
 
-from jgrapht.algorithms.shortestpaths import yen_k_loopless
-############################
-### Funções auxiliares para árvores enraizadas
+# Verifica se um grafo é uma árvore enraizada
+def is_rootedTree(tree):
+  root = list(filter(lambda v: list(tree.inedges_of(v)) == [],tree.vertices))
+  if len(root) == 1:
+    notroot = [v for v in tree.vertices if v not in root]
+    return all(len(list(tree.inedges_of(v)))==1 for v in notroot)
+  return False
+
+# Retorna o predecessor (parent) de um vértice v em uma árvore enraizada
 def parent (v,rtree):
-  inedges = list(rtree.inedges_of(v))
-  if len(inedges) == 1:
-    return rtree.edge_source(inedges[0])
+  if is_rootedTree(rtree):
+    inedges = list(rtree.inedges_of(v))
+    if len(inedges) == 0:
+      return None # root
+    else:
+      return rtree.edge_source(inedges[0])
   else: # todo vértice tem apenas um predecessor em uma árvore enraizada
     return None
 
-def children (v,tree):
-  oute = tree.outedges_of(v)
-  return [tree.edge_target(e) for e in oute]
+# Retorna uma lista com os sucessores (children) de um vértice v em uma árvore enraizada
+def children (v,rtree):
+  if is_rootedTree(rtree):
+    oute = rtree.outedges_of(v)
+    return [rtree.edge_target(e) for e in oute]
+  else:
+    return None
 
-def is_root(v,tree):
-  return list(tree.inedges_of(v))==[]
+# Determina se um vértice v é a raiz em uma árvore enraizada
+def is_root(v,rtree):
+  if (is_rootedTree(rtree)):
+    return list(rtree.inedges_of(v))==[]
+  else:
+    return None
 
-def is_leaf(v,tree):
-  return list(tree.outedges_of(v))==[]
-  
-def dist(g,v1,v2):
-  return len(next(yen_k_loopless(g,v1,v2,1)).edges)
+def is_leaf(v,rtree):
+  if (is_rootedTree(rtree)):
+    return list(rtree.outedges_of(v))==[]
+  else:
+    return None
 
+# Retorna uma árvore enraizada (dag) para uma árvore, sendo root a raiz 
 def get_rootedTree(tree,root):
-  if not is_tree(tree):
+  if (not is_tree(tree)) or (root not in tree.vertices):
     return None
   # cria instância do grafo orientado com opção dag=True
   rtree = jgrapht.create_graph(dag=True,weighted=False)
@@ -45,10 +69,12 @@ def get_rootedTree(tree,root):
       rtree.add_edge(t,s)
   return rtree
 
-# Constroi uma árvore de busca em largura
+"""# Busca em Largura"""
+
+# Retorna uma árvore de busca em largura
 # Algoritmo BFS visto nas notas de aula, retornando árvore ao invés da função predecessor
 # Retorna uma árvore orientada, a função nível e a função tempo
-from random import randint
+
 def bfs (g,root):
   if not root in g.vertices:
     return None,None,None
@@ -81,10 +107,11 @@ def bfs (g,root):
       Q.pop(0) # remove x da cabeça da fila Q
   return tree,l,t
 
+"""# Busca em Profundidade"""
+
 # Constroi uma árvore de busca em profundidade
 # Algoritmo DFS apresentado nas notas de aula
 # Retorna uma árvore DFS orientada e as funções tempo
-from random import randint
 def dfs (g,root):
   if not root in g.vertices:
     return None,None,None
@@ -114,4 +141,3 @@ def dfs (g,root):
       t[x] = i
       S.pop(0) #remove x do topo
   return tree,f,t
-  

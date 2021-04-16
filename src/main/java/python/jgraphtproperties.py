@@ -1,8 +1,10 @@
-"""# Funções"""
-
+# Importando a JgraphT 
+import jgrapht
 from jgrapht.algorithms.shortestpaths import yen_k_loopless
 from jgrapht.views import as_masked_subgraph
 from treeutil import is_root, is_leaf, children, dfs
+
+"""# Corte de Arestas, Aresta de Corte e Vértice de Corte"""
 
 ##############################################
 ### Determina se uma aresta é ponte

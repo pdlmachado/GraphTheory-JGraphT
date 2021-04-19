@@ -53,4 +53,4 @@ def edge_cut(X, g):
   Y = [v for v in g.vertices if not v in X]
   edges = filter(lambda e: (g.edge_source(e) in X and g.edge_target(e) in Y) or
                            (g.edge_source(e) in Y and g.edge_target(e) in X),g.edges)
-  return edges
+  return list(edges)

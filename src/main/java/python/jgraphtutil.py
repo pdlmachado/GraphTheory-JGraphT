@@ -349,7 +349,7 @@ def draw_cut(g,cut=[],cutlabel='',vlabel='',vset=[],vsetlabel='',v_attrs={},elab
         edge_labels[e] = e_attrs[e][elabel]
   elif edgeweight_aslabel:
     for e in graph.edges:
-      edge_labels[e] = str(graph.get_edge_weight(e))
+      edge_labels[e] = str(g.get_edge_weight(e))
   draw_matplotlib.draw_jgrapht_vertex_labels(
     g,
     positions=positions,

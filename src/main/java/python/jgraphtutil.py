@@ -421,6 +421,20 @@ def get_vertexid (label, attrs):
       return v
   return None
 
+# Retorna o conjunto de arestas com terminais entre x e y
+# para grafos não direcionados
+def get_edges (g,x,y):
+  if (x in g.vertices) and (y in g.vertices):
+    edges = []
+    for e in g.edges:
+      source = g.edge_source(e)
+      target = g.edge_target(e)
+      if (source==x and target==y) or (source==y and target==x):
+        edges.append(e) 
+    return edges
+  else:
+     return None
+
 """# Passeios, Caminhos e Trilhas"""
 
 # distancia entre 2 vértices de um grafo

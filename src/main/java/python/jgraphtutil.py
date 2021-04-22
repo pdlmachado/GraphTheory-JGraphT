@@ -356,7 +356,7 @@ def draw_cut(g,cut=[],cutlabel='',vlabel='',vset=[],vsetlabel='',v_attrs={},elab
     labels=vertex_labels,
     vertex_font_color="white"
   )  
-  if not (e_attrs=={}):
+  if (not e_attrs=={}) or (edgeweight_aslabel):
     draw_matplotlib.draw_jgrapht_edge_labels(
       g,
       positions=positions,

@@ -367,14 +367,14 @@ def draw_cut(g,cut=[],cutlabel='',vlabel='',vset=[],vsetlabel='',v_attrs={},elab
   plt.show()
 
 # Desenha floresta com até 10 componentes
-def draw_components(g,clist,vlabel='',v_attrs={},elabel='',e_attrs={},vertexid_aslabel=False,layout="circular",width=8,height=5):
+def draw_components(g,clist,clabel="Component",vlabel='',v_attrs={},elabel='',e_attrs={},vertexid_aslabel=False,layout="circular",width=8,height=5):
   if len(clist) > 10:
     return None
   positions = draw_matplotlib.layout(g, seed=10, name=layout)
   color_names = ["red", "darkblue", "green", "lightgreen", "grey", "pink", "orange", "brown", "purple", "lightblue"]
   i = 1
   for c in clist:
-    label = "Component " + str(i)
+    label = clabel + str(i)
     draw_matplotlib.draw_jgrapht_vertices(
       g, 
       positions=positions, 
@@ -416,6 +416,8 @@ def draw_components(g,clist,vlabel='',v_attrs={},elabel='',e_attrs={},vertexid_a
     )
   plt.rcParams['figure.figsize'] = [width,height]
   plt.show()
+
+
   
 """# Propriedades de Vértices e Arestas"""
 

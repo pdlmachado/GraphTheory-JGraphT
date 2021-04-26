@@ -300,18 +300,19 @@ def draw_bipartite(g,p1,p2,vlabel='',v_attrs={},elabel='',e_attrs={},vertexid_as
 
 # Desenha grafo destacando um conjunto de arestas
 # Desenha grafo destacando um conjunto de arestas
-def draw_cut(g,cut=[],cutlabel='',vlabel='',vset=[],vsetlabel='',v_attrs={},elabel='',e_attrs={},vertexid_aslabel=False,edgeweight_aslabel=False,layout="circular"):
+def draw_cut(g,cut=[],cutlabel='',vlabel='',vset=[],vsetlabel='',v_attrs={},elabel='',e_attrs={},vertexid_aslabel=False,edgeweight_aslabel=False,layout="circular",width=8,height=5):
   if cutlabel == '':
     cutlabel = 'Edge cut'
   positions = draw_matplotlib.layout(g, seed=10, name=layout)
   notcut = [e for e in g.edges if e not in cut]
   notvset = [v for v in g.vertices if v not in vset]
-  draw_matplotlib.draw_jgrapht_vertices(
-    g, 
-    positions=positions, 
-    vertex_list=notvset, 
-    vertex_color="blue", 
-  )
+  if not (notvset == []):
+    draw_matplotlib.draw_jgrapht_vertices(
+      g, 
+      positions=positions, 
+      vertex_list=notvset, 
+      vertex_color="blue", 
+    )
   if vset != []:
     draw_matplotlib.draw_jgrapht_vertices(
       g, 
@@ -362,10 +363,11 @@ def draw_cut(g,cut=[],cutlabel='',vlabel='',vset=[],vsetlabel='',v_attrs={},elab
       positions=positions,
       labels=edge_labels
     )
+  plt.rcParams['figure.figsize'] = [width,height]
   plt.show()
 
 # Desenha floresta com até 10 componentes
-def draw_components(g,clist,vlabel='',v_attrs={},elabel='',e_attrs={},vertexid_aslabel=False,layout="circular"):
+def draw_components(g,clist,vlabel='',v_attrs={},elabel='',e_attrs={},vertexid_aslabel=False,layout="circular",width=8,height=5):
   if len(clist) > 10:
     return None
   positions = draw_matplotlib.layout(g, seed=10, name=layout)
@@ -412,9 +414,9 @@ def draw_components(g,clist,vlabel='',v_attrs={},elabel='',e_attrs={},vertexid_a
       positions=positions,
       labels=edge_labels
     )
-  plt.rcParams['figure.figsize'] = [10,10]
+  plt.rcParams['figure.figsize'] = [width,height]
   plt.show()
-
+  
 """# Propriedades de Vértices e Arestas"""
 
 # Retorna o identificador de um vértice a partir do valor do atributo 'label'

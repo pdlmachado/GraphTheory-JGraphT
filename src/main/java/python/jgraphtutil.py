@@ -367,11 +367,12 @@ def draw_cut(g,cut=[],cutlabel='',vlabel='',vset=[],vsetlabel='',v_attrs={},elab
   plt.show()
 
 # Desenha floresta com até 10 componentes
-def draw_components(g,clist,clabel="Component",vlabel='',v_attrs={},elabel='',e_attrs={},vertexid_aslabel=False,layout="circular",width=8,height=5):
+def draw_components(g,clist,clabel="Componente",vlabel='',v_attrs={},elabel='',e_attrs={},vertexid_aslabel=False,
+                    layout="circular",width=8,height=5,vsize=450,vshape='o',vfcolor='black'):
   if len(clist) > 10:
     return None
   positions = draw_matplotlib.layout(g, seed=10, name=layout)
-  color_names = ["red", "darkblue", "green", "lightgreen", "grey", "pink", "orange", "brown", "purple", "lightblue"]
+  color_names = ["red", "cyan", "green", "lightgreen", "grey", "lightpink", "orange", "yellow", "violet", "lightblue"]
   i = 1
   for c in clist:
     label = clabel + str(i)
@@ -380,7 +381,9 @@ def draw_components(g,clist,clabel="Component",vlabel='',v_attrs={},elabel='',e_
       positions=positions, 
       vertex_list=c, 
       vertex_color=color_names[i-1], 
-      vertex_title=label
+      vertex_title=label,
+      vertex_size=vsize,
+      vertex_shape=vshape
     )
     i = i+1
   draw_matplotlib.draw_jgrapht_edges(
@@ -406,7 +409,7 @@ def draw_components(g,clist,clabel="Component",vlabel='',v_attrs={},elabel='',e_
     g,
     positions=positions,
     labels=vertex_labels,
-    vertex_font_color="white"
+    vertex_font_color=vfcolor
   )  
   if not (e_attrs=={}):
     draw_matplotlib.draw_jgrapht_edge_labels(
@@ -416,7 +419,6 @@ def draw_components(g,clist,clabel="Component",vlabel='',v_attrs={},elabel='',e_
     )
   plt.rcParams['figure.figsize'] = [width,height]
   plt.show()
-
 
   
 """# Propriedades de Vértices e Arestas"""

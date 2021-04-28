@@ -214,7 +214,8 @@ def draw_simple(graph,layout='circular',
                 edge_font_color='gray',
                 axis=True,
                 width=8,
-                height=5):
+                height=5,
+                vsize=450):
   
   vertex_labels = {}
   if(vlabel!='' and v_attrs!={}):
@@ -244,6 +245,7 @@ def draw_simple(graph,layout='circular',
     edge_labels=edge_labels,
     edge_font_color=edge_font_color,
     axis=axis,
+    vertex_size=vsize
   )
   plt.rcParams['figure.figsize'] = [width,height]
   plt.show()

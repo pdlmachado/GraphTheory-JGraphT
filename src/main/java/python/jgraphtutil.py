@@ -215,7 +215,8 @@ def draw_simple(graph,layout='circular',
                 axis=True,
                 width=8,
                 height=5,
-                vsize=450):
+                vsize=450,
+                cmap=None):
   
   vertex_labels = {}
   if(vlabel!='' and v_attrs!={}):
@@ -245,11 +246,12 @@ def draw_simple(graph,layout='circular',
     edge_labels=edge_labels,
     edge_font_color=edge_font_color,
     axis=axis,
-    vertex_size=vsize
+    vertex_size=vsize,
+    vertex_cmap=cmap
   )
   plt.rcParams['figure.figsize'] = [width,height]
   plt.show()
-
+  
 # Desenha grafo bipartido com partições em p1 e p2
 def draw_bipartite(g,p1,p2,vlabel='',v_attrs={},elabel='',e_attrs={},vertexid_aslabel=False):
   positions = draw_matplotlib.layout(g, seed=10, name="circular")

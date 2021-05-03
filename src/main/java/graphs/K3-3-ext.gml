@@ -354,37 +354,6 @@ graph
 	]
 	edge
 	[
-		source	1
-		target	4
-		graphics
-		[
-			type	"arc"
-			fill	"#000000"
-			arcType	"fixedRatio"
-			arcHeight	-0.18239647150039673
-			arcRatio	-0.005655704531818628
-			Line
-			[
-				point
-				[
-					x	399.0
-					y	118.0
-				]
-				point
-				[
-					x	398.8175964355469
-					y	182.5
-				]
-				point
-				[
-					x	399.0
-					y	247.0
-				]
-			]
-		]
-	]
-	edge
-	[
 		source	0
 		target	3
 		graphics

@@ -63,6 +63,18 @@ def edge_list(g,v_attrs={},e_attrs={},
       e_tuple = e_tuple + tuple([g.get_edge_weight(e)])
     result.append(e_tuple)
   return result
+  
+# Retorna partições de vértices em um grafo bipartido
+def find_partitions (g):
+  if is_bipartite(g):
+    X = []
+    Y = []
+    for v in g.vertices:
+      if (v not in X) and all(not g.contains_edge_between(v,x) for x in X):
+        X.append(v)
+      else:
+        Y.append(v)
+    return X,Y
 
 """# Importação de Grafos"""
 

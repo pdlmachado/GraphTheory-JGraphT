@@ -4,8 +4,11 @@ import jgrapht
 # Importando funções para visualização gráfica
 import jgrapht.drawing.draw_matplotlib as draw_matplotlib
 import matplotlib.pyplot as plt
+
+
 from jgrapht.algorithms.shortestpaths import yen_k_loopless
 import unittest
+from jgrapht.properties import is_bipartite
 
 """# Listas de Vértices e Arestas"""
 

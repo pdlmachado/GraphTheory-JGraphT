@@ -467,6 +467,20 @@ def get_edges (g,x,y):
     return edges
   else:
      return None
+     
+# Retorna o conjunto de arcos com terminais de x para y
+# para grafos direcionados
+def get_arcs (d,x,y):
+  if (x in d.vertices) and (y in d.vertices):
+    arcs = []
+    for a in d.arcs:
+      source = d.edge_source(a)
+      target = d.edge_target(a)
+      if (source==x and target==y):
+        arcs.append(a) 
+    return arcs
+  else:
+     return None
 
 """# Passeios, Caminhos e Trilhas"""
 

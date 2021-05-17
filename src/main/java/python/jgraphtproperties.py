@@ -54,3 +54,11 @@ def edge_cut(X, g):
   edges = filter(lambda e: (g.edge_source(e) in X and g.edge_target(e) in Y) or
                            (g.edge_source(e) in Y and g.edge_target(e) in X),g.edges)
   return list(edges)
+  
+# Retorna um corte de saída (conjunto) de arcos com um terminal em X e outro em Y 
+def outedge_cut(X, d):
+  if all(v in d.vertices for v in X):
+    Y = [v for v in d.vertices if not v in X]
+    arcs = filter(lambda a: d.edge_source(a) in X and d.edge_target(a) in Y,d.edges)
+    return list(arcs)
+  return None  

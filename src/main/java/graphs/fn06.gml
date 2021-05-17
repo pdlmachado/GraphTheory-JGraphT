@@ -213,7 +213,7 @@ graph
 	[
 		source	3
 		target	4
-		label	"10"
+		label	"20"
 		graphics
 		[
 			fill	"#999999"
@@ -221,7 +221,7 @@ graph
 		]
 		LabelGraphics
 		[
-			text	"10"
+			text	"20"
 			fontSize	12
 			fontName	"Dialog"
 			configuration	"AutoFlippingLabel"

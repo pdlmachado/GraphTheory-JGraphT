@@ -25,7 +25,7 @@ graph
 			text	"x"
 			fontSize	12
 			fontName	"Dialog"
-			model	"null"
+			anchor	"c"
 		]
 	]
 	node
@@ -48,7 +48,7 @@ graph
 			text	"b"
 			fontSize	12
 			fontName	"Dialog"
-			model	"null"
+			anchor	"c"
 		]
 	]
 	node
@@ -71,7 +71,7 @@ graph
 			text	"c"
 			fontSize	12
 			fontName	"Dialog"
-			model	"null"
+			anchor	"c"
 		]
 	]
 	node
@@ -94,7 +94,7 @@ graph
 			text	"d"
 			fontSize	12
 			fontName	"Dialog"
-			model	"null"
+			anchor	"c"
 		]
 	]
 	node
@@ -117,7 +117,7 @@ graph
 			text	"y"
 			fontSize	12
 			fontName	"Dialog"
-			model	"null"
+			anchor	"c"
 		]
 	]
 	edge
@@ -127,7 +127,7 @@ graph
 		label	"10"
 		graphics
 		[
-			fill	"#000000"
+			fill	"#999999"
 			targetArrow	"standard"
 		]
 		LabelGraphics
@@ -138,8 +138,8 @@ graph
 			configuration	"AutoFlippingLabel"
 			contentWidth	17.34765625
 			contentHeight	18.701171875
-			model	"null"
-			position	"null"
+			model	"six_pos"
+			position	"tail"
 		]
 	]
 	edge
@@ -149,7 +149,7 @@ graph
 		label	"10"
 		graphics
 		[
-			fill	"#000000"
+			fill	"#999999"
 			targetArrow	"standard"
 		]
 		LabelGraphics
@@ -160,8 +160,8 @@ graph
 			configuration	"AutoFlippingLabel"
 			contentWidth	17.34765625
 			contentHeight	18.701171875
-			model	"null"
-			position	"null"
+			model	"six_pos"
+			position	"tail"
 		]
 	]
 	edge
@@ -171,7 +171,51 @@ graph
 		label	"10"
 		graphics
 		[
-			fill	"#000000"
+			fill	"#999999"
+			targetArrow	"standard"
+		]
+		LabelGraphics
+		[
+			text	"10"
+			fontSize	12
+			fontName	"Dialog"
+			configuration	"AutoFlippingLabel"
+			contentWidth	17.34765625
+			contentHeight	18.701171875
+			model	"six_pos"
+			position	"tail"
+		]
+	]
+	edge
+	[
+		source	3
+		target	4
+		label	"20"
+		graphics
+		[
+			fill	"#999999"
+			targetArrow	"standard"
+		]
+		LabelGraphics
+		[
+			text	"20"
+			fontSize	12
+			fontName	"Dialog"
+			configuration	"AutoFlippingLabel"
+			contentWidth	17.34765625
+			contentHeight	18.701171875
+			model	"six_pos"
+			position	"tail"
+		]
+	]
+	edge
+	[
+		source	1
+		target	3
+		label	"10"
+		graphics
+		[
+			fill	"#999999"
 			targetArrow	"standard"
 		]
 		LabelGraphics
@@ -193,56 +237,12 @@ graph
 		label	"10"
 		graphics
 		[
-			fill	"#000000"
-			sourceArrow	"standard"
-		]
-		LabelGraphics
-		[
-			text	"10"
-			fontSize	12
-			fontName	"Dialog"
-			configuration	"AutoFlippingLabel"
-			contentWidth	17.34765625
-			contentHeight	18.701171875
-			model	"null"
-			position	"null"
-		]
-	]
-	edge
-	[
-		source	1
-		target	3
-		label	"10"
-		graphics
-		[
-			fill	"#000000"
-			sourceArrow	"standard"
-		]
-		LabelGraphics
-		[
-			text	"10"
-			fontSize	12
-			fontName	"Dialog"
-			configuration	"AutoFlippingLabel"
-			contentWidth	17.34765625
-			contentHeight	18.701171875
-			model	"null"
-			position	"null"
-		]
-	]
-	edge
-	[
-		source	3
-		target	4
-		label	"20"
-		graphics
-		[
-			fill	"#000000"
+			fill	"#999999"
 			targetArrow	"standard"
 		]
 		LabelGraphics
 		[
-			text	"20"
+			text	"10"
 			fontSize	12
 			fontName	"Dialog"
 			configuration	"AutoFlippingLabel"

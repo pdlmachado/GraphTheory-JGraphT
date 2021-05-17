@@ -317,6 +317,7 @@ def draw_bipartite(g,p1,p2,vlabel='',v_attrs={},elabel='',e_attrs={},vertexid_as
     )
   plt.show()
 
+
 # Desenha grafo destacando um conjunto de arestas
 # Desenha grafo destacando um conjunto de arestas
 def draw_cut(g,cut=[],cutlabel='',vlabel='',vset=[],vsetlabel='',
@@ -352,13 +353,15 @@ def draw_cut(g,cut=[],cutlabel='',vlabel='',vset=[],vsetlabel='',
       positions=positions,
       edge_list=cut,
       edge_color="orange",
+      arrow_color="orange",
       edge_title = cutlabel
     )
   draw_matplotlib.draw_jgrapht_edges(
     g,
     positions=positions,
     edge_list=notcut,
-    edge_color="black"
+    edge_color="black",
+    arrow_color="black",
   )
   vertex_labels = {}
   if(vlabel!='' and v_attrs!={}):
@@ -389,7 +392,8 @@ def draw_cut(g,cut=[],cutlabel='',vlabel='',vset=[],vsetlabel='',
       labels=edge_labels
     )
   plt.rcParams['figure.figsize'] = [width,height]
-  plt.show()  
+  plt.show()
+
 # Desenha floresta com até 10 componentes
 def draw_components(g,clist,clabel="Componente",vlabel='',v_attrs={},elabel='',e_attrs={},vertexid_aslabel=False,
                     layout="circular",width=8,height=5,vsize=450,vshape='o',vfcolor='black'):

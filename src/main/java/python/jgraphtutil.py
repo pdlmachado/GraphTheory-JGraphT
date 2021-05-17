@@ -473,7 +473,7 @@ def get_edges (g,x,y):
 def get_arcs (d,x,y):
   if (x in d.vertices) and (y in d.vertices):
     arcs = []
-    for a in d.arcs:
+    for a in d.edges:
       source = d.edge_source(a)
       target = d.edge_target(a)
       if (source==x and target==y):

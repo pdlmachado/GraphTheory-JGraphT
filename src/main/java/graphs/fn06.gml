@@ -257,7 +257,7 @@ graph
 	[
 		source	3
 		target	4
-		label	"20"
+		label	"5"
 		graphics
 		[
 			fill	"#000000"
@@ -265,11 +265,11 @@ graph
 		]
 		LabelGraphics
 		[
-			text	"20"
+			text	"5"
 			fontSize	12
 			fontName	"Dialog"
 			configuration	"AutoFlippingLabel"
-			contentWidth	17.34765625
+			contentWidth	10.673828125
 			contentHeight	18.701171875
 			model	"six_pos"
 			position	"tail"

@@ -159,7 +159,7 @@ def read_multiple_CSV(csvgraph,v_attrs,e_attrs,
 ##########################################
 # Importa grafo no formato GML
 from jgrapht.io.importers import parse_gml
-def import_gml (g,v_attrs,e_attrs,filename):
+def import_gml (g,v_attrs,e_attrs,filename,weights_aslabel=False):
 
   # Função que adiciona atributos de vértices
   def v_att_cb(vertex, attribute_name, attribute_value):
@@ -182,6 +182,10 @@ def import_gml (g,v_attrs,e_attrs,filename):
   parse_gml(g,input_gml1,
             vertex_attribute_cb=v_att_cb,
             edge_attribute_cb=e_att_cb)
+  if weights_aslabel and g.type.weighted:
+    for e in g.edges:
+      w = int(e_attrs[e]['label'])
+      g.set_edge_weight(e,w)
 
 #############
 # Cria dicionário v_attrs a partir de input_string no formato CSV 

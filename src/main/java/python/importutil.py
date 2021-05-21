@@ -107,8 +107,15 @@ def read_edges (csvgraph,listcsv,v_attrs,viddict,e_attrs,esourceid,etargetid,ela
 ##########################################
 # Importa grafo no formato GML
 from jgrapht.io.importers import parse_gml
-def import_gml (g,v_attrs,e_attrs,filename,weights_aslabel=False):
 
+def import_gml (g,v_attrs,e_attrs,filename,weights_aslabel=False):
+  # Leitura do arquivo em um string de entrada
+  gmlfile = open(filename,"r")
+  input_gml = "".join(gmlfile.readlines())
+  gmlfile.close()
+  read_gml (g,input_gml,v_attrs,e_attrs,weights_aslabel)
+
+def read_gml (g,input_gml,v_attrs,e_attrs,weights_aslabel):
   # Função que adiciona atributos de vértices
   def v_att_cb(vertex, attribute_name, attribute_value):
       if vertex not in v_attrs:
@@ -120,11 +127,6 @@ def import_gml (g,v_attrs,e_attrs,filename,weights_aslabel=False):
       if edge not in e_attrs:
           e_attrs[edge] = {}
       e_attrs[edge][attribute_name] = attribute_value
-
-  # Leitura do arquivo em um string de entrada
-  gmlfile1 = open(filename,"r")
-  input_gml1 = "".join(gmlfile1.readlines())
-  gmlfile1.close()
 
   # Importando a definição no formato GML
   parse_gml(g,input_gml1,

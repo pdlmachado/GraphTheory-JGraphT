@@ -78,18 +78,18 @@ graph
 	[
 		source	0
 		target	1
-		label	"5"
+		label	"c"
 		graphics
 		[
 			fill	"#000000"
 		]
 		LabelGraphics
 		[
-			text	"5"
+			text	"c"
 			fontSize	12
 			fontName	"Dialog"
 			configuration	"AutoFlippingLabel"
-			contentWidth	10.673828125
+			contentWidth	10.0
 			contentHeight	18.701171875
 			model	"null"
 			position	"null"
@@ -99,7 +99,7 @@ graph
 	[
 		source	1
 		target	2
-		label	"6"
+		label	"a"
 		graphics
 		[
 			fill	"#000000"
@@ -124,7 +124,46 @@ graph
 		]
 		LabelGraphics
 		[
-			text	"6"
+			text	"a"
+			fontSize	12
+			fontName	"Dialog"
+			configuration	"AutoFlippingLabel"
+			contentWidth	10.673828125
+			contentHeight	18.701171875
+			model	"null"
+			position	"null"
+		]
+	]
+	edge
+	[
+		source	2
+		target	1
+		label	"b"
+		graphics
+		[
+			fill	"#000000"
+			Line
+			[
+				point
+				[
+					x	492.0
+					y	190.0
+				]
+				point
+				[
+					x	452.0
+					y	154.0
+				]
+				point
+				[
+					x	451.0
+					y	91.0
+				]
+			]
+		]
+		LabelGraphics
+		[
+			text	"b"
 			fontSize	12
 			fontName	"Dialog"
 			configuration	"AutoFlippingLabel"

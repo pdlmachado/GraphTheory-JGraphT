@@ -90,24 +90,6 @@ graph
 		graphics
 		[
 			fill	"#000000"
-			Line
-			[
-				point
-				[
-					x	451.0
-					y	91.0
-				]
-				point
-				[
-					x	484.0
-					y	132.0
-				]
-				point
-				[
-					x	492.0
-					y	190.0
-				]
-			]
 		]
 	]
 	edge
@@ -117,24 +99,6 @@ graph
 		graphics
 		[
 			fill	"#000000"
-			Line
-			[
-				point
-				[
-					x	492.0
-					y	190.0
-				]
-				point
-				[
-					x	452.0
-					y	154.0
-				]
-				point
-				[
-					x	451.0
-					y	91.0
-				]
-			]
 		]
 	]
 ]

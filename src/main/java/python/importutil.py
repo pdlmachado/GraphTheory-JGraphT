@@ -129,7 +129,7 @@ def read_gml (g,input_gml,v_attrs,e_attrs,weights_aslabel):
       e_attrs[edge][attribute_name] = attribute_value
 
   # Importando a definição no formato GML
-  parse_gml(g,input_gml1,
+  parse_gml(g,input_gml,
             vertex_attribute_cb=v_att_cb,
             edge_attribute_cb=e_att_cb)
   if weights_aslabel and g.type.weighted:

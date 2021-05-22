@@ -17,8 +17,6 @@ from jgrapht.properties import is_tree
 from random import randint
 from jgrapht.views import as_undirected
 from jgrapht import create_graph
-!wget https://raw.githubusercontent.com/pdlmachado/GraphTheory-JGraphT/master/src/main/java/python/getutil.py
-from getutil import get_dist
 
 """# Funções para Árvore Enraizada"""
 

@@ -23,8 +23,8 @@ https://colab.research.google.com/drive/1akfgNvX6ic5o_JkCherpqTCotERTOT7A?
 #!wget https://raw.githubusercontent.com/pdlmachado/GraphTheory-JGraphT/master/src/main/java/python/searchutil.py
 #!wget https://raw.githubusercontent.com/pdlmachado/GraphTheory-JGraphT/master/src/main/java/python/treeutil.py
 
-# Importando a JgraphT 
-import jgrapht
+# Importando funções
+from jgrapht import create_graph
 from jgrapht.algorithms.cycles import fundamental_cycle_basis_paton
 from searchutil import dfs
 from treeutil import is_root,is_leaf,children

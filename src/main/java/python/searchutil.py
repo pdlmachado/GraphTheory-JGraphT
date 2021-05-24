@@ -18,7 +18,7 @@ https://colab.research.google.com/drive/1lxpFEmuvvAN-0jMwQ6djRzEqFwyXWGF0?
 """
 
 # Instalando a JgraphT para uso neste notebook
-!pip install jgrapht
+# !pip install jgrapht
 
 # Importando a JgraphT 
 import jgrapht

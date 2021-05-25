@@ -18,7 +18,7 @@ https://colab.research.google.com/drive/1lxpFEmuvvAN-0jMwQ6djRzEqFwyXWGF0?
 """
 
 # Se desejar compilar, descomente o(s) comando(s) abaixo
-!pip install jgrapht
+#!pip install jgrapht
 
 # Importando a JgraphT 
 from random import randint

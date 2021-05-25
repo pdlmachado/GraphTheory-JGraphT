@@ -21,13 +21,13 @@ https://colab.research.google.com/drive/1akfgNvX6ic5o_JkCherpqTCotERTOT7A?
 #!pip install jgrapht
 #!wget https://raw.githubusercontent.com/pdlmachado/GraphTheory-JGraphT/master/src/main/java/python/getutil.py
 #!wget https://raw.githubusercontent.com/pdlmachado/GraphTheory-JGraphT/master/src/main/java/python/searchutil.py
-#!wget https://raw.githubusercontent.com/pdlmachado/GraphTheory-JGraphT/master/src/main/java/python/treeutil.py
+#!wget https://raw.githubusercontent.com/pdlmachado/GraphTheory-JGraphT/master/src/main/java/python/rootedtreeutil.py
 
 # Importando funções
 from jgrapht import create_graph
 from jgrapht.algorithms.cycles import fundamental_cycle_basis_paton
 from searchutil import dfs
-from treeutil import is_root,is_leaf,children
+from rootedtreeutil import is_root,is_leaf,children
 
 """# Corte de Arestas, Aresta de Corte e Vértice de Corte
 

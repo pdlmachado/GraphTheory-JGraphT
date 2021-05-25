@@ -146,7 +146,9 @@ def get_dist(g,v1,v2):
   else:
     return None
 
-"""# vertex_list e edge_list
+"""# Deprecated
+
+## vertex_list e edge_list
 
 Retorna uma lista com os vértices de um grafo. Cada vértice é representado pelo tupla (id, label), caso o vértice possua um label ou simplesmente id.
 

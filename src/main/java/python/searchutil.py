@@ -17,11 +17,10 @@ Testes para as funções encontram-se neste notebook:
 https://colab.research.google.com/drive/1lxpFEmuvvAN-0jMwQ6djRzEqFwyXWGF0?
 """
 
-# Instalando a JgraphT para uso neste notebook
-# !pip install jgrapht
+# Se desejar compilar, descomente o(s) comando(s) abaixo
+!pip install jgrapht
 
 # Importando a JgraphT 
-import jgrapht
 from random import randint
 from jgrapht import create_graph
 
@@ -43,7 +42,7 @@ def bfs (g,root):
   t = {}
   t[root]=i
   Q = [root]
-  tree = jgrapht.create_graph(directed=True,weighted=False,dag=True)
+  tree = create_graph(directed=True,weighted=False,dag=True)
   tree.add_vertex(root)
   while Q != []:
     x = Q[0] # x é o vértice da cabeça de Q
@@ -79,7 +78,7 @@ def dfs (g,root):
   visited = [root] # Lista com vértices que foram pintados
   f[root] = i
   S.append(root)
-  tree = jgrapht.create_graph(directed=True,weighted=False,dag=True)
+  tree = create_graph(directed=True,weighted=False,dag=True)
   tree.add_vertex(root)
   while S != [] :
     x = S[0] # x é o topo da pilha S

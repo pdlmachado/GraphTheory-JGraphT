@@ -22,6 +22,7 @@ https://colab.research.google.com/drive/1Qz0Afd8EMb_EEQSYB-fb59cM5qACQYVU?usp=sh
 #!wget https://raw.githubusercontent.com/pdlmachado/GraphTheory-JGraphT/master/src/main/java/python/getutil.py
 
 # Importando funções
+from jgrapht import create_graph
 from jgrapht.properties import is_tree
 from getutil import get_dist
 

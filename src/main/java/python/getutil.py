@@ -146,18 +146,17 @@ def get_dist(g,v1,v2):
   else:
     return None
 
-"""# Deprecated"""
+"""# vertex_list e edge_list
 
-# Deprecated
-# Retorna uma lista com os vértices de um grafo.
-# Cada vértice é representado pelo tupla (id, label), caso o vértice possua
-# um label ou simplesmente id.
-# Parâmetros:
-#  g é a instância do grafo
-#  v_attrs é um dicionário com os atributos dos vértices, se existirem
-#  label é o nome de um atributo dos vértices que pode ser impresso como label;
-#       default é 'label'
-#  subset é um subconjunto dos vértices; se [], indica todos os vértices.
+Retorna uma lista com os vértices de um grafo. Cada vértice é representado pelo tupla (id, label), caso o vértice possua um label ou simplesmente id.
+
+Parâmetros:
+-  g é a instância do grafo
+-  v_attrs é um dicionário com os atributos dos vértices, se existirem
+-  label é o nome de um atributo dos vértices que pode ser impresso como label; default é 'label'
+-  subset é um subconjunto dos vértices; se [], indica todos os vértices.
+"""
+
 def vertex_list (g,v_attrs={},label='label',subset=None):
   result = []
   list_vertices = g.vertices
@@ -170,21 +169,18 @@ def vertex_list (g,v_attrs={},label='label',subset=None):
     result.append(str_v)
   return result
 
-# Deprecated
-# Retorna uma lista com as arestas de um grafo
-# Cada aresta é representada por uma tupla (id, source, target, label, weight)
-# Atributo 'label' é default para identificar o label da aresta. 
-# A tupla conterá label e weight apenas fornecidos (ver parâmetros abaixo).
-# Parâmetros:
-#  g é a instância do grafo
-#  v_attrs é um dicionário com os atributos dos vértices, se existirem
-#  e_attrs é um dicionário com os atributos das arestas, se existirem
-#  vlabel é o nome de um atributo dos vértices que pode ser impresso como label;
-#     default é 'label'
-#  elabel é o nome de um atributo das arestas que pode ser impresso como label;
-#     default é 'label'
-#  weight indica se os pesos das arestas devem ser impressos, caso existam
-#  subset é um subconjunto de arestas; se None, indica todas as arestas.
+"""Retorna uma lista com as arestas de um grafo. Cada aresta é representada por uma tupla (id, source, target, label, weight). Atributo 'label' é default para identificar o label da aresta. A tupla conterá label e weight apenas fornecidos (ver parâmetros abaixo).
+
+Parâmetros:
+-  g é a instância do grafo
+-  v_attrs é um dicionário com os atributos dos vértices, se existirem
+-  e_attrs é um dicionário com os atributos das arestas, se existirem
+-  vlabel é o nome de um atributo dos vértices que pode ser impresso como label; default é 'label'
+- elabel é o nome de um atributo das arestas que pode ser impresso como label; default é 'label'
+-  weight indica se os pesos das arestas devem ser impressos, caso existam
+-  subset é um subconjunto de arestas; se None, indica todas as arestas.
+"""
+
 def edge_list(g,v_attrs={},e_attrs={},
                 vlabel='label',elabel='label',weight=False,subset=None):
   result = []

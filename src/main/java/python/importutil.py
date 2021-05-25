@@ -20,26 +20,29 @@ https://colab.research.google.com/drive/1X7nngfUSPYOvdi5ej2SGpKNjZyYsn-tG?
 # Se desejar compilar, descomente o comando abaixo
 #!pip install jgrapht
 
-# Importando a JgraphT
-import jgrapht
-
-"""## read_multiple_csv"""
-
-# Importa um grafo a partir de tabelas com os conjuntos de vértices e arestas
-# Parâmetros:
-#   csvgraph - instância do grafo
-#   v_attrs - instância do dicionário de atributos de vértices
-#   e_attrs - instância do dicionário de atributos de arestas
-#   vfilename - arquivo com tabela de vértices no formato CSV
-#   vid - atributo que representa vértices na tabela de arestas
-#   vlabel - atributo que representa os labels dos vértices (se existir)
-#   efilename - arquivo com tabela de arestas no formato CSV
-#   esourceid - atributo que representa o vértice origem
-#   etargetid - atributo que representa o vértice destino
-#   elabel - atributo que representa os labels das arestas (se existir)
-#   weightid - atributo que representa o peso das arestas (se existir)
-#   delimiter - delimitador utilizado nos arquivos CSV - default: ,
+# Importando funções
 import csv
+from jgrapht.io.importers import parse_gml
+
+"""## read_multiple_csv
+
+Importa um grafo a partir de tabelas com os conjuntos de vértices e arestas.
+
+Parâmetros:
+-   csvgraph - instância do grafo
+-   v_attrs - instância do dicionário de atributos de vértices
+-   e_attrs - instância do dicionário de atributos de arestas
+-   vfilename - arquivo com tabela de vértices no formato CSV
+-   vid - atributo que representa vértices na tabela de arestas
+-  vlabel - atributo que representa os labels dos vértices (se existir)
+-   efilename - arquivo com tabela de arestas no formato CSV
+-   esourceid - atributo que representa o vértice origem
+-   etargetid - atributo que representa o vértice destino
+-   elabel - atributo que representa os labels das arestas (se existir)
+-   weightid - atributo que representa o peso das arestas (se existir)
+-   delimiter - delimitador utilizado nos arquivos CSV - default: ,
+"""
+
 def read_multiple_CSV(csvgraph,v_attrs,e_attrs,
                        vfilename,vid,vlabel,
                        efilename,esourceid,etargetid,elabel='',weightid='',
@@ -107,11 +110,17 @@ def read_edges (csvgraph,listcsv,v_attrs,viddict,e_attrs,esourceid,etargetid,ela
       dict['label'] = listcsv[i][edgelabel_index]
     e_attrs[e] = dict
 
-"""## import_gml"""
+"""## import_gml
 
-##########################################
-# Importa grafo no formato GML
-from jgrapht.io.importers import parse_gml
+Importa grafo no formato GML
+
+Parâmetros:
+-   csvgraph - instância do grafo
+-   v_attrs - instância do dicionário de atributos de vértices
+-   e_attrs - instância do dicionário de atributos de arestas
+- filename - nome do arquivo como grafo
+- weights_aslabel - indica se o valor do atributo 'label' deve ser usado como peso para o grafo.
+"""
 
 def import_gml (g,v_attrs,e_attrs,filename,weights_aslabel=False):
   # Leitura do arquivo em um string de entrada
@@ -142,12 +151,13 @@ def read_gml (g,input_gml,v_attrs,e_attrs,weights_aslabel):
       w = int(e_attrs[e]['label'])
       g.set_edge_weight(e,w)
 
-"""## create_vdict"""
+"""## create_vdict
 
-#############
-# Cria dicionário v_attrs a partir de input_string no formato CSV 
-# edgelist ou adjacencylist. Se weighted=True, o último
-# elemento de cada linha será o peso da aresta (para o formato edgelist)
+Cria dicionário *v_attrs* a partir de *input_string* no formato CSV 
+*edgelist* ou *adjacencylist*. Se *weighted=True*, o último
+elemento de cada linha será o peso da aresta (para o formato *edgelist*)
+"""
+
 def create_vdict (v_attrs, input_string, weighted=False):
   listcsv = input_string.split('\n')
   vlist = []

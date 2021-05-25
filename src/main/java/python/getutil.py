@@ -20,10 +20,7 @@ https://colab.research.google.com/drive/1Prk2E2a69kyqcmVGQyz_vmqzMsD62Dsp?
 # Se desejar compilar, descomente o comando abaixo
 #!pip install jgrapht
 
-# Importando a JgraphT
-import jgrapht
-
-# Importando outras funções
+# Importando funções
 from jgrapht.algorithms.shortestpaths import yen_k_loopless
 from jgrapht.properties import is_bipartite
 

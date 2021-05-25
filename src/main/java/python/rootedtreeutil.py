@@ -95,7 +95,7 @@ def get_rootedTree(tree,root):
   if (not is_tree(tree)) or (root not in tree.vertices):
     return None
   # cria instância do grafo orientado com opção dag=True
-  rtree = jgrapht.create_graph(dag=True,weighted=False)
+  rtree = create_graph(dag=True,weighted=False)
   # adiciona vértices no grafo
   rtree.add_vertices_from(tree.vertices)
   # adiciona arcos no grafo a partir das arestas de tree

@@ -20,12 +20,10 @@ https://colab.research.google.com/drive/12JUu5AjfF65pCNAfa3IrV56OhDWmbcvV?
 # Se desejar compilar, descomente o comando abaixo
 #!pip install jgrapht
 
-# Importando a JgraphT
-import jgrapht
-
-# Importando funções para visualização gráfica
-import jgrapht.drawing.draw_matplotlib as draw_matplotlib
-import matplotlib.pyplot as plt
+# Importando funções
+from jgrapht import create_graph
+from jgrapht.drawing import draw_matplotlib
+from matplotlib import pyplot
 from matplotlib import colors
 
 """## draw_graph
@@ -160,5 +158,5 @@ def draw_graph(g,layout="circular",
       positions=positions,
       labels=edge_labels
     )
-  plt.rcParams['figure.figsize'] = [width,height]
-  plt.show()
+  pyplot.rcParams['figure.figsize'] = [width,height]
+  pyplot.show()

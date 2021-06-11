@@ -1,0 +1,1001 @@
+id,First Name,Last Name,Age,Grade,Country
+1,Lettie,Jachimczak,14,10.0,Mozambique
+2,Ed,Quinnette,14,7.9,China
+3,Silvanus,Baseggio,13,5.2,Thailand
+4,Corrinne,Jakubovitch,16,4.0,Indonesia
+5,Nils,Loomes,16,6.7,China
+6,Wash,Bartolozzi,16,5.2,Nigeria
+7,Gavin,Semon,15,2.9,Myanmar
+8,Julita,Pulsford,16,4.5,Philippines
+9,Bastien,Hierro,16,2.0,China
+10,Rheta,Locock,16,,Russia
+11,Bentlee,Blackah,15,0.7,Indonesia
+12,Lianna,Darkins,15,7.2,Philippines
+13,Gabriellia,Pesek,13,1.7,East Timor
+14,Annamarie,Wychard,15,3.6,Vietnam
+15,Kirsten,McIlwrath,14,3.5,Indonesia
+16,Kariotta,Zorzi,13,8.7,Syria
+17,Kimberley,Sandifer,15,4.1,Bolivia
+18,Cazzie,Lyford,16,2.0,Finland
+19,Rainer,Bridle,16,1.9,American Samoa
+20,Cornelius,Chiverstone,16,7.9,Ireland
+21,Idette,Dunbar,16,4.9,Russia
+22,Morena,Langforth,16,2.0,China
+23,Bonnibelle,Stenton,13,2.6,Brazil
+24,Gabbey,Motton,13,6.7,Colombia
+25,Augy,Wilcockes,16,3.4,Philippines
+26,Yvonne,Peskett,13,6.7,Chad
+27,Stevena,Aughton,15,8.1,Finland
+28,Kandace,Scanterbury,14,0.8,Kenya
+29,Welbie,Espine,14,4.6,Czech Republic
+30,Mair,Tulleth,13,2.0,Poland
+31,Ingram,Berceros,13,0.0,Greece
+32,Keenan,Laurenty,13,9.6,Spain
+33,Andria,Urridge,14,8.0,Indonesia
+34,Arman,Feria,16,2.2,Belarus
+35,Rafaela,Delacourt,13,9.0,Indonesia
+36,Abagail,Tunnoch,14,6.2,Colombia
+37,Ogden,Ranshaw,15,6.3,Indonesia
+38,Violante,Medforth,16,5.7,Cape Verde
+39,Burtie,Brandon,16,4.6,Nepal
+40,Kris,Royds,13,0.1,Canada
+41,Tyrus,Mowsdell,15,,Dominican Republic
+42,Sosanna,Fountaine,15,4.4,Russia
+43,Hugibert,Chaves,15,4.4,Bangladesh
+44,Arron,Wavell,13,0.6,United States
+45,Luca,Goddard,14,9.8,China
+46,Clark,Orrell,16,6.3,Honduras
+47,Caesar,Keddey,13,1.6,France
+48,Koo,Clavey,13,1.3,China
+49,Stacey,Simoens,16,4.3,Kazakhstan
+50,Devland,Russilll,15,7.2,China
+51,Patsy,Gresley,15,6.1,Croatia
+52,Florrie,Belleny,14,7.1,France
+53,Bram,Indge,13,1.8,China
+54,Kim,Cruess,14,9.1,Honduras
+55,Lottie,Birchner,15,3.4,Latvia
+56,Kurt,Basant,13,8.7,Indonesia
+57,Clarence,Whooley,13,8.9,Russia
+58,Teodor,McArthur,15,6.8,Brazil
+59,Chen,Janaszkiewicz,15,4.9,South Africa
+60,Hunt,Mertgen,16,2.3,China
+61,Sophie,Call,14,4.4,Thailand
+62,Justin,Tiddy,16,4.3,Portugal
+63,Hymie,Nuscha,13,6.8,Argentina
+64,Rhonda,Balsellie,13,9.8,Guatemala
+65,Scotti,Glaze,14,8.3,American Samoa
+66,Charmaine,Kaesmakers,16,1.8,Indonesia
+67,Alejandra,Goodlatt,14,6.6,Palestinian Territory
+68,Aleece,Savaage,14,3.3,Sweden
+69,Hana,Kedward,14,2.7,Indonesia
+70,Tony,Boughtwood,13,3.1,Mexico
+71,Tudor,Sharnock,15,3.8,Philippines
+72,Tansy,McAlinden,15,4.8,Portugal
+73,George,Tufts,13,5.7,Philippines
+74,Waneta,Cruttenden,16,0.5,Guatemala
+75,Esmeralda,Teager,14,4.1,Sweden
+76,Delilah,Hobbing,13,4.7,Ivory Coast
+77,Flem,McGeorge,13,4.6,Haiti
+78,Philomena,Machent,15,1.7,Japan
+79,Ilyssa,MacGahey,15,8.4,Sweden
+80,Madelena,Vinton,15,4.2,Czech Republic
+81,Tally,Wolfinger,15,8.1,Indonesia
+82,Zeb,Vines,13,4.2,Ireland
+83,Elvyn,Winger,14,8.7,Philippines
+84,Benton,Giacopazzi,13,2.2,Mexico
+85,Juanita,Duffield,14,9.6,Cambodia
+86,Dorey,Yann,13,,Tunisia
+87,Brynn,Arens,16,2.9,Argentina
+88,Nikos,Shanks,13,6.5,China
+89,Kirbie,Treweek,13,8.8,Nigeria
+90,Sibylle,Gergher,15,3.9,Micronesia
+91,Inglis,MacCarroll,13,8.6,China
+92,Audry,Gentreau,14,4.5,Bosnia and Herzegovina
+93,Kalinda,Tortis,13,1.5,Portugal
+94,Tailor,Pillans,14,0.9,China
+95,Sheelah,Brundle,13,4.3,Zambia
+96,Brigitte,Pomphrett,13,0.7,Indonesia
+97,Kristyn,Haggish,15,3.7,Bolivia
+98,Matias,Malsher,14,9.4,China
+99,Suellen,Wilmot,15,4.1,Poland
+100,Sid,Eastope,13,9.6,Indonesia
+101,Demetra,Kibbee,16,1.7,Indonesia
+102,Ethel,Hasser,14,4.2,China
+103,Sutherlan,Pulhoster,15,9.1,United States
+104,Cristiano,Braisby,13,1.6,Georgia
+105,Skelly,Hadwick,15,6.0,Philippines
+106,Lotty,Halshaw,15,2.4,China
+107,Erwin,Thal,13,9.8,Bosnia and Herzegovina
+108,Godfree,Brindle,14,0.5,Norway
+109,Brandyn,Bagnal,13,2.1,Iran
+110,Bruce,Murrison,13,0.6,Brazil
+111,Antone,McMichael,13,1.4,Nigeria
+112,Goldina,Bartelet,13,5.0,Yemen
+113,Leslie,Honnan,14,1.6,Papua New Guinea
+114,Yankee,Locker,16,7.8,China
+115,Kara-lynn,Westley,16,3.5,Republic of the Congo
+116,Isadore,Pettet,14,2.8,Sweden
+117,Joice,Lachaize,16,1.9,China
+118,Karry,Manthorpe,15,8.4,Thailand
+119,Maribeth,Bompass,14,9.8,China
+120,Roch,Hairyes,14,7.5,China
+121,Morry,Cowup,16,1.8,China
+122,Karlyn,Van der Baaren,15,1.5,Nigeria
+123,Joell,Pegler,15,9.4,Colombia
+124,Dorey,Siverns,14,4.5,Belarus
+125,Kirbie,Dell 'Orto,16,6.2,Sweden
+126,Verile,Hollyer,14,7.9,China
+127,Cesya,O'Donoghue,14,7.3,Colombia
+128,Olly,Phethean,13,9.9,Poland
+129,Monte,Summerrell,15,2.9,China
+130,Charline,De Marchi,14,2.1,China
+131,Olivie,Cahalan,14,3.5,Japan
+132,Friedrich,Basill,13,4.2,Argentina
+133,Alexa,Petrescu,14,2.9,Guinea
+134,Sigismundo,Wiles,13,8.7,China
+135,Alex,Cowpland,13,8.3,Mali
+136,Paulina,Tille,14,2.8,Benin
+137,Tye,Doutch,13,2.4,Indonesia
+138,Barbe,Drewe,16,1.4,Poland
+139,Karlotta,Alexis,13,1.9,Bosnia and Herzegovina
+140,Irvine,Mallam,15,7.2,Philippines
+141,Verina,Feifer,16,3.7,Liechtenstein
+142,Jessie,Cuthbertson,13,4.3,China
+143,Hayes,Anstis,14,0.2,Indonesia
+144,Garrik,Kubacek,14,1.6,China
+145,Trumann,Haydock,14,2.4,Japan
+146,Ramsey,Lartice,16,2.3,Ethiopia
+147,Frederigo,Breckin,15,3.8,Philippines
+148,Wells,Doerr,14,6.4,China
+149,Peder,O' Driscoll,16,6.3,China
+150,Bonnee,Ansteys,15,0.3,Indonesia
+151,Yance,Molder,13,6.7,Sweden
+152,Jandy,Chaunce,13,5.6,Argentina
+153,Ricky,Lineham,14,9.1,Philippines
+154,Olly,Featley,16,3.0,Sweden
+155,Dyann,Echallier,13,9.2,Poland
+156,Harv,Bendare,15,1.6,Philippines
+157,Berkly,Bullock,15,2.2,Argentina
+158,Krispin,Rankmore,13,4.2,Indonesia
+159,Delmor,Pigford,16,1.4,Iran
+160,Hermann,Legrice,13,,Sweden
+161,Karlyn,Reck,16,9.9,Greece
+162,Tony,La Wille,14,6.5,Philippines
+163,Kip,Batterham,15,7.0,Bulgaria
+164,Brena,Brydone,15,6.1,Paraguay
+165,Eleonore,Rack,13,7.9,Indonesia
+166,Hester,Cockshott,13,0.5,Indonesia
+167,Nikola,Youthed,15,7.3,Nicaragua
+168,Betty,Keeri,16,9.5,France
+169,Bibbye,Tother,13,2.2,Japan
+170,Shayla,Vest,15,2.1,China
+171,Hayward,Balderstone,13,9.5,Argentina
+172,Marnia,Krzyzowski,16,1.5,Portugal
+173,Farah,Moxham,16,7.8,South Africa
+174,Reamonn,Kirimaa,15,7.8,Greece
+175,Corine,Sedgebeer,13,7.8,Kazakhstan
+176,Keeley,Boner,13,2.5,Indonesia
+177,Nicol,Stodd,14,1.6,Estonia
+178,Nadia,Earwicker,16,9.1,Greece
+179,Rolf,Filan,14,3.2,China
+180,Rosalind,Longhurst,15,6.7,Indonesia
+181,Eddie,Zannini,14,4.2,Guatemala
+182,Dulcie,Licquorish,15,4.6,Peru
+183,Sylas,Hinrichs,16,6.4,Indonesia
+184,Moria,Hulett,16,6.8,China
+185,Merna,Tidbury,16,9.2,Poland
+186,Stepha,Newns,15,9.4,China
+187,Cody,Esbrook,13,4.2,Brazil
+188,Larine,Durrad,16,8.2,China
+189,Rasla,Basezzi,14,7.7,United Kingdom
+190,Neale,Everton,13,4.8,Philippines
+191,Jerad,Norrey,16,8.9,Honduras
+192,Donny,Muddiman,15,2.8,Indonesia
+193,Coralyn,Girardy,16,2.7,Greece
+194,Reena,Shire,14,5.2,Czech Republic
+195,Sheila-kathryn,Lunam,13,6.1,Brazil
+196,Jedidiah,Rocks,16,3.3,France
+197,Rochette,Bruce,14,5.8,United States
+198,Jinny,Parlett,13,7.6,Russia
+199,Julie,Cornhill,14,0.7,Namibia
+200,Schuyler,Knudsen,15,1.2,China
+201,Mark,Cattenach,14,2.2,Brazil
+202,Ed,Aliberti,16,4.9,Philippines
+203,Christophorus,Silverman,14,5.6,Belgium
+204,Charmion,Woodhead,13,9.2,Democratic Republic of the Congo
+205,Doralia,Medeway,16,9.8,Philippines
+206,Lindie,Lamar,14,5.1,Russia
+207,Rebekah,Fieldsend,15,6.8,Chile
+208,Mamie,Rubenov,14,6.0,Estonia
+209,Palmer,Fearnside,14,7.8,China
+210,Phil,Harrigan,14,0.3,Comoros
+211,Benito,Lampbrecht,13,5.8,France
+212,Claresta,Greed,13,8.2,Argentina
+213,Brewster,Goggen,16,3.5,Israel
+214,Chevalier,Issac,15,4.0,Russia
+215,Aurilia,McGaughey,13,1.3,China
+216,Terry,Hearl,14,0.6,Indonesia
+217,Lorrie,Creaven,14,0.7,Spain
+218,Jareb,Darter,15,9.2,Portugal
+219,Milicent,Obbard,14,2.4,Guatemala
+220,Roxi,Emmanuel,15,7.1,United Kingdom
+221,Nicoli,Dahle,16,4.3,China
+222,Cody,Twitching,15,2.6,Mexico
+223,Nissy,Huddart,15,9.7,China
+224,Langston,Ciccone,16,3.2,Norway
+225,Gabriele,Spurdon,14,4.3,China
+226,Maurizio,Grindlay,13,6.1,Morocco
+227,Ivar,Greger,16,7.4,China
+228,Beaufort,Castleton,14,0.3,China
+229,Dagny,Robinette,16,4.0,China
+230,Dahlia,Paffot,13,8.1,Russia
+231,Karita,Ranklin,15,5.6,Poland
+232,Godfrey,Lunt,13,6.0,United States
+233,Armando,Wytchard,14,0.4,Greece
+234,Lianne,Fennessy,15,6.2,Peru
+235,Gayleen,Casoni,16,1.1,China
+236,Donaugh,Klimentyev,14,8.1,Canada
+237,Salli,Hitzmann,15,0.9,Saint Vincent and the Grenadines
+238,Isabella,Petran,16,,Indonesia
+239,Ebeneser,Ramsted,14,5.4,Colombia
+240,Jeramie,Hexham,15,1.9,Bosnia and Herzegovina
+241,Bertie,Rankine,16,9.6,Tunisia
+242,Nesta,Buchan,15,8.0,Japan
+243,Bellina,Hemphill,16,8.5,Indonesia
+244,Carolan,Prover,13,0.1,Vietnam
+245,Rodge,Osan,14,6.8,Czech Republic
+246,Anderson,Lambdon,13,7.4,China
+247,Aloysius,Grizard,16,2.1,Guyana
+248,Dolorita,Lapree,15,2.3,Philippines
+249,Xerxes,Jeduch,16,4.9,Poland
+250,Josey,Kindred,14,7.2,Mexico
+251,Kendra,Doole,16,1.0,Tunisia
+252,Corabelle,McTrustram,14,8.8,Kazakhstan
+253,Terza,Kemston,13,6.3,Canada
+254,Prisca,Rispine,16,9.9,Thailand
+255,Nero,Muress,13,4.3,Poland
+256,Rebbecca,Bateup,15,5.6,China
+257,Josy,Gillow,13,3.3,United States
+258,Reena,Gerdes,13,5.1,China
+259,Devin,Lantiff,14,5.3,China
+260,Bree,Larham,15,0.2,Russia
+261,Dimitri,Allkins,15,4.6,Japan
+262,Bettye,Grichukhanov,15,4.1,China
+263,Andrey,Skellen,15,5.4,Mongolia
+264,Beilul,O'Brien,15,2.7,Guatemala
+265,Slade,Boughey,16,3.8,New Zealand
+266,Rickert,Pettiford,13,7.8,Canada
+267,Clarance,Coombs,16,1.9,China
+268,Britt,Shakespeare,15,3.5,Indonesia
+269,Bella,Allmark,13,3.3,Croatia
+270,Drake,Maryon,15,7.7,Czech Republic
+271,Gabi,Koubek,16,5.5,Portugal
+272,Erda,Giddens,15,3.9,Kyrgyzstan
+273,Brittan,Dyet,16,5.7,Indonesia
+274,Ruthanne,Abbet,14,2.9,China
+275,Allene,Rahl,13,6.5,Cuba
+276,Kayle,Restall,16,3.9,Comoros
+277,Riley,Inchcomb,16,0.7,Albania
+278,Durant,Perelli,16,6.3,Madagascar
+279,Ynes,Storrar,14,3.9,Czech Republic
+280,Nappy,Rodenburg,16,4.0,France
+281,Daffi,Pigrome,13,7.0,China
+282,Pearla,Amerighi,13,8.5,France
+283,Virgie,Elias,15,6.2,Ivory Coast
+284,Michelina,Chastey,15,5.4,Philippines
+285,Zolly,Wigfall,14,8.8,Philippines
+286,Davie,Habbin,14,6.5,China
+287,Dukey,Frontczak,13,4.1,Thailand
+288,Edi,Halfacre,16,7.1,Afghanistan
+289,Melesa,Piggford,14,7.1,Indonesia
+290,Berny,Salthouse,14,4.1,Sweden
+291,Nerte,Seifert,13,7.7,Mexico
+292,Orren,Piscot,15,1.8,Greece
+293,Osborne,Lever,14,6.5,Costa Rica
+294,Darcie,Gippes,14,6.3,China
+295,Garvin,Abatelli,15,3.1,Vietnam
+296,Erick,Tejada,14,5.4,Indonesia
+297,Sorcha,Androli,15,8.3,Colombia
+298,Janeczka,Barbrick,16,0.9,China
+299,Whitney,Dawltrey,16,7.8,Poland
+300,Langston,Brimblecombe,15,9.1,Portugal
+301,Flory,Osselton,14,4.3,China
+302,Dynah,Trimnell,14,8.8,Afghanistan
+303,Valentine,Ciotto,14,4.1,Indonesia
+304,Inglis,Pughe,16,5.3,Ireland
+305,Mellisa,Jecks,16,0.1,Bangladesh
+306,Forrester,Lakey,16,3.4,Iran
+307,Hartley,Spincks,16,3.9,Pakistan
+308,Gil,Scatchar,14,5.8,Tanzania
+309,Sioux,MacNab,16,7.7,Indonesia
+310,Leyla,Sacks,15,8.3,Russia
+311,Wallas,Damrel,13,6.7,Poland
+312,Andriana,Iddenden,13,9.1,Ukraine
+313,Karon,Celli,13,0.1,Brazil
+314,Aggi,Sturt,13,2.8,Finland
+315,Valeria,Glennard,14,0.2,Philippines
+316,Wilmette,Aronowitz,14,2.7,Indonesia
+317,Haley,Alphege,13,2.1,France
+318,Simone,Thackwray,14,2.5,Russia
+319,Tammie,Wrankling,14,7.8,Micronesia
+320,Brandea,Beville,14,5.9,Netherlands
+321,Any,Marian,14,4.0,Tanzania
+322,Rosanna,Kenney,13,1.8,Guatemala
+323,Merrilee,Springtorpe,14,9.4,China
+324,Sella,Stobbs,15,9.7,China
+325,Taryn,Harmstone,16,9.5,Colombia
+326,Vachel,Dorning,16,9.2,China
+327,Graig,Fittall,16,2.4,Norway
+328,Davon,Fountaine,16,8.6,Namibia
+329,Roddie,Blakey,15,7.0,Sweden
+330,Celestyna,Martusov,13,0.5,Spain
+331,Leonidas,Jacmar,16,3.0,Sri Lanka
+332,Sergei,McBay,15,5.5,Philippines
+333,Brant,Vanichkov,13,4.0,Malaysia
+334,Piggy,Grenshiels,16,0.2,China
+335,Carr,Raiment,13,6.4,Philippines
+336,Jayne,McGirr,16,3.5,Indonesia
+337,Lewie,Gardener,13,5.5,Indonesia
+338,Roddy,McCathy,16,4.9,Venezuela
+339,Moyra,Attle,16,1.9,Russia
+340,Linea,Barbrick,13,0.3,Indonesia
+341,Quentin,Antognetti,14,9.3,New Caledonia
+342,Guido,Kryzhov,15,,China
+343,Pooh,Sawdy,16,1.4,Israel
+344,Kristen,Catterell,16,2.3,Argentina
+345,Cele,Haggard,15,0.9,South Korea
+346,Wald,Phelip,14,2.3,France
+347,Bear,DelaField,14,0.5,Czech Republic
+348,Derward,Romain,14,5.9,Indonesia
+349,Sada,Shepard,13,5.7,Poland
+350,Winthrop,Maypes,15,3.8,Croatia
+351,Barny,Iskowicz,16,2.4,Iran
+352,Clarisse,O'Dowd,15,9.8,Poland
+353,Lian,Sykora,13,5.2,Syria
+354,Vernen,Carsberg,13,4.7,United States
+355,Georgine,See,14,9.6,Brazil
+356,Filip,Stancer,15,1.0,China
+357,Luce,Jeannon,15,4.3,Russia
+358,Dominic,Freak,15,4.7,Brazil
+359,Zena,Ashbe,16,5.1,Finland
+360,Bonny,Buttriss,16,9.0,South Korea
+361,Olivier,Batrick,16,7.5,China
+362,Yoshiko,Gregine,13,5.1,China
+363,Lauryn,Wiffield,16,1.0,China
+364,Annette,Senescall,14,6.6,Germany
+365,Boone,Tench,13,,Thailand
+366,Darby,Wasiela,16,0.1,China
+367,Ludwig,Eynon,13,9.3,Tanzania
+368,Terrill,Bootell,16,7.0,Indonesia
+369,Darb,Thay,15,1.2,Philippines
+370,Jerrilyn,Thandi,13,6.2,China
+371,Kayne,Doram,15,1.8,China
+372,Marnia,Horning,14,5.9,Pakistan
+373,Blayne,Wolsey,13,4.4,Peru
+374,Delmar,Spuffard,13,6.9,Sweden
+375,Regan,Borer,14,4.9,Reunion
+376,Al,Coenraets,14,3.5,France
+377,Adelle,Cullinane,14,4.4,Portugal
+378,Regina,Gosland,16,8.6,Indonesia
+379,Kelly,Hessenthaler,14,4.0,Indonesia
+380,Pietrek,Crosston,16,0.1,Portugal
+381,Guillermo,Zanuciolii,13,,Philippines
+382,Emeline,De Lascy,14,7.0,Equatorial Guinea
+383,Sander,Paddison,14,6.4,France
+384,Lynde,Seacombe,14,6.0,Czech Republic
+385,Sydel,Gratrex,13,3.2,Saint Kitts and Nevis
+386,Lucky,Pullen,14,1.6,Sweden
+387,Rozina,Blackwell,16,2.4,Mexico
+388,Myles,Beams,16,8.9,China
+389,Sindee,Hacquel,16,2.3,Dominican Republic
+390,Mady,Swigger,15,4.3,Poland
+391,Ophelia,Sloam,14,8.0,Russia
+392,Keelby,Mottershaw,15,5.5,Japan
+393,Torr,Ranshaw,13,0.0,China
+394,Eadith,Brinicombe,15,8.5,Argentina
+395,Leanna,Broune,14,2.9,South Africa
+396,Archambault,Norridge,14,7.0,Sweden
+397,Holt,Sweeting,15,10.0,France
+398,Shandie,Barlas,16,5.3,Indonesia
+399,Donn,Cheers,16,9.7,Paraguay
+400,Annmaria,Ruzicka,15,1.2,Nigeria
+401,Lorant,MacKaig,14,5.7,China
+402,Maude,Goodfellowe,13,8.2,Canada
+403,Rhoda,Prazor,13,3.4,China
+404,Jermaine,Dettmar,13,7.9,Indonesia
+405,Logan,Urien,15,,China
+406,Kane,Masurel,14,5.0,Russia
+407,Chelsy,Condie,16,6.6,Mexico
+408,Barty,MacAlister,15,4.3,Belarus
+409,Tobe,Sink,13,2.6,Portugal
+410,Stormy,Decourt,16,9.1,Russia
+411,Gert,Cranage,15,,Serbia
+412,Demetri,Elie,13,2.8,China
+413,Elroy,Roder,13,1.0,Philippines
+414,Judas,Ayers,14,8.8,Brazil
+415,Anthe,Liddle,16,3.7,Philippines
+416,Gerti,McCurtain,13,0.2,China
+417,Miles,Roxburgh,16,0.5,San Marino
+418,Tabatha,Louiset,14,4.0,Sweden
+419,Junina,McGarrahan,13,1.8,Peru
+420,Marji,Sotworth,14,5.6,China
+421,Lauryn,Brugmann,14,2.0,China
+422,Dinah,Buzin,14,7.5,Indonesia
+423,Lesli,Auguste,14,3.6,Republic of the Congo
+424,Vinita,Stalman,15,4.6,Indonesia
+425,Micki,Edmonston,14,9.1,China
+426,Cherida,Giffen,15,6.6,Indonesia
+427,Eleanora,Yushkov,14,3.3,China
+428,Cello,Argent,14,8.7,Spain
+429,Melly,Delacourt,13,2.8,North Korea
+430,Temple,Bridgens,16,2.2,Colombia
+431,Bertrand,O'Cannan,15,5.4,Guam
+432,Jess,Utting,16,2.9,China
+433,Uta,Remer,15,6.0,Russia
+434,Sissie,Lavender,16,9.1,Brazil
+435,Selma,Thorne,13,5.2,Indonesia
+436,Lenee,Elcoate,16,7.2,Bosnia and Herzegovina
+437,Shantee,Atwater,13,7.8,Indonesia
+438,Obadias,Guillerman,13,0.9,Brazil
+439,Dorry,Reap,13,1.1,Thailand
+440,Miranda,Glede,14,0.4,Kazakhstan
+441,Sallyann,Honnan,13,4.3,Myanmar
+442,Finley,Padly,16,2.9,United States
+443,Ewan,Meach,14,0.6,Ethiopia
+444,Davina,Sprott,14,4.4,China
+445,Andonis,Shakesbye,14,5.8,Russia
+446,Hallie,Grunbaum,13,9.5,Greece
+447,Natalina,Sandcroft,15,1.5,China
+448,Alonso,Walenta,16,5.8,Argentina
+449,Torey,Ker,14,5.5,Philippines
+450,Zacharie,Instone,13,,Indonesia
+451,Trenna,Kollasch,14,3.6,Russia
+452,Butch,Deller,14,6.1,Indonesia
+453,Benny,Paulig,14,8.0,Brazil
+454,Karilynn,Gavaghan,16,4.0,Brazil
+455,Gareth,Hargreaves,14,2.2,Indonesia
+456,Phillipp,Tellenbrook,15,3.0,China
+457,Prue,Torricina,15,4.8,Colombia
+458,Suzann,Sherer,14,8.7,Philippines
+459,Fergus,McNeigh,15,3.1,Mexico
+460,Joyce,Piffe,15,7.5,Poland
+461,Carita,Morby,15,0.5,Bhutan
+462,Romola,Jonczyk,14,7.6,Azerbaijan
+463,Johnathan,Aloway,13,5.0,Russia
+464,Skipton,Pratt,15,3.2,China
+465,Joete,Luthwood,16,2.0,Thailand
+466,Sheena,Doggrell,14,0.8,Croatia
+467,Abran,Lilian,14,10.0,Thailand
+468,Carleen,Sparry,16,7.3,China
+469,Shirlene,Hanny,15,7.9,South Africa
+470,Raoul,Brent,15,0.2,Indonesia
+471,Christopher,Fonte,15,0.9,Ukraine
+472,Ellen,Sunnex,13,4.7,China
+473,Violette,Marginson,15,9.2,Portugal
+474,Brand,Mohun,16,9.0,Thailand
+475,Shae,Steinor,14,6.8,Indonesia
+476,Ganny,Janku,15,2.5,Indonesia
+477,Consuela,Liepina,13,3.9,Portugal
+478,Nonna,Lundie,14,9.2,China
+479,Anatole,Ollivierre,15,7.7,China
+480,Gale,Cutforth,13,9.7,Sri Lanka
+481,Mollee,Mathen,13,2.5,China
+482,Stefanie,Mandrake,15,9.2,China
+483,Doe,Sarre,15,8.2,South Africa
+484,Zechariah,Coker,16,9.5,Tanzania
+485,Chanda,Vassall,16,3.2,Spain
+486,Zelma,Stobbie,15,5.5,China
+487,Caro,Baude,14,3.6,Czech Republic
+488,Karel,Demaid,14,1.6,Azerbaijan
+489,Quinn,Ruberry,14,1.1,Poland
+490,Dallon,Benez,16,4.3,Bosnia and Herzegovina
+491,Othilie,Klyn,16,0.5,Philippines
+492,Remington,Hartright,16,1.6,Malaysia
+493,Jewell,Worlock,14,6.3,Ukraine
+494,Murdoch,Radcliffe,16,1.6,United States
+495,Conny,De Roeck,15,2.1,Poland
+496,Odey,Lethbridge,14,6.8,Haiti
+497,Winne,Blaskett,13,7.1,Indonesia
+498,Rolph,Butchard,16,2.3,Brazil
+499,Forbes,Grouvel,15,6.4,Iran
+500,Ferdinande,Boyn,16,1.0,Indonesia
+501,Russ,Joan,16,5.3,Peru
+502,Tull,Huggins,16,4.7,China
+503,Rock,Pentelow,16,3.4,Indonesia
+504,Micky,Ceillier,16,3.7,Germany
+505,Horton,Pover,13,0.2,Philippines
+506,Anders,Geator,15,1.6,Indonesia
+507,Sabrina,Copplestone,15,7.2,Philippines
+508,Ashley,Dews,16,2.4,Pakistan
+509,Ronnie,Waterfall,13,0.7,Argentina
+510,Gertrud,Twelves,15,1.1,China
+511,Hermine,Hayfield,16,5.4,Indonesia
+512,Becki,Ashwell,15,8.2,Philippines
+513,Gennifer,Gove,13,7.2,China
+514,Mahala,Tyrone,15,1.0,Russia
+515,Almeda,Burcher,16,9.3,Russia
+516,Wally,Deane,15,,Kenya
+517,Tristam,Dightham,16,2.3,Portugal
+518,Sargent,Firidolfi,16,7.5,Germany
+519,Udell,Ibbeson,14,4.7,South Africa
+520,Germain,Stitson,15,5.3,Dominican Republic
+521,Leif,Flattman,15,9.1,China
+522,Iver,Marishenko,13,5.9,China
+523,Marge,Hanshawe,16,9.2,China
+524,Karmen,Dizlie,14,9.7,Tunisia
+525,Karlie,Doberer,15,7.4,Portugal
+526,Madlen,Alflat,14,1.5,Philippines
+527,Chevy,Gellibrand,15,6.8,Japan
+528,Ronnica,Booth-Jarvis,14,9.1,Peru
+529,Yolane,Annell,16,6.1,Israel
+530,Emmalynn,Bezemer,14,5.5,Armenia
+531,Freeland,Felipe,14,5.8,China
+532,Cloe,Dory,15,5.2,Indonesia
+533,Monica,Hellikes,14,0.4,Indonesia
+534,Artemus,Lowy,14,6.6,China
+535,Chen,Heaton,15,2.1,Philippines
+536,Gilly,Calvard,15,3.9,China
+537,Kailey,Grancher,14,7.2,United States
+538,Jacquelynn,Molnar,15,8.0,China
+539,Rebbecca,Landreth,14,2.9,Albania
+540,Griffith,Eldridge,14,1.5,China
+541,Agathe,Rodway,15,7.4,Indonesia
+542,Tremaine,Pauncefort,14,5.3,Sweden
+543,Claudette,Rubinsaft,15,6.9,China
+544,Tarrance,Mosedale,15,6.3,Greece
+545,Hazel,Euplate,13,8.5,China
+546,Heda,Schrir,15,2.5,Pakistan
+547,Bennie,Bance,15,3.6,United States
+548,Callean,Osan,16,7.5,Russia
+549,Katlin,Yapp,15,8.4,Philippines
+550,Svend,Slobom,14,5.6,Brazil
+551,Wayne,Isakson,13,2.2,Philippines
+552,Trent,Brigman,14,9.2,Brazil
+553,Lib,Crighton,13,6.0,France
+554,Michaella,Kitchen,13,6.7,Thailand
+555,Marjory,Poxson,13,5.8,Tanzania
+556,Mirabel,O' Finan,13,9.3,Colombia
+557,Eula,Wharin,16,6.2,Macedonia
+558,Angie,Cubin,16,7.0,United States
+559,Ashley,Bucky,15,4.5,Indonesia
+560,Hew,Patrickson,15,6.3,Indonesia
+561,Raleigh,McCalister,15,6.9,Indonesia
+562,Phil,Bradbury,16,4.7,Sudan
+563,Jenine,Bodimeade,14,8.2,Portugal
+564,Nicolea,Sunderland,14,6.2,Canada
+565,Jemmy,Peak,14,8.8,China
+566,Mick,Randell,14,8.8,Russia
+567,Giles,Larmuth,13,7.4,Poland
+568,Elsi,Chevins,13,9.3,Indonesia
+569,Arliene,Ewen,15,1.6,Sweden
+570,Adolphe,Quadling,16,7.7,Norway
+571,Clayton,Barrow,13,9.1,Slovenia
+572,Cairistiona,Lademann,14,9.4,Brazil
+573,Guillemette,Apedaile,13,3.3,Poland
+574,Augustin,Eberst,14,3.8,China
+575,Bili,Boustead,16,0.1,China
+576,Maressa,Wasteney,15,4.2,Portugal
+577,Lily,Ledson,16,7.0,Poland
+578,Joyann,Antonik,16,3.3,Indonesia
+579,Marilin,Trenear,14,1.5,Netherlands
+580,Bekki,Tabram,15,1.7,Honduras
+581,Onida,Kleinberer,15,4.1,Philippines
+582,Tiffy,Gladhill,14,1.6,Indonesia
+583,Tracee,Kenwood,13,6.7,Russia
+584,Neale,Clappison,13,5.1,China
+585,Abe,Dudley,13,9.8,China
+586,Nathanael,Khrishtafovich,15,4.5,Ireland
+587,Wendye,Mitchelhill,14,4.5,Vietnam
+588,Gizela,Hay,16,2.4,Saudi Arabia
+589,Kira,Drysdell,16,7.3,Czech Republic
+590,Arlen,Bess,15,4.9,China
+591,Lynsey,Bloodworth,13,6.5,Philippines
+592,Parrnell,Trench,15,9.3,China
+593,Dael,Boshard,14,2.1,Macedonia
+594,Diane-marie,Kubelka,16,9.7,Russia
+595,Tallie,Hadleigh,13,5.2,Philippines
+596,Anny,Kalinovich,13,4.2,Ukraine
+597,Thia,Becke,14,6.7,Japan
+598,Verney,Wabersinke,14,4.1,Indonesia
+599,Maddi,De Filippis,16,1.7,China
+600,Caspar,Tubritt,15,9.1,Philippines
+601,Hilliary,Scoggins,15,5.1,Thailand
+602,Arabella,Stivens,14,5.7,China
+603,Danyette,Deares,15,4.3,Poland
+604,Jamie,Kohnemann,16,4.6,Vietnam
+605,Jenni,Trevena,15,7.2,France
+606,Pyotr,Kovacs,15,5.9,United States
+607,Nelly,Filipychev,15,,Thailand
+608,Cristin,Moody,14,0.0,Iran
+609,Lora,Winfindine,13,6.2,China
+610,Deena,Blinco,16,7.7,Yemen
+611,Sancho,Kingsman,13,5.4,Morocco
+612,Antoine,Cristoferi,15,6.2,Dominican Republic
+613,Papageno,Durrance,13,0.8,Philippines
+614,Eleanor,Kempshall,15,3.9,China
+615,Simmonds,Ackers,15,6.5,Bangladesh
+616,Margie,McConaghy,15,1.7,Mexico
+617,Marge,Janton,14,9.5,Sweden
+618,Pauly,McInnery,15,9.3,Kenya
+619,Vivianne,Tirte,16,1.5,Russia
+620,Kamilah,Aitkin,15,2.8,Russia
+621,Hogan,Earles,14,6.3,Madagascar
+622,Zsa zsa,Woods,15,9.3,China
+623,Ludwig,Blunsum,14,0.9,China
+624,Reiko,Ormonde,15,0.8,Saudi Arabia
+625,Bobbee,Bygraves,13,1.1,Russia
+626,Sofia,Triggel,14,9.1,El Salvador
+627,Barnabe,Hollingsby,14,2.8,China
+628,Bren,Matteris,15,5.5,Indonesia
+629,Chlo,Sultana,15,9.6,Greece
+630,Jewell,Spikeings,14,5.1,Indonesia
+631,Erna,Moodycliffe,14,5.4,Greece
+632,Max,Dublin,13,9.4,China
+633,Noni,Addyman,15,4.7,China
+634,Abba,Bertelsen,16,7.9,Macedonia
+635,Coralyn,Dowker,14,5.8,China
+636,Rosabelle,Gayter,14,0.6,Poland
+637,Melisent,Richen,13,9.5,Russia
+638,Suzette,Argile,14,4.1,China
+639,Collin,Saffer,13,5.8,France
+640,Stephanus,Vequaud,13,8.4,Russia
+641,Hiram,Madden,16,8.5,Philippines
+642,Britteny,Langley,15,5.3,Mongolia
+643,Ricky,Holley,14,8.6,France
+644,Emlynn,Pettus,13,5.8,Poland
+645,Gratia,Gitthouse,16,6.3,Indonesia
+646,Nadine,Mawford,13,,Australia
+647,Cyb,Commucci,14,0.1,South Sudan
+648,Lynna,Paternoster,14,9.6,Greece
+649,Rubi,Mapp,16,5.8,United States
+650,Durante,Wanless,14,7.9,Albania
+651,Dolf,Mitie,15,9.2,China
+652,Malorie,Leall,16,5.9,Indonesia
+653,Darill,Linguard,14,5.7,Greece
+654,Holly,Hariot,16,7.6,United States
+655,Torey,Burberye,15,4.7,Philippines
+656,Peg,Stonehouse,14,7.4,Nigeria
+657,Flss,McKeggie,15,5.3,Colombia
+658,Kelbee,Thornbarrow,15,4.8,United States
+659,Glenn,Heyburn,16,9.6,Vietnam
+660,Stafford,Hymor,14,8.8,Argentina
+661,Portia,Pillington,15,1.0,Indonesia
+662,Anastassia,Duhig,14,3.4,Tajikistan
+663,Durand,Ketteridge,13,5.1,Vanuatu
+664,Colas,Prantoni,15,3.5,China
+665,Dimitry,Elcott,13,2.9,China
+666,Uta,Dewitt,15,5.3,Argentina
+667,Kessiah,Godridge,14,1.2,Indonesia
+668,Malissa,Hadgkiss,14,9.5,Indonesia
+669,Caterina,Elph,14,4.4,Canada
+670,Bernelle,Mitkin,15,7.8,Portugal
+671,Myrvyn,Mumberson,14,3.3,United States
+672,Trixi,Follett,14,4.4,Botswana
+673,Vassili,Cristoforetti,15,9.5,Micronesia
+674,Klarika,Seivwright,13,6.0,Philippines
+675,Nedda,Sultan,15,6.7,Paraguay
+676,Jacquette,Fifoot,15,1.2,Indonesia
+677,Cort,Leftridge,16,7.5,Indonesia
+678,Kirbee,Chatelain,13,6.4,Ukraine
+679,Loreen,Timeby,16,6.5,China
+680,Bailie,Stanbury,13,0.2,China
+681,Cristionna,Maddin,15,8.7,Nigeria
+682,Marcela,Seiter,13,4.2,Portugal
+683,Emiline,Fisher,13,4.4,China
+684,Leandra,Cocks,13,8.0,China
+685,Genvieve,Muck,14,2.8,Vietnam
+686,Florida,Luigi,13,9.7,Sweden
+687,Guillemette,Wase,13,0.7,China
+688,Clary,Bowld,15,7.7,Laos
+689,Wade,Pledge,13,2.9,Indonesia
+690,Mitchell,Jago,14,7.0,Zambia
+691,Myrta,Raulin,13,7.7,Portugal
+692,Sumner,Risely,14,1.9,Indonesia
+693,Ariel,Creaser,14,1.1,Peru
+694,Roselia,Gisbye,16,1.5,Russia
+695,Clair,Brazear,13,3.6,Ethiopia
+696,Jodi,Pothbury,14,4.0,Poland
+697,Ramona,Harmeston,16,0.2,Germany
+698,Lexy,Symes,15,9.3,Philippines
+699,Wanda,Vernham,16,1.5,Philippines
+700,Denys,Slimon,14,6.3,Philippines
+701,Davie,Espada,14,3.3,South Africa
+702,Linc,Abramow,14,4.4,Philippines
+703,Elisha,Klimentyonok,13,8.6,Portugal
+704,Claiborn,Leile,15,2.8,Colombia
+705,Saul,Possa,14,4.7,Canada
+706,Bryan,Baert,16,6.3,Sweden
+707,Rubetta,Shrimplin,13,3.3,Turkey
+708,Bekki,Bushby,13,0.5,Albania
+709,Emogene,Jiri,16,0.7,Indonesia
+710,Orelle,Endean,13,9.5,Indonesia
+711,Daile,Prestney,14,0.6,Indonesia
+712,Sarette,Shone,15,1.1,China
+713,Brit,Heasman,14,1.0,Thailand
+714,Kermit,Cockshtt,15,8.2,Poland
+715,Willabella,Wort,13,0.0,Indonesia
+716,Daron,Gercken,15,9.0,Bangladesh
+717,Mariya,Batting,13,7.6,Bulgaria
+718,Jodie,Peregrine,15,5.8,Russia
+719,Ashlie,Musker,14,2.3,Albania
+720,Chelsie,Archibould,13,1.0,United States
+721,Patrick,Ferreras,14,2.5,United States
+722,Clarance,Curgenuer,14,9.1,South Korea
+723,Judy,Scoullar,16,1.1,Canada
+724,Nanete,Logsdale,13,8.1,China
+725,Charline,MacIver,16,2.5,China
+726,Lotty,Inmett,13,7.8,China
+727,Lynelle,Livesay,16,3.0,Russia
+728,Mahalia,Bavage,14,4.9,Indonesia
+729,Lorenza,Linley,15,9.3,China
+730,Trenna,Hadland,16,5.7,Kenya
+731,Kaspar,Colliber,15,0.6,Ethiopia
+732,Isidore,Helbeck,16,3.5,Ukraine
+733,Gaylord,Happs,16,7.5,France
+734,Conant,Tuttle,13,5.3,Russia
+735,Markus,Jenkison,15,2.5,China
+736,Rudolfo,Ludlow,16,4.6,China
+737,Jasmine,Clutten,15,6.5,Germany
+738,Lilli,Peak,15,4.4,Tajikistan
+739,Norah,Wrench,16,3.6,Colombia
+740,Con,Fishly,13,1.6,Madagascar
+741,Eugine,Exrol,14,2.3,China
+742,Micheil,MacCracken,14,6.3,Philippines
+743,Jonas,Heakins,13,4.2,Philippines
+744,Celestina,Gladding,15,2.4,Philippines
+745,Rheta,Alesio,13,1.1,Spain
+746,Lonni,Friedank,15,5.9,Colombia
+747,Dru,Harriot,13,2.2,Russia
+748,Johna,Deppe,16,,United States
+749,Elysee,Grossman,14,9.0,Mexico
+750,Tristan,Rignall,15,2.2,Bangladesh
+751,Vicki,Urion,14,2.2,Poland
+752,Roselle,Richen,14,8.5,China
+753,Jenine,Ripley,15,0.7,Tanzania
+754,Maje,Robardley,14,0.4,Armenia
+755,Igor,Willatt,15,9.2,France
+756,Amii,Crotty,14,6.5,China
+757,Collete,Creed,15,5.7,Norway
+758,Rorke,Lindley,14,1.8,Eritrea
+759,Agustin,Pavlasek,15,9.9,Sri Lanka
+760,Rorke,Huzzey,16,2.0,Russia
+761,Mahala,Mochar,15,9.4,Myanmar
+762,Gregg,Flaubert,16,6.8,China
+763,Fawn,Pietron,13,3.7,Lithuania
+764,Caroline,Mendel,14,0.4,China
+765,Inger,Vasse,14,8.5,Sweden
+766,Lyndel,Dmisek,13,10.0,Guinea
+767,Marco,Locke,16,9.0,Vietnam
+768,Booth,Spittles,15,3.5,China
+769,Ferne,Housby,15,1.2,China
+770,Sammy,Goodere,16,4.9,United States
+771,Ashli,Cosham,14,4.3,Uganda
+772,Charin,Moody,16,2.6,France
+773,Daniel,Bartlomiejczyk,15,6.6,Czech Republic
+774,Connor,Larrad,15,8.4,China
+775,Kamillah,Hasloch,14,7.2,Colombia
+776,Lita,Wickey,16,3.9,South Africa
+777,Tisha,Ibberson,13,8.6,Vietnam
+778,Muffin,Helder,14,6.1,Nigeria
+779,Nikolas,Goldsby,16,0.0,China
+780,Ashby,Leyes,15,4.8,Mongolia
+781,Mechelle,Ocheltree,15,8.1,Kazakhstan
+782,Saunderson,Fri,15,,Pakistan
+783,Inness,Buttel,16,5.7,Philippines
+784,Gaye,Langan,14,4.2,Philippines
+785,Ely,Day,14,9.4,Poland
+786,Shadow,Brimicombe,16,7.3,Brazil
+787,Therine,Folkes,15,3.3,France
+788,Darn,De Malchar,13,4.5,Mongolia
+789,Latia,Pendergrast,13,2.1,China
+790,Elfie,Arnison,16,7.0,Portugal
+791,Dori,Gibbon,13,2.7,Portugal
+792,Nataline,Duncan,15,1.5,Kazakhstan
+793,Boy,Ellum,16,2.0,Peru
+794,Gloriane,Tinner,13,1.3,Indonesia
+795,Conway,Asquez,14,7.3,Syria
+796,Bird,Folcarelli,13,1.8,Philippines
+797,Prescott,Malec,15,6.1,China
+798,Augustine,Devey,14,8.4,Mongolia
+799,Dorolice,Lackie,13,5.4,United States
+800,Max,Harmant,15,0.4,Japan
+801,Emmeline,Osband,16,5.0,Russia
+802,Bobbie,Courson,15,0.2,Azerbaijan
+803,Lacy,Starmer,15,4.1,Indonesia
+804,Leslie,Brann,13,9.6,Hungary
+805,Gwenny,Sheircliffe,13,7.8,Russia
+806,Vin,Jeacock,14,4.5,Indonesia
+807,Karisa,Jerrold,16,9.0,Indonesia
+808,Bax,Bethell,14,3.2,Portugal
+809,Allina,Raoult,13,8.4,Philippines
+810,Angelo,Beddin,13,9.6,Indonesia
+811,Dore,Concklin,15,10.0,Philippines
+812,Shanon,McCreery,16,4.3,Serbia
+813,Kasper,Reiners,16,3.3,Russia
+814,Abigael,Ellams,15,9.6,Bulgaria
+815,Verile,Martyns,13,3.7,Ivory Coast
+816,Even,McQuaker,15,6.3,Poland
+817,Craggy,Rusk,14,9.1,Japan
+818,Noreen,Collisson,16,3.7,China
+819,Alecia,Readings,13,7.6,Peru
+820,Lucien,Benzie,15,5.6,China
+821,Nada,Bundock,16,9.5,Palestinian Territory
+822,Arleyne,Brodeur,13,8.2,Russia
+823,Jany,Woodier,13,9.3,China
+824,Egon,Askham,15,3.9,China
+825,Gale,Mortlock,15,5.3,Argentina
+826,Terri,Carbry,16,4.6,China
+827,Gaspard,Davidof,14,5.0,Indonesia
+828,Halley,De Bruijne,13,6.7,China
+829,Hunt,Thurnham,14,4.3,Argentina
+830,Nikolia,Coggings,13,1.6,Greece
+831,Bar,Elcocks,16,1.2,Portugal
+832,Brien,Edworthie,15,4.5,Mexico
+833,Farah,Snipe,13,6.3,Colombia
+834,Grantley,Fellos,13,2.9,South Korea
+835,Jessie,Tilson,13,9.3,Philippines
+836,Karina,Rodrigo,14,9.6,Russia
+837,Lynnea,Ivakhno,14,5.3,Greece
+838,Conan,Bisseker,14,4.3,China
+839,Kerk,Tummasutti,16,7.4,Ireland
+840,Danny,Whittick,16,0.1,Malaysia
+841,Rab,Kassidy,15,6.0,Russia
+842,Cull,Syce,13,6.9,Indonesia
+843,Nelli,Cashford,14,1.5,China
+844,Mallissa,Dow,16,2.2,Mongolia
+845,Katrine,Gillie,15,2.9,China
+846,Karen,Darton,13,6.1,China
+847,Easter,ffrench Beytagh,15,0.6,Indonesia
+848,Gabi,Mildner,13,6.4,Gambia
+849,Mahmud,Londing,13,3.4,Macedonia
+850,Holly,Goddard,14,1.6,Japan
+851,Joana,Bish,14,9.7,China
+852,Filberte,Siggins,15,6.4,Serbia
+853,Sula,Clemot,13,7.8,Indonesia
+854,Jada,Kurt,14,4.3,France
+855,Giorgi,Zettoi,14,,France
+856,Euphemia,Carrack,15,6.5,Indonesia
+857,Carson,Gonsalo,15,2.3,Poland
+858,Conrado,Provost,15,1.7,Brazil
+859,Pierre,Ransbury,14,1.6,Indonesia
+860,Caritta,Shivell,16,8.9,China
+861,Hortensia,Gladbeck,14,0.7,China
+862,Chris,Marlowe,15,4.6,Czech Republic
+863,Jordanna,Cogger,13,8.1,Poland
+864,Darn,Tremblett,13,6.1,China
+865,Jedd,Kewley,13,7.7,China
+866,Asia,Humbatch,15,6.6,United States
+867,Agata,Lavrinov,13,4.8,Canada
+868,Erek,Baford,15,10.0,China
+869,Ilka,Yandell,14,1.2,Nigeria
+870,Johna,Deelay,13,4.8,Russia
+871,Wilek,Dressel,16,4.7,Thailand
+872,Barnie,Gillaspy,13,,France
+873,Edan,Wauchope,14,9.6,Colombia
+874,Kaiser,Faragher,13,6.3,Hong Kong
+875,Lolita,Simnett,13,7.0,Thailand
+876,Ruggiero,Forrester,15,0.9,China
+877,Danny,Garlant,16,6.8,Russia
+878,Edik,Grichukhanov,13,2.2,Philippines
+879,Dulci,Styche,14,2.5,Colombia
+880,Laryssa,Reside,14,4.6,China
+881,Cindie,Auten,13,4.9,Indonesia
+882,Christine,Bearblock,13,5.5,France
+883,Sunshine,Ennor,14,1.8,China
+884,Burnard,Rearden,15,2.5,China
+885,Rubia,July,16,4.3,Russia
+886,Merola,Wheowall,13,6.5,Portugal
+887,Elladine,Spray,16,1.3,Philippines
+888,Tracey,Le Houx,13,3.8,China
+889,Shem,Monketon,15,9.4,China
+890,Debbie,Hazelby,15,2.0,France
+891,Ali,Hallut,16,2.9,Argentina
+892,Hedvige,Hamil,14,3.1,Australia
+893,Lise,Jurgensen,13,8.5,Indonesia
+894,Flemming,Gregol,15,7.3,Japan
+895,Neil,Fairlaw,16,1.9,Russia
+896,Louis,Gyves,14,1.6,Sweden
+897,Netta,Knevet,16,5.9,Czech Republic
+898,Muriel,Crannach,16,5.6,China
+899,Sabina,MacIllrick,15,6.6,Indonesia
+900,Corbett,Officer,15,7.8,United States
+901,Marshal,Suggett,13,,Philippines
+902,Puff,Pim,13,3.9,Uruguay
+903,Chiarra,Burton,15,7.0,Bangladesh
+904,Leonidas,Craine,16,4.1,Tanzania
+905,Dru,Mindenhall,15,7.5,Kyrgyzstan
+906,Hadlee,Farney,14,2.0,Sweden
+907,Sargent,Wandrey,16,3.4,Philippines
+908,Merrel,Philipsohn,16,0.6,Russia
+909,Erin,Iwanowicz,15,9.6,Ukraine
+910,Nancey,Heart,16,4.8,China
+911,Essie,Joice,16,4.5,Tunisia
+912,Sacha,Volett,15,5.3,China
+913,Paolina,Houseago,13,0.9,Central African Republic
+914,Kalindi,Husselbee,16,0.2,China
+915,Helen-elizabeth,Valdes,15,4.0,Philippines
+916,Mel,Zorzutti,14,7.2,Iraq
+917,Serge,Candlish,14,,Macedonia
+918,Sheba,Baldry,14,7.7,France
+919,Findley,Grunder,14,6.7,Indonesia
+920,Eunice,Sabate,13,4.5,Russia
+921,Jillane,Brampton,16,2.7,Peru
+922,Moore,Merryfield,14,7.7,Ireland
+923,Tommy,Pinchbeck,15,3.7,Russia
+924,Desirae,Itzkovwitch,14,7.8,China
+925,Jarrod,Tute,14,3.2,Colombia
+926,Nesta,Cowdroy,13,2.7,Indonesia
+927,Lorenzo,Sargeant,14,7.0,China
+928,Casie,Garlicke,14,0.1,Bulgaria
+929,Em,Basnett,15,9.0,Venezuela
+930,Janessa,Booeln,14,7.6,Bahrain
+931,Miguelita,Silbert,16,3.3,France
+932,Fredric,Cockson,13,0.5,Brazil
+933,Kris,Quilter,13,9.4,Luxembourg
+934,Nellie,Kubal,14,0.9,Sweden
+935,Shanie,Oxbe,14,2.9,Kenya
+936,Danella,Markham,13,4.3,Indonesia
+937,Carlye,Schild,15,6.9,China
+938,Melvin,Fasson,13,4.9,Sierra Leone
+939,Patton,Innett,13,4.8,Canada
+940,Steffi,Duligall,15,2.3,France
+941,Abeu,Beautyman,16,8.2,Indonesia
+942,Paten,Docharty,15,6.8,Zambia
+943,Theodore,Sibley,15,0.1,China
+944,Tobye,Dunbobin,14,4.9,China
+945,Missie,Dobkin,13,6.7,Russia
+946,Moritz,Beane,14,6.1,China
+947,Moe,Ingarfield,15,2.8,Germany
+948,Ettie,Finder,16,7.9,Peru
+949,Lanie,Dimnage,13,1.9,China
+950,Tabatha,Loudyan,15,3.6,Indonesia
+951,Agnesse,Lankham,15,0.2,Slovenia
+952,Candie,Sainsbury,15,5.6,China
+953,Georgie,Culshaw,15,5.2,Myanmar
+954,Freddy,Callicott,13,4.4,Mexico
+955,Cullan,Stoyles,15,7.4,Indonesia
+956,Delly,Portam,13,8.6,China
+957,Robby,Liggett,16,0.4,Curacao
+958,Shelton,Craise,16,9.6,Ukraine
+959,Yancy,Jodkowski,14,0.4,Poland
+960,Ashlan,Corkish,14,9.4,Ukraine
+961,Tanya,Velte,13,5.6,Indonesia
+962,Rustie,Thaller,15,8.9,Italy
+963,Yetty,Rose,14,7.0,China
+964,Catherin,Lewin,15,7.4,Philippines
+965,Natale,Fildes,15,0.5,Russia
+966,Tobi,De Blasiis,13,7.7,China
+967,Alphonso,Outerbridge,15,5.3,Croatia
+968,Pieter,Galletley,16,7.5,Brazil
+969,Gates,Jaggs,15,6.0,Philippines
+970,Mel,Kohter,13,3.6,China
+971,Tally,Guerin,16,9.3,Russia
+972,Joe,Woodham,15,9.5,China
+973,Felisha,Dutson,16,8.6,Philippines
+974,Gard,Wingate,15,8.7,Bulgaria
+975,Harley,Stothert,16,0.9,Serbia
+976,Corbin,Babar,15,7.5,Afghanistan
+977,Lanae,Crossan,15,1.6,Venezuela
+978,Charmaine,Herries,15,2.4,Mexico
+979,Johny,Bedle,14,1.1,Indonesia
+980,Hurlee,Kantor,15,6.2,Peru
+981,Connie,Lethem,16,9.8,Russia
+982,Lulu,Alliston,13,6.3,China
+983,Ellery,Britto,15,7.2,Mexico
+984,Heall,Matthensen,13,8.8,Canada
+985,Davide,Matuskiewicz,13,0.9,Morocco
+986,Barbe,Jurgenson,15,4.8,Netherlands
+987,Lynea,Grimditch,16,0.3,France
+988,Lindie,Bastow,13,2.9,China
+989,Crichton,Brugman,14,1.4,Venezuela
+990,Deane,Davidowich,15,2.3,Peru
+991,Jacky,Scalera,14,5.9,Indonesia
+992,Matt,Durbin,16,1.8,Poland
+993,Rachael,Easun,13,9.7,Russia
+994,Nathan,Eadmeades,16,6.9,France
+995,Morley,Whitby,15,3.0,Mongolia
+996,Randie,Rivett,14,4.4,Japan
+997,Miranda,Harmour,13,2.4,Turkmenistan
+998,Susanetta,Menego,15,9.5,Philippines
+999,Etti,McIlheran,14,7.7,Indonesia
+1000,Dewie,Speake,16,9.0,El Salvador

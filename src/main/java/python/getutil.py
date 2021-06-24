@@ -68,7 +68,10 @@ def get_edge_labels (g,v_attrs={},e_attrs={},vlabel='label',elabel='label',
     if v_attrs != {} and vlabel in v_attrs[source].keys():
       source = v_attrs[source][vlabel]
       target = v_attrs[target][vlabel]
-    e_tuple = (source,target)
+    if g.type.allowing_multiple_edges == True:
+      e_tuple = (e,source,target)
+    else:
+      e_tuple = (source,target)
     if e_attrs != {} and elabel in e_attrs[e].keys():
       e_tuple = (e_attrs[e][elabel],source,target)
     if weight:
@@ -87,7 +90,7 @@ def get_vertexid (label, attrs):
       return v
   return None
 
-"""Retorna o conjunto de arestas com terminais entre *x* e *y* em grafos não direcionados *g*"""
+"""Retorna uma lista de arestas com terminais entre *x* e *y* em grafos não direcionados *g*"""
 
 def get_edge_ids_between (g,x,y):
   if (x in g.vertices) and (y in g.vertices):
@@ -101,7 +104,7 @@ def get_edge_ids_between (g,x,y):
   else:
      return None
 
-"""Retorna o conjunto de arcos com terminais de *x* para *y* em grafos direcionados *d*"""
+"""Retorna uma lista de arcos com terminais de *x* para *y* em grafos direcionados *d*"""
 
 def get_arc_ids_between (d,x,y):
   if (x in d.vertices) and (y in d.vertices):

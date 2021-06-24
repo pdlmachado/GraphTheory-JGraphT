@@ -26,7 +26,7 @@ from jgrapht.properties import is_bipartite
 
 """## get_vertice_labels, get_edge_labels
 
-Função que retorna uma lista com os labels dos vértices de um grafo ou um subconjunto deles.
+Função que retorna um conjunto com os labels dos vértices de um grafo ou um subconjunto deles.
 Parâmetros:
 - g - instância do grafo 
 - v_attrs - dicionário de atributos dos vértices
@@ -36,15 +36,15 @@ Parâmetros:
 
 def get_vertice_labels (g,v_attrs,label='label',subset=None):
   if not subset is None:
-    vlist = subset
+    vset = subset
   else:
-    vlist = g.vertices
+    vset = g.vertices
   try:
-    return [v_attrs[v][label] for v in vlist]
+    return {v_attrs[v][label] for v in vset}
   except:
-    return vlist
+    return vset
 
-"""Função que retorna uma lista de arestas, onde os vértices podem ser representados por labels (ao invés de seus ids), com ou sem label, com ou sem peso.
+"""Função que retorna um conjunto de arestas, onde os vértices podem ser representados por labels (ao invés de seus ids), com ou sem label, com ou sem peso.
 Parâmetros:
 - g - instância do grafo
 - v_attrs - dicionário de atributos dos vértices (default {}, os vértices serão representados por seus ids)
@@ -58,11 +58,11 @@ Parâmetros:
 
 def get_edge_labels (g,v_attrs={},e_attrs={},vlabel='label',elabel='label',
                      subset=None,weight=False):
-  result = []
-  list_edges = g.edges
+  result = {}
+  set_edges = g.edges
   if not subset is None:
-    list_edges = subset
-  for e in list_edges:
+    set_edges = subset
+  for e in set_edges:
     source = g.edge_source(e)
     target = g.edge_target(e)
     if v_attrs != {} and vlabel in v_attrs[source].keys():

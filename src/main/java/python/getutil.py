@@ -73,7 +73,7 @@ def get_edge_labels (g,v_attrs={},e_attrs={},vlabel='label',elabel='label',
       e_tuple = (e_attrs[e][elabel],source,target)
     if weight:
       e_tuple = e_tuple + tuple([g.get_edge_weight(e)])
-    result.append(e_tuple)
+    result.add(e_tuple)
   return result
 
 """## get_vertexid, get_edge_ids_between, get_arc_ids_between
@@ -91,12 +91,12 @@ def get_vertexid (label, attrs):
 
 def get_edge_ids_between (g,x,y):
   if (x in g.vertices) and (y in g.vertices):
-    edges = []
+    edges = {}
     for e in g.edges:
       source = g.edge_source(e)
       target = g.edge_target(e)
       if (source==x and target==y) or (source==y and target==x):
-        edges.append(e) 
+        edges.add(e) 
     return edges
   else:
      return None
@@ -105,12 +105,12 @@ def get_edge_ids_between (g,x,y):
 
 def get_arc_ids_between (d,x,y):
   if (x in d.vertices) and (y in d.vertices):
-    arcs = []
+    arcs = {}
     for a in d.edges:
       source = d.edge_source(a)
       target = d.edge_target(a)
       if (source==x and target==y):
-        arcs.append(a) 
+        arcs.add(a) 
     return arcs
   else:
      return None
@@ -123,13 +123,13 @@ Função que retorna as partições (X,Y) de um grafo bipartido g.
 # Retorna partições de vértices em um grafo bipartido
 def get_partitions (g):
   if is_bipartite(g):
-    X = []
-    Y = []
+    X = {}
+    Y = {}
     for v in g.vertices:
       if (v not in X) and all(not g.contains_edge_between(v,x) for x in X):
-        X.append(v)
+        X.add(v)
       else:
-        Y.append(v)
+        Y.add(v)
     return X,Y
 
 """## dist

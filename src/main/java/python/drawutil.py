@@ -40,7 +40,7 @@ Parâmetros:
 * **elabel**, **e_attrs** - identificador do label de arestas e dicionário
 * **vertex_color** - cor do vértice (default: cyan) ou range(n) com índice de variantes em um mapa de cores (parâmetro vmap),
 * **vmap** - mapa de cores (defaul None), https://matplotlib.org/stable/gallery/color/colormap_reference.html
-* **edge_color** - cor da aresta (default: black) ou range(n) com índice de variantes em um mapa de cores (parâmetro emap),
+* **edge_color** - cor da aresta (default: orange) ou range(n) com índice de variantes em um mapa de cores (parâmetro emap),
 * **emap** - mapa de cores (default None), https://matplotlib.org/stable/gallery/color/colormap_reference.html
 * **vertex_font_color** - cor da fonte do vértice (default: black) (ver cores disponíveis em https://matplotlib.org/stable/gallery/color/named_colors.html#sphx-glr-gallery-color-named-colors-py)
 * **edge_font_color** - cor da fonte da aresta/arco (default: gray) (ver cores disponíveis em https://matplotlib.org/stable/gallery/color/named_colors.html#sphx-glr-gallery-color-named-colors-py)
@@ -62,7 +62,7 @@ def draw_graph(g,layout="circular",
                vertexid_aslabel=False,edgeweight_aslabel=False,
                vlabel='',v_attrs={},elabel='',e_attrs={},
                vertex_color='cyan',vmap=None,
-               edge_color='black',emap=None,
+               edge_color='orange',emap=None,
                vertex_font_color='black',
                edge_font_color='gray',
                axis=False,

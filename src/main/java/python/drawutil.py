@@ -150,13 +150,14 @@ def draw_graph(g,layout="circular",
     g,
     positions=positions,
     labels=vertex_labels,
-    vertex_font_color="black"
+    vertex_font_color=vertex_font_color
   )  
   if (not e_attrs=={}) or (edgeweight_aslabel):
     draw_matplotlib.draw_jgrapht_edge_labels(
       g,
       positions=positions,
-      labels=edge_labels
+      labels=edge_labels,
+      edge_font_color=edge_font_color
     )
   pyplot.rcParams['figure.figsize'] = [width,height]
   pyplot.show()

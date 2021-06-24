@@ -38,11 +38,11 @@ Parâmetros:
 * **edgeweight_aslabel** - pesos das arestas deve ser usados como labels
 * **vlabel**, **v_attrs** - identificador do label de vértices e dicionário
 * **elabel**, **e_attrs** - identificador do label de arestas e dicionário
-* **vertex_color** - cor do vértice (default: blue) ou range(n) com índice de variantes em um mapa de cores (parâmetro vmap),
+* **vertex_color** - cor do vértice (default: cyan) ou range(n) com índice de variantes em um mapa de cores (parâmetro vmap),
 * **vmap** - mapa de cores (defaul None), https://matplotlib.org/stable/gallery/color/colormap_reference.html
 * **edge_color** - cor da aresta (default: black) ou range(n) com índice de variantes em um mapa de cores (parâmetro emap),
 * **emap** - mapa de cores (default None), https://matplotlib.org/stable/gallery/color/colormap_reference.html
-* **vertex_font_color** - cor da fonte do vértice (default: white) (ver cores disponíveis em https://matplotlib.org/stable/gallery/color/named_colors.html#sphx-glr-gallery-color-named-colors-py)
+* **vertex_font_color** - cor da fonte do vértice (default: black) (ver cores disponíveis em https://matplotlib.org/stable/gallery/color/named_colors.html#sphx-glr-gallery-color-named-colors-py)
 * **edge_font_color** - cor da fonte da aresta/arco (default: gray) (ver cores disponíveis em https://matplotlib.org/stable/gallery/color/named_colors.html#sphx-glr-gallery-color-named-colors-py)
 * **axis** - desenha ou não um frame
 * **width**, **height** - largura, altura da janela de exibição
@@ -61,9 +61,9 @@ Os seguintes parâmetros devem ser utilizados quando se deseja desenhar grupos d
 def draw_graph(g,layout="circular",
                vertexid_aslabel=False,edgeweight_aslabel=False,
                vlabel='',v_attrs={},elabel='',e_attrs={},
-               vertex_color='blue',vmap=None,
+               vertex_color='cyan',vmap=None,
                edge_color='black',emap=None,
-               vertex_font_color='white',
+               vertex_font_color='black',
                edge_font_color='gray',
                axis=False,
                width=8,height=5,vsize=450,vshape='o',

@@ -91,12 +91,12 @@ def get_vertexid (label, attrs):
 
 def get_edge_ids_between (g,x,y):
   if (x in g.vertices) and (y in g.vertices):
-    edges = set()
+    edges = []
     for e in g.edges:
       source = g.edge_source(e)
       target = g.edge_target(e)
       if (source==x and target==y) or (source==y and target==x):
-        edges.add(e) 
+        edges.append(e) 
     return edges
   else:
      return None
@@ -105,12 +105,12 @@ def get_edge_ids_between (g,x,y):
 
 def get_arc_ids_between (d,x,y):
   if (x in d.vertices) and (y in d.vertices):
-    arcs = set()
+    arcs = []
     for a in d.edges:
       source = d.edge_source(a)
       target = d.edge_target(a)
       if (source==x and target==y):
-        arcs.add(a) 
+        arcs.append(a) 
     return arcs
   else:
      return None

@@ -18,8 +18,8 @@ https://colab.research.google.com/drive/1Prk2E2a69kyqcmVGQyz_vmqzMsD62Dsp?
 """
 
 # Se desejar compilar, descomente o comando abaixo
-!pip install jgrapht
-import jgrapht
+#!pip install jgrapht
+#import jgrapht
 
 # Importando funções
 from jgrapht.algorithms.shortestpaths import yen_k_loopless

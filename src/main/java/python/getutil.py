@@ -79,7 +79,6 @@ def get_edge_labels (g,v_attrs={},e_attrs={},vlabel='label',elabel='label',
       e_tuple = edge
     if e_attrs != {} and elabel in e_attrs[e].keys():
       e_tuple = '{}:{}'.format(e_attrs[e][elabel],edge)
-    print(e_tuple)
     if weight:
       e_tuple = '{}:{}'.format(e_tuple,g.get_edge_weight(e))
     result.add(e_tuple)

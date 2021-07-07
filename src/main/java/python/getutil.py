@@ -18,8 +18,8 @@ https://colab.research.google.com/drive/1Prk2E2a69kyqcmVGQyz_vmqzMsD62Dsp?
 """
 
 # Se desejar compilar, descomente o comando abaixo
-#!pip install jgrapht
-#import jgrapht
+!pip install jgrapht
+import jgrapht
 
 # Importando funções
 from jgrapht.algorithms.shortestpaths import yen_k_loopless
@@ -74,13 +74,14 @@ def get_edge_labels (g,v_attrs={},e_attrs={},vlabel='label',elabel='label',
     else:
       edge = '{{{},{}}}'.format(source,target)
     if g.type.allowing_multiple_edges == True:
-      e_tuple = (e,edge)
+      e_tuple = '{}:{}'.format(e,edge)
     else:
-      e_tuple = (edge)
+      e_tuple = edge
     if e_attrs != {} and elabel in e_attrs[e].keys():
-      e_tuple = (e_attrs[e][elabel],edge)
+      e_tuple = '{}:{}'.format(e_attrs[e][elabel],edge)
+    print(e_tuple)
     if weight:
-      e_tuple = e_tuple + tuple([g.get_edge_weight(e)])
+      e_tuple = '{}:{}'.format(e_tuple,g.get_edge_weight(e))
     result.add(e_tuple)
   return result
 

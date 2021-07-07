@@ -68,12 +68,16 @@ def get_edge_labels (g,v_attrs={},e_attrs={},vlabel='label',elabel='label',
     if v_attrs != {} and vlabel in v_attrs[source].keys():
       source = v_attrs[source][vlabel]
       target = v_attrs[target][vlabel]
-    if g.type.allowing_multiple_edges == True:
-      e_tuple = (e,source,target)
+    if g.type.directed:
+      edge = (source,target)
     else:
-      e_tuple = (source,target)
+      edge = {source,target}
+    if g.type.allowing_multiple_edges == True:
+      e_tuple = (e,edge)
+    else:
+      e_tuple = (edge)
     if e_attrs != {} and elabel in e_attrs[e].keys():
-      e_tuple = (e_attrs[e][elabel],source,target)
+      e_tuple = (e_attrs[e][elabel],edge)
     if weight:
       e_tuple = e_tuple + tuple([g.get_edge_weight(e)])
     result.add(e_tuple)

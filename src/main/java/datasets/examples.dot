@@ -1,0 +1,17 @@
+digraph "examples.jar" {
+    // Path: examples.jar
+   "examples.Foo"                                     -> "java.io.PrintStream (java.base)";
+   "examples.Foo"                                     -> "java.lang.Object (java.base)";
+   "examples.Foo"                                     -> "java.lang.String (java.base)";
+   "examples.Foo"                                     -> "java.lang.System (java.base)";
+   "examples.NumberFunctions"                         -> "java.io.PrintStream (java.base)";
+   "examples.NumberFunctions"                         -> "java.lang.Object (java.base)";
+   "examples.NumberFunctions"                         -> "java.lang.String (java.base)";
+   "examples.NumberFunctions"                         -> "java.lang.System (java.base)";
+   "examples.WBdataexample"                           -> "java.io.PrintStream (java.base)";
+   "examples.WBdataexample"                           -> "java.lang.Double (java.base)";
+   "examples.WBdataexample"                           -> "java.lang.Object (java.base)";
+   "examples.WBdataexample"                           -> "java.lang.String (java.base)";
+   "examples.WBdataexample"                           -> "java.lang.StringBuilder (java.base)";
+   "examples.WBdataexample"                           -> "java.lang.System (java.base)";
+}

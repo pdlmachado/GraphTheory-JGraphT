@@ -1,0 +1,28 @@
+digraph "util.jar" {
+    // Path: util.jar
+   "util"                                             -> "com.mxgraph.layout (not found)";
+   "util"                                             -> "com.mxgraph.layout.hierarchical (not found)";
+   "util"                                             -> "com.mxgraph.layout.orthogonal (not found)";
+   "util"                                             -> "com.mxgraph.model (not found)";
+   "util"                                             -> "com.mxgraph.swing (not found)";
+   "util"                                             -> "com.mxgraph.util (not found)";
+   "util"                                             -> "com.mxgraph.view (not found)";
+   "util"                                             -> "java.awt (java.desktop)";
+   "util"                                             -> "java.io (java.base)";
+   "util"                                             -> "java.lang (java.base)";
+   "util"                                             -> "java.lang.invoke (java.base)";
+   "util"                                             -> "java.util (java.base)";
+   "util"                                             -> "java.util.function (java.base)";
+   "util"                                             -> "java.util.stream (java.base)";
+   "util"                                             -> "javax.swing (java.desktop)";
+   "util"                                             -> "org.jgrapht (not found)";
+   "util"                                             -> "org.jgrapht.alg.connectivity (not found)";
+   "util"                                             -> "org.jgrapht.alg.shortestpath (not found)";
+   "util"                                             -> "org.jgrapht.alg.util (not found)";
+   "util"                                             -> "org.jgrapht.ext (not found)";
+   "util"                                             -> "org.jgrapht.graph (not found)";
+   "util"                                             -> "org.jgrapht.nio (not found)";
+   "util"                                             -> "org.jgrapht.nio.csv (not found)";
+   "util"                                             -> "org.jgrapht.nio.gml (not found)";
+   "util"                                             -> "org.jgrapht.util (not found)";
+}

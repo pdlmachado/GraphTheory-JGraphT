@@ -1,6 +1,6 @@
 digraph "examples.jar" {
     // Path: examples.jar
-   "examples.Foo"                                     -> "examples.NumberFunctions (examples.jar)";
+   "examples.Foo"                                     -> "examples.NumberFunctions";
    "examples.Foo"                                     -> "java.io.PrintStream (java.base)";
    "examples.Foo"                                     -> "java.lang.Object (java.base)";
    "examples.Foo"                                     -> "java.lang.String (java.base)";

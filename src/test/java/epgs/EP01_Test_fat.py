@@ -1,4 +1,4 @@
-import unittest
+
 class Test_fat(unittest.TestCase):
 
   def test_valid01 (self):

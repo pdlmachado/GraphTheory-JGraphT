@@ -19,10 +19,12 @@ https://colab.research.google.com/drive/1X7nngfUSPYOvdi5ej2SGpKNjZyYsn-tG?
 
 # Se desejar compilar, descomente o comando abaixo
 #!pip install jgrapht
+#import jgrapht
 
 # Importando funções
 import csv
-from jgrapht.io.importers import parse_gml
+from jgrapht.io.importers import parse_gml,parse_graphml,parse_dot
+import re
 
 """## read_multiple_csv
 
@@ -115,9 +117,9 @@ def read_edges (csvgraph,listcsv,v_attrs,viddict,e_attrs,esourceid,etargetid,ela
 Importa grafo no formato GML
 
 Parâmetros:
--   csvgraph - instância do grafo
--   v_attrs - instância do dicionário de atributos de vértices
--   e_attrs - instância do dicionário de atributos de arestas
+-   g - instância do grafo
+-   v_attrs - instância (vazia) do dicionário de atributos de vértices
+-   e_attrs - instância (vazia) do dicionário de atributos de arestas
 - filename - nome do arquivo como grafo
 - weights_aslabel - indica se o valor do atributo 'label' deve ser usado como peso para o grafo.
 """
@@ -150,6 +152,38 @@ def read_gml (g,input_gml,v_attrs,e_attrs,weights_aslabel):
     for e in g.edges:
       w = int(e_attrs[e]['label'])
       g.set_edge_weight(e,w)
+
+"""# import_dot
+
+Importa grafo no formato DOT
+
+Parâmetros:
+-   g - instância do grafo
+-   v_attrs - instância (vazia) do dicionário de atributos de vértices
+-   e_attrs - instância (vazia) do dicionário de atributos de arestas
+- filename - nome do arquivo como grafo
+
+"""
+
+def import_dot (g,v_attrs,e_attrs,filename):
+  file = open(filename,"r")
+  input_string = re.sub(' \(.*\)','',"".join(file.readlines()))
+  file.close()
+  read_dot(g,input_string,v_attrs,e_attrs)
+
+def read_dot(g,input_string,v_attrs,e_attrs):  
+  # Função que adiciona atributos de vértices
+  def v_att_cb(vertex, attribute_name, attribute_value):
+      if vertex not in v_attrs:
+          v_attrs[vertex] = {}
+      v_attrs[vertex]['label'] = attribute_value
+
+  # Função que adiciona atributos de arestas
+  def e_att_cb(edge, attribute_name, attribute_value):
+      if edge not in e_attrs:
+          e_attrs[edge] = {}
+      e_attrs[edge][attribute_name] = attribute_value
+  parse_dot(g,input_string,vertex_attribute_cb=v_att_cb,edge_attribute_cb=e_att_cb)
 
 """## create_vdict
 

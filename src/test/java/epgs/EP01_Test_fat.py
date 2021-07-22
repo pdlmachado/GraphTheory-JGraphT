@@ -1,3 +1,4 @@
+import unittest
 # From: https://eli.thegreenplace.net/2011/08/02/python-unit-testing-parametrized-test-cases
 class ParametrizedTestCase(unittest.TestCase):
     """ TestCase classes that want to be parametrized should
@@ -67,8 +68,6 @@ toy5 = """digraph "toy5.jar" {
 }
 """
 
-
-import unittest
 import math
 class Test_fat(ParametrizedTestCase):
 

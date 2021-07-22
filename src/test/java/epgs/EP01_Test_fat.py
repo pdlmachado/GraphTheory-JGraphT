@@ -81,4 +81,4 @@ class Test_fat(ParametrizedTestCase):
     read_dot(g,input_string,v_attrs,e_attrs)
     self.assertTrue(math.isclose(a=f(g),b=expected,rel_tol=0.01))
     
-
+params = [[toy1,0.30],[toy2,0.33],[toy3,0.0],[toy4,0.5],[toy5,0.83]]

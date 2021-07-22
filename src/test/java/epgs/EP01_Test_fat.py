@@ -69,6 +69,7 @@ toy5 = """digraph "toy5.jar" {
 """
 
 import math
+import jgrapht
 class Test_fat(ParametrizedTestCase):
 
   def test_valid01 (self):

@@ -74,14 +74,13 @@ from importutil import read_dot
 class Test_fat(ParametrizedTestCase):
 
   def test_valid01 (self):
-    input_string,expected = self.param
+    f,input_string,expected = self.param
     g = jgrapht.create_graph (weighted=False)
     v_attrs = {}
     e_attrs = {}
     read_dot(g,input_string,v_attrs,e_attrs)
-    f = fat(g)
-    self.assertTrue(math.isclose(a=f,b=expected,rel_tol=0.01))
+    self.assertTrue(math.isclose(a=f(g),b=expected,rel_tol=0.01))
     
-params = [[toy1,0.30],[toy2,0.33],[toy3,0.0],[toy4,0.5],[toy5,0.83]]
+params = [[fat,toy1,0.30],[fat,toy2,0.33],[fat,toy3,0.0],[fat,toy4,0.5],[fat,toy5,0.83]]
 
 Test_fat_cases = [ParametrizedTestCase.parametrize(Test_fat, param=params[i]) for i in range(len(params))]

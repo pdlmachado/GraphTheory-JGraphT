@@ -79,6 +79,7 @@ class Test_fat(ParametrizedTestCase):
     v_attrs = {}
     e_attrs = {}
     read_dot(g,input_string,v_attrs,e_attrs)
-    self.assertTrue(math.isclose(a=f(g),b=expected,rel_tol=0.01))
+    ef = eval(f)
+    self.assertTrue(math.isclose(a=ef(g),b=expected,rel_tol=0.01))
     
-params = [[toy1,0.30],[toy2,0.33],[toy3,0.0],[toy4,0.5],[toy5,0.83]]
+params = [['fat',toy1,0.30],['fat',toy2,0.33],['fat',toy3,0.0],['fat',toy4,0.5],['fat',toy5,0.83]]

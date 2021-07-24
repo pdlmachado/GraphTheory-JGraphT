@@ -82,31 +82,35 @@ class Test_I(ParametrizedTestCase):
     l = [i[0] for i in f(g)]
     self.assertEqual(l,expected)
 
-class Test_fan_out (unittest.TestCase):
+class Test_fan_out (ParametrizedTestCase):
   def test_valid01 (self):
+    f=self.param
     g = jgrapht.create_graph (weighted=False)
     v_attrs = {}
     e_attrs = {}
     read_dot(g,toy1,v_attrs,e_attrs)  
     expected_fan_out = [2,1,2,0,1]
-    self.assertTrue(all(fan_out(g,v)==expected_fan_out[v] for v in g.vertices))
+    self.assertTrue(all(f(g,v)==expected_fan_out[v] for v in g.vertices))
 
   def test_invalid (self):
+    f=self.param
     g = jgrapht.create_graph (weighted=False)
-    self.assertTrue(fan_out(g,0) is None)
+    self.assertTrue(f(g,0) is None)
 
-class Test_fan_in (unittest.TestCase):
+class Test_fan_in (ParametrizedTestCase):
   def test_valid01 (self):
+    f=self.param
     g = jgrapht.create_graph (weighted=False)
     v_attrs = {}
     e_attrs = {}
     read_dot(g,toy1,v_attrs,e_attrs)  
     expected_fan_in = [0,2,2,1,1]
-    self.assertTrue(all(fan_in(g,v)==expected_fan_in[v] for v in g.vertices))
+    self.assertTrue(all(f(g,v)==expected_fan_in[v] for v in g.vertices))
 
   def test_invalid (self):
+    f=self.param
     g = jgrapht.create_graph (weighted=False)
-    self.assertTrue(fan_in(g,0) is None)
+    self.assertTrue(f(g,0) is None)
 
 
 params = [[toy1,[0, 2, 4, 1, 3]],[toy2,[0, 3, 2, 4, 5, 1]],[toy3,[]],[toy4,[0,1]],[toy5,[2,1,0]]]

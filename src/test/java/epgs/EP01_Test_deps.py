@@ -73,7 +73,7 @@ import math
 import jgrapht
 from importutil import read_dot
 
-class Test_deps(ParametrizedTestCase):
+class Test_ddeps(ParametrizedTestCase):
 
   def test_ddeps (self):
     f,input_string,v,expected = self.param

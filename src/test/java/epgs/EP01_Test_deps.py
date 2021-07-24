@@ -75,7 +75,7 @@ from importutil import read_dot
 
 class Test_deps(ParametrizedTestCase):
 
-  def test_deps (self):
+  def test_ddeps (self):
     f,input_string,v,expected = self.param
     g = jgrapht.create_graph (weighted=False)
     v_attrs = {}

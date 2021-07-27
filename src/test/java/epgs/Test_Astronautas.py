@@ -22,7 +22,7 @@ class ParametrizedTestCase(unittest.TestCase):
     
 # Test Data
 
-g1 = create_graph(directed=False, weighted=False)
+g1 = jgrapht.create_graph(directed=False, weighted=False)
 g1.add_vertices_from([x for x in range(0,4)])
 g1.add_edge(0,1,edge=0)
 g1.add_edge(0,2,edge=1)
@@ -31,7 +31,7 @@ g1.add_edge(1,3,edge=3)
 g1.add_edge(2,3,edge=4)
 
 # Grafo não direcionado conectado
-g2 = create_graph(directed=False, weighted=False)
+g2 = jgrapht.create_graph(directed=False, weighted=False)
 g2.add_vertices_from([x for x in range(9)])
 g2.add_edge(0,1,edge=0)
 g2.add_edge(0,2,edge=1)

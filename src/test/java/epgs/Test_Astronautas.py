@@ -23,7 +23,7 @@ class ParametrizedTestCase(unittest.TestCase):
 # Test Data
 
 import jgrapht
-class Test_fat(ParametrizedTestCase):
+class Test_astronautas(ParametrizedTestCase):
 
   def test_valid01 (self):
     pass

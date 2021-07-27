@@ -22,10 +22,43 @@ class ParametrizedTestCase(unittest.TestCase):
     
 # Test Data
 
-import jgrapht
-class Test_astronautas(ParametrizedTestCase):
+g1 = create_graph(directed=False, weighted=False)
+g1.add_vertices_from([x for x in range(0,4)])
+g1.add_edge(0,1,edge=0)
+g1.add_edge(0,2,edge=1)
+g1.add_edge(0,3,edge=2)
+g1.add_edge(1,3,edge=3)
+g1.add_edge(2,3,edge=4)
 
+# Grafo não direcionado conectado
+g2 = create_graph(directed=False, weighted=False)
+g2.add_vertices_from([x for x in range(9)])
+g2.add_edge(0,1,edge=0)
+g2.add_edge(0,2,edge=1)
+g2.add_edge(1,3,edge=2)
+g2.add_edge(1,8,edge=3)
+g2.add_edge(2,7,edge=4)
+g2.add_edge(2,6,edge=5)
+g2.add_edge(2,4,edge=6)
+g2.add_edge(3,5,edge=7)
+g2.add_edge(6,7,edge=8)
+g2.add_edge(7,8,edge=9)
+
+g3 = jgrapht.create_graph(directed=False, weighted=False)
+
+import jgrapht
+
+class Test_astronautas(ParametrizedTestCase):
   def test_valid01 (self):
-    pass
+    f,g,expected=self.param
+    try:
+      sresult = map(lambda x : sorted(x),f(g))
+      sexpected = map(lambda x : sorted(x),expected)
+      self.assertCountEqual(sresult,sexpected)
+    except:
+      self.assertTrue(f(g) is None and g is None)
     
-params = []
+params = [[g1,[(1,2)]],
+          [g2,[(0, 3), (0, 4), (0, 5), (0, 6), (0, 7), (0, 8), (1, 2), (1, 4), (1, 5), (1, 6), (1, 7), (2, 3), (2, 5), (2, 8), (3, 4), (3, 6), (3, 7), (3, 8), (4, 5), (4, 6), (7,4), (4, 8), (5, 6), (5, 7), (5, 8), (6, 8)]],
+          [g3,[]],
+          [None,None]]

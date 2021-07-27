@@ -21,6 +21,7 @@ class ParametrizedTestCase(unittest.TestCase):
         return suite
     
 # Test Data
+import jgrapht
 
 g1 = jgrapht.create_graph(directed=False, weighted=False)
 g1.add_vertices_from([x for x in range(0,4)])
@@ -45,8 +46,6 @@ g2.add_edge(6,7,edge=8)
 g2.add_edge(7,8,edge=9)
 
 g3 = jgrapht.create_graph(directed=False, weighted=False)
-
-import jgrapht
 
 class Test_astronautas(ParametrizedTestCase):
   def test_valid01 (self):

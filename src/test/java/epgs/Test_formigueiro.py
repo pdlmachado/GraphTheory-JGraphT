@@ -81,7 +81,7 @@ for v in g2.vertices:
     v4_attrs[v]['cheio'] = True
   else:
     v4_attrs[v]['cheio'] = False
-## v4_attrs
+## v5_attrs
 v5_attrs = {v:{} for v in g2.vertices}
 profundidade = [0,30,15,0,100,6,24,35,48]
 for v in g2.vertices:
@@ -99,7 +99,6 @@ class Test_formigueiro(ParametrizedTestCase):
 
   def test_valid01 (self):
     f,g,v_attrs,i,expected = self.param
-    #sresult = map(lambda x : sorted(x),f(g,v_attrs,i))
     result = f(g,v_attrs,i)
     self.assertEqual(result,expected)
 

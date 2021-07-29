@@ -23,7 +23,7 @@ class ParametrizedTestCase(unittest.TestCase):
 # Test Data
 
 import jgrapht
-class Test_cdir_euler(ParametrizedTestCase):
+class Test_orientacao(ParametrizedTestCase):
 
   def test_valid01 (self):
     pass

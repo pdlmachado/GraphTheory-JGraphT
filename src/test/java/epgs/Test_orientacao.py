@@ -64,7 +64,7 @@ g5 = jgrapht.create_graph(directed=False,weighted=False)
 jgrapht.generators.complete_graph(g5,9)
 
 g6 = jgrapht.create_graph(directed=False,weighted=False) 
-jgrapht.generators.hypercube(g,8)
+jgrapht.generators.hypercube(g6,8)
 
 g7 = jgrapht.create_graph(directed=False,weighted=False) 
 jgrapht.generators.wheel(g7,8)

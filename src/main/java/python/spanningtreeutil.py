@@ -29,6 +29,7 @@ from jgrapht import create_graph
 from jgrapht.properties import is_weakly_connected,is_tree
 from connectutil import is_bridge
 from random import randint
+from jgrapht.views import as_masked_subgraph
 
 """## is_spanningTree
 
@@ -73,5 +74,5 @@ def coTree (graph,spanningtree):
   if is_spanningTree(graph,spanningtree):
     covmask = lambda v : False
     coemask = lambda e : e in spanningtree.edges
-    return jgrapht.views.as_masked_subgraph(graph,covmask,coemask)
+    return as_masked_subgraph(graph,covmask,coemask)
   return None

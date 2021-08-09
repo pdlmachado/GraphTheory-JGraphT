@@ -63,3 +63,15 @@ def gen_spanningTree (g,s):
         notbridges = [e for e in s.edges if not is_bridge(e,s)]
     else:
       return None
+
+"""# co_tree
+
+Constroi uma co-arvore a partir de um grafo e uma de suas arvore geradoras.
+"""
+
+def coTree (graph,spanningtree):
+  if is_spanningTree(graph,spanningtree):
+    covmask = lambda v : False
+    coemask = lambda e : e in spanningtree.edges
+    return jgrapht.views.as_masked_subgraph(graph,covmask,coemask)
+  return None

@@ -76,3 +76,19 @@ def coTree (graph,spanningtree):
     coemask = lambda e : e in spanningtree.edges
     return as_masked_subgraph(graph,covmask,coemask)
   return None
+
+"""# fundamental_cycles
+
+Calcula os ciclos fundamentais de um grafo para uma árvore geradora e sua co-árvore
+"""
+
+def fundamental_cycles(g,tree,cotree):
+  cycleedges = []
+  for e in cotree.edges:
+    # adiciona aresta da co-árvore na árvore
+    tree.add_edge(cotree.edge_source(e),cotree.edge_target(e),edge=e)
+    # adiciona aresta do ciclo fundamental formado na lista de ciclos
+    cycleedges.append([e for e in tree.edges if not is_bridge(e,tree)])
+    # remove a aresta da co-árvore da árvore
+    tree.remove_edge(e)
+  return cycleedges

@@ -79,6 +79,6 @@ class Test_mfs(ParametrizedTestCase):
     v_attrs = {}
     e_attrs = {}
     read_dot(g,input_string,v_attrs,e_attrs)
-    self.assertTrue(math.isclose(a=f(g),b=expected,rel_tol=0.01))
+    self.assertCountEqual(f(g),expected)
     
-params = [[toy1,0.30],[toy2,0.33],[toy3,0.0],[toy4,0.5],[toy5,0.83]]
+params = [[toy1,[]],[toy2,[],[toy3,[]],[toy4,[]],[toy5,[]]]

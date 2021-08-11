@@ -68,11 +68,11 @@ toy5 = """digraph "toy5.jar" {
 }
 """
 
-def isCycle(c):
-  flag = c[0][0] == c[-1][1]
+def isCycle(g,c):
+  flag = g.edge_source(c[0]) == g.edge_target(c[-1])
   if flag == True:
       for i in range(len(c)-1):
-        if not c[i][1] == c[i+1][0]:
+        if not g.edge_target(c[i]) == g.edge_source(c[i+1]):
           flag = False
   return flag
 
@@ -88,12 +88,13 @@ class Test_min_dep(ParametrizedTestCase):
     v_attrs = {}
     e_attrs = {}
     read_dot(g,input_string,v_attrs,e_attrs)
-    self.assertTrue(all(isCycle(c) for c in f(g)))
+    self.assertTrue(all(isCycle(g,c) for c in f(g)))
     self.assertTrue(all(any(Counter(e)==Counter(c) for e in expected) for c in f(g)))
     self.assertTrue(all(any(Counter(e)==Counter(c) for c in f(g)) for e in expected))
     
-params = [[toy1,[[(1, 2), (2, 4), (4, 1)]]],
-          [toy2,[[(1, 2), (2, 3), (3, 1)], [(1, 2), (2, 3), (3, 5), (5, 0), (0, 1)], [(2, 3), (3, 5), (5, 0), (0, 2)], [(5, 0), (0, 5)], [(1, 2), (2, 4), (4, 1)]]],
+params = [[toy1,[[2, 4, 5]]],
+          [toy2,[[2, 3, 6], [2, 3, 7, 8, 0], [3, 7, 8, 1], [8, 9], [2, 4, 5]]],
           [toy3,[]],
           [toy4,[]],
-          [toy5,[[(0, 1), (1, 2), (2, 0)], [(1, 2), (2, 1)], [(0, 1), (1, 0)]]]]
+          [toy5,[[0, 1, 2], [1, 4], [0, 3]]]
+         ]

@@ -68,6 +68,17 @@ toy5 = """digraph "toy5.jar" {
 }
 """
 
+toy6= """digraph "toy5.jar" {
+    // Path: toy5.jar
+"A" -> "B";
+"B" -> "C";
+"C" -> "A";
+"D" -> "A";
+"C" -> "D";
+"A" -> "C"
+}
+"""
+
 import math
 import jgrapht
 from importutil import read_dot
@@ -79,6 +90,7 @@ class Test_mfs(ParametrizedTestCase):
     v_attrs = {}
     e_attrs = {}
     read_dot(g,input_string,v_attrs,e_attrs)
-    self.assertCountEqual(f(g),expected)
+    result = f(g)
+    self.assertCountEqual(result,expected)
     
-params = [[toy1,[]],[toy2,[]],[toy3,[]],[toy4,[]],[toy5,[]]]
+params = [[toy1,[2]],[toy2,[2, 8]],[toy3,[]],[toy4,[]],[toy5,[0,1]],[toy6,[0,5]]]

@@ -92,6 +92,6 @@ class Test_prof(ParametrizedTestCase):
     read_dot(g,input_string,v_attrs,e_attrs)
     result = f(g)
     print(result)
-    self.assertCountEqual(result,expected)
+    self.assertEqual(result,expected)
     
 params = [[toy1,0],[toy2,0],[toy3,0],[toy4,0],[toy5,0],[toy6,0]]

@@ -91,7 +91,6 @@ class Test_prof(ParametrizedTestCase):
     e_attrs = {}
     read_dot(g,input_string,v_attrs,e_attrs)
     result = f(g)
-    print(result)
     self.assertEqual(result,expected)
     
 params = [[toy1,3],[toy2,5],[toy3,0],[toy4,1],[toy5,2],[toy6,2]]

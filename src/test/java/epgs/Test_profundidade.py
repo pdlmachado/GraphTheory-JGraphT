@@ -94,4 +94,4 @@ class Test_prof(ParametrizedTestCase):
     print(result)
     self.assertEqual(result,expected)
     
-params = [[toy1,0],[toy2,0],[toy3,0],[toy4,0],[toy5,0],[toy6,0]]
+params = [[toy1,3],[toy2,5],[toy3,0],[toy4,1],[toy5,2],[toy6,2]]

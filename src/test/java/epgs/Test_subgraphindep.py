@@ -68,29 +68,43 @@ toy5 = """digraph "toy5.jar" {
 }
 """
 
-toy6= """digraph "toy5.jar" {
-    // Path: toy5.jar
-"A" -> "B";
-"B" -> "C";
-"C" -> "A";
-"D" -> "A";
-"C" -> "D";
-"A" -> "C"
+toy6= """digraph "toy6.jar" {
+    // Path: toy6.jar
+"d" -> "e";
+"c" -> "d";
+"a" -> "c";
+"b" -> "a";
+"c" -> "b";
 }
 """
 
 import math
 import jgrapht
 from importutil import read_dot
-class Test_prof(ParametrizedTestCase):
+class Test_sindep(ParametrizedTestCase):
 
   def test_valid01 (self):
-    f,input_string,expected = self.param
+    f,input_string,c,expectedv,expectede = self.param
     g = jgrapht.create_graph (weighted=False)
     v_attrs = {}
     e_attrs = {}
     read_dot(g,input_string,v_attrs,e_attrs)
-    result = f(g)
-    self.assertEqual(result,expected)
+    result = f(g,c)
+    self.assertCountEqual(result.vertices,expectedv)
+    self.assertCountEqual(result.edges,expectede)
+
+class Test_sindep_invalid(unittest.TestCase):
+
+  def test_invalid (self):
+    g = jgrapht.create_graph (weighted=False)
+    v_attrs = {}
+    e_attrs = {}
+    read_dot(g,toy3,v_attrs,e_attrs)
+    self.assertTrue(subgraph_in_dep(g,10) is None)
     
-params = [[toy1,3],[toy2,5],[toy3,0],[toy4,1],[toy5,2],[toy6,2]]
+params = [[toy1,1,[1, 0, 4, 2],[0, 5, 4, 1, 2]],
+          [toy2,5,[5, 3, 0, 2, 1, 4],[7, 9, 3, 8, 1, 2, 0, 5, 6, 4]],
+          [toy4,0,[0],[]],
+          [toy5,1,[2,1,0],[1, 0, 4, 2, 3]],
+          [toy6,0,[0,2,3,4],[1,2,3,4]]
+          ]

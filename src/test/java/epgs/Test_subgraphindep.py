@@ -90,20 +90,14 @@ class Test_sindep(ParametrizedTestCase):
     e_attrs = {}
     read_dot(g,input_string,v_attrs,e_attrs)
     result = f(g,c)
-    self.assertCountEqual(result.vertices,expectedv)
-    self.assertCountEqual(result.edges,expectede)
-
-class Test_sindep_invalid(unittest.TestCase):
-
-  def test_invalid (self):
-    g = jgrapht.create_graph (weighted=False)
-    v_attrs = {}
-    e_attrs = {}
-    read_dot(g,toy3,v_attrs,e_attrs)
-    self.assertTrue(subgraph_in_dep(g,10) is None)
-    
+    try:
+      self.assertCountEqual(result.vertices,expectedv)
+      self.assertCountEqual(result.edges,expectede)
+    except:
+      self.assertTrue(result is None and (g.vertices==[] or c not in g.vertices))  
 params = [[toy1,1,[1, 0, 4, 2],[0, 5, 4, 1, 2]],
           [toy2,5,[5, 3, 0, 2, 1, 4],[7, 9, 3, 8, 1, 2, 0, 5, 6, 4]],
+          [toy3,0,None,None],
           [toy4,0,[0],[]],
           [toy5,1,[2,1,0],[1, 0, 4, 2, 3]],
           [toy6,0,[0,2,3,4],[1,2,3,4]]

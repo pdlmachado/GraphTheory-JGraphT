@@ -78,28 +78,38 @@ toy6= """digraph "toy6.jar" {
 }
 """
 
+def sameComponent (g,v1,v2):
+  w,components = is_weakly_connected(g)
+  return any(v1 in c and v2 in c for c in components)
+
 import math
 import jgrapht
 from importutil import read_dot
+
 class Test_clusters(ParametrizedTestCase):
 
   def test_valid01 (self):
-    f,input_string,c,expectedv,expectede = self.param
+    f,input_string = self.param
     g = jgrapht.create_graph (weighted=False)
     v_attrs = {}
     e_attrs = {}
     read_dot(g,input_string,v_attrs,e_attrs)
-    result = f(g,c)
-    try:
-      self.assertCountEqual(result.vertices,expectedv)
-      self.assertCountEqual(result.edges,expectede)
-    except:
-      self.assertTrue(result is None and (g.vertices==[] or c not in g.vertices))  
-      
-params = [[toy1,1,[1, 0, 4, 2],[0, 5, 4, 1, 2]],
-          [toy2,5,[5, 3, 0, 2, 1, 4],[7, 9, 3, 8, 1, 2, 0, 5, 6, 4]],
-          [toy3,0,None,None],
-          [toy4,0,[0],[]],
-          [toy5,1,[2,1,0],[1, 0, 4, 2, 3]],
-          [toy6,0,[0,2,3,4],[1,2,3,4]]
+    result = f(g)
+    self.assertCountEqual([item for sublist in result for item in sublist],g.vertices) 
+    self.assertTrue(all(sameComponent(g,v1,v2) for c in result for v1 in c for v2 in c))
+    self.assertTrue(all(len(c)>=1 for c in result))
+
+params = [[toy1],
+          [toy2],
+          [toy3],
+          [toy4],
+          [toy5],
+          [toy6],
           ]
+
+paramsf = [[get_clusters]+p for p in params]
+Test_clusters_cases = [ParametrizedTestCase.parametrize(Test_clusters, param=paramsf[i]) for i in range(len(paramsf))]
+suite = unittest.TestSuite()
+for tc in Test_clusters_cases:
+  suite.addTest(tc)
+unittest.TextTestRunner(verbosity=2).run(suite)

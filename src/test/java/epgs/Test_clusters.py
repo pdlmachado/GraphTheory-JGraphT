@@ -106,10 +106,3 @@ params = [[toy1],
           [toy5],
           [toy6],
           ]
-
-paramsf = [[get_clusters]+p for p in params]
-Test_clusters_cases = [ParametrizedTestCase.parametrize(Test_clusters, param=paramsf[i]) for i in range(len(paramsf))]
-suite = unittest.TestSuite()
-for tc in Test_clusters_cases:
-  suite.addTest(tc)
-unittest.TextTestRunner(verbosity=2).run(suite)

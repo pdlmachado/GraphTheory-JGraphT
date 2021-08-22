@@ -78,6 +78,7 @@ toy6= """digraph "toy6.jar" {
 }
 """
 
+from jgrapht.algorithms.connectivity import is_weakly_connected
 def sameComponent (g,v1,v2):
   w,components = is_weakly_connected(g)
   return any(v1 in c and v2 in c for c in components)

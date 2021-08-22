@@ -86,7 +86,7 @@ import math
 import jgrapht
 from importutil import read_dot
 
-class Test_clusters(ParametrizedTestCase):
+class Test_get_clusters(ParametrizedTestCase):
 
   def test_valid01 (self):
     f,input_string = self.param

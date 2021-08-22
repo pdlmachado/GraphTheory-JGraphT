@@ -78,6 +78,13 @@ toy6= """digraph "toy6.jar" {
 }
 """
 
+toy7= """digraph "toy7.jar" {
+    // Path: toy7.jar
+"d" -> "e";
+"c" -> "a";
+}
+"""
+
 from jgrapht.algorithms.connectivity import is_weakly_connected
 def sameComponent (g,v1,v2):
   w,components = is_weakly_connected(g)
@@ -106,4 +113,5 @@ params = [[toy1],
           [toy4],
           [toy5],
           [toy6],
+          [toy7]
           ]

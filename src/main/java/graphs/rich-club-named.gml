@@ -8,7 +8,7 @@ graph
 	node
 	[
 		id	0
-		label	"M&#xe1;rio"
+		label	"Mario"
 		graphics
 		[
 			x	336.0
@@ -22,7 +22,7 @@ graph
 		]
 		LabelGraphics
 		[
-			text	"M&#xe1;rio"
+			text	"Mario"
 			fontSize	12
 			fontName	"Dialog"
 			anchor	"c"
@@ -192,7 +192,7 @@ graph
 	node
 	[
 		id	8
-		label	"Jo&#xe3;o"
+		label	"João"
 		graphics
 		[
 			x	57.0
@@ -206,7 +206,7 @@ graph
 		]
 		LabelGraphics
 		[
-			text	"Jo&#xe3;o"
+			text	"João"
 			fontSize	12
 			fontName	"Dialog"
 			anchor	"c"

@@ -122,8 +122,46 @@ graph
 	]
 	edge
 	[
-		source	2
+		source	3
+		target	4
+		graphics
+		[
+			fill	"#000000"
+			targetArrow	"standard"
+		]
+	]
+	edge
+	[
+		source	3
 		target	1
+		graphics
+		[
+			fill	"#000000"
+			targetArrow	"standard"
+			Line
+			[
+				point
+				[
+					x	454.0
+					y	382.0
+				]
+				point
+				[
+					x	535.0
+					y	349.0
+				]
+				point
+				[
+					x	454.0
+					y	193.0
+				]
+			]
+		]
+	]
+	edge
+	[
+		source	2
+		target	0
 		graphics
 		[
 			fill	"#000000"
@@ -137,29 +175,15 @@ graph
 				]
 				point
 				[
-					x	528.0
-					y	239.0
+					x	375.0
+					y	149.66666666666666
 				]
 				point
 				[
 					x	454.0
-					y	193.0
+					y	101.0
 				]
 			]
-		]
-		edgeAnchor
-		[
-			yTarget	-0.3333333333333333
-		]
-	]
-	edge
-	[
-		source	3
-		target	4
-		graphics
-		[
-			fill	"#000000"
-			targetArrow	"standard"
 		]
 	]
 ]

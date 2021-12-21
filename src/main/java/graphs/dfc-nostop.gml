@@ -81,6 +81,25 @@ graph
 		[
 		]
 	]
+	node
+	[
+		id	4
+		label	""
+		graphics
+		[
+			x	322.5
+			y	293.0
+			w	30.0
+			h	30.0
+			type	"ellipse"
+			raisedBorder	0
+			fill	"#FFCC00"
+			outline	"#000000"
+		]
+		LabelGraphics
+		[
+		]
+	]
 	edge
 	[
 		source	0
@@ -141,6 +160,54 @@ graph
 		edgeAnchor
 		[
 			yTarget	-0.6666666666666666
+		]
+	]
+	edge
+	[
+		source	2
+		target	0
+		graphics
+		[
+			fill	"#000000"
+			targetArrow	"standard"
+			Line
+			[
+				point
+				[
+					x	454.0
+					y	293.0
+				]
+				point
+				[
+					x	371.5
+					y	194.5
+				]
+				point
+				[
+					x	454.0
+					y	101.0
+				]
+			]
+		]
+	]
+	edge
+	[
+		source	2
+		target	4
+		graphics
+		[
+			fill	"#000000"
+			targetArrow	"standard"
+		]
+	]
+	edge
+	[
+		source	4
+		target	1
+		graphics
+		[
+			fill	"#000000"
+			targetArrow	"standard"
 		]
 	]
 ]

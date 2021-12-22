@@ -38,7 +38,7 @@ g2.add_edge(0,1,edge=0)
 g2.add_edge(0,2,edge=1)
 g2.add_edge(1,3,edge=2)
 g2.add_edge(1,8,edge=3)
-g2.add_edge(2,7,edge=4)
+g2.add_edge(7,2,edge=4)
 g2.add_edge(2,6,edge=5)
 g2.add_edge(2,4,edge=6)
 g2.add_edge(3,5,edge=7)
@@ -50,10 +50,13 @@ g3 = jgrapht.create_graph(directed=True, weighted=False)
 class Test_cparada(ParametrizedTestCase):
   def test_valid01 (self):
     f,g,p,expected = self.param
-    print(f(g,p))
-    self.assertEqualCount(f(g,p),expected)
-    
-params = [[g1,0,[]],
-          [g2,0,[]],
+    try:
+      result = f(g,p)
+      self.assertCountEqual(result,expected)
+    except:
+      self.assertTrue(f(g,p) is None and g is None)
+
+params = [[g1,0,[3]],
+          [g2,0,[4, 5, 8]],
           [g3,0,[]],
-          [None,None]]
+          [None,0,None]]

@@ -49,7 +49,9 @@ g3 = jgrapht.create_graph(directed=True, weighted=False)
 
 class Test_cparada(ParametrizedTestCase):
   def test_valid01 (self):
-    pass
+    f,g,p,expected = self.param
+    print(f(g,p))
+    self.assertEqualCount(f(g,p),expected)
     
 params = [[g1,0,[]],
           [g2,0,[]],

@@ -31,7 +31,7 @@ graph
 	node
 	[
 		id	1
-		label	"return &quot;positivo"
+		label	"return positivo"
 		graphics
 		[
 			x	734.5
@@ -45,7 +45,7 @@ graph
 		]
 		LabelGraphics
 		[
-			text	"return &quot;positivo"
+			text	"return positivo"
 			fontSize	12
 			fontName	"Dialog"
 			model	"null"
@@ -100,7 +100,7 @@ graph
 	node
 	[
 		id	4
-		label	"return &quot;negativo&quot;"
+		label	"return negativo"
 		graphics
 		[
 			x	839.0
@@ -114,7 +114,7 @@ graph
 		]
 		LabelGraphics
 		[
-			text	"return &quot;negativo&quot;"
+			text	"return negativo"
 			fontSize	12
 			fontName	"Dialog"
 			model	"null"
@@ -123,7 +123,7 @@ graph
 	node
 	[
 		id	5
-		label	"return &quot;zero&quot;"
+		label	"return zero"
 		graphics
 		[
 			x	953.0
@@ -137,7 +137,7 @@ graph
 		]
 		LabelGraphics
 		[
-			text	"return &quot;zero&quot;"
+			text	"return zero"
 			fontSize	12
 			fontName	"Dialog"
 			model	"null"

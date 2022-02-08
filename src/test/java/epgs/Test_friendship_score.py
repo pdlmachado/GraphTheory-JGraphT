@@ -60,7 +60,7 @@ class Test_friendship_score(ParametrizedTestCase):
 params = [[g1,0,5],
           [g1,2,3],
           [g1,4,0],
-          [g1,1,4],
+          [g1,1,3],
           [g2,0,2],
           [g3,0,None],
           [None,None,None]]

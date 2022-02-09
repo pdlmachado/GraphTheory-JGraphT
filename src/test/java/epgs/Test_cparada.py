@@ -77,8 +77,8 @@ g6.add_edge(2,4)
 g6.add_edge(4,1)
 g6.add_edge(3,1)
 g6.add_edge(2,0)
-g6.add_edge(0,4)
-g6.add_edge(0,3)
+g6.add_edge(0,5)
+g6.add_edge(0,6)
 
 g7 = jgrapht.create_graph(directed=True, weighted=False)
 g7.add_vertices_from([x for x in range(5)])
@@ -89,20 +89,22 @@ g7.add_edge(3,1)
 g7.add_edge(3,4)
 
 
-class Test_repeticoes(ParametrizedTestCase):
+class Test_cparada(ParametrizedTestCase):
   def test_valid01 (self):
-    f,g,expected = self.param
+    f,g,s,expected = self.param
     try:
-      result = f(g)
+      result = f(g,s)
       self.assertCountEqual(result,expected)
     except:
       self.assertTrue(f(g) is None and g is None)
 
-params = [[g1,[]],
-          [g2,[[2, 6, 7]]],
-          [g3,[]],
-          [g4,[[1, 2, 3], [1, 2, 5, 3]]],
-          [g5,[[0, 1, 2], [1, 2, 3], [1, 2, 4]]],
-          [g6,[[0, 1, 2], [0, 3, 1, 2], [0, 4, 1, 2], [1, 2, 3], [1, 2, 4]]],
-          [g7,[[0, 1, 2]]],
-          [None,None]]
+params = [[g1,0,[3]],
+          [g2,0,[4,5,8]],
+          #[g3,0,[]],
+          [g4,0,[4]],
+          [g5,0,[]],
+          [g6,0,[5,6]],
+          [g7,0,[]],
+          [g7,3,[4]],
+          #[g7,10,[]]
+          ]

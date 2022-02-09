@@ -47,6 +47,16 @@ g2.add_edge(7,8,edge=9)
 
 g3 = jgrapht.create_graph(directed=False, weighted=False)
 
+g5 = jgrapht.create_graph(directed=False, weighted=False)
+g5.add_vertices_from([0,1,2,3,4])
+g5.add_edge(0,1)
+g5.add_edge(1,2)
+g5.add_edge(2,3)
+g5.add_edge(2,4)
+g5.add_edge(2,0)
+g5.add_edge(3,1)
+g5.add_edge(4,1)
+
 
 class Test_friendship_score(ParametrizedTestCase):
   def test_valid01 (self):
@@ -62,6 +72,20 @@ params = [[g1,0,5],
           [g1,3,5],
           [g1,1,3],
           [g2,0,2],
+          [g2,1,3],
+          [g2,2,5],
+          [g2,3,2],
+          [g2,4,1],
+          [g2,5,1],
+          [g2,6,3],
+          [g2,7,4],
+          [g2,8,2],
+          [g5,0,3],
+          [g5,1,7],
+          [g5,2,7],
+          [g5,3,3],
+          [g5,4,3],
           [g1,4,None],
           [g3,0,None],
           [None,None,None]]
+

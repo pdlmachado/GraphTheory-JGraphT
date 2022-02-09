@@ -11,8 +11,8 @@ graph
 		label	"b"
 		graphics
 		[
-			x	66.0
-			y	184.86054223745424
+			x	225.0
+			y	75.0
 			w	30.0
 			h	30.0
 			type	"ellipse"
@@ -34,8 +34,8 @@ graph
 		label	"a"
 		graphics
 		[
-			x	71.0
-			y	235.86054223745424
+			x	150.0
+			y	150.0
 			w	30.0
 			h	30.0
 			type	"ellipse"
@@ -57,8 +57,8 @@ graph
 		label	"c"
 		graphics
 		[
-			x	220.78919070623706
-			y	15.0
+			x	0.0
+			y	0.0
 			w	30.0
 			h	30.0
 			type	"ellipse"
@@ -80,8 +80,8 @@ graph
 		label	"f"
 		graphics
 		[
-			x	225.2395083451367
-			y	139.68561995468247
+			x	75.0
+			y	75.0
 			w	30.0
 			h	30.0
 			type	"ellipse"
@@ -103,8 +103,8 @@ graph
 		label	"d"
 		graphics
 		[
-			x	151.10120472416702
-			y	118.48861657367645
+			x	150.0
+			y	75.0
 			w	30.0
 			h	30.0
 			type	"ellipse"
@@ -126,8 +126,8 @@ graph
 		label	"e"
 		graphics
 		[
-			x	148.35075716259388
-			y	41.42866553333056
+			x	150.0
+			y	0.0
 			w	30.0
 			h	30.0
 			type	"ellipse"
@@ -149,8 +149,8 @@ graph
 		label	"h"
 		graphics
 		[
-			x	15.0
-			y	204.86054223745424
+			x	225.0
+			y	150.0
 			w	30.0
 			h	30.0
 			type	"ellipse"
@@ -172,8 +172,8 @@ graph
 		label	"i"
 		graphics
 		[
-			x	268.3090522895822
-			y	75.72613746344476
+			x	0.0
+			y	75.0
 			w	30.0
 			h	30.0
 			type	"ellipse"
@@ -191,29 +191,16 @@ graph
 	]
 	edge
 	[
-		source	1
-		target	0
-		graphics
-		[
-			fill	"#000000"
-		]
-	]
-	edge
-	[
 		source	2
 		target	5
 		graphics
 		[
 			fill	"#000000"
 		]
-	]
-	edge
-	[
-		source	3
-		target	4
-		graphics
+		edgeAnchor
 		[
-			fill	"#000000"
+			xSource	1.0
+			xTarget	-1.0
 		]
 	]
 	edge
@@ -224,6 +211,11 @@ graph
 		[
 			fill	"#000000"
 		]
+		edgeAnchor
+		[
+			ySource	-1.0
+			yTarget	1.0
+		]
 	]
 	edge
 	[
@@ -232,6 +224,11 @@ graph
 		graphics
 		[
 			fill	"#000000"
+		]
+		edgeAnchor
+		[
+			ySource	1.0
+			yTarget	-1.0
 		]
 	]
 	edge
@@ -242,6 +239,11 @@ graph
 		[
 			fill	"#000000"
 		]
+		edgeAnchor
+		[
+			xSource	1.0
+			xTarget	-1.0
+		]
 	]
 	edge
 	[
@@ -251,14 +253,10 @@ graph
 		[
 			fill	"#000000"
 		]
-	]
-	edge
-	[
-		source	1
-		target	6
-		graphics
+		edgeAnchor
 		[
-			fill	"#000000"
+			ySource	1.0
+			yTarget	-1.0
 		]
 	]
 	edge
@@ -268,6 +266,53 @@ graph
 		graphics
 		[
 			fill	"#000000"
+		]
+		edgeAnchor
+		[
+			xSource	1.0
+			xTarget	-1.0
+		]
+	]
+	edge
+	[
+		source	4
+		target	3
+		graphics
+		[
+			fill	"#000000"
+		]
+		edgeAnchor
+		[
+			xSource	-1.0
+			xTarget	1.0
+		]
+	]
+	edge
+	[
+		source	4
+		target	1
+		graphics
+		[
+			fill	"#000000"
+		]
+		edgeAnchor
+		[
+			ySource	1.0
+			yTarget	-1.0
+		]
+	]
+	edge
+	[
+		source	6
+		target	1
+		graphics
+		[
+			fill	"#000000"
+		]
+		edgeAnchor
+		[
+			xSource	-1.0
+			xTarget	1.0
 		]
 	]
 ]

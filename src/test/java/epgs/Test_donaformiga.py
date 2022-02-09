@@ -87,6 +87,14 @@ class Test_donaformiga(ParametrizedTestCase):
 
 params = [[g1,v_g1,0,3],
           [g1,v_g1,2,0],
-          [g2,v_g2,0,4],
+          [g2,v_g2,0,4], # Salões 1,2,8,7
+          [g2,v_g2,1,3], # Salões 2,7,8
+          [g2,v_g2,2,0], # Salões
+          [g2,v_g2,3,1], # Salões 5
+          [g2,v_g2,4,1], # Salões 2
+          [g2,v_g2,5,0], # Salões 2,7
+          [g2,v_g2,6,2], # Salões 2
+          [g2,v_g2,7,1], # Salões 2
+          [g2,v_g2,8,2], # Salões 7,2
           [g3,{},0,0],
           [None,None,None,None]]

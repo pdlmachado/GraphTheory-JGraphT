@@ -47,6 +47,47 @@ g2.add_edge(7,8,edge=9)
 
 g3 = jgrapht.create_graph(directed=True, weighted=False)
 
+g4 = jgrapht.create_graph(directed=True, weighted=False)
+g4.add_vertices_from([x for x in range(6)])
+g4.add_edge(0,1)
+g4.add_edge(1,2)
+g4.add_edge(2,3)
+g4.add_edge(3,4)
+g4.add_edge(3,1)
+g4.add_edge(2,5)
+g4.add_edge(5,3)
+
+g5 = jgrapht.create_graph(directed=True, weighted=False)
+g5.add_vertices_from([x for x in range(5)])
+g5.add_edge(0,1)
+g5.add_edge(1,2)
+g5.add_edge(2,3)
+g5.add_edge(2,4)
+g5.add_edge(4,1)
+g5.add_edge(3,1)
+g5.add_edge(2,0)
+
+g6 = jgrapht.create_graph(directed=True, weighted=False)
+g6.add_vertices_from([x for x in range(7)])
+g6.add_edge(0,1)
+g6.add_edge(1,2)
+g6.add_edge(2,3)
+g6.add_edge(2,4)
+g6.add_edge(4,1)
+g6.add_edge(3,1)
+g6.add_edge(2,0)
+g6.add_edge(0,6)
+g6.add_edge(0,5)
+
+g7 = jgrapht.create_graph(directed=True, weighted=False)
+g7.add_vertices_from([x for x in range(5)])
+g7.add_edge(0,1)
+g7.add_edge(1,2)
+g7.add_edge(2,0)
+g7.add_edge(3,1)
+g7.add_edge(3,4)
+
+
 class Test_cparada(ParametrizedTestCase):
   def test_valid01 (self):
     f,g,p,expected = self.param
@@ -59,4 +100,11 @@ class Test_cparada(ParametrizedTestCase):
 params = [[g1,0,[3]],
           [g2,0,[4, 5, 8]],
           [g3,0,[]],
+          [g4,0,[4]],
+          [g5,0,[]],
+          [g5,2,[]],
+          [g6,0,[6,5]],
+          [g7,0,[]],
+          [g7,3,[4]],
           [None,0,None]]
+

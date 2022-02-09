@@ -85,8 +85,10 @@ class Test_donaformiga(ParametrizedTestCase):
     except:
       self.assertTrue(f(g,v_g,s) is None and g is None)
 
-params = [[g1,v_g1,0,3],
-          [g1,v_g1,2,0],
+params = [[g1,v_g1,0,3], # Salões 1,2,3
+          [g1,v_g1,2,0], # Salões
+          [g1,v_g1,1,0], # Salões
+          [g1,v_g1,3,1], # Salões 2
           [g2,v_g2,0,4], # Salões 1,2,8,7
           [g2,v_g2,1,3], # Salões 2,7,8
           [g2,v_g2,2,0], # Salões
@@ -96,5 +98,6 @@ params = [[g1,v_g1,0,3],
           [g2,v_g2,6,2], # Salões 2
           [g2,v_g2,7,1], # Salões 2
           [g2,v_g2,8,2], # Salões 7,2
+          [g2,v_g2,10,0],
           [g3,{},0,0],
           [None,None,None,None]]

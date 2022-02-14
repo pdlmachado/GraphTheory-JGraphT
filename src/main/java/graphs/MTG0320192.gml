@@ -1,5 +1,5 @@
 Creator	"yFiles"
-Version	"2.15"
+Version	"2.17"
 graph
 [
 	hierarchic	1
@@ -25,7 +25,7 @@ graph
 			text	"a"
 			fontSize	12
 			fontName	"Dialog"
-			model	"null"
+			anchor	"c"
 		]
 	]
 	node
@@ -48,7 +48,7 @@ graph
 			text	"c"
 			fontSize	12
 			fontName	"Dialog"
-			model	"null"
+			anchor	"c"
 		]
 	]
 	node
@@ -71,7 +71,7 @@ graph
 			text	"b"
 			fontSize	12
 			fontName	"Dialog"
-			model	"null"
+			anchor	"c"
 		]
 	]
 	node
@@ -94,7 +94,7 @@ graph
 			text	"g"
 			fontSize	12
 			fontName	"Dialog"
-			model	"null"
+			anchor	"c"
 		]
 	]
 	node
@@ -117,7 +117,7 @@ graph
 			text	"d"
 			fontSize	12
 			fontName	"Dialog"
-			model	"null"
+			anchor	"c"
 		]
 	]
 	node
@@ -140,7 +140,7 @@ graph
 			text	"f"
 			fontSize	12
 			fontName	"Dialog"
-			model	"null"
+			anchor	"c"
 		]
 	]
 	node
@@ -163,7 +163,7 @@ graph
 			text	"h"
 			fontSize	12
 			fontName	"Dialog"
-			model	"null"
+			anchor	"c"
 		]
 	]
 	node
@@ -186,7 +186,7 @@ graph
 			text	"e"
 			fontSize	12
 			fontName	"Dialog"
-			model	"null"
+			anchor	"c"
 		]
 	]
 	edge
@@ -228,8 +228,8 @@ graph
 			configuration	"AutoFlippingLabel"
 			contentWidth	10.673828125
 			contentHeight	18.701171875
-			model	"null"
-			position	"null"
+			model	"six_pos"
+			position	"tail"
 		]
 	]
 	edge
@@ -271,15 +271,15 @@ graph
 			configuration	"AutoFlippingLabel"
 			contentWidth	10.673828125
 			contentHeight	18.701171875
-			model	"null"
-			position	"null"
+			model	"six_pos"
+			position	"tail"
 		]
 	]
 	edge
 	[
 		source	0
 		target	4
-		label	"2"
+		label	"8"
 		graphics
 		[
 			type	"arc"
@@ -308,21 +308,21 @@ graph
 		]
 		LabelGraphics
 		[
-			text	"2"
+			text	"8"
 			fontSize	12
 			fontName	"Dialog"
 			configuration	"AutoFlippingLabel"
 			contentWidth	10.673828125
 			contentHeight	18.701171875
-			model	"null"
-			position	"null"
+			model	"six_pos"
+			position	"tail"
 		]
 	]
 	edge
 	[
 		source	1
 		target	3
-		label	"2"
+		label	"7"
 		graphics
 		[
 			type	"arc"
@@ -351,14 +351,14 @@ graph
 		]
 		LabelGraphics
 		[
-			text	"2"
+			text	"7"
 			fontSize	12
 			fontName	"Dialog"
 			configuration	"AutoFlippingLabel"
 			contentWidth	10.673828125
 			contentHeight	18.701171875
-			model	"null"
-			position	"null"
+			model	"six_pos"
+			position	"tail"
 		]
 	]
 	edge
@@ -400,8 +400,8 @@ graph
 			configuration	"AutoFlippingLabel"
 			contentWidth	10.673828125
 			contentHeight	18.701171875
-			model	"null"
-			position	"null"
+			model	"six_pos"
+			position	"tail"
 		]
 	]
 	edge
@@ -443,8 +443,8 @@ graph
 			configuration	"AutoFlippingLabel"
 			contentWidth	10.673828125
 			contentHeight	18.701171875
-			model	"null"
-			position	"null"
+			model	"six_pos"
+			position	"tail"
 		]
 	]
 	edge
@@ -486,8 +486,8 @@ graph
 			configuration	"AutoFlippingLabel"
 			contentWidth	10.673828125
 			contentHeight	18.701171875
-			model	"null"
-			position	"null"
+			model	"six_pos"
+			position	"tail"
 		]
 	]
 	edge
@@ -529,8 +529,8 @@ graph
 			configuration	"AutoFlippingLabel"
 			contentWidth	10.673828125
 			contentHeight	18.701171875
-			model	"null"
-			position	"null"
+			model	"six_pos"
+			position	"tail"
 		]
 	]
 	edge
@@ -572,8 +572,8 @@ graph
 			configuration	"AutoFlippingLabel"
 			contentWidth	10.673828125
 			contentHeight	18.701171875
-			model	"null"
-			position	"null"
+			model	"six_pos"
+			position	"tail"
 		]
 	]
 ]

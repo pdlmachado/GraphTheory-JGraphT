@@ -77,7 +77,7 @@ g4.add_edge(2,4)
 g4.add_edge(3,4)
 
 g5 = jgrapht.create_graph(directed=False, weighted=True)
-g5.add_vertices_from([0,1,2,3,4,5,6])
+g5.add_vertices_from([0,1,2,3,4,5])
 g5.add_edge(0,1)
 g5.add_edge(1,2)
 g5.add_edge(2,3)
@@ -111,7 +111,7 @@ class Test_linkusage1(ParametrizedTestCase):
   def test_valid (self):
     f,g,ew,ed = self.param
     rw,rd = f(g)
-    #print(rw,rd)
+    print(rw,rd)
     self.assertEqual(rw,ew)
     self.assertDictEqual(rd,ed)
 

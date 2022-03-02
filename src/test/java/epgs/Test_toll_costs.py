@@ -64,7 +64,7 @@ g3 = jgrapht.create_graph(directed=False, weighted=True)
 g3.add_vertex(100)
 
 g4 = jgrapht.create_graph(directed=False, weighted=True)
-g4.add_vertices_from([x for x in range(6)])
+g4.add_vertices_from([x for x in range(5)])
 g4.add_edge(0,1)
 g4.add_edge(0,2)
 g4.add_edge(0,3)

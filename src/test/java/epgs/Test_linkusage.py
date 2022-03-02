@@ -127,13 +127,4 @@ params = [[g1,62.0,{0: 3, 1: 3, 2: 2, 3: 3, 4: 3}],
           [g8,22.0, {0: 4, 1: 0, 2: 2, 3: 2, 4: 4, 5: 2, 6: 2, 7: 2, 8: 2, 9: 2}]
           ]
 
-class Test_linkusage2 (unittest.TestCase):
 
-  def test_empty (self):
-    rw,rd = link_usage(g9)
-    self.assertDictEqual(rd,{})
-    self.assertEqual(rw,0)
-
-  def test_invalid (self):
-    rw,rd = link_usage(None)
-    self.assertTrue(rw is None and rd is None)

@@ -107,8 +107,6 @@ g8.add_edge(2,4)
 g8.add_edge(3,4)
 g8.set_edge_weight(1,20)
 
-g9 = jgrapht.create_graph(directed=False, weighted=True)
-
 class Test_linkusage1(ParametrizedTestCase):
   def test_valid (self):
     f,g,ew,ed = self.param

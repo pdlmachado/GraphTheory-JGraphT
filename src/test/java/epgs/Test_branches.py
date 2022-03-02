@@ -42,5 +42,5 @@ class Test_branches_valid(ParametrizedTestCase):
     self.assertEqual(result,b)
 
 params = [[t1,0,[[0, 1, 4, 5], [0, 2], [0, 3]]],
-          [t2,0,[]],
+          [t2,100,[]],
          ]

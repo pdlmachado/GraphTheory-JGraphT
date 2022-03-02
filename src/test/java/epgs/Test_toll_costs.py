@@ -83,6 +83,7 @@ g5.add_edge(1,2)
 g5.add_edge(2,3)
 g5.add_edge(0,4)
 g5.add_edge(4,5)
+g5.add_edge(0,6)
 g5.add_edge(6,7)
 
 
@@ -113,6 +114,7 @@ class Test_toll_costs1(ParametrizedTestCase):
   def test_valid (self):
     f,g,ew,ep = self.param
     rw,rp = f(g)
+    print(rw,rp)
     self.assertEqual(rw,ew)
     self.assertCountEqual(rp,ep)
 

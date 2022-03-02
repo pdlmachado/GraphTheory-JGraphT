@@ -60,8 +60,8 @@ d4.add_vertex(20)
 
 class Test_topological_base(ParametrizedTestCase):
   def test_base (self):
-    d = self.param
-    top = topological_order(d)
+    f,d = self.param
+    top = f(d)
     #print(top)
     self.assertEqual(len(top),len(d.vertices))
     self.assertCountEqual(top,d.vertices)

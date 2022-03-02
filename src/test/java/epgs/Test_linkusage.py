@@ -21,6 +21,8 @@ class ParametrizedTestCase(unittest.TestCase):
         return suite
     
 # Test Data
+import jgrapht
+
 g1 = jgrapht.create_graph(directed=False, weighted=True)
 g1.add_vertices_from([x for x in range(0,4)])
 g1.add_edge(0,1,edge=0)

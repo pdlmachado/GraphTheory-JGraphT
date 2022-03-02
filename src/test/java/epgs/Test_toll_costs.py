@@ -110,8 +110,8 @@ g8.set_edge_weight(1,20)
 
 class Test_toll_costs1(ParametrizedTestCase):
   def test_valid (self):
-    g,ew,ep = self.param
-    rw,rp = toll_costs(g)
+    f,g,ew,ep = self.param
+    rw,rp = f(g)
     self.assertEqual(rw,ew)
     self.assertCountEqual(rp,ep)
 

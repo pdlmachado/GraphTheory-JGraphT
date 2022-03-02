@@ -34,7 +34,7 @@ t1.add_edge(4,5,edge=4)
 t2 = jgrapht.create_graph(directed=False, weighted=False)
 t2.add_vertex(100)
 
-class Test_branches1(ParametrizedTestCase):
+class Test_branches_valid(ParametrizedTestCase):
   def test_valid (self):
     f,t,r,b = self.param
     result = f(t,r)
@@ -42,4 +42,5 @@ class Test_branches1(ParametrizedTestCase):
     self.assertEqual(result,b)
 
 params = [[t1,0,[[0, 1, 4, 5], [0, 2], [0, 3]]],
-          [t2,0,[]]
+          [t2,0,[]],
+         ]

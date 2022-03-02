@@ -113,7 +113,6 @@ class Test_toll_costs1(ParametrizedTestCase):
   def test_valid (self):
     f,g,ew,ep = self.param
     rw,rp = f(g)
-    print(rw,rp)
     self.assertEqual(rw,ew)
     self.assertCountEqual(rp,ep)
 

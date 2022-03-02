@@ -63,7 +63,7 @@ class Test_topological_base(ParametrizedTestCase):
     f,d = self.param
     top = f(d)
     #print(top)
-    self.assertEqual(len(top),len(d.vertices))
+    self.assertEquals(len(top),len(d.vertices))
     self.assertCountEqual(top,d.vertices)
     self.assertTrue(all(all(top.index(v) < top.index(w) for w in [d.edge_target(e) for e in d.outedges_of(v)]) for v in d.vertices))       
 

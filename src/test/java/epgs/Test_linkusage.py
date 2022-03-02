@@ -111,7 +111,6 @@ class Test_linkusage1(ParametrizedTestCase):
   def test_valid (self):
     f,g,ew,ed = self.param
     rw,rd = f(g)
-    print(rw,rd)
     self.assertEqual(rw,ew)
     self.assertDictEqual(rd,ed)
 

@@ -38,7 +38,6 @@ class Test_branches_valid(ParametrizedTestCase):
   def test_valid (self):
     f,t,r,b = self.param
     result = f(t,r)
-    print(result)
     self.assertEqual(result,b)
 
 params = [[t1,0,[[0, 1, 4, 5], [0, 2], [0, 3]]],

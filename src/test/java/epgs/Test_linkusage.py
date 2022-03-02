@@ -107,8 +107,8 @@ g8.add_edge(2,4)
 g8.add_edge(3,4)
 g8.set_edge_weight(1,20)
 
-class Test_linkusage_valid(ParametrizedTestCase):
-  def test_valid (self):
+class Test_linkusage_base(ParametrizedTestCase):
+  def test_base (self):
     f,g,ew,ed = self.param
     rw,rd = f(g)
     self.assertEqual(rw,ew)

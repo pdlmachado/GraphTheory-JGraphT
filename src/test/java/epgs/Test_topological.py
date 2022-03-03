@@ -33,7 +33,7 @@ d1.add_edge(4,5,edge=4)
 
 # Árvore enraizada (dag)
 d2 = jgrapht.create_graph(directed=True, weighted=False, dag=True)
-d2.add_vertices_from([x for x in range(9)])
+d2.add_vertices_from([x for x in range(8)])
 d2.add_edge(0,1,edge=0)
 d2.add_edge(0,2,edge=1)
 d2.add_edge(3,1,edge=2)

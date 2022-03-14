@@ -114,7 +114,7 @@ class Test_linkusage_base(ParametrizedTestCase):
     self.assertEqual(rw,ew)
     self.assertDictEqual(rd,ed)
 
-params = [[g1,62.0,{0: 6, 1: 6, 2: 6, 3: 0, 4: 0}],
+params = [[g1,66.0,{0: 6, 1: 6, 2: 6, 3: 0, 4: 0}],
           [g2,616.0,{0: 20, 1: 20, 2: 28, 3: 20, 4: 16, 5: 0, 6: 16, 7: 16, 8: 16, 9: 20}],
           [g3,0.0,{}],
           [g4,20.0,{0: 2, 1: 2, 2: 2, 3: 2, 4: 2, 5: 2, 6: 2, 7: 2, 8: 2, 9: 2}],

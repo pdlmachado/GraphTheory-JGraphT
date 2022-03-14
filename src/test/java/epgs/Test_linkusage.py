@@ -33,7 +33,7 @@ g1.add_edge(2,3,edge=4)
 g1.set_edge_weight(0,4)
 g1.set_edge_weight(1,6)
 g1.set_edge_weight(2,1)
-g1.set_edge_weight(3,3)
+g1.set_edge_weight(3,9)
 g1.set_edge_weight(4,7)
 
 # Grafo não direcionado conectado

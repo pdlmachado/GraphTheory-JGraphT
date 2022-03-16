@@ -90,6 +90,7 @@ g5.add_edge(6,7)
 g6 = jgrapht.create_graph(directed=False, weighted=True)
 from jgrapht.generators import ring_graph
 ring_graph(g6,10)
+g6.set_edge_weight(5,20)
 
 g7 = jgrapht.create_graph(directed=False, weighted=True)
 from jgrapht.generators import hypercube
@@ -122,7 +123,7 @@ params = [[g1,10.0,{1,2,3}],
           [g3,0.0,{}],
           [g4,4.0,{0, 1, 2, 3}],
           [g5,7.0,{0, 1, 2, 3, 4, 5, 6}],
-          #[g6,9.0,{0, 1, 2, 3, 4, 6, 7, 8, 9}],
+          [g6,9.0,{0, 1, 2, 3, 4, 6, 7, 8, 9}],
           [g7,15.0,{0, 1, 2, 3, 4, 5, 6, 8, 9, 10, 11, 14, 16, 18, 19}],
           [g8,4.0,{0, 2, 3, 4}]
           ]

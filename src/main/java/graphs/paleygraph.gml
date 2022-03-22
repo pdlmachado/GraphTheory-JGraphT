@@ -34,8 +34,8 @@ graph
 		label	"b"
 		graphics
 		[
-			x	536.5
-			y	92.0
+			x	539.0
+			y	78.0
 			w	30.0
 			h	30.0
 			type	"ellipse"
@@ -220,33 +220,6 @@ graph
 	]
 	edge
 	[
-		source	0
-		target	2
-		graphics
-		[
-			fill	"#000000"
-			Line
-			[
-				point
-				[
-					x	372.0
-					y	140.0
-				]
-				point
-				[
-					x	520.0
-					y	92.0
-				]
-				point
-				[
-					x	701.0
-					y	140.0
-				]
-			]
-		]
-	]
-	edge
-	[
 		source	2
 		target	0
 		graphics
@@ -393,6 +366,24 @@ graph
 	[
 		source	5
 		target	2
+		graphics
+		[
+			fill	"#000000"
+		]
+	]
+	edge
+	[
+		source	2
+		target	1
+		graphics
+		[
+			fill	"#000000"
+		]
+	]
+	edge
+	[
+		source	1
+		target	0
 		graphics
 		[
 			fill	"#000000"

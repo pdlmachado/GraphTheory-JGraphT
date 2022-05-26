@@ -11,8 +11,8 @@ graph
 		label	"f"
 		graphics
 		[
-			x	375.0
-			y	125.0
+			x	125.0
+			y	175.0
 			w	30.0
 			h	30.0
 			type	"ellipse"
@@ -34,7 +34,7 @@ graph
 		label	"a"
 		graphics
 		[
-			x	450.0
+			x	175.0
 			y	375.0
 			w	30.0
 			h	30.0
@@ -57,8 +57,8 @@ graph
 		label	"b"
 		graphics
 		[
-			x	300.0
-			y	275.0
+			x	225.0
+			y	225.0
 			w	30.0
 			h	30.0
 			type	"ellipse"
@@ -80,8 +80,8 @@ graph
 		label	"d"
 		graphics
 		[
-			x	225.0
-			y	175.0
+			x	275.0
+			y	125.0
 			w	30.0
 			h	30.0
 			type	"ellipse"
@@ -103,8 +103,8 @@ graph
 		label	"e"
 		graphics
 		[
-			x	300.0
-			y	125.0
+			x	275.0
+			y	50.0
 			w	30.0
 			h	30.0
 			type	"ellipse"
@@ -126,8 +126,8 @@ graph
 		label	"c"
 		graphics
 		[
-			x	75.0
-			y	225.0
+			x	350.0
+			y	275.0
 			w	30.0
 			h	30.0
 			type	"ellipse"
@@ -149,8 +149,8 @@ graph
 		label	"g"
 		graphics
 		[
-			x	375.0
-			y	50.0
+			x	50.0
+			y	175.0
 			w	30.0
 			h	30.0
 			type	"ellipse"
@@ -174,30 +174,11 @@ graph
 		[
 			fill	"#000000"
 			targetArrow	"standard"
-			Line
-			[
-				point
-				[
-					x	225.0
-					y	175.0
-				]
-				point
-				[
-					x	225.0
-					y	129.16666666666666
-				]
-				point
-				[
-					x	300.0
-					y	125.0
-				]
-			]
 		]
 		edgeAnchor
 		[
 			ySource	-1.0
-			xTarget	-1.0
-			yTarget	0.2777777777777771
+			yTarget	1.0
 		]
 	]
 	edge
@@ -212,25 +193,24 @@ graph
 			[
 				point
 				[
-					x	225.0
-					y	175.0
+					x	275.0
+					y	125.0
 				]
 				point
 				[
-					x	79.16666666666667
-					y	175.0
+					x	350.0
+					y	125.0
 				]
 				point
 				[
-					x	75.0
-					y	225.0
+					x	350.0
+					y	275.0
 				]
 			]
 		]
 		edgeAnchor
 		[
-			xSource	-1.0
-			xTarget	0.27777777777777807
+			xSource	1.0
 			yTarget	-1.0
 		]
 	]
@@ -246,26 +226,26 @@ graph
 			[
 				point
 				[
-					x	225.0
-					y	175.0
-				]
-				point
-				[
-					x	370.8333333333333
-					y	175.0
-				]
-				point
-				[
-					x	375.0
+					x	275.0
 					y	125.0
+				]
+				point
+				[
+					x	130.0
+					y	125.0
+				]
+				point
+				[
+					x	125.0
+					y	175.0
 				]
 			]
 		]
 		edgeAnchor
 		[
-			xSource	1.0
-			xTarget	-0.27777777777777907
-			yTarget	1.0
+			xSource	-1.0
+			xTarget	0.3333333333333333
+			yTarget	-1.0
 		]
 	]
 	edge
@@ -280,26 +260,31 @@ graph
 			[
 				point
 				[
-					x	225.0
+					x	275.0
+					y	125.0
+				]
+				point
+				[
+					x	275.0
+					y	175.0
+				]
+				point
+				[
+					x	230.0
 					y	175.0
 				]
 				point
 				[
 					x	225.0
-					y	266.6666666666667
-				]
-				point
-				[
-					x	300.0
-					y	275.0
+					y	225.0
 				]
 			]
 		]
 		edgeAnchor
 		[
 			ySource	1.0
-			xTarget	-1.0
-			yTarget	-0.5555555555555542
+			xTarget	0.3333333333333333
+			yTarget	-1.0
 		]
 	]
 	edge
@@ -314,174 +299,225 @@ graph
 			[
 				point
 				[
-					x	300.0
-					y	125.0
-				]
-				point
-				[
-					x	70.83333333333333
-					y	120.83333333333333
-				]
-				point
-				[
-					x	75.0
-					y	225.0
-				]
-			]
-		]
-		edgeAnchor
-		[
-			xSource	-1.0
-			ySource	-0.27777777777777807
-			xTarget	-0.27777777777777807
-			yTarget	-1.0
-		]
-	]
-	edge
-	[
-		source	4
-		target	0
-		graphics
-		[
-			fill	"#000000"
-			targetArrow	"standard"
-		]
-		edgeAnchor
-		[
-			xSource	1.0
-			xTarget	-1.0
-		]
-	]
-	edge
-	[
-		source	4
-		target	6
-		graphics
-		[
-			fill	"#000000"
-			targetArrow	"standard"
-			Line
-			[
-				point
-				[
-					x	300.0
-					y	125.0
-				]
-				point
-				[
-					x	300.0
-					y	58.333333333333336
-				]
-				point
-				[
-					x	375.0
+					x	275.0
 					y	50.0
 				]
-			]
-		]
-		edgeAnchor
-		[
-			ySource	-1.0
-			xTarget	-1.0
-			yTarget	0.5555555555555557
-		]
-	]
-	edge
-	[
-		source	4
-		target	2
-		graphics
-		[
-			fill	"#000000"
-			targetArrow	"standard"
-		]
-		edgeAnchor
-		[
-			ySource	1.0
-			yTarget	-1.0
-		]
-	]
-	edge
-	[
-		source	1
-		target	5
-		graphics
-		[
-			fill	"#000000"
-			targetArrow	"standard"
-			Line
-			[
 				point
 				[
-					x	450.0
-					y	375.0
+					x	400.0
+					y	45.0
 				]
 				point
 				[
-					x	125.0
-					y	377.0833333333333
-				]
-				point
-				[
-					x	125.0
+					x	400.0
 					y	275.0
 				]
 				point
 				[
-					x	79.16666666666667
+					x	350.0
 					y	275.0
 				]
-				point
-				[
-					x	75.0
-					y	225.0
-				]
 			]
 		]
 		edgeAnchor
 		[
-			xSource	-1.0
-			ySource	0.13888888888888762
-			xTarget	0.27777777777777807
-			yTarget	1.0
-		]
-	]
-	edge
-	[
-		source	1
-		target	0
-		graphics
-		[
-			fill	"#000000"
-			targetArrow	"standard"
-			Line
-			[
-				point
-				[
-					x	450.0
-					y	375.0
-				]
-				point
-				[
-					x	445.8333333333333
-					y	125.0
-				]
-				point
-				[
-					x	375.0
-					y	125.0
-				]
-			]
-		]
-		edgeAnchor
-		[
-			xSource	-0.27777777777777907
-			ySource	-1.0
+			xSource	1.0
+			ySource	-0.3333333333333333
 			xTarget	1.0
 		]
 	]
 	edge
 	[
+		source	4
+		target	0
+		graphics
+		[
+			fill	"#000000"
+			targetArrow	"standard"
+			Line
+			[
+				point
+				[
+					x	275.0
+					y	50.0
+				]
+				point
+				[
+					x	120.0
+					y	50.0
+				]
+				point
+				[
+					x	125.0
+					y	175.0
+				]
+			]
+		]
+		edgeAnchor
+		[
+			xSource	-1.0
+			xTarget	-0.3333333333333333
+			yTarget	-1.0
+		]
+	]
+	edge
+	[
+		source	4
+		target	6
+		graphics
+		[
+			fill	"#000000"
+			targetArrow	"standard"
+			Line
+			[
+				point
+				[
+					x	275.0
+					y	50.0
+				]
+				point
+				[
+					x	275.0
+					y	0.0
+				]
+				point
+				[
+					x	50.0
+					y	0.0
+				]
+				point
+				[
+					x	50.0
+					y	175.0
+				]
+			]
+		]
+		edgeAnchor
+		[
+			ySource	-1.0
+			yTarget	-1.0
+		]
+	]
+	edge
+	[
+		source	4
+		target	2
+		graphics
+		[
+			fill	"#000000"
+			targetArrow	"standard"
+			Line
+			[
+				point
+				[
+					x	275.0
+					y	50.0
+				]
+				point
+				[
+					x	325.0
+					y	55.0
+				]
+				point
+				[
+					x	325.0
+					y	215.0
+				]
+				point
+				[
+					x	225.0
+					y	225.0
+				]
+			]
+		]
+		edgeAnchor
+		[
+			xSource	1.0
+			ySource	0.3333333333333333
+			xTarget	1.0
+			yTarget	-0.6666666666666666
+		]
+	]
+	edge
+	[
+		source	1
+		target	5
+		graphics
+		[
+			fill	"#000000"
+			targetArrow	"standard"
+			Line
+			[
+				point
+				[
+					x	175.0
+					y	375.0
+				]
+				point
+				[
+					x	300.0
+					y	380.0
+				]
+				point
+				[
+					x	300.0
+					y	350.0
+				]
+				point
+				[
+					x	350.0
+					y	350.0
+				]
+				point
+				[
+					x	350.0
+					y	275.0
+				]
+			]
+		]
+		edgeAnchor
+		[
+			xSource	1.0
+			ySource	0.3333333333333333
+			yTarget	1.0
+		]
+	]
+	edge
+	[
+		source	1
+		target	0
+		graphics
+		[
+			fill	"#000000"
+			targetArrow	"standard"
+			Line
+			[
+				point
+				[
+					x	175.0
+					y	375.0
+				]
+				point
+				[
+					x	125.0
+					y	370.0
+				]
+				point
+				[
+					x	125.0
+					y	175.0
+				]
+			]
+		]
+		edgeAnchor
+		[
+			xSource	-1.0
+			ySource	-0.3333333333333333
+			yTarget	1.0
+		]
+	]
+	edge
+	[
 		source	1
 		target	2
 		graphics
@@ -492,76 +528,32 @@ graph
 			[
 				point
 				[
-					x	450.0
+					x	175.0
 					y	375.0
 				]
 				point
 				[
-					x	400.0
-					y	368.75
-				]
-				point
-				[
-					x	400.0
+					x	180.0
 					y	325.0
 				]
 				point
 				[
-					x	304.1666666666667
+					x	230.0
 					y	325.0
 				]
 				point
 				[
-					x	300.0
-					y	275.0
-				]
-			]
-		]
-		edgeAnchor
-		[
-			xSource	-1.0
-			ySource	-0.4166666666666667
-			xTarget	0.27777777777777907
-			yTarget	1.0
-		]
-	]
-	edge
-	[
-		source	5
-		target	6
-		graphics
-		[
-			fill	"#000000"
-			targetArrow	"standard"
-			Line
-			[
-				point
-				[
-					x	75.0
+					x	225.0
 					y	225.0
 				]
-				point
-				[
-					x	25.0
-					y	220.83333333333334
-				]
-				point
-				[
-					x	25.0
-					y	50.0
-				]
-				point
-				[
-					x	375.0
-					y	50.0
-				]
 			]
 		]
 		edgeAnchor
 		[
-			xSource	-1.0
-			ySource	-0.2777777777777771
-			xTarget	-1.0
+			xSource	0.3333333333333333
+			ySource	-1.0
+			xTarget	0.3333333333333333
+			yTarget	1.0
 		]
 	]
 	edge
@@ -576,32 +568,31 @@ graph
 			[
 				point
 				[
-					x	75.0
-					y	225.0
-				]
-				point
-				[
-					x	150.0
-					y	229.16666666666666
-				]
-				point
-				[
-					x	150.0
-					y	283.3333333333333
+					x	350.0
+					y	275.0
 				]
 				point
 				[
 					x	300.0
-					y	275.0
+					y	270.0
+				]
+				point
+				[
+					x	300.0
+					y	225.0
+				]
+				point
+				[
+					x	225.0
+					y	225.0
 				]
 			]
 		]
 		edgeAnchor
 		[
-			xSource	1.0
-			ySource	0.2777777777777771
-			xTarget	-1.0
-			yTarget	0.5555555555555542
+			xSource	-1.0
+			ySource	-0.3333333333333333
+			xTarget	1.0
 		]
 	]
 	edge
@@ -615,8 +606,8 @@ graph
 		]
 		edgeAnchor
 		[
-			ySource	-1.0
-			yTarget	1.0
+			xSource	-1.0
+			xTarget	1.0
 		]
 	]
 	edge
@@ -631,27 +622,26 @@ graph
 			[
 				point
 				[
-					x	375.0
-					y	125.0
+					x	125.0
+					y	175.0
 				]
 				point
 				[
-					x	379.1666666666667
-					y	270.8333333333333
+					x	220.0
+					y	175.0
 				]
 				point
 				[
-					x	300.0
-					y	275.0
+					x	225.0
+					y	225.0
 				]
 			]
 		]
 		edgeAnchor
 		[
-			xSource	0.27777777777777907
-			ySource	1.0
-			xTarget	1.0
-			yTarget	-0.27777777777777907
+			xSource	1.0
+			xTarget	-0.3333333333333333
+			yTarget	-1.0
 		]
 	]
 	edge
@@ -666,31 +656,26 @@ graph
 			[
 				point
 				[
-					x	375.0
-					y	50.0
+					x	50.0
+					y	175.0
 				]
 				point
 				[
-					x	425.0
-					y	50.0
+					x	55.0
+					y	225.0
 				]
 				point
 				[
-					x	425.0
-					y	279.1666666666667
-				]
-				point
-				[
-					x	300.0
-					y	275.0
+					x	225.0
+					y	225.0
 				]
 			]
 		]
 		edgeAnchor
 		[
-			xSource	1.0
-			xTarget	1.0
-			yTarget	0.27777777777777907
+			xSource	0.3333333333333333
+			ySource	1.0
+			xTarget	-1.0
 		]
 	]
 	edge
@@ -705,37 +690,32 @@ graph
 			[
 				point
 				[
-					x	300.0
-					y	275.0
+					x	225.0
+					y	225.0
 				]
 				point
 				[
-					x	295.8333333333333
-					y	350.0
+					x	220.0
+					y	300.0
 				]
 				point
 				[
-					x	375.0
-					y	350.0
+					x	170.0
+					y	300.0
 				]
 				point
 				[
-					x	375.0
-					y	372.9166666666667
-				]
-				point
-				[
-					x	450.0
+					x	175.0
 					y	375.0
 				]
 			]
 		]
 		edgeAnchor
 		[
-			xSource	-0.27777777777777907
+			xSource	-0.3333333333333333
 			ySource	1.0
-			xTarget	-1.0
-			yTarget	-0.13888888888888762
+			xTarget	-0.3333333333333333
+			yTarget	-1.0
 		]
 	]
 	edge
@@ -750,31 +730,32 @@ graph
 			[
 				point
 				[
-					x	300.0
-					y	275.0
-				]
-				point
-				[
-					x	175.0
-					y	275.0
-				]
-				point
-				[
-					x	175.0
-					y	220.83333333333334
-				]
-				point
-				[
-					x	75.0
+					x	225.0
 					y	225.0
+				]
+				point
+				[
+					x	275.0
+					y	235.0
+				]
+				point
+				[
+					x	275.0
+					y	280.0
+				]
+				point
+				[
+					x	350.0
+					y	275.0
 				]
 			]
 		]
 		edgeAnchor
 		[
-			xSource	-1.0
-			xTarget	1.0
-			yTarget	-0.2777777777777771
+			xSource	1.0
+			ySource	0.6666666666666666
+			xTarget	-1.0
+			yTarget	0.3333333333333333
 		]
 	]
 	edge
@@ -789,37 +770,37 @@ graph
 			[
 				point
 				[
-					x	75.0
-					y	225.0
+					x	350.0
+					y	275.0
 				]
 				point
 				[
-					x	70.83333333333333
-					y	300.0
+					x	340.0
+					y	325.0
 				]
 				point
 				[
-					x	100.0
-					y	300.0
+					x	275.0
+					y	325.0
 				]
 				point
 				[
-					x	100.0
-					y	381.25
+					x	275.0
+					y	370.0
 				]
 				point
 				[
-					x	450.0
+					x	175.0
 					y	375.0
 				]
 			]
 		]
 		edgeAnchor
 		[
-			xSource	-0.27777777777777807
+			xSource	-0.6666666666666666
 			ySource	1.0
-			xTarget	-1.0
-			yTarget	0.4166666666666667
+			xTarget	1.0
+			yTarget	-0.3333333333333333
 		]
 	]
 	edge
@@ -834,32 +815,36 @@ graph
 			[
 				point
 				[
-					x	75.0
-					y	225.0
+					x	350.0
+					y	275.0
+				]
+				point
+				[
+					x	360.0
+					y	425.0
 				]
 				point
 				[
 					x	0.0
-					y	229.16666666666666
+					y	425.0
 				]
 				point
 				[
 					x	0.0
-					y	41.666666666666664
+					y	175.0
 				]
 				point
 				[
-					x	375.0
-					y	50.0
+					x	50.0
+					y	175.0
 				]
 			]
 		]
 		edgeAnchor
 		[
-			xSource	-1.0
-			ySource	0.2777777777777771
+			xSource	0.6666666666666666
+			ySource	1.0
 			xTarget	-1.0
-			yTarget	-0.5555555555555557
 		]
 	]
 	edge
@@ -874,31 +859,27 @@ graph
 			[
 				point
 				[
-					x	375.0
-					y	50.0
+					x	50.0
+					y	175.0
 				]
 				point
 				[
-					x	375.0
-					y	0.0
+					x	45.0
+					y	380.0
 				]
 				point
 				[
-					x	454.1666666666667
-					y	0.0
-				]
-				point
-				[
-					x	450.0
+					x	175.0
 					y	375.0
 				]
 			]
 		]
 		edgeAnchor
 		[
-			ySource	-1.0
-			xTarget	0.27777777777777907
-			yTarget	-1.0
+			xSource	-0.3333333333333333
+			ySource	1.0
+			xTarget	-1.0
+			yTarget	0.3333333333333333
 		]
 	]
 ]

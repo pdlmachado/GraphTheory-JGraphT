@@ -62,7 +62,7 @@ d4.add_vertex(20)
 class Test_existem_caminhos_disjuntos(ParametrizedTestCase):
   def test_base (self):
     f,g,s,t,expected = self.param
-    result = f(g)
+    result = f(g,s,t)
     self.assertEqual(result,expected)
 
 params = [[d1,0,1,0]

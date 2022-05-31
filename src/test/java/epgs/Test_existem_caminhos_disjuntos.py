@@ -65,5 +65,5 @@ class Test_existem_caminhos_disjuntos(ParametrizedTestCase):
     result = f(g,s,t)
     self.assertEqual(result,expected)
 
-params = [[d1,0,1,0]
+params = [[d1,0,1,1]
           ]

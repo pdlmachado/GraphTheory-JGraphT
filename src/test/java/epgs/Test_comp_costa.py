@@ -52,8 +52,6 @@ v_g1 = {
     23 : {'label' : 'T'},
     24 : {'label' : 'A'}
 }
-draw_graph(g1,vertexid_aslabel=True,layout= "fruchterman_reingold")
-
 
 class Test_comp_costa(ParametrizedTestCase):
   def test_base (self):

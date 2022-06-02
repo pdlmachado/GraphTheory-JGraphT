@@ -17,7 +17,7 @@ graph
 			h	30.0
 			type	"rectangle"
 			raisedBorder	0
-			fill	"#FFCC00"
+			fill	"#00FFFF"
 			outline	"#000000"
 		]
 		LabelGraphics
@@ -40,7 +40,7 @@ graph
 			h	30.0
 			type	"rectangle"
 			raisedBorder	0
-			fill	"#FFCC00"
+			fill	"#00FFFF"
 			outline	"#000000"
 		]
 		LabelGraphics
@@ -63,7 +63,7 @@ graph
 			h	30.0
 			type	"rectangle"
 			raisedBorder	0
-			fill	"#FFCC00"
+			fill	"#00FFFF"
 			outline	"#000000"
 		]
 		LabelGraphics
@@ -86,7 +86,7 @@ graph
 			h	30.0
 			type	"rectangle"
 			raisedBorder	0
-			fill	"#FFCC00"
+			fill	"#00FFFF"
 			outline	"#000000"
 		]
 		LabelGraphics
@@ -109,7 +109,7 @@ graph
 			h	30.0
 			type	"rectangle"
 			raisedBorder	0
-			fill	"#FFCC00"
+			fill	"#00FFFF"
 			outline	"#000000"
 		]
 		LabelGraphics
@@ -132,7 +132,7 @@ graph
 			h	30.0
 			type	"rectangle"
 			raisedBorder	0
-			fill	"#FFCC00"
+			fill	"#00FFFF"
 			outline	"#000000"
 		]
 		LabelGraphics
@@ -155,7 +155,7 @@ graph
 			h	30.0
 			type	"rectangle"
 			raisedBorder	0
-			fill	"#FFCC00"
+			fill	"#00FFFF"
 			outline	"#000000"
 		]
 		LabelGraphics
@@ -201,7 +201,7 @@ graph
 			h	30.0
 			type	"rectangle"
 			raisedBorder	0
-			fill	"#FFCC00"
+			fill	"#00FFFF"
 			outline	"#000000"
 		]
 		LabelGraphics
@@ -224,7 +224,7 @@ graph
 			h	30.0
 			type	"rectangle"
 			raisedBorder	0
-			fill	"#FFCC00"
+			fill	"#00FFFF"
 			outline	"#000000"
 		]
 		LabelGraphics
@@ -247,7 +247,7 @@ graph
 			h	30.0
 			type	"rectangle"
 			raisedBorder	0
-			fill	"#FFCC00"
+			fill	"#00FFFF"
 			outline	"#000000"
 		]
 		LabelGraphics
@@ -339,7 +339,7 @@ graph
 			h	30.0
 			type	"rectangle"
 			raisedBorder	0
-			fill	"#FFCC00"
+			fill	"#00FFFF"
 			outline	"#000000"
 		]
 		LabelGraphics
@@ -362,7 +362,7 @@ graph
 			h	30.0
 			type	"rectangle"
 			raisedBorder	0
-			fill	"#FFCC00"
+			fill	"#00FFFF"
 			outline	"#000000"
 		]
 		LabelGraphics
@@ -385,7 +385,7 @@ graph
 			h	30.0
 			type	"rectangle"
 			raisedBorder	0
-			fill	"#FFCC00"
+			fill	"#00FFFF"
 			outline	"#000000"
 		]
 		LabelGraphics
@@ -431,7 +431,7 @@ graph
 			h	30.0
 			type	"rectangle"
 			raisedBorder	0
-			fill	"#FFCC00"
+			fill	"#00FFFF"
 			outline	"#000000"
 		]
 		LabelGraphics
@@ -454,7 +454,7 @@ graph
 			h	30.0
 			type	"rectangle"
 			raisedBorder	0
-			fill	"#FFCC00"
+			fill	"#00FFFF"
 			outline	"#000000"
 		]
 		LabelGraphics
@@ -477,7 +477,7 @@ graph
 			h	30.0
 			type	"rectangle"
 			raisedBorder	0
-			fill	"#FFCC00"
+			fill	"#00FFFF"
 			outline	"#000000"
 		]
 		LabelGraphics
@@ -500,7 +500,7 @@ graph
 			h	30.0
 			type	"rectangle"
 			raisedBorder	0
-			fill	"#FFCC00"
+			fill	"#00FFFF"
 			outline	"#000000"
 		]
 		LabelGraphics
@@ -523,7 +523,7 @@ graph
 			h	30.0
 			type	"rectangle"
 			raisedBorder	0
-			fill	"#FFCC00"
+			fill	"#00FFFF"
 			outline	"#000000"
 		]
 		LabelGraphics
@@ -546,7 +546,7 @@ graph
 			h	30.0
 			type	"rectangle"
 			raisedBorder	0
-			fill	"#FFCC00"
+			fill	"#00FFFF"
 			outline	"#000000"
 		]
 		LabelGraphics
@@ -569,7 +569,7 @@ graph
 			h	30.0
 			type	"rectangle"
 			raisedBorder	0
-			fill	"#FFCC00"
+			fill	"#00FFFF"
 			outline	"#000000"
 		]
 		LabelGraphics

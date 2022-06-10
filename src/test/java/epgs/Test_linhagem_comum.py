@@ -66,5 +66,5 @@ class Test_linhagem_comum(ParametrizedTestCase):
     self.assertEqual(result,expected)
 
 params = [[d1,0,1,True],
-          [d1,5,3,False]
+          [d1,5,3,True]
           ]

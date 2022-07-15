@@ -38,5 +38,5 @@ class Test_visitavel_base(ParametrizedTestCase):
     r = f(g,p)
     self.assertEqual(r,e)
 
-params = [[g1,0,False]
+params = [[g1,0,True]
           ]

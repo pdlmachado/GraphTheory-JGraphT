@@ -149,8 +149,8 @@ graph
 		label	"7"
 		graphics
 		[
-			x	69.1454081632653
-			y	295.0
+			x	93.78826530612244
+			y	290.0
 			w	30.0
 			h	30.0
 			type	"ellipse"
@@ -172,8 +172,8 @@ graph
 		label	"8"
 		graphics
 		[
-			x	69.1454081632653
-			y	365.0
+			x	123.78826530612244
+			y	358.0
 			w	30.0
 			h	30.0
 			type	"ellipse"
@@ -218,7 +218,7 @@ graph
 		label	"10"
 		graphics
 		[
-			x	19.1454081632653
+			x	-2.8545918367346985
 			y	295.0
 			w	30.0
 			h	30.0
@@ -239,90 +239,198 @@ graph
 	[
 		source	0
 		target	1
+		label	"r"
 		graphics
 		[
-			fill	"#000000"
+			fill	"#C0C0C0"
 			targetArrow	"standard"
+		]
+		LabelGraphics
+		[
+			text	"r"
+			fontSize	12
+			fontName	"Dialog"
+			configuration	"AutoFlippingLabel"
+			contentWidth	7.99609375
+			contentHeight	18.701171875
+			model	"null"
+			position	"null"
 		]
 	]
 	edge
 	[
 		source	1
 		target	2
+		label	"r"
 		graphics
 		[
-			fill	"#000000"
+			fill	"#C0C0C0"
 			targetArrow	"standard"
+		]
+		LabelGraphics
+		[
+			text	"r"
+			fontSize	12
+			fontName	"Dialog"
+			configuration	"AutoFlippingLabel"
+			contentWidth	7.99609375
+			contentHeight	18.701171875
+			model	"null"
+			position	"null"
 		]
 	]
 	edge
 	[
 		source	0
 		target	3
+		label	"l"
 		graphics
 		[
-			fill	"#000000"
+			fill	"#C0C0C0"
 			targetArrow	"standard"
+		]
+		LabelGraphics
+		[
+			text	"l"
+			fontSize	12
+			fontName	"Dialog"
+			configuration	"AutoFlippingLabel"
+			contentWidth	6.666015625
+			contentHeight	18.701171875
+			model	"null"
+			position	"null"
 		]
 	]
 	edge
 	[
 		source	1
 		target	4
+		label	"l"
 		graphics
 		[
-			fill	"#000000"
+			fill	"#C0C0C0"
 			targetArrow	"standard"
+		]
+		LabelGraphics
+		[
+			text	"l"
+			fontSize	12
+			fontName	"Dialog"
+			configuration	"AutoFlippingLabel"
+			contentWidth	6.666015625
+			contentHeight	18.701171875
+			model	"null"
+			position	"null"
 		]
 	]
 	edge
 	[
 		source	4
 		target	5
+		label	"r"
 		graphics
 		[
-			fill	"#000000"
+			fill	"#C0C0C0"
 			targetArrow	"standard"
+		]
+		LabelGraphics
+		[
+			text	"r"
+			fontSize	12
+			fontName	"Dialog"
+			configuration	"AutoFlippingLabel"
+			contentWidth	7.99609375
+			contentHeight	18.701171875
+			model	"null"
+			position	"null"
 		]
 	]
 	edge
 	[
 		source	5
 		target	6
+		label	"r"
 		graphics
 		[
-			fill	"#000000"
+			fill	"#C0C0C0"
 			targetArrow	"standard"
+		]
+		LabelGraphics
+		[
+			text	"r"
+			fontSize	12
+			fontName	"Dialog"
+			configuration	"AutoFlippingLabel"
+			contentWidth	7.99609375
+			contentHeight	18.701171875
+			model	"null"
+			position	"null"
 		]
 	]
 	edge
 	[
 		source	6
 		target	7
+		label	"r"
 		graphics
 		[
-			fill	"#000000"
+			fill	"#C0C0C0"
 			targetArrow	"standard"
+		]
+		LabelGraphics
+		[
+			text	"r"
+			fontSize	12
+			fontName	"Dialog"
+			configuration	"AutoFlippingLabel"
+			contentWidth	7.99609375
+			contentHeight	18.701171875
+			model	"null"
+			position	"null"
 		]
 	]
 	edge
 	[
 		source	4
 		target	8
+		label	"l"
 		graphics
 		[
-			fill	"#000000"
+			fill	"#C0C0C0"
 			targetArrow	"standard"
+		]
+		LabelGraphics
+		[
+			text	"l"
+			fontSize	12
+			fontName	"Dialog"
+			configuration	"AutoFlippingLabel"
+			contentWidth	6.666015625
+			contentHeight	18.701171875
+			model	"null"
+			position	"null"
 		]
 	]
 	edge
 	[
 		source	8
 		target	9
+		label	"l"
 		graphics
 		[
-			fill	"#000000"
+			fill	"#C0C0C0"
 			targetArrow	"standard"
+		]
+		LabelGraphics
+		[
+			text	"l"
+			fontSize	12
+			fontName	"Dialog"
+			configuration	"AutoFlippingLabel"
+			contentWidth	6.666015625
+			contentHeight	18.701171875
+			model	"null"
+			position	"null"
 		]
 	]
 ]

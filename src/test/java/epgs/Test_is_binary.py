@@ -30,6 +30,13 @@ d1.add_edge(0,2,edge=1)
 d1.add_edge(2,3,edge=2)
 d1.add_edge(2,4,edge=3)
 d1.add_edge(4,5,edge=4)
+e_d1 = {
+    0 : {'label': 'l'},
+    1 : {'label': 'r'},
+    2 : {'label': 'l'},
+    3 : {'label': 'r'},
+    4 : {'label': 'r'}
+}
 
 d2 = jgrapht.create_graph(directed=True, weighted=False, dag=True)
 d2.add_vertices_from([x for x in range(0,6)])
@@ -38,6 +45,14 @@ d2.add_edge(0,2,edge=1)
 d2.add_edge(0,3,edge=2)
 d2.add_edge(2,4,edge=3)
 d2.add_edge(4,5,edge=4)
+e_d2 = {
+    0 : {'label': 'l'},
+    1 : {'label': 'r'},
+    2 : {'label': 'l'},
+    3 : {'label': 'r'},
+    4 : {'label': 'r'}
+}
+
 
 d3 = jgrapht.create_graph(directed=True, weighted=False, dag=True)
 d3.add_vertex(20)
@@ -47,4 +62,4 @@ class Test_is_binary_base(ParametrizedTestCase):
     f,d,e,r = self.param
     result = f(d,e)      
 
-params = [[d1,{},True],[d2,{},False],[d3,{},True]]
+params = [[d1,e_d1,True],[d2,e_d2,False],[d3,{},True]]

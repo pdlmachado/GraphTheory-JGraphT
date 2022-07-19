@@ -44,7 +44,7 @@ d3.add_vertex(20)
 
 class Test_is_binary_base(ParametrizedTestCase):
   def test_base (self):
-    f,d,r = self.param
-    result = f(d)      
+    f,d,e,r = self.param
+    result = f(d,e)      
 
-params = [[d1,True],[d2,False],[d3,True]]
+params = [[d1,{},True],[d2,{},False],[d3,{},True]]

@@ -32,6 +32,8 @@ Verifica se um grafo é uma árvore enraizada
 """
 
 def is_rootedTree(tree):
+  if not (tree.type.directed):
+    return False
   root = list(filter(lambda v: list(tree.inedges_of(v)) == [],tree.vertices))
   if len(root) == 1:
     notroot = [v for v in tree.vertices if v not in root]

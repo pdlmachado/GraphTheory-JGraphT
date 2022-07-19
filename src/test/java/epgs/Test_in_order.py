@@ -39,27 +39,12 @@ e_d1 = {
 }
 
 d2 = jgrapht.create_graph(directed=True, weighted=False, dag=True)
-d2.add_vertices_from([x for x in range(0,6)])
-d2.add_edge(0,1,edge=0)
-d2.add_edge(0,2,edge=1)
-d2.add_edge(0,3,edge=2)
-d2.add_edge(2,4,edge=3)
-d2.add_edge(4,5,edge=4)
-e_d2 = {
-    0 : {'label': 'l'},
-    1 : {'label': 'r'},
-    2 : {'label': 'l'},
-    3 : {'label': 'r'},
-    4 : {'label': 'r'}
-}
-
-
-d3 = jgrapht.create_graph(directed=True, weighted=False, dag=True)
-d3.add_vertex(20)
+d2.add_vertex(20)
 
 class Test_in_order_base(ParametrizedTestCase):
   def test_base (self):
-    f,d,e,r = self.param
-    result = f(d,e)      
+    f,d,e,v,r = self.param
+    result = f(d,e,v)   
+    self.assertEqual(result,r,r)  
 
-params = [[d1,e_d1,0,[]],[d2,e_d2,0,[]],[d3,{},0,[]]]
+params = [[d1,e_d1,0,[1, 0, 3, 2, 4, 5]],[d2,{},20,[20]]]

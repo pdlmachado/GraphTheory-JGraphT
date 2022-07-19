@@ -32,7 +32,7 @@ g1.add_edge(1,3,edge=3)
 g1.add_edge(2,3,edge=4)
 
 
-class Test_visitavel_base(ParametrizedTestCase):
+class Test_in_route_base(ParametrizedTestCase):
   def test_base (self):
     f,g,p,e = self.param
     r = f(g,p)

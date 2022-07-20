@@ -58,15 +58,15 @@ g5.add_edge(3,1)
 g5.add_edge(4,1)
 
 
-class Test_independent_hubs(ParametrizedTestCase):
+class Test_independent_hubs_base (ParametrizedTestCase):
   def test_valid01 (self):
     f,g,expected = self.param
     result = f(g)
+    gname = [ k for k,v in locals().items() if v == g][0]
     self.assertEqual(result,expected)
 
-params = [[g1,{}],
-          [g2,{}],
+params = [[g1,{0: 0.5}],
+          [g2,{2: 10.5,1: 13.0}],
           [g3,{}],
-          [g4,{}],
-          [g5,{}]
+          [g5,{1: 1.5}]
          ]

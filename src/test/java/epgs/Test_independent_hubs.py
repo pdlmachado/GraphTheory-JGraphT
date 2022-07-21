@@ -47,6 +47,10 @@ g2.add_edge(7,8,edge=9)
 
 g3 = jgrapht.create_graph(directed=False, weighted=False)
 
+g4 = jgrapht.create_graph(directed=False,weighted=False)
+from jgrapht.generators import generalized_petersen
+generalized_petersen(g4,5,1)
+
 g5 = jgrapht.create_graph(directed=False, weighted=False)
 g5.add_vertices_from([0,1,2,3,4])
 g5.add_edge(0,1)
@@ -57,16 +61,45 @@ g5.add_edge(2,0)
 g5.add_edge(3,1)
 g5.add_edge(4,1)
 
+g6 = jgrapht.create_graph(directed=False, weighted=False)
+from jgrapht.generators import linear
+linear(g6,10)
+
+g7 = jgrapht.create_graph(directed=False, weighted=False)
+from jgrapht.generators import ring_graph
+ring_graph(g7,7)
+
+g8 = jgrapht.create_graph(directed=False, weighted=False)
+from jgrapht.generators import grid
+grid(g8,7,5)
+
+g9 = jgrapht.create_graph(directed=False, weighted=False)
+from jgrapht.generators import star
+star(g9,20)
+
+g10 = jgrapht.create_graph(directed=False, weighted=False)
+from jgrapht.generators import windmill
+windmill(g10,3,4)
+
+g11 = jgrapht.create_graph(directed=False, weighted=False)
+from jgrapht.generators import complete_bipartite_graph
+complete_bipartite_graph(g11,7,3)
 
 class Test_independent_hubs_base (ParametrizedTestCase):
-  def test_valid01 (self):
+  def test_base (self):
     f,g,expected = self.param
     result = f(g)
-    gname = [ k for k,v in locals().items() if v == g][0]
     self.assertEqual(result,expected)
 
 params = [[g1,{0: 0.5}],
           [g2,{2: 10.5,1: 13.0}],
           [g3,{}],
-          [g5,{1: 1.5}]
+          [g4,{1: 4.0, 4: 4.0, 7: 4.0, 8: 4.0}],
+          [g5,{1: 1.5}],
+          [g6,{2: 14.0, 4: 20.0, 6: 18.0, 8: 8.0}],
+          [g7,{0: 3.0, 2: 3.0, 4: 3.0}],
+          [g8,{1: 20.83,3: 20.83,5: 26.41,7: 75.86,9: 26.41,11: 89.62,13: 89.62,15: 42.44,17: 116.93,19: 42.44,21: 89.62,23: 89.62,25: 26.41,27: 75.86,29: 26.41,31: 20.83,33: 20.83}],
+          [g9,{0: 171.0}],
+          [g10,{0: 27.0}],
+          [g11,{7: 7.0, 8: 7.0, 9: 7.0}]
          ]

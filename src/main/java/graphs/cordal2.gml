@@ -25,7 +25,7 @@ graph
 			text	"c"
 			fontSize	12
 			fontName	"Dialog"
-			model	"null"
+			anchor	"c"
 		]
 	]
 	node
@@ -48,7 +48,7 @@ graph
 			text	"b"
 			fontSize	12
 			fontName	"Dialog"
-			model	"null"
+			anchor	"c"
 		]
 	]
 	node
@@ -71,7 +71,7 @@ graph
 			text	"a"
 			fontSize	12
 			fontName	"Dialog"
-			model	"null"
+			anchor	"c"
 		]
 	]
 	node
@@ -94,7 +94,7 @@ graph
 			text	"g"
 			fontSize	12
 			fontName	"Dialog"
-			model	"null"
+			anchor	"c"
 		]
 	]
 	node
@@ -117,7 +117,7 @@ graph
 			text	"f"
 			fontSize	12
 			fontName	"Dialog"
-			model	"null"
+			anchor	"c"
 		]
 	]
 	node
@@ -140,7 +140,7 @@ graph
 			text	"e"
 			fontSize	12
 			fontName	"Dialog"
-			model	"null"
+			anchor	"c"
 		]
 	]
 	node
@@ -163,7 +163,7 @@ graph
 			text	"d"
 			fontSize	12
 			fontName	"Dialog"
-			model	"null"
+			anchor	"c"
 		]
 	]
 	edge
@@ -242,6 +242,24 @@ graph
 	[
 		source	0
 		target	4
+		graphics
+		[
+			fill	"#000000"
+		]
+	]
+	edge
+	[
+		source	4
+		target	1
+		graphics
+		[
+			fill	"#000000"
+		]
+	]
+	edge
+	[
+		source	5
+		target	0
 		graphics
 		[
 			fill	"#000000"

@@ -131,9 +131,6 @@ def import_gml (g,v_attrs,e_attrs,filename,weights_aslabel=False,
   input_gml = "".join(gmlfile.readlines())
   gmlfile.close()
   read_gml (g,input_gml,v_attrs,e_attrs,weights_aslabel)
-  if len(vlabels)>0:
-    v_attrs = {v:{key: v_attrs[v][key] for key in v_attrs[v].keys()&vlabels} for v in g.vertices}
-
 
 def read_gml (g,input_gml,v_attrs,e_attrs,weights_aslabel):
   # Função que adiciona atributos de vértices

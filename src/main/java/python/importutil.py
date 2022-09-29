@@ -124,12 +124,16 @@ Parâmetros:
 - weights_aslabel - indica se o valor do atributo 'label' deve ser usado como peso para o grafo.
 """
 
-def import_gml (g,v_attrs,e_attrs,filename,weights_aslabel=False):
+def import_gml (g,v_attrs,e_attrs,filename,weights_aslabel=False,
+                vlabels=set(),elabels=set()):
   # Leitura do arquivo em um string de entrada
   gmlfile = open(filename,"r")
   input_gml = "".join(gmlfile.readlines())
   gmlfile.close()
   read_gml (g,input_gml,v_attrs,e_attrs,weights_aslabel)
+  if len(vlabels)>0:
+    v_attrs = {v:{key: v_attrs[v][key] for key in v_attrs[v].keys()&vlabels} for v in g.vertices}
+
 
 def read_gml (g,input_gml,v_attrs,e_attrs,weights_aslabel):
   # Função que adiciona atributos de vértices
@@ -185,7 +189,7 @@ def read_dot(g,input_string,v_attrs,e_attrs):
       e_attrs[edge][attribute_name] = attribute_value
   parse_dot(g,input_string,vertex_attribute_cb=v_att_cb,edge_attribute_cb=e_att_cb)
 
-"""## create_vdict
+"""# create_vdict
 
 Cria dicionário *v_attrs* a partir de *input_string* no formato CSV 
 *edgelist* ou *adjacencylist*. Se *weighted=True*, o último

@@ -156,7 +156,7 @@ def draw_graph(g,layout="circular",
     labels=vertex_labels,
     vertex_font_color=vertex_font_color
   )  
-  if (not e_attrs=={}) or (edgeweight_aslabel):
+  if (not e_attrs=={}) or (edgeweight_aslabel) or (edgeid_aslabel):
     draw_matplotlib.draw_jgrapht_edge_labels(
       g,
       positions=positions,

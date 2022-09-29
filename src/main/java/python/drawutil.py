@@ -35,6 +35,7 @@ Parâmetros:
 * **g** - instância do grafo
 * **layout** - circular (default) / random / fruchterman_reingold / fruchterman_reingold_indexed
 * **vertexid_aslabel** - ids dos vértices devem ser utilizados como labels
+* **edgeid_aslabel** - ids das arestas devem ser utilizados como labels
 * **edgeweight_aslabel** - pesos das arestas deve ser usados como labels
 * **vlabel**, **v_attrs** - identificador do label de vértices e dicionário
 * **elabel**, **e_attrs** - identificador do label de arestas e dicionário
@@ -59,7 +60,7 @@ Os seguintes parâmetros devem ser utilizados quando se deseja desenhar grupos d
 """
 
 def draw_graph(g,layout="circular",
-               vertexid_aslabel=False,edgeweight_aslabel=False,
+               vertexid_aslabel=False,edgeid_aslabel=False,edgeweight_aslabel=False,
                vlabel='',v_attrs={},elabel='',e_attrs={},
                vertex_color='cyan',vmap=None,
                edge_color='orange',emap=None,
@@ -146,6 +147,9 @@ def draw_graph(g,layout="circular",
   elif edgeweight_aslabel:
     for e in g.edges:
       edge_labels[e] = str(g.get_edge_weight(e))
+  elif edgeid_aslabel:
+    for e in g.edges:
+      edge_labels[e] = str(e)
   draw_matplotlib.draw_jgrapht_vertex_labels(
     g,
     positions=positions,

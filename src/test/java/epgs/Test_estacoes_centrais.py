@@ -51,7 +51,7 @@ params = [
 # Classe de testes base
 class Test_estacoes_centrais (ParametrizedTestCase):
   def test_base (self):
-    g,e_g,k,saida_esperada = self.param
+    f,g,e_g,k,saida_esperada = self.param
     self.assertEqual(estacoes_centrais(g,e_g,k),saida_esperada)
 
 suite1 = unittest.TestSuite()

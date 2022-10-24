@@ -69,8 +69,7 @@ def draw_graph(g,layout="circular",
                axis=False,
                width=8,height=5,vsize=450,vshape='o',
                vset=[],vsetcolor=[],vsetlabel=[],
-               eset=[],esetcolor=[],esetlabel=[],
-               vsetonly=False):
+               eset=[],esetcolor=[],esetlabel=[]):
   flatten = lambda t: [item for sublist in t for item in sublist]
   positions = draw_matplotlib.layout(g, seed=10, name=layout)
   if vset == []:
@@ -95,7 +94,7 @@ def draw_graph(g,layout="circular",
         vertex_size=vsize,
         vertex_shape=vshape
       )
-    if notinvset != [] and not vsetonly:
+    if notinvset != []:
       draw_matplotlib.draw_jgrapht_vertices(
         g, 
         positions=positions, 

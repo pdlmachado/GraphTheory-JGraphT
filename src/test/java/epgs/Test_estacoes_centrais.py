@@ -1,5 +1,6 @@
 # Definindo os dados para o teste
 # [grafo,dicionário de arestas, limiar,saída esperada]
+import jgrapht
 lu = jgrapht.create_graph(directed=False,weighted=True, 
                          allowing_multiple_edges=True)
 v_lu = {}

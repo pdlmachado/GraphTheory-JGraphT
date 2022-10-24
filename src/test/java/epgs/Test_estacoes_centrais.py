@@ -23,21 +23,31 @@ class ParametrizedTestCase(unittest.TestCase):
             suite.addTest(testcase_klass(name, param=param))
         return suite
 
-# Definindo os dados para o teste
-# [grafo,dicionário de arestas, limiar,saída esperada]      
+# Test Data
 g1 = jgrapht.create_graph(directed=False,weighted=True, 
                          allowing_multiple_edges=True)
 v_g1 = {}
 e_g1 = {}
-# Importando sua definição
-#read_multiple_CSV(lu,v_lu,e_lu,
-#                  'london.stations.csv','id','name',
-#                  'london.connections.csv','station1','station2',weightid='time',
-#                  delimiter=',')
+g1.add_vertices_from([x for x in range(8)])
+g1.add_edge(0,2,edge=0)
+e_g1[0]={'line'='1'}
+g1.add_edge(0,2,edge=1)
+e_g1[1]={'line'='2'}
+g1.add_edge(1,2,edge=2)
+e_g1[1]={'line'='3'}
+g1.add_edge(2,3,edge=3)
+e_g1[1]={'line'='1'}
+g1.add_edge(2,3,edge=4)
+e_g1[1]={'line'='2'}
+g1.add_edge(2,3,edge=5)
+e_g1[1]={'line'='3'}
+g1.add_edge(3,8,edge=6)
+e_g1[1]={'line'='1'}
+g1.add_edge(3,8,edge=7)
+e_g1[1]={'line'='4'}
 
 
-
-
+# [grafo,dicionário de arestas, limiar,saída esperada]  
 params = [
     [g1,e_g1,8,{}],
     [g1,e_g1,6,{}],

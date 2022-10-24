@@ -23,43 +23,34 @@ class ParametrizedTestCase(unittest.TestCase):
             suite.addTest(testcase_klass(name, param=param))
         return suite
 
-# Test Data
-g1 = jgrapht.create_graph(directed=False,weighted=True, 
-                         allowing_multiple_edges=True)
-v_g1 = {}
-e_g1 = {}
-g1.add_vertices_from([x for x in range(8)])
-g1.add_edge(0,2,edge=0)
-e_g1[0]={'line'='1'}
-g1.add_edge(0,2,edge=1)
-e_g1[1]={'line'='2'}
-g1.add_edge(1,2,edge=2)
-e_g1[1]={'line'='3'}
-g1.add_edge(2,3,edge=3)
-e_g1[1]={'line'='1'}
-g1.add_edge(2,3,edge=4)
-e_g1[1]={'line'='2'}
-g1.add_edge(2,3,edge=5)
-e_g1[1]={'line'='3'}
-g1.add_edge(3,8,edge=6)
-e_g1[1]={'line'='1'}
-g1.add_edge(3,8,edge=7)
-e_g1[1]={'line'='4'}
+# Test Data [k,saída desejada]
+# Grafo g1  
+params_g1 = [
+    [0,{0: 2, 1: 1, 2: 3, 3: 4, 4: 1, 5: 2, 6: 3, 7: 2, 8: 2}],
+    [1,{0: 2, 1: 1, 2: 3, 3: 4, 4: 1, 5: 2, 6: 3, 7: 2, 8: 2}],
+    [2,{0: 2, 2: 3, 3: 4, 5: 2, 6: 3, 7: 2, 8: 2}],
+    [3,{2: 3, 3: 4, 6: 3}],
+    [4,{3: 4}],
+    [5,{}],
+]
 
-
-# [grafo,dicionário de arestas, limiar,saída esperada]  
-params = [
-    [g1,e_g1,8,{}],
-    [g1,e_g1,6,{}],
-    [g1,e_g1,5,{}],
-    [None,{},0,None],
-    [jgrapht.create_graph(),{},0,{}],
-    [g1,{},0,None],
-    [g1,e_g1,-1,None]
+# Grafo lu
+params_lu = [
+    [6,{145: 6}],
+    [5,{11: 5, 145: 6}]
 ]
 
 # Classe de testes base
-class Test_estacoes_centrais (ParametrizedTestCase):
+class Test_estacoes_centrais_base (ParametrizedTestCase):
   def test_base (self):
     f,g,e_g,k,saida_esperada = self.param
     self.assertEqual(f(g,e_g,k),saida_esperada)
+
+# Classe de testes edge
+class Test_estacoes_centrais_edge (ParametrizedTestCase):
+  def test_edge (self):
+    f,g,e_g = self.param
+    self.assertTrue(f(None,{},0) is None)
+    self.assertTrue(f(jgrapht.create_graph(),{},0) == {})
+    self.assertTrue(f(g,{},0) is None)
+    self.assertTrue(f(g,e_g,-1) is None)

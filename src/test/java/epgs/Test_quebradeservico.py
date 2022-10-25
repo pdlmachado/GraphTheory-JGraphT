@@ -46,4 +46,4 @@ class Test_quebradeservico_base (ParametrizedTestCase):
 class Test_quebradeservico_edge (ParametrizedTestCase):
   def test_edge (self):
     f,g,e_g = self.param
-    self.assertTrue(f(None,{},None,10) is None,"Grafo não pode ser None")
+    self.assertTrue(f(None,{},None) is None,"Grafo não pode ser None")

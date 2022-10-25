@@ -34,6 +34,7 @@ params_lu = [
 
 # Classe de testes base
 class Test_tempo_estimado_base (ParametrizedTestCase):
+  from jgrapht.algorithms.shortestpaths import yen_k_loopless
   def test_base (self):
     f,g,e_g,v1,v2,t,saida_esperada,m = self.param
     path = next(yen_k_loopless(g,v1,v2,1))

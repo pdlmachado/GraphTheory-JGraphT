@@ -26,7 +26,7 @@ class ParametrizedTestCase(unittest.TestCase):
 # Test Data [v1,v2,t,saída desejada]
 # Grafo g1  
 params_g1 = [
-  [1,4,5,12,"#01"]
+  [1,4,5,15,"#01"]
 ]
 
 # Grafo lu

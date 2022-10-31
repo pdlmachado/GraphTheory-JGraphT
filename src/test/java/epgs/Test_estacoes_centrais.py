@@ -23,8 +23,9 @@ class ParametrizedTestCase(unittest.TestCase):
             suite.addTest(testcase_klass(name, param=param))
         return suite
 
-# Test Data [k,saída desejada]
-# Grafo g1  
+# Função receberá g1, e_g1, e valores k abaixo listados, juntamente com a saída desejada
+# Cada tupla é identificada com #n para facilitar a depuração em caso de erros e falhas
+# Exemplo: estacoes_centrais(g1,e_g1,0) deve retornar {0: 2, 1: 1, 2: 3, 3: 4, 4: 1, 5: 2, 6: 3, 7: 2, 8: 2}
 params_g1 = [
     [0,{0: 2, 1: 1, 2: 3, 3: 4, 4: 1, 5: 2, 6: 3, 7: 2, 8: 2},"#1"],
     [1,{0: 2, 1: 1, 2: 3, 3: 4, 4: 1, 5: 2, 6: 3, 7: 2, 8: 2},"#2"],
@@ -32,12 +33,13 @@ params_g1 = [
     [3,{2: 3, 3: 4, 6: 3},"#4"],
     [4,{3: 4},"#5"],
     [5,{},"#6"],
+    [0,{},"#7"]
 ]
 
-# Grafo lu
+# Grafo lu (tal como explicado para g1
 params_lu = [
-    [6,{145: 6},"#7"],
-    [5,{11: 5, 145: 6},"#8"]
+    [6,{145: 6},"#1"],
+    [5,{11: 5, 145: 6},"#1"]
 ]
 
 # Classe de testes base

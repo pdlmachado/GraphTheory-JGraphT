@@ -26,11 +26,23 @@ class ParametrizedTestCase(unittest.TestCase):
 # Test Data [v1,v2,t,saída desejada]
 # Grafo g1  
 params_g1 = [
-  [1,4,5,15,"#01"]
+  [1,4,5,15,"#01"],
+  [0,2,10,11,"#02"],
+  [1,1,10,0,"#03"],
+  [1,2,10,11,"#04"],
+  [3,6,10,12,"#05"],
+  [7,8,7,34,"#06"],
+  [7,8,0,13,"#07"],
+  [7,8,1,16,"#08"],
 ]
 
 # Grafo lu
 params_lu = [
+  [1,4,5,86,"#01"],
+  [131,2,10,140,"#02"],
+  [1,200,9,130,"#03"],
+  [1,200,0,58,"#04"],
+  [1,1,10,0,"#05"]  
 ]
 
 # Classe de testes base
@@ -44,5 +56,12 @@ class Test_tempo_estimado_base (ParametrizedTestCase):
 class Test_tempo_estimado_edge (ParametrizedTestCase):
   def test_edge (self):
     f,g,e_g = self.param
-    self.assertTrue(f(None,{},None,10) is None,"Grafo não pode ser None")
+    path = next(yen_k_loopless(g,1,2,1))
+    self.assertTrue(f(None,{},None,0) is None,"Grafo não pode ser None")
+    self.assertTrue(f(g,None,None,0) is None,"Dicionário de arestas não pode ser None")
+    self.assertTrue(f(jgrapht.create_graph(),{},None,0) is None,"Deve retornar None para grafo nulo")
+    self.assertTrue(f(g,{},p,10) is None,"Dicionário não pode ser vazio para grafo não vazio")
+    self.assertTrue(f(g,e_g,p,-1) is None,"t tem que ser um número positivo ou zero")
+    self.assertTrue(f(g,e_g,None,10) is None,"Path não pode ser None")
+
 

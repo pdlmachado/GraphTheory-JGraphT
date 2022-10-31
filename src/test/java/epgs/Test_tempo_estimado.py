@@ -60,8 +60,8 @@ class Test_tempo_estimado_edge (ParametrizedTestCase):
     self.assertTrue(f(None,{},None,0) is None,"Grafo não pode ser None")
     self.assertTrue(f(g,None,None,0) is None,"Dicionário de arestas não pode ser None")
     self.assertTrue(f(jgrapht.create_graph(),{},None,0) is None,"Deve retornar None para grafo nulo")
-    self.assertTrue(f(g,{},p,10) is None,"Dicionário não pode ser vazio para grafo não vazio")
-    self.assertTrue(f(g,e_g,p,-1) is None,"t tem que ser um número positivo ou zero")
+    self.assertTrue(f(g,{},path,10) is None,"Dicionário não pode ser vazio para grafo não vazio")
+    self.assertTrue(f(g,e_g,path,-1) is None,"t tem que ser um número positivo ou zero")
     self.assertTrue(f(g,e_g,None,10) is None,"Path não pode ser None")
 
 

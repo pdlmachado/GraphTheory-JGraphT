@@ -22,9 +22,12 @@ class ParametrizedTestCase(unittest.TestCase):
         for name in testnames:
             suite.addTest(testcase_klass(name, param=param))
         return suite
+    
+#####################################
+# Test Data 
 
-# Test Data [v1,v2,t,saída desejada]
-# Grafo g1  
+# Valores de vértice origem,destino (graphpath) e t para grafo g1 e e_g1
+# Path é criado no método de teste
 params_g1 = [
   [1,4,5,15,"#01"],
   [0,2,10,11,"#02"],
@@ -36,7 +39,7 @@ params_g1 = [
   [7,8,1,16,"#08"],
 ]
 
-# Grafo lu
+# Valores de vértice origem,destino (graphpath) e t para grafo lu e e_lu
 params_lu = [
   [1,4,5,86,"#01"],
   [131,2,10,140,"#02"],
@@ -44,6 +47,17 @@ params_lu = [
   [1,200,0,58,"#04"],
   [1,1,10,0,"#05"]  
 ]
+
+# Outros exemplos de grafos para teste
+g2 = jgrapht.create_graph(directed=False)
+g2.add_vertices_from([0,1])
+g2.add_edge(0,1,edge=0)
+e_g2 = {0:{'line':'0'}}
+p2 = next(yen_k_loopless(g2,0,1,1))
+
+g3 = jgrapht.create_graph(directed=False)
+g3.add_vertex(0)
+e_g3 = {}
 
 # Classe de testes base
 class Test_tempo_estimado_base (ParametrizedTestCase):
@@ -54,14 +68,32 @@ class Test_tempo_estimado_base (ParametrizedTestCase):
 
 # Classe de testes edge
 class Test_tempo_estimado_edge (ParametrizedTestCase):
-  def test_edge (self):
+  def test_None (self):
     f,g,e_g = self.param
-    path = next(yen_k_loopless(g,1,2,1))
-    self.assertTrue(f(None,{},None,0) is None,"Grafo não pode ser None")
-    self.assertTrue(f(g,None,None,0) is None,"Dicionário de arestas não pode ser None")
-    self.assertTrue(f(jgrapht.create_graph(),{},None,0) is None,"Deve retornar None para grafo nulo")
-    self.assertTrue(f(g,{},path,10) is None,"Dicionário não pode ser vazio para grafo não vazio")
-    self.assertTrue(f(g,e_g,path,-1) is None,"t tem que ser um número positivo ou zero")
-    self.assertTrue(f(g,e_g,None,10) is None,"Path não pode ser None")
+    self.assertTrue(f(None,e_g2,p2,0) is None,"Grafo não pode ser None")
+    self.assertTrue(f(g2,None,p2,0) is None,"Dicionário de arestas não pode ser None")
 
+  def test_nulo (self):
+    f,g,e_g = self.param
+    self.assertTrue(f(jgrapht.create_graph(),{},p2,0) is None,"Deve retornar None para grafo nulo")
+    self.assertTrue(f(g2,{},e_g2,10) is None,"Dicionário não pode ser vazio para grafo não vazio")  
 
+  def test_t_invalido (self):
+    f,g,e_g = self.param
+    self.assertTrue(f(g2,e_g2,p2,-1) is None,"t tem que ser um número positivo ou zero")
+
+  def test_edict_invalido (self):
+    f,g,e_g = self.param
+    self.assertTrue(f(g,e_g2,p2,0) is None,"Dicionário inválido")
+
+  def test_path_invalido (self):
+    f,g,e_g = self.param
+    self.assertTrue(f(g,e_g,p2,0) is None,"Path não pertence a este grafo")
+
+  def test_trivial (self):
+    f,g,e_g = self.param
+    self.assertTrue(f(g3,e_g3,None,3) is None,"Deve retornar None para grafo trivial")
+
+  def test_k2 (self):
+    f,g,e_g = self.param
+    self.assertEqual(f(g2,e_g2,p2,2),3) 

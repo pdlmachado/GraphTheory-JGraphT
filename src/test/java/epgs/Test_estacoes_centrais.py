@@ -88,4 +88,4 @@ class Test_estacoes_centrais_edge (ParametrizedTestCase):
 
   def test_k2 (self):
     f,g,e_g = self.param
-    self.assertEqual(f(g2,e_g2,1),{0: 1, 1: 1},"Deve retornar {} para grafo trivial") 
+    self.assertEqual(f(g2,e_g2,1),{0: 1, 1: 1}) 

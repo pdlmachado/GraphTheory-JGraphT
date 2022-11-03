@@ -26,13 +26,15 @@ class ParametrizedTestCase(unittest.TestCase):
 #####################################
 # Test Data 
 
-# Valores de atracoes, atual e maxdist para grafo g1 e e_g1
+# Valores de estacao atual e maxdist para grafo g1 e e_g1
 # Path é criado no método de teste
 params_g1 = [
+    ['Bodocongó',1,[('UFCG', 'Bodocongó'), ('Treze', 'Prata'), ('Campinense', 'Prata')],"#01"]
 ]
 
-# Valores de atracoes, atual e maxdist para grafo lu e e_lu
+# Valores de estacao atual e maxdist para grafo lu e e_lu
 params_lu = [
+    ['Gunnersbury',5,[('Kensington Palace', 'High Street Kensington')],'#02']
 ]
 
 # Outros exemplos de grafos para teste
@@ -41,11 +43,13 @@ g2.add_vertices_from([0,1])
 g2.add_edge(0,1,edge=0)
 v_g2 = {0:{'label':'v0'}, 1:{'label':'v1'}}
 e_g2 = {0:{'line':'0'}}
+atracoes_g2 = {'a0' : 'v0'}
 
 g3 = jgrapht.create_graph(directed=False)
 g3.add_vertex(0)
 v_g3 = {0:{'label':'v0'}}
 e_g3 = {}
+atracoes_g3 = {'a0' : 'v0'}
 
 # Classe de testes base
 class Test_atracoesmaisproximas_base (ParametrizedTestCase):
@@ -57,28 +61,26 @@ class Test_atracoesmaisproximas_base (ParametrizedTestCase):
 class Test_atracoesmaisproximas_edge (ParametrizedTestCase):
   def test_None (self):
     f,g,v_g = self.param
-    self.assertTrue(f(None,v_g2,["v0"],0,1) is None,"Grafo não pode ser None")
-    self.assertTrue(f(g2,None,["v0"],0,1) is None,"Dicionário de vértices não pode ser None")
+    self.assertTrue(f(None,v_g2,atracoes_g2,"v0",1) is None,"Grafo não pode ser None")
+    self.assertTrue(f(g2,None,atracoes_g2,"v0",1) is None,"Dicionário de vértices não pode ser None")
 
   def test_nulo (self):
     f,g,v_g = self.param
-    self.assertTrue(f(jgrapht.create_graph(),{},{},["v0"],1) is None,"Deve retornar None para grafo nulo")
-    self.assertTrue(f(g2,{},e_g2,["v0"],1) is None,"Dicionário não pode ser vazio para grafo não vazio")  
-    self.assertTrue(f(g2,v_g2,{},["v0"],1) is None,"Dicionário não pode ser vazio para grafo não vazio")  
+    self.assertTrue(f(jgrapht.create_graph(),{},{},"v0",1) is None,"Deve retornar None para grafo nulo")
+    self.assertTrue(f(g2,{},atracoes_g2,"v0",1) is None,"Dicionário não pode ser vazio para grafo não vazio")  
 
-  #def test_s_invalida (self):
-  #  f,g,v_g = self.param
-  #  self.assertTrue(f(g2,v_g2,e_g2,["a1"],1) is None,"Atracao inválida")
+  def test_s_invalida (self):
+    f,g,v_g = self.param
+    self.assertTrue(f(g,v_g,atracoes_g2,"v0",1) is None,"Atracao inválida")
 
-  #def test_vdict_invalido (self):
-  #  f,g,v_g = self.param
-  #  self.assertTrue(f(g,v_g2,e_g,[""]) is None,"Dicionário de vértices inválido")
+  def test_vdict_invalido (self):
+    f,g,v_g = self.param
+    self.assertTrue(f(g,v_g2,atracoes_g2,"v0",1) is None,"Dicionário de vértices inválido")
 
-  #def test_trivial (self):
-  #  f,g,v_g3 = self.param
-  #  self.assertEqual(f(g3,v_g3,e_g3,["v0"]),[],"Deve retornar [] para grafo trivial")
+  def test_trivial (self):
+    f,g,v_g = self.param
+    self.assertEqual(f(g3,v_g3,atracoes_g3,"v0",1),[('a0', 'v0')])
 
-  #def test_k2 (self):
-  #  f,g,v_g = self.param
-  #  self.assertEqual(f(g2,v_g2,e_g2,["v1"]),[('v0', 'v1', '0')]) 
-  
+  def test_k2 (self):
+    f,g,v_g = self.param
+    self.assertEqual(f(g2,v_g2,atracoes_g2,"v0",1),[('a0', 'v0')]) 

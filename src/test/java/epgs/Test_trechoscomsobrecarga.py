@@ -32,7 +32,7 @@ params_g1 = [
   [['Centro'],[('São José','Centro','4'),('Centenário','Centro','2'),('São José','Centro','3'),('José Pinheiro','Centro','3'), ('José Pinheiro','Centro', '4')],"#01"]
 ]
 
-# Valores de vértice origem,destino (graphpath) e t para grafo lu e e_lu
+# Valores de lista de estações para grafo lu e e_lu
 params_lu = [
   [["Aldgate","Tower Hill"],[('Liverpool Street', 'Aldgate', '3'), ('Monument', 'Tower Hill', '3'), ('Aldgate East', 'Tower Hill', '4'), ('Monument', 'Tower Hill', '4'), ('Liverpool Street', 'Aldgate', '8')],"#01"]
 ]

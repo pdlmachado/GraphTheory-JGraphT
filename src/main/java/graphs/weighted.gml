@@ -613,6 +613,7 @@ graph
 	[
 		source	9
 		target	1
+		label	"7"
 		graphics
 		[
 			fill	"#000000"
@@ -621,6 +622,17 @@ graph
 		[
 			xSource	1.0
 			xTarget	-1.0
+		]
+		LabelGraphics
+		[
+			text	"7"
+			fontSize	12
+			fontName	"Dialog"
+			configuration	"AutoFlippingLabel"
+			contentWidth	10.673828125
+			contentHeight	18.701171875
+			model	"null"
+			position	"null"
 		]
 	]
 	edge

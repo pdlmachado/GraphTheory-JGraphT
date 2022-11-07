@@ -11,8 +11,8 @@ graph
 		label	"0"
 		graphics
 		[
-			x	350.0
-			y	225.0
+			x	425.0
+			y	125.0
 			w	37.5
 			h	37.5
 			type	"ellipse"
@@ -34,7 +34,7 @@ graph
 		label	"1"
 		graphics
 		[
-			x	200.0
+			x	425.0
 			y	275.0
 			w	37.5
 			h	37.5
@@ -57,8 +57,8 @@ graph
 		label	"2"
 		graphics
 		[
-			x	275.0
-			y	400.0
+			x	575.0
+			y	0.0
 			w	37.5
 			h	37.5
 			type	"ellipse"
@@ -80,8 +80,8 @@ graph
 		label	"3"
 		graphics
 		[
-			x	50.0
-			y	350.0
+			x	575.0
+			y	700.0
 			w	37.5
 			h	37.5
 			type	"ellipse"
@@ -103,8 +103,8 @@ graph
 		label	"4"
 		graphics
 		[
-			x	50.0
-			y	175.0
+			x	275.0
+			y	575.0
 			w	37.5
 			h	37.5
 			type	"ellipse"
@@ -126,8 +126,8 @@ graph
 		label	"5"
 		graphics
 		[
-			x	275.0
-			y	475.0
+			x	0.0
+			y	0.0
 			w	37.5
 			h	37.5
 			type	"ellipse"
@@ -150,7 +150,7 @@ graph
 		graphics
 		[
 			x	125.0
-			y	100.0
+			y	425.0
 			w	37.5
 			h	37.5
 			type	"ellipse"
@@ -172,8 +172,8 @@ graph
 		label	"7"
 		graphics
 		[
-			x	125.0
-			y	175.0
+			x	275.0
+			y	425.0
 			w	37.5
 			h	37.5
 			type	"ellipse"
@@ -195,8 +195,8 @@ graph
 		label	"8"
 		graphics
 		[
-			x	200.0
-			y	100.0
+			x	125.0
+			y	275.0
 			w	37.5
 			h	37.5
 			type	"ellipse"
@@ -218,8 +218,8 @@ graph
 		label	"9"
 		graphics
 		[
-			x	200.0
-			y	175.0
+			x	275.0
+			y	275.0
 			w	37.5
 			h	37.5
 			type	"ellipse"
@@ -246,8 +246,8 @@ graph
 		]
 		edgeAnchor
 		[
-			ySource	1.0
-			yTarget	-1.0
+			xSource	1.0
+			xTarget	-1.0
 		]
 		LabelGraphics
 		[
@@ -257,9 +257,9 @@ graph
 			configuration	"AutoFlippingLabel"
 			contentWidth	10.673828125
 			contentHeight	18.701171875
-			model	"free"
-			x	135.0
-			y	144.25
+			model	"side_slider"
+			x	194.6630859375
+			y	404.298828125
 		]
 	]
 	edge
@@ -275,29 +275,29 @@ graph
 				point
 				[
 					x	125.0
-					y	100.0
+					y	425.0
 				]
 				point
 				[
-					x	125.0
-					y	50.0
+					x	75.0
+					y	425.0
 				]
 				point
 				[
-					x	350.0
-					y	50.0
+					x	75.0
+					y	125.0
 				]
 				point
 				[
-					x	350.0
-					y	225.0
+					x	425.0
+					y	125.0
 				]
 			]
 		]
 		edgeAnchor
 		[
-			ySource	-1.0
-			yTarget	-1.0
+			xSource	-1.0
+			xTarget	-1.0
 		]
 		LabelGraphics
 		[
@@ -307,9 +307,9 @@ graph
 			configuration	"AutoFlippingLabel"
 			contentWidth	10.673828125
 			contentHeight	18.701171875
-			model	"free"
-			x	115.82578435019842
-			y	-23.15234375
+			model	"side_slider"
+			x	323.5609375
+			y	104.298828125
 		]
 	]
 	edge
@@ -323,8 +323,8 @@ graph
 		]
 		edgeAnchor
 		[
-			ySource	-1.0
-			yTarget	1.0
+			xSource	1.0
+			xTarget	-1.0
 		]
 		LabelGraphics
 		[
@@ -334,9 +334,9 @@ graph
 			configuration	"AutoFlippingLabel"
 			contentWidth	10.673828125
 			contentHeight	18.701171875
-			model	"free"
-			x	269.6630859375
-			y	431.5621124751985
+			model	"side_slider"
+			x	79.5326171875
+			y	-20.701171875
 		]
 	]
 	edge
@@ -347,35 +347,11 @@ graph
 		graphics
 		[
 			fill	"#000000"
-			Line
-			[
-				point
-				[
-					x	50.0
-					y	350.0
-				]
-				point
-				[
-					x	225.0
-					y	362.5
-				]
-				point
-				[
-					x	225.0
-					y	400.0
-				]
-				point
-				[
-					x	275.0
-					y	400.0
-				]
-			]
 		]
 		edgeAnchor
 		[
-			xSource	1.0
-			ySource	0.6666666666666666
-			xTarget	-1.0
+			ySource	-1.0
+			yTarget	1.0
 		]
 		LabelGraphics
 		[
@@ -385,9 +361,9 @@ graph
 			configuration	"AutoFlippingLabel"
 			contentWidth	17.34765625
 			contentHeight	18.701171875
-			model	"free"
-			x	155.1279296875
-			y	356.94901723710313
+			model	"side_slider"
+			x	555.65234375
+			y	309.47197265625
 		]
 	]
 	edge
@@ -402,25 +378,25 @@ graph
 			[
 				point
 				[
-					x	275.0
-					y	475.0
+					x	0.0
+					y	0.0
 				]
 				point
 				[
-					x	50.0
-					y	475.0
+					x	0.0
+					y	700.0
 				]
 				point
 				[
-					x	50.0
-					y	350.0
+					x	575.0
+					y	700.0
 				]
 			]
 		]
 		edgeAnchor
 		[
-			xSource	-1.0
-			yTarget	1.0
+			ySource	1.0
+			xTarget	-1.0
 		]
 		LabelGraphics
 		[
@@ -430,9 +406,9 @@ graph
 			configuration	"AutoFlippingLabel"
 			contentWidth	17.34765625
 			contentHeight	18.701171875
-			model	"free"
-			x	205.625
-			y	465.6494140625
+			model	"side_slider"
+			x	53.777734375
+			y	679.298828125
 		]
 	]
 	edge
@@ -446,8 +422,8 @@ graph
 		]
 		edgeAnchor
 		[
-			ySource	1.0
-			yTarget	-1.0
+			xSource	1.0
+			xTarget	-1.0
 		]
 		LabelGraphics
 		[
@@ -457,9 +433,9 @@ graph
 			configuration	"AutoFlippingLabel"
 			contentWidth	10.673828125
 			contentHeight	18.701171875
-			model	"free"
+			model	"side_slider"
 			x	194.6630859375
-			y	216.6117156498016
+			y	254.298828125
 		]
 	]
 	edge
@@ -474,27 +450,32 @@ graph
 			[
 				point
 				[
-					x	125.0
-					y	175.0
+					x	275.0
+					y	425.0
 				]
 				point
 				[
-					x	118.75
-					y	337.5
+					x	350.0
+					y	436.1111111111111
 				]
 				point
 				[
-					x	50.0
-					y	350.0
+					x	350.0
+					y	691.6666666666666
+				]
+				point
+				[
+					x	575.0
+					y	700.0
 				]
 			]
 		]
 		edgeAnchor
 		[
-			xSource	-0.3333333333333333
-			ySource	1.0
-			xTarget	1.0
-			yTarget	-0.6666666666666666
+			xSource	1.0
+			ySource	0.5925925925925912
+			xTarget	-1.0
+			yTarget	-0.4444444444444446
 		]
 		LabelGraphics
 		[
@@ -504,9 +485,9 @@ graph
 			configuration	"AutoFlippingLabel"
 			contentWidth	10.673828125
 			contentHeight	18.701171875
-			model	"free"
-			x	113.4130859375
-			y	199.7367156498016
+			model	"side_slider"
+			x	352.0
+			y	632.823097511574
 		]
 	]
 	edge
@@ -521,24 +502,25 @@ graph
 			[
 				point
 				[
-					x	50.0
-					y	350.0
+					x	575.0
+					y	700.0
 				]
 				point
 				[
-					x	200.0
-					y	350.0
+					x	425.0
+					y	688.8888888888889
 				]
 				point
 				[
-					x	200.0
+					x	425.0
 					y	275.0
 				]
 			]
 		]
 		edgeAnchor
 		[
-			xSource	1.0
+			xSource	-1.0
+			ySource	-0.5925925925925928
 			yTarget	1.0
 		]
 		LabelGraphics
@@ -549,9 +531,9 @@ graph
 			configuration	"AutoFlippingLabel"
 			contentWidth	10.673828125
 			contentHeight	18.701171875
-			model	"free"
-			x	158.46484375
-			y	380.0740172371032
+			model	"side_slider"
+			x	412.326171875
+			y	614.3908094618056
 		]
 	]
 	edge
@@ -562,35 +544,11 @@ graph
 		graphics
 		[
 			fill	"#000000"
-			Line
-			[
-				point
-				[
-					x	200.0
-					y	275.0
-				]
-				point
-				[
-					x	250.0
-					y	268.75
-				]
-				point
-				[
-					x	250.0
-					y	225.0
-				]
-				point
-				[
-					x	350.0
-					y	225.0
-				]
-			]
 		]
 		edgeAnchor
 		[
-			xSource	1.0
-			ySource	-0.3333333333333333
-			xTarget	-1.0
+			ySource	-1.0
+			yTarget	1.0
 		]
 		LabelGraphics
 		[
@@ -600,9 +558,9 @@ graph
 			configuration	"AutoFlippingLabel"
 			contentWidth	10.673828125
 			contentHeight	18.701171875
-			model	"free"
-			x	228.75038752480157
-			y	259.3994140625
+			model	"side_slider"
+			x	412.326171875
+			y	190.6494140625
 		]
 	]
 	edge
@@ -613,11 +571,30 @@ graph
 		graphics
 		[
 			fill	"#000000"
+			Line
+			[
+				point
+				[
+					x	275.0
+					y	575.0
+				]
+				point
+				[
+					x	275.0
+					y	694.4444444444445
+				]
+				point
+				[
+					x	575.0
+					y	700.0
+				]
+			]
 		]
 		edgeAnchor
 		[
 			ySource	1.0
-			yTarget	-1.0
+			xTarget	-1.0
+			yTarget	-0.2962962962962964
 		]
 		LabelGraphics
 		[
@@ -627,9 +604,9 @@ graph
 			configuration	"AutoFlippingLabel"
 			contentWidth	10.673828125
 			contentHeight	18.701171875
-			model	"free"
-			x	29.326171874999993
-			y	219.25
+			model	"side_slider"
+			x	277.0
+			y	639.3091362847222
 		]
 	]
 	edge
@@ -642,8 +619,8 @@ graph
 		]
 		edgeAnchor
 		[
-			ySource	1.0
-			yTarget	-1.0
+			xSource	1.0
+			xTarget	-1.0
 		]
 	]
 	edge
@@ -657,8 +634,8 @@ graph
 		]
 		edgeAnchor
 		[
-			xSource	-1.0
-			xTarget	1.0
+			ySource	1.0
+			yTarget	-1.0
 		]
 		LabelGraphics
 		[
@@ -668,15 +645,16 @@ graph
 			configuration	"AutoFlippingLabel"
 			contentWidth	10.673828125
 			contentHeight	18.701171875
-			model	"free"
-			x	47.76074218750003
-			y	270.91131882440476
+			model	"side_slider"
+			x	277.0
+			y	340.6494140625
 		]
 	]
 	edge
 	[
 		source	2
 		target	1
+		label	"2"
 		graphics
 		[
 			fill	"#000000"
@@ -684,26 +662,38 @@ graph
 			[
 				point
 				[
-					x	275.0
-					y	400.0
+					x	575.0
+					y	0.0
 				]
 				point
 				[
-					x	275.0
-					y	281.25
+					x	569.4444444444445
+					y	275.0
 				]
 				point
 				[
-					x	200.0
+					x	425.0
 					y	275.0
 				]
 			]
 		]
 		edgeAnchor
 		[
-			ySource	-1.0
+			xSource	-0.2962962962962964
+			ySource	1.0
 			xTarget	1.0
-			yTarget	0.3333333333333333
+		]
+		LabelGraphics
+		[
+			text	"2"
+			fontSize	12
+			fontName	"Dialog"
+			configuration	"AutoFlippingLabel"
+			contentWidth	10.673828125
+			contentHeight	18.701171875
+			model	"side_slider"
+			x	495.4332465277778
+			y	277.0
 		]
 	]
 	edge
@@ -717,8 +707,8 @@ graph
 		]
 		edgeAnchor
 		[
-			xSource	-1.0
-			xTarget	1.0
+			ySource	1.0
+			yTarget	-1.0
 		]
 		LabelGraphics
 		[
@@ -728,9 +718,9 @@ graph
 			configuration	"AutoFlippingLabel"
 			contentWidth	10.673828125
 			contentHeight	18.701171875
-			model	"free"
-			x	47.7607421875
-			y	90.64941406250001
+			model	"side_slider"
+			x	127.0
+			y	340.6494140625
 		]
 	]
 	edge
@@ -745,26 +735,26 @@ graph
 			[
 				point
 				[
-					x	350.0
-					y	225.0
+					x	425.0
+					y	125.0
 				]
 				point
 				[
-					x	350.0
-					y	393.75
+					x	563.8888888888889
+					y	125.0
 				]
 				point
 				[
-					x	275.0
-					y	400.0
+					x	575.0
+					y	0.0
 				]
 			]
 		]
 		edgeAnchor
 		[
-			ySource	1.0
-			xTarget	1.0
-			yTarget	-0.3333333333333333
+			xSource	1.0
+			xTarget	-0.5925925925925928
+			yTarget	1.0
 		]
 		LabelGraphics
 		[
@@ -774,9 +764,9 @@ graph
 			configuration	"AutoFlippingLabel"
 			contentWidth	10.673828125
 			contentHeight	18.701171875
-			model	"free"
-			x	360.0
-			y	269.25
+			model	"side_slider"
+			x	522.7130425347223
+			y	104.298828125
 		]
 	]
 	edge
@@ -792,30 +782,25 @@ graph
 				point
 				[
 					x	125.0
-					y	100.0
+					y	425.0
 				]
 				point
 				[
-					x	0.0
-					y	93.75
+					x	125.0
+					y	697.2222222222222
 				]
 				point
 				[
-					x	0.0
-					y	350.0
-				]
-				point
-				[
-					x	50.0
-					y	350.0
+					x	575.0
+					y	700.0
 				]
 			]
 		]
 		edgeAnchor
 		[
-			xSource	-1.0
-			ySource	-0.3333333333333333
+			ySource	1.0
 			xTarget	-1.0
+			yTarget	-0.1481481481481482
 		]
 		LabelGraphics
 		[
@@ -825,15 +810,16 @@ graph
 			configuration	"AutoFlippingLabel"
 			contentWidth	10.673828125
 			contentHeight	18.701171875
-			model	"free"
-			x	16.361328125
-			y	69.06250000000001
+			model	"side_slider"
+			x	127.0
+			y	621.6095377604166
 		]
 	]
 	edge
 	[
 		source	7
 		target	1
+		label	"10"
 		graphics
 		[
 			fill	"#000000"
@@ -841,26 +827,37 @@ graph
 			[
 				point
 				[
-					x	125.0
-					y	175.0
+					x	275.0
+					y	425.0
 				]
 				point
 				[
-					x	131.25
-					y	275.0
+					x	413.8888888888889
+					y	425.0
 				]
 				point
 				[
-					x	200.0
+					x	425.0
 					y	275.0
 				]
 			]
 		]
 		edgeAnchor
 		[
-			xSource	0.3333333333333333
-			ySource	1.0
-			xTarget	-1.0
+			xSource	1.0
+			xTarget	-0.5925925925925928
+			yTarget	1.0
+		]
+		LabelGraphics
+		[
+			text	"10"
+			fontSize	12
+			fontName	"Dialog"
+			configuration	"AutoFlippingLabel"
+			contentWidth	17.34765625
+			contentHeight	18.701171875
+			model	"null"
+			position	"null"
 		]
 	]
 	edge
@@ -876,25 +873,25 @@ graph
 				point
 				[
 					x	125.0
-					y	100.0
+					y	425.0
 				]
 				point
 				[
-					x	50.0
-					y	106.25
+					x	136.1111111111111
+					y	575.0
 				]
 				point
 				[
-					x	50.0
-					y	175.0
+					x	275.0
+					y	575.0
 				]
 			]
 		]
 		edgeAnchor
 		[
-			xSource	-1.0
-			ySource	0.3333333333333333
-			yTarget	-1.0
+			xSource	0.5925925925925912
+			ySource	1.0
+			xTarget	-1.0
 		]
 		LabelGraphics
 		[
@@ -904,23 +901,36 @@ graph
 			configuration	"AutoFlippingLabel"
 			contentWidth	10.673828125
 			contentHeight	18.701171875
-			model	"free"
-			x	85.57578435019842
-			y	96.8994140625
+			model	"side_slider"
+			x	196.11514756944445
+			y	554.298828125
 		]
 	]
 	edge
 	[
 		source	7
 		target	4
+		label	"6"
 		graphics
 		[
 			fill	"#000000"
 		]
 		edgeAnchor
 		[
-			xSource	-1.0
-			xTarget	1.0
+			ySource	1.0
+			yTarget	-1.0
+		]
+		LabelGraphics
+		[
+			text	"6"
+			fontSize	12
+			fontName	"Dialog"
+			configuration	"AutoFlippingLabel"
+			contentWidth	10.673828125
+			contentHeight	18.701171875
+			model	"side_slider"
+			x	277.0
+			y	490.6494140625
 		]
 	]
 	edge
@@ -935,31 +945,26 @@ graph
 			[
 				point
 				[
-					x	200.0
-					y	175.0
-				]
-				point
-				[
-					x	400.0
-					y	175.0
-				]
-				point
-				[
-					x	400.0
-					y	406.25
+					x	275.0
+					y	275.0
 				]
 				point
 				[
 					x	275.0
-					y	400.0
+					y	11.111111111111086
+				]
+				point
+				[
+					x	575.0
+					y	0.0
 				]
 			]
 		]
 		edgeAnchor
 		[
-			xSource	1.0
-			xTarget	1.0
-			yTarget	0.3333333333333333
+			ySource	-1.0
+			xTarget	-1.0
+			yTarget	0.5925925925925912
 		]
 		LabelGraphics
 		[
@@ -969,9 +974,9 @@ graph
 			configuration	"AutoFlippingLabel"
 			contentWidth	10.673828125
 			contentHeight	18.701171875
-			model	"free"
-			x	243.763671875
-			y	220.02441406250003
+			model	"side_slider"
+			x	262.326171875
+			y	47.99656394675927
 		]
 	]
 ]

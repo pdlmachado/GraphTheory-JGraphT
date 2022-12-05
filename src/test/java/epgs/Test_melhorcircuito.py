@@ -32,14 +32,16 @@ params_g1 = [
     [['Bodocongó', 'Cruzeiro', 'Prata', 'Catolé', 'Centenário', 'Nações'],
      ['Nações', 'Catolé', 'Centenário', 'Catolé', 'Prata', 'Bodocongó', 'Prata', 'Cruzeiro', 'Prata', 'Catolé', 'Nações'],"#01"],
     [['São José', 'Cruzeiro', 'Nações'],[],"#02"],
-    [['São José', 'Centro', 'José Pinheiro'],['José Pinheiro', 'Centro', 'São José', 'Centro', 'José Pinheiro'],"#03"]
+    [['São José', 'Centro', 'José Pinheiro'],['José Pinheiro', 'Centro', 'São José', 'Centro', 'José Pinheiro'],"#03"],
+    [[],[],"#04"]
 ]
 
 # Valores de estacao atual e maxdist para grafo lu e e_lu
 params_lu = [
     [['Aldgate East', 'Shadwell', 'Shoreditch', 'Tower Gateway', 'Wapping', 'Whitechapel'],
      ['Whitechapel', 'Shoreditch', 'Whitechapel', 'Shadwell', 'Wapping', 'Shadwell', 'Tower Gateway', 'Shadwell', 'Whitechapel', 'Aldgate East', 'Whitechapel'],"#01"],
-    [['Barons Court', 'Ealing Broadway', 'Ealing Common', 'Hammersmith', 'North Ealing', 'Ravenscourt Park', 'Stamford Brook', 'Turnham Green', 'West Kensington'],[],"#02"]
+    [['Barons Court', 'Ealing Broadway', 'Ealing Common', 'Hammersmith', 'North Ealing', 'Ravenscourt Park', 'Stamford Brook', 'Turnham Green', 'West Kensington'],[],"#02"],
+    [[],[],"#03"]
     
 ]
 
@@ -70,15 +72,16 @@ class Test_melhorcircuito_edge (ParametrizedTestCase):
     f,g,v_g = self.param
     self.assertTrue(f(None,v_g,["v0"]) is None,"Grafo não pode ser None")
     self.assertTrue(f(g,None,["v0"]) is None,"Dicionário de vértices não pode ser None")
+    self.assertTrue(f(g,v_g,None) is None,"Lista de estações não pode ser None")
 
   def test_nulo (self):
     f,g,v_g = self.param
     self.assertTrue(f(jgrapht.create_graph(),{},["v0"]) is None,"Deve retornar None para grafo nulo")
     self.assertTrue(f(g2,{},["v0"]) is None,"Dicionário não pode ser vazio para grafo não vazio")  
 
-  def test_s_invalida (self):
+  def test_estacao_invalida (self):
     f,g,v_g = self.param
-    self.assertTrue(f(g2,v_g2,["v10"]) is None,"Estação inválida")
+    self.assertTrue(f(g2,v_g2,["v10","v0"]) is None,"Estação inválida")
 
   def test_vdict_invalido (self):
     f,g,v_g = self.param

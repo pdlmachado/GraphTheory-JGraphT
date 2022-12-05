@@ -29,12 +29,19 @@ class ParametrizedTestCase(unittest.TestCase):
 # Valores de lista de estações para grafo g1 e e_g1
 # Path é criado no método de teste
 params_g1 = [
-  [['Centro'],[('São José','Centro','4'),('Centenário','Centro','2'),('São José','Centro','3'),('José Pinheiro','Centro','3'), ('José Pinheiro','Centro', '4')],"#01"]
+  [['Centro'],[('São José','Centro','4'),('Centenário','Centro','2'),('São José','Centro','3'),('José Pinheiro','Centro','3'), ('José Pinheiro','Centro', '4')],"#01"],
+  [['Centro', 'São José'],[('Catolé', 'São José', '3'), ('Catolé', 'São José', '4'), ('Centenário', 'Centro', '2'), ('José Pinheiro', 'Centro', '3'), ('José Pinheiro', 'Centro', '4')],"#02"],
+  [['Nações', 'José Pinheiro'],[('Catolé', 'Nações', '1'),('Catolé', 'Nações', '4'),('Centro', 'José Pinheiro', '3'),('Centro', 'José Pinheiro', '4')],"#03"],
+  [['Catolé','Cruzeiro'],[('Prata', 'Cruzeiro', '3'),('Prata', 'Catolé', '1'),('Prata', 'Catolé', '2'),('Prata', 'Catolé', '3'),('Nações', 'Catolé', '1'),('Nações', 'Catolé', '4'),('Centenário', 'Catolé', '2'),('São José', 'Catolé', '3'),('São José', 'Catolé', '4')],"#04"],
+  [[],[],"#05"]
 ]
 
 # Valores de lista de estações para grafo lu e e_lu
 params_lu = [
-  [["Aldgate","Tower Hill"],[('Liverpool Street', 'Aldgate', '3'), ('Monument', 'Tower Hill', '3'), ('Aldgate East', 'Tower Hill', '4'), ('Monument', 'Tower Hill', '4'), ('Liverpool Street', 'Aldgate', '8')],"#01"]
+  [["Aldgate","Tower Hill"],[('Liverpool Street', 'Aldgate', '3'), ('Monument', 'Tower Hill', '3'), ('Aldgate East', 'Tower Hill', '4'), ('Monument', 'Tower Hill', '4'), ('Liverpool Street', 'Aldgate', '8')],"#01"],
+  [[],[],"#02"],
+  [['Old Street','Angel'],[("King's Cross St. Pancras", 'Angel', '9'),('Moorgate', 'Old Street', '9')],'#03'],
+  [['Euston Square','Brixton'],[('Great Portland Street', 'Euston Square', '3'),("King's Cross St. Pancras", 'Euston Square', '3'),('Great Portland Street', 'Euston Square', '6'),("King's Cross St. Pancras", 'Euston Square', '6'),('Great Portland Street', 'Euston Square', '8'),("King's Cross St. Pancras", 'Euston Square', '8'),('Stockwell', 'Brixton', '11')],'#04']
 ]
 
 # Outros exemplos de grafos para teste
@@ -71,7 +78,7 @@ class Test_trechoscomsobrecarga_edge (ParametrizedTestCase):
 
   def test_s_invalida (self):
     f,g,v_g,e_g = self.param
-    self.assertTrue(f(g2,v_g2,e_g2,["v3"]) is None,"Estação inválida")
+    self.assertTrue(f(g2,v_g2,e_g2,["v0","v3"]) is None,"Estação inválida")
 
   def test_vdict_invalido (self):
     f,g,v_g,e_g = self.param
@@ -79,7 +86,7 @@ class Test_trechoscomsobrecarga_edge (ParametrizedTestCase):
 
   def test_edict_invalido (self):
     f,g,v_g,e_g = self.param
-    self.assertTrue(f(g,v_g,e_g2,0) is None,"Dicionário de arestas inválido")
+    self.assertTrue(f(g,v_g,e_g2,[""]) is None,"Dicionário de arestas inválido")
 
   def test_trivial (self):
     f,g,v_g,e_g = self.param

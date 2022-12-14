@@ -64,7 +64,7 @@ class Test_melhorcircuito_base (ParametrizedTestCase):
   def test_base (self):
     f,g,v_g,estacoes,saida_esperada,m = self.param
     result = f(g,v_g,estacoes)
-    self.assertCountEqual(result[1:len(result)],saida_esperada[1:len(result)],m)
+    self.assertCountEqual(result[1:],saida_esperada[1:],m)
 
 # Classe de testes edge
 class Test_melhorcircuito_edge (ParametrizedTestCase):

@@ -23,26 +23,37 @@ Testes para as funções encontram-se neste notebook:
 import networkx as nx
 import matplotlib.pyplot as plt
 
-def draw_graph (G, pos, node_labels=None, edge_labels=None):
-  nx.draw_networkx_nodes(G,pos, node_color="cyan", node_size=500)
-  nx.draw_networkx_edges(G,pos)
+def draw_graph(G,pos,node_labels=None,edge_labels=None,
+                     node_color="cyan",node_size=500):
+  nx.draw_networkx_nodes(G,pos, node_color=node_color, node_size=node_size)
   if node_labels is None:
     nx.draw_networkx_labels(G,pos)
   else:
     nx.draw_networkx_labels(G,pos,labels=node_labels)
-  if edge_labels is None:
-    pass
-  else:
-    nx.draw_networkx_edge_labels(G,pos,edge_labels=edge_labels)
-  plt.box(False)
-  plt.show()
-
-def draw_multigraph(G,pos):
-  nx.draw_networkx_nodes(G,pos, node_color="cyan", node_size=500)
-  nx.draw_networkx_labels(G,pos)
   ax = plt.gca()
-  for e in G.edges:
-    if e[2] > 0:
+  v = list(G.nodes)
+  elist = []
+  notelist = []
+  for i in range(len(G.nodes)):
+    for j in range(i,len(G.nodes)):
+      elistb = [e for e in G.edges if (e[0]==v[i] and e[1]==v[j]) or (e[0]==v[j] and e[1]==v[i])]
+      if len(elistb) > 1:
+        for k in range(len(elistb)):
+          elist.append((elistb[k][0],elistb[k][1],k))
+      elif len(elistb) == 1:
+        notelist.append(elistb[0])
+  for e in elist:
+    if nx.is_directed(G):
+      ax.annotate("",
+                xy=pos[e[0]], xycoords='data',
+                xytext=pos[e[1]], textcoords='data',
+                arrowprops=dict(arrowstyle="-|>", color="black",
+                                shrinkA=11, shrinkB=11,
+                                patchA=None, patchB=None,
+                                connectionstyle="arc3,rad=rrr".replace('rrr',str(0.3*e[2])),
+                                ),
+      )
+    else:
       ax.annotate("",
                 xy=pos[e[0]], xycoords='data',
                 xytext=pos[e[1]], textcoords='data',
@@ -52,7 +63,12 @@ def draw_multigraph(G,pos):
                                 connectionstyle="arc3,rad=rrr".replace('rrr',str(0.3*e[2])),
                                 ),
       )
-  nx.draw_networkx_edges(G,pos,arrows=True,edgelist=[e for e in G.edges if e[2]==0])
+  nx.draw_networkx_edges(G,pos,arrows=True,edgelist=[e for e in G.edges if e in notelist])
+  if edge_labels is None:
+    pass
+  else:
+    if elist == []:
+      nx.draw_networkx_edge_labels(G,pos,edge_labels=edge_labels)
   plt.axis(False)
   plt.show()
 
